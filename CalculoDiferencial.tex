@@ -1,0 +1,171 @@
+\documentclass[10pt,a4paper,openright]{book}
+
+\title{CÁLCULO DIFERENCIAL}
+\author{Juan Diego Barrado Daganzo e Iker Muñox Martínez\\2º de Carrera} %\\ es salto de linea
+\date{\today}
+\pagestyle{plain}
+\setlength{\parskip}{0.35cm} %edicion de espaciado
+\setlength{\parindent}{0cm} %edicion de sangría
+\clubpenalty=10000 %líneas viudas NO
+\widowpenalty=10000 %líneas viudas NO
+
+\usepackage[spanish]{babel} %Para que el idioma por defecto sea español
+\usepackage{amsmath} %Paquetes para mates
+\usepackage{amsfonts} %Paquetes para mates
+\usepackage{amssymb} %Paquetes para mates
+\usepackage{latexsym} %Paquetes para mates
+\usepackage{multicol} %Paquetes columnas
+\usepackage{cancel} %Paquete tachar cosas
+\usepackage[top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry}
+
+\usepackage{titlesec} %Formato de capitulos y secciones
+	\titleformat{\chapter}[display]{\normalfont\huge\bfseries\color{capitulos}}{\thechapter}{20pt}{\Huge}[\titlerule{}]
+	\titleformat{\section}{\normalfont\Large\bfseries\color{secciones}}{\thesection}{1em}{}
+	\titleformat{\subsection}{\normalfont\large\bfseries\color{subsecciones}}{\thesubsection}{1em}{}
+	\titleformat{\subsubsection}{\normalfont\normalsize\bfseries\color{subsubsecciones}}{\thesubsubsection}{1em}{}
+
+\usepackage[dvipsnames,usenames]{color} %activar e incluir colores
+	\definecolor{capitulos}{RGB}{60,0,0}%gama de colores de los capitulos
+	\definecolor{secciones}{RGB}{95,8,5}%gama de colores de las secciones
+	\definecolor{subsecciones}{RGB}{140,36,31}%gama de colores de las subsections
+	\definecolor{subsubsecciones}{RGB}{188,109,79}%gama de colores de las subsubsections
+	
+\usepackage{graphicx} %Para incluir fotos
+\graphicspath{{./fotos/}}
+
+\usepackage{pgfplots}
+\usepackage{tkz-fct}
+
+\begin{document}
+\maketitle
+
+\chapter*{TEORÍA DE LA MEDIDA}
+Vamos a introducir un elemento fundamental en esta asignatura, y muy útil para las posteriores, que no es otra cosa que la capacidad de definir qué es una medida y cómo podemos medir las cosas según un criterio general.
+
+\section*{ESPACIOS MÉTRICOS}
+
+\subsubsection*{Definición: distancia}
+Sea $E\neq \emptyset$ un conjunto, decimos que $d: E\times E \rightarrow \mathbb R$ es una \textbf{métrica o distancia} siempre que se satisfaga las siguientes propiedades\footnote{Nótese que no está permitido valores que tiendan a infinito (comprendidos en $\bar{\mathbb R}$)}
+\begin{itemize}
+\item Positiva: $d(x,y)>0: \forall x, y \in E$
+\item No degenerada: $d(x,y) > 0 \Leftrightarrow x = y$
+\item Simetría: $d(x,y) = d(y,x): \forall x,y \in E$
+\item Desigualdad triangular: $d(x,y)\leq d(x,z)+ d(z,y): \forall x,y,z\in E$
+\end{itemize}
+
+Al par $(E,d)$ lo denotamos como \textbf{espacio métrico}.
+
+\subsubsection*{Ejemplos}
+
+Un ejemplo sencillo de comprobar es considerar $\mathbb R$ con la métrica $d(x,y) = |x-y|$ tradicional.
+
+Para poner otro ejemplo, dado $E\neq \emptyset$ definimos la métrica discreta como:
+$$d(x,y) = \begin{cases} 0 & x= y \\ 1 & x\neq y \end{cases}$$
+Luego con la definición dada de distancia y un conjunto cualquiera $E$ tenemos que estos forman una peculiar definición de espacio métrico.
+
+\subsubsection*{Espacio euclídeo usual}
+Definimos $\mathbb R ^n = \mathbb R\times \cdots \times \mathbb R = \{(x_1, \cdots, x_n): x_i\in \mathbb R\}$, donde consideramos la suma y el producto por escalares como los usuales, lo cual dota a $\mathbb R^n$ de estructura de espacio vectorial.
+
+\subsubsection*{Espacios normados}
+Sea $E$ un espacio vectorial real, se dice que $||\cdot||: E \rightarrow \mathbb R$ es una \textbf{norma} si se cumplen las siguientes propiedades:
+\begin{itemize}
+\item Positiva: $||x||\geq 0: \forall x \in E$
+\item No degenerada: $||x|| = 0 \Leftrightarrow x = 0$
+\item Homogénea: $||\lambda x|| = |\lambda| \cdot ||x||: \forall \lambda \in \mathbb R \wedge \forall x \in E$
+\item Desigualdad triangular: $||x+y||\leq ||x|| + ||y||$
+\end{itemize}
+Al par $(E,||\cdot||)$ se le denota como \textbf{espacio normado}.
+
+\subsubsection*{Ejemplo}
+Considerando $\mathbb R^n$ denominamos como la clásica norma euclídea a:
+$$||x|| = ||x||_2 = \sqrt{x_1^2+\cdots + x_n^2} : \forall x \in \mathbb R^n $$
+Para demostrar que, en efecto, esto es una norma, procederemos a demostrar la última de las propiedades (puesto que las demás son triviales) más adelante, puesto que su demostración surge de la desigualdad de Cauchy-Schwarz.
+
+En otro ejemplo, si consideramos $\left(E,||\cdot||\right)$ un espacio normado, podemos definir la métrica asociada a dicha norma como:
+$$d_{||\cdot||}(x,y)=||x-y||: \forall x, y \in E$$
+Cuya definición, por ser en base a una norma ya dada, hace fácilmente verificable las condiciones de métrica.
+
+\subsubsection*{Definición}
+De este modo, se define la \textbf{métrica o distancia euclídea} en $\mathbb R^n$ como la métrica asociada a la norma euclídea:
+$$d(x,y)=d_2(x,y)=\sqrt{(x_1-y_1)^2+\cdots + (x_n-y_n)^2}$$
+
+\subsubsection*{Ejemplos}
+Definimos el conjunto de las funciones continuas $E=\{f: [0,1]\rightarrow \mathbb R: f\mbox{ continua}\} = \mathbb C[0,1]$ y la función:
+$$d(f,g) = \sup\{|f(x)-g(x)|: \forall x \in [0,1]\}$$
+Lo primero de todo, comprobamos que está bien definida: como son funciones continuas la diferencia es continua y, por ser el valor absoluto una función continua, la composición con él también es continua. Por tanto, al tratarse de una función continua y acotada en $[0,1]$ el máximo se alcanza así que de hecho no solo el supremo es un número finito sino que es máximo de la función en ese intervalo.
+
+Para ver que se trata de una norma, comprobamos la última propiedad puesto que las anteriores se comprueban trivialmente:
+$$d(f,g) = |f(x) - g(x)| = |f(x) - h(x) + h(x)- g(x)| \leq |f(x) - h(x)| + |h(x) - g(x)| \leq d(f,h) + d(h,g)$$
+
+Si definimos $||f||_\infty = \sup\{|f(x)| : x \in [0,1]\}$, entonces el par $(E, || \ ||_\infty)$ es un espacio normado.
+$$||f||_\infty = d(f,0)$$
+
+Sea $E = \{f : (0,1] \rightarrow \mathbb{R} \mbox{ continua }\}$definimos 
+
+$d(f,g) = \sup\{|f(x) - g(x)| : \forall x \in (0,1]\}$
+
+Sin embargo, no es una métrica ya que no está bien definida, por ejemplo, $d(\frac{1}{x}, 0) = \infty$
+
+\subsubsection*{Observación}
+Sin embargo, no toda métrica tiene asociada una norma en un espacio vectorial. Para verlo, tomamos $\mathbb R^n$ con la métrica discreta definida, observamos que no existe una norma que haga que el par $(\mathbb R^n, d)$ sea un espacio normado puesto que en caso de existir, por ejemplo, no se verifica la 3 propiedad:
+$$\mbox{Sea }x\in \mathbb R: x\neq 0, \ \exists ||\cdot||\Rightarrow\underbrace{d(\lambda x , 0)}_{=1} = ||\lambda x|| = |\lambda|\cdot ||x|| = |\lambda| \cdot d(x,0) = |\lambda|$$
+Y como debe ocurrir para todo lambda, no se verifica.
+
+Consideramos en $\mathbb R^n$ la siguiente norma:
+$$||x||_1=|x_1|+\cdots+|x_n|$$
+En general, se define la norma $p$ (con $1<p<\infty$) como:
+$$||x||_p = \left(|x_1|^p + \cdots + |x_n|^p\right)^{1/p}$$
+Observación: $||x||_\infty = \max \{|x_j| : j = 1,\ldots, n\}$
+
+\subsubsection*{Definición: producto escalar}
+Sea $E$ un espacio vectorial, se dice que $\langle \cdot, \cdot\rangle: E\times E \rightarrow \mathbb R$ es un producto escalar si es una forma bilineal definida positiva, es decir, cumple las propiedades:
+\begin{itemize}
+\item Definida positiva: $\langle x,x \rangle \geq 0 : \forall x \in E$
+\item No degenerada: $\langle x,x \rangle = 0 \Leftrightarrow x = 0$
+\item Homogeneidad: $\langle \lambda x, y \rangle = \lambda \langle x,y\rangle : \forall x, y \in E$
+\item Bilinealidad: $\langle x,y+z\rangle = \langle x,y\rangle + \langle x,z\rangle : \forall x, y ,z \in E$
+\item Simétrica: $\langle x,y\rangle = \langle y,x\rangle: ,\forall x, y ,\in E$
+\end{itemize}
+Al par $(E, \langle \cdot, \cdot\rangle)$ se le denomina espacio vectorial con producto escalar o espacio \textbf{pre-Hilbert}.
+
+\underline{Ejemplos}
+\begin{enumerate}
+\item En $\mathbb{R}^n$, definimos $$\langle x,y\rangle = \sum_{j=1}^{n} x_j \cdot y_j : \forall x,y \in \mathbb{R}^n$$
+
+\item En $\mathcal{C}[0,1]$, definimos $$\langle f,g \rangle = \int_{0}^{1} f(x) \cdot g(x) dx$$
+\end{enumerate}
+
+\subsubsection*{Desigualdad de Cauchy-Schwarz}
+Sea $(E, \langle\cdot, \cdot\rangle)$ un espacio pre-Hilbert y sean $x,y \in E$ dos vectores cualesquiera. Entonces ocurre que:
+$$|\langle x,y\rangle| \leq \sqrt{\langle x,x \rangle \cdot \langle y,y\rangle}$$
+
+\underline{Demostración}
+\begin{itemize}
+\item Si $x = 0$ o $y=0$, la desigualdad es trivial.
+
+\item Tomemos en primer lugar un $\lambda\in \mathbb R$ arbitrario y escojamos $x,y \in E \setminus \{0\}$:
+$$0 \leq \ \langle \lambda x + y, \lambda x + y\rangle = \lambda^2 \langle x,x\rangle + 2\lambda \langle x,y\rangle + \langle y,y\rangle$$
+Esta ecuación\footnote{Esto es mayor o igual que 0 por la propiedad de definida positiva} describe una parábola que, a lo sumo, es tangente al eje $X$ pero nunca lo llega a cruzar porque es siempre $\geq 0$. Consecuentemente, el discriminante de esta ecuación nunca será estrictamente positivo ya que esto implicaría tener dos raíces, es decir:
+$$\Delta = 4 \langle x,y\rangle^2 - 4\langle x,x\rangle\cdot \langle y,y\rangle \leq 0 \Leftrightarrow \langle x,y\rangle^2 -\langle x,x\rangle\cdot \langle y,y\rangle \leq 0 \Leftrightarrow|\langle x,y\rangle| \leq \sqrt{\langle x,x\rangle\cdot\langle y,y\rangle}$$
+\end{itemize}
+Como observación ocurre que hay igualdad si y solo si los vectores son proporcionales:
+$$|\langle x,y\rangle| =\sqrt{\langle x,x\rangle \cdot \langle y,y\rangle} \Leftrightarrow x = \alpha y : \alpha \in \mathbb{R}$$
+Si son proporcionales es trivial demostrar la igualdad, pero si tenemos la igualdad, entonces ello implica que la parábola de la que hablamos antes corta en un único punto al eje de abscisas, luego:
+$$\langle\lambda \cdot x + y, \lambda \cdot x + y\rangle =  0\Leftrightarrow  \lambda^2 \langle x,x\rangle + 2\lambda \langle x,y\rangle + \langle y,y\rangle = 0 \Leftrightarrow \lambda = \frac{-2 \cdot \langle x,y\rangle}{2 \cdot \langle x,x\rangle} \Leftrightarrow x = -\lambda y$$
+
+\subsubsection*{Proposición}
+Dado un espacio pre-Hilbert $(E, \langle \cdot, \cdot \rangle)$ y definimos $||x|| = \sqrt{\langle x,x \rangle}$, entonces $(E, || \cdot ||)$ es normado.
+
+\underline{Demostración}:
+
+La única propiedad no trivial es la desigualdad triangular. Sea 
+$$|| x+y||^2 = \langle x+y,x+y\rangle = ||x||^2 + 2 \cdot \langle x,y\rangle + ||y||^2$$
+Aplicando la desigualdad de Cauchy-Schwarz
+$$\leq ||x||^2 + 2 ||x|| \cdot ||y|| + ||y||^2 = (||x|| + ||y||)^2$$
+
+\section*{DÍA 09/09/2021}
+Falta el principio al cual no has llegado.
+
+
+
+\end{document}
