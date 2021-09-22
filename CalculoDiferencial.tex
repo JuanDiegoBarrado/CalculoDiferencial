@@ -64,6 +64,13 @@
 
 \theoremprework{\vspace{0.25cm}}
 	\newtheorem*{prop}{Proposición}
+	
+\theoremprework{\vspace{0.25cm}}
+\theoremheaderfont{\normalfont}
+\theorembodyfont{\normalfont}
+	\newtheorem*{demo}{\underline{Demostración:}}
+	
+	
 
 \begin{document}
 \maketitle
@@ -233,37 +240,31 @@ $$||x||^2 + ||y||^2 = ||x+y||^2$$
 
 Es interesante observar que el recíproco también es cierto. Dado un espacio normado $(E, || \cdot ||)$, si $|| \cdot ||$ satisface la Ley del Paralelogramo, entonces existe un producto escalar $\langle \cdot , \cdot \rangle$ tal que $||x||^2 = \langle x,x\rangle$. La demostración se deja como ejercicio.
 
-\section*{Topología en Espacios Métricos}
-
+\section*{TOPOLOGÍA EN ESPACIOS MÉTRICOS}
 \begin{defi}[Bola]
-
-Sea el espacio métrico $(E,d)$. Se define la \textbf{bola abierta} de centro $x\in E$ y radio $r>0$ al conjunto 
+Sea el espacio métrico $(E,d)$. Se define la \textbf{bola abierta} de centro $x\in E$ y radio $r>0$ al conjunto:
 $$B(x,r) = \{y \in E : d(x,y) < r\}$$
-Asimismo, definimos como \textbf{bola cerrada} al conjunto
+Asimismo, definimos como \textbf{bola cerrada} al conjunto:
 $$\bar{B}(x,r) = \{y \in E : d(x,y) \leq r\}$$
 \end{defi}
 
-Ejemplos:
+\underline{Ejemplos}:
 \begin{itemize}
-\item En $\mathbb{R}$, sea $x = \frac{a+b}{2}, a < b, a,b \in \mathbb{R}$ y $r = \frac{b-a}{2} > 0$
+\item En $\mathbb{R}$, tomando $x = \frac{a+b}{2}$ donde $a < b$ y $a,b \in \mathbb{R}$, elegimos $r = \frac{b-a}{2} > 0$. Luego ocurre que:
 $$B(x,r) = \{y \in \mathbb{R} : \left| y - \frac{a+b}{2}\right| < \frac{b-a}{2}\} = (a,b)$$
 
-En general, si $x \in \mathbb{R}, r>0$
-$$B(x,r) = (x-r,x+r)$$
-
-\item Sea $(X,d)$, siendo $d$ la distancia discreta $d(x,y) = \begin{cases} 0 & x=y \\ 1 & x \neq y \end{cases}$
-$$B(x,2) = X$$
-$$B(x,1) = \{x\} \ \ \ \bar{B}(x,1) = X$$
-
+\item Sea $(X,d)$, siendo $d$ la métrica discreta $d(x,y) = \begin{cases} 0 & x=y \\ 1 & x \neq y \end{cases}$, tenemos entonces que:
+\begin{align*}
+B(x,2) = X && B(x,1) = \{x\} && \bar{B}(x,1) = X
+\end{align*}
 \end{itemize}
 
 \begin{defi}[Conjunto abierto]
-Sea $(X,d)$ un espacio métrico. Se dice que un conjunto $A \subset X$ es \textbf{abierto} si 
+Sea $(X,d)$ un espacio métrico, se dice que un conjunto $A \subset X$ es \textbf{abierto} si:
 $$\forall x \in A, \exists \varepsilon > 0 : B(x,\varepsilon) \subset A$$
 \end{defi}
 
-Observaciones:
-
+\underline{Observaciones}:
 \begin{itemize}
 \item Si $\varepsilon_1 < \varepsilon_2 \Rightarrow B(x,\varepsilon_1) \subset B(x,\varepsilon_2)$
 
@@ -273,59 +274,47 @@ Observaciones:
 
 \item Consideramos el espacio métrico $\left( (0,1], d_2 \right)$. El conjunto $(0,1]$ es abierto es este espacio métrico determinado. Es decir, que el hecho de ser abierto o no depende del espacio métrico en el que nos encontramos.
 
-\item $\{x\}$ no es abierto en $\mathbb{R}$. Sin embargo, $\{x\}$ sí es abierto en $(\mathbb{R}, d_{\mbox{discreta}})$
+\item $\{x\}$ no es abierto en $\mathbb{R}$. Sin embargo, $\{x\}$ sí es abierto en $(\mathbb{R}, d_{\mbox{\tiny discreta}})$
 
 \end{itemize}
 
 
 \begin{prop}
-
 En un espacio métrico $(E,d)$, toda bola abierta es un abierto.
-
 \end{prop}
-\underline{Demostración}
 
-Sean $x \in E, r>0 \mbox{ y } y \in B(x,r)$. Queremos probar que $\exists \varepsilon > 0 : B(y,e) \subset B(x,r)$
-
-Sea $\varepsilon = r - d(x,y) > 0$. Veamos que $B(y,e) \subset B(x,r)$
-
-Sea $z \in B(y, \varepsilon)$, veamos que $d(x,z) < r$
-
+\begin{demo}
+Sean $x \in E$ y $r>0$ tomamos $y \in B(x,r)$. Queremos probar que $\exists \varepsilon > 0 : B(y,e) \subset B(x,r)$, luego sea $\varepsilon = r - d(x,y) > 0$ vamos a ver que $B(y,e) \subset B(x,r)$. Para ello sea $z \in B(y, \varepsilon)$ comprobemos que $d(x,z) < r$:
 $$d(x,z) \leq d(x,y) + d(y,z) < d(x,y) + \varepsilon = r$$
-
+\end{demo}
 
 \begin{prop}
-Sea el espacio métrico $(E,d)$. Entonces:
+Sea el espacio métrico $(E,d)$, entonces\footnote{Para la 2ª afirmación no es necesario que la familia sea finita} ocurre:
 \end{prop}
 \begin{enumerate}
-\item $\forall A_1, \ldots, A_n$ familia de conjuntos abiertos en $E, \displaystyle\bigcap_{j=1}^N A_j$ es abierto en $E$
+\item $\forall A_1, \ldots, A_n$ familia de conjuntos abiertos en $E$, $\displaystyle\bigcap_{j=1}^N A_j$ es abierto en $E$.
 
-\item $\forall \{A_\alpha\}_{\alpha \in I}$ familia arbitraria de conjuntos abiertos en $E, \displaystyle \bigcup_{\alpha \in I}^N A_\alpha$ es abierto 
+\item $\forall \{A_\alpha\}_{\alpha \in I}$ familia arbitraria de conjuntos abiertos en $E$, $\displaystyle \bigcup_{\alpha \in I} A_\alpha$ es abierto en $E$.
 \end{enumerate}
 
-\underline{Demostración}
-
+\begin{demo}
 \begin{itemize}
-\item Sea $x \in \displaystyle\bigcap_{j=1}^N A_j$. Queremos probar que $\exists \varepsilon > 0 : B(x,\varepsilon) \subset \displaystyle\bigcap_{j=1}^N A_j$
-
-Dado $j \in \{1, \ldots , N\}$, sea $\varepsilon_j > 0 : B(x,\varepsilon_j) \subset A_j$. Sea $\varepsilon = \underset{j \in \{1, \ldots , N\}}{\min}\{\varepsilon_j\} > 0$
-
-Entonces $$B(x,\varepsilon) \subset \bigcap_{j=1}^N B(x,\varepsilon_j)\subset  \bigcap_{j=1}^N A_j$$
-
-
-\item Sea $x \in \displaystyle\bigcup_{\alpha \in I} A_\alpha \Rightarrow \exists \beta \in I : x \in A_\beta $ 
-
-Es decir, $$\exists \varepsilon > 0 : B(x, \varepsilon) \subset A_\beta \bigcup_{\alpha \in I} A_\alpha$$
+\item Tomamos $x \in \displaystyle\bigcap_{j=1}^N A_j$ para intentar probar que:
+$$\exists \varepsilon > 0 : B(x,\varepsilon) \subset \bigcap_{j=1}^N A_j$$
+Para ello, la idea es que fijado un $j$ tendremos un $\varepsilon_j$ que valdrá, luego como es un conjunto finito podemos quedarnos con el más pequeño y valdrá para todos los demás:
+$$j \in \{1, \ldots , N\} \Rightarrow \exists \varepsilon_j > 0 : B(x,\varepsilon_j) \subset A_j \Rightarrow \varepsilon = \underset{j \in \{1, \ldots , N\}}{\min}\{\varepsilon_j\} > 0$$
+De esta forma ocurre que:
+$$B(x,\varepsilon) \subset \bigcap_{j=1}^N B(x,\varepsilon_j)\subset  \bigcap_{j=1}^N A_j$$
+\item Sea $x \in \displaystyle\bigcup_{\alpha \in I} A_\alpha \Rightarrow \exists \beta \in I : x \in A_\beta $ , luego se tiene que:
+$$\exists \varepsilon > 0 : B(x, \varepsilon) \subset A_\beta \subset \bigcup_{\alpha \in I} A_\alpha$$
 \end{itemize}
+\end{demo}
 
-\underline{Observación}
-
+\underline{Observación}:
 En $(\mathbb{R}^n, d_2), A_j=(-\frac{1}{j}, \frac{1}{j})$ es abierto pero $\displaystyle\bigcap_{j=1}^\infty A_j = \{0\}$  \textbf{no} es abierto en $\mathbb{R}$.
 
 \begin{defi}[Topología]
-
-
-Toda familia de conjuntos $T$ de un conjunto $X$, $T \subset \wp (X)$, que satisface:
+Toda familia de subconjuntos $T$ de un conjunto $X$, $T \subset \wp (X)$, que satisface:
 \begin{itemize}
 \item $\emptyset, X \in T$
 
@@ -334,29 +323,25 @@ Toda familia de conjuntos $T$ de un conjunto $X$, $T \subset \wp (X)$, que satis
 \item $T$ es invariante por uniones arbitrarias.
 \end{itemize}
 
-Se denomina como \textbf{topología de X}. Así, la familia de abiertos de un espacio métrico $(X,d)$ es una topología.
+Se denomina como \textbf{topología de X}.
 \end{defi}
+
+ Así, la familia de abiertos de un espacio métrico $(X,d)$ es una topología.
 
 \begin{defi}[Punto interior]
-Dado un espacio métrico $(E,d)$, se dice que $x$ es un punto interior de de $A \subset E$ si $$\exists \varepsilon > 0 B(x, \varepsilon) \subset A$$
-
+Dado un espacio métrico $(E,d)$, se dice que $x$ es un \textbf{punto interior} de $A \subset E$ si cumple que:
+$$\exists \varepsilon > 0 : B(x, \varepsilon) \subset A$$
 Denotamos como $\mathring{A} = int(A) = \{x \in A : x \mbox{ es punto interior}\}$
 \end{defi}
-Observaciones:
+
+\underline{Observaciones}:
 \begin{itemize}
 \item $\mathring{A} \subset A$
-
 \item $A$ es abierto $\Leftrightarrow A = \mathring{A}$
-
-\item Sea $x \in \mathring{A} \Leftrightarrow \exists U$ abierto $: x \in U \subset A$
-
-\item $\mathring{A} = \{0\}$ en $\mathbb{R}$
-
-\item Si $A = [0,1]$, entonces $\mathring{A} = (0,1)$
-
-\item $\displaystyle \mathring{A} = \bigcup_{\underset{\mathcal{U} \mbox{ es abierto }}{\mathcal{U} \subset A}} \mathcal{U}$
+\item $x \in \mathring{A} \Leftrightarrow \exists U$ abierto $: x \in U \subset A$
+\item $A=\{0\}\Rightarrow \mathring{A} = \emptyset$
+\item $A = [0,1]\Rightarrow\mathring{A} = (0,1)$
+\item $\mathring{A} = \bigcup_{\mathcal{U} \subset A} \mathcal{U}$ donde $U$ es abierto.
 \end{itemize}
-
-
 
 \end{document}
