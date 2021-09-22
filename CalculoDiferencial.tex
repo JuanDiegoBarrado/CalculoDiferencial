@@ -78,11 +78,11 @@ Vamos a introducir un elemento fundamental en esta asignatura, y muy útil para 
 \section*{CONCEPTO DE MÉTRICA Y ESPACIOS NORMADOS}
 En esta sección, se definen los elementos básicos para el estudio de medidas, distancias y se estudian las características de las estructuras que se generan a partir de dichas definiciones, con sus consecuentes resultados para otras áreas como la geometría.
 
-\begin{defi}[distancia]
+\begin{defi}[métrica]
 Sea $E\neq \emptyset$ un conjunto, decimos que $d: E\times E \rightarrow \mathbb R$ es una \textbf{métrica o distancia} siempre que se satisfaga las siguientes propiedades\footnote{Nótese que no está permitido valores que tiendan a infinito (comprendidos en $\bar{\mathbb R}$)}
 \begin{itemize}
 \item Positiva: $d(x,y)>0: \forall x, y \in E$
-\item No degenerada: $d(x,y) > 0 \Leftrightarrow x = y$
+\item No degenerada: $d(x,y) = 0 \Leftrightarrow x = y$
 \item Simetría: $d(x,y) = d(y,x): \forall x,y \in E$
 \item Desigualdad triangular: $d(x,y)\leq d(x,z)+ d(z,y): \forall x,y,z\in E$
 \end{itemize}
@@ -122,6 +122,15 @@ $$||x|| = ||x||_2 = \sqrt{x_1^2+\cdots + x_n^2} : \forall x \in \mathbb R^n $$
 La demostración es trivial salvo el último apartado, que no se puede demostrar hasta más adelante puesto que se necesita de la \textit{Desigualdad de Cauchy-Schwarz}.
 \end{itemize}
 
+\begin{defi}[Norma ``\textit{p}'']
+Consideramos en $\mathbb R^n$ la siguiente norma:
+$$||x||_1=|x_1|+\cdots+|x_n|$$
+En general, se define la norma $p$ (con $1<p<\infty$) como:
+$$||x||_p = \left(|x_1|^p + \cdots + |x_n|^p\right)^{1/p}$$
+Es decir, que en el caso extremo tenemos que:
+$$||x||_\infty = \lim_{p\rightarrow\infty} ||x||_p = \max \{|x_j| : j = 1,\ldots, n\}$$
+\end{defi}
+
 \begin{prop}[Métrica asociada a una norma]
 Si consideramos $\left(E,||\cdot||\right)$ un espacio normado, podemos definir \textbf{la métrica asociada a dicha norma} como:
 $$d_{||\cdot||}(x,y)=||x-y||: \forall x, y \in E$$
@@ -157,15 +166,6 @@ $$d\left(\frac{1}{x}, 0\right) = \infty$$
 Sin embargo, no toda métrica tiene asociada una norma en un espacio vectorial. Para verlo, tomamos $\mathbb R^n$ con la métrica discreta definida: observamos que no existe una norma que haga que el par $(\mathbb R^n, d)$ sea un espacio normado puesto que en caso de existir, por ejemplo, no se verifica la 3 propiedad:
 $$\mbox{Sea }x\in \mathbb R: x\neq 0, \ \exists ||\cdot||\Rightarrow\underbrace{d(\lambda x , 0)}_{=1} = ||\lambda x|| = |\lambda|\cdot ||x|| = |\lambda| \cdot d(x,0) = |\lambda|$$
 Y como debe ocurrir para todo lambda, es absurdo.
-
-\begin{defi}[Norma ``\textit{p}'']
-Consideramos en $\mathbb R^n$ la siguiente norma:
-$$||x||_1=|x_1|+\cdots+|x_n|$$
-En general, se define la norma $p$ (con $1<p<\infty$) como:
-$$||x||_p = \left(|x_1|^p + \cdots + |x_n|^p\right)^{1/p}$$
-Es decir, que en el caso extremo tenemos que:
-$$||x||_\infty = \lim_{p\rightarrow\infty} ||x||_p = \max \{|x_j| : j = 1,\ldots, n\}$$
-\end{defi}
 
 \begin{defi}[Producto escalar]
 Sea $E$ un espacio vectorial, se dice que $\langle \cdot, \cdot\rangle: E\times E \rightarrow \mathbb R$ es un \textbf{producto escalar} si es una forma bilineal definida positiva, es decir, cumple las propiedades:
@@ -366,6 +366,171 @@ Denotamos como $\mathring{A} = int(A) = \{x \in A : x \mbox{ es punto interior}\
 \item $A=\{0\}\Rightarrow \mathring{A} = \emptyset$
 \item $A = [0,1]\Rightarrow\mathring{A} = (0,1)$
 \item $\mathring{A} = \bigcup_{\mathcal{U} \subset A} \mathcal{U}$ donde $U$ es abierto.
+\end{itemize}
+
+\section*{NUEVA SEMANA}
+
+\underline{Ejemplo}:
+
+Tomando $\mathbb{R}^{2}$ y el conjunto $A =\{(0,x): 0 < x < A\}$ vemos que $\mathring{A} = \emptyset$
+
+\begin{defi}
+En un espacio métrico $(E,d)$ decimos que un conjunto $A\subset E$ es cerrado si $E\setminus{A}$ es abierto.
+\end{defi}
+
+\underline{Ejemplos}:
+\begin{itemize}
+\item $\emptyset, E$ son cerrados.
+\item En $\mathbb{R}$, $(0,1]$ no es abierto ni cerrado.
+\item En $(0,2]$ el conjunto $(0,1]$, es cerrado puesto que su complementario es $(0,2]\setminus(0,1] = (1,2]$ es abierto en este espacio ambiente.
+\item En $\mathbb{R}^{2}$ los puntos son cerrados puesto que si tomamos $A=\{x\}$, entonces $\mathbb{R}\setminus A$ es abierto. Tomamos $y\in \mathbb{R}$ y $\varepsilon = \frac{||x-y||_2}{2}$ entonces $x\notin B(y,\varepsilon)$, luego es abierto.
+\end{itemize}
+
+\begin{prop}
+En cualquier espacio métrico $(E,d)$ las bolas cerradas $\bar{B}(x,\varepsilon)$ son conjuntos cerrados.
+\end{prop}
+
+\begin{demo}
+Se reduce todo a ver que el complementario es abierto. Sea $z\in E\setminus \bar{B}(x,\varepsilon)$, luego esto es así si y solo si:
+$$d(z,x) > \varepsilon$$
+Sea $0 < \delta < d(z,x) - \varepsilon$, ¿$B(z,\delta)\subset E\setminus \bar{B}(x,\varepsilon)$? o lo que es lo mismo, que la intersección de esta bola de centro z con la bola cerrada inicial es el vacío:
+$$y \in B(z,\delta)\Rightarrow d(y,x)\geq d(x,z) - d(z,y)> d(x,z) - \delta >\varepsilon$$
+Luego ya tenemos lo que queríamos probar
+\end{demo}
+
+\begin{prop}
+Sea un espacio métrico (E,d) se cumple que:
+\begin{enumerate}
+\item Si $\{A_\alpha\}_{\alpha \in I}$ son cerrados, entonces: $\bigcap_{\alpha \in I} A_{\alpha} \mbox{ cerrado}$
+\item Si $\{A_\alpha\}_{j = 1, \cdots, n}$ son cerrados, entonces: $\bigcup_{j = 1}^{n} A_{n} \mbox{ cerrado}$
+\end{enumerate}
+\end{prop}
+\begin{demo}
+Se demuestra por las Leyes de De Morgan
+\end{demo}
+
+\begin{defi}[Punto de acumulación]
+Sea $(E,d)$ un espacio métrico, y sea $A \subset E$, se dice que $x \in E$ es un \textbf{punto de acumulación} de A si:
+$$\forall \varepsilon > 0: \left(B(x,\varepsilon)\setminus\{x\}\right)\cap A \neq \emptyset$$
+Es decir, para cualquier ``entorno'' alrededor de ese punto sin contar con el punto, la intersección con el conjunto original es no vacía. Al \textbf{conjunto de puntos de acumulación} se le conoce como $A'$
+
+\item Sea $A=(0,1)$ en $\mathbb{R}$, entonces $A'=[0,1]$, de lo que se desprende que no tiene por qué darse $A'\subset A$
+\item $A = \{1\}$ en $\mathbb{R}$, entonces $A' = \emptyset$, de lo que se desprende que no tiene por qué darse $A\subset A'$
+\end{defi}
+
+\underline{\textbf{Observación}}:
+$$x\in A' \Leftrightarrow \forall U \mbox{ abierto} \subset E, \ x\in U \Rightarrow \left( U\setminus\{x\}\right) \cap A \neq \emptyset$$
+
+Tomamos $(E,d)$ siendo $d$ la métrica discreta y un conjunto $A\subset E$, entonces:
+$$x\in A' \Leftrightarrow \forall \varepsilon > 0: \left( B(x,\varepsilon) \setminus\{x\}\right) \cap A \neq \emptyset$$
+Con lo cual, si tomamos $0 < \varepsilon \leq 1$, entonces
+$$B(x,\varepsilon)\setminus\{x\} =\emptyset \Rightarrow A' = \emptyset$$
+
+\begin{prop}
+Sea $(E,d)$ un espacio métrico y $A\subset E$, entonces ocurre que:
+$$A'\subset A \Leftrightarrow A \mbox{ cerrado}$$
+\end{prop}
+\begin{demo}
+\begin{itemize}
+\item $\Leftarrow$:
+
+Si $A$ es cerrado, entonces $E\setminus A$ es abierto. De esta forma, queremos decir que
+$$\forall x \notin A : \exists \varepsilon > 0 : B(x,\varepsilon)\subset (E\setminus A) \Rightarrow B(x,\varepsilon) \cap A = \emptyset \Rightarrow B(x,\varepsilon)\setminus \{x\} \cap A = \emptyset \Rightarrow$$
+$$\Rightarrow x \notin A' \Rightarrow A' \subset A$$
+
+\item $\Rightarrow$:
+
+Supongamos ahora que $A'\subset A$ veamos que el complementario es abierto, luego hay que ver que cualquier punto suyo es interior.
+
+Sea $x\in E\setminus A$, luego $x\notin A'$. Esto quiere decir que:
+$$\exists \varepsilon > 0 : \left(B(x,\varepsilon)\setminus\{x\}\right)\cap A = \emptyset \Rightarrow B(x,\varepsilon)\cap A = \emptyset \Rightarrow B(x,\varepsilon)\subset (E\setminus A)$$
+\end{itemize}
+\end{demo}
+
+\begin{defi}[Adherencia]
+Sea $(E,d)$ un espacio métrico y $A \subset E$, definimos \textbf{la adherencia} de $A$ como:
+$$\bar{A} = \bigcap_{A\subset F } F$$
+Donde $F$ debe ser cerrado
+\end{defi}
+
+\underline{\textbf{Observaciones}}:
+\begin{itemize}
+\item Esto siempre está bien definido porque $F=E\supset A$ y $E$ es cerrado.
+\item $\bar{A}\supset A$
+\item $\bar{A}$ es el menor cerrado que contiene a $A$
+\item $A\subset B\Rightarrow \bar{A}\subset \bar{B}$
+\end{itemize}
+
+\underline{Ejemplos}:
+\begin{itemize}
+\item $A = (0,1)$ en $\mathbb{R}$, entonces $\bar{A} = [0,1]$
+\item $A = \mathbb{Q}$ en $\mathbb{R}$, entonces $\bar{A} = \mathbb{R}$
+\end{itemize}
+
+\begin{prop}
+Sea $(E,d)$ un espacio métrico y $A\subset E$, entonces:
+$$\bar{A} = A \cup A'$$
+\end{prop}
+
+\begin{demo}
+Sea $B= A\cup A'$, vamos a probar que $B=\bar{A}$.
+\begin{itemize}
+\item $B \supset \bar{A}$
+
+Vamos a probar que $B$ es un conjunto cerrado, puesto que si probamos esta propiedad se tiene que $A\subset B\Rightarrow \bar{A}\subset \bar{B} = B$ y quedaría demostrada la primera inclusión:
+$$x \in B^{c} = A^{c} \cap (E\setminus A')\Rightarrow x\notin B \Rightarrow x\notin A \ \wedge \ x\notin A'$$
+En primer lugar, por ocurrir que $x\notin \bar{A}$, se tiene que:
+$$\exists \varepsilon > 0 : \left( B(x,\varepsilon)\setminus\{x\}\right)\cap A = \emptyset$$
+Luego usando esa afirmación junto con que $x\notin A$, tenemos que:
+$$B(x,\varepsilon)\cap A = \emptyset\Rightarrow B(x,\varepsilon) \subset A^{c}$$
+Queda solo por probar que $B(x,\varepsilon)\subset E\setminus A'$, veamoslo:
+$$z\in B(x,\varepsilon)\Rightarrow \exists \delta > 0 : x\notin B(z, \delta)\subset B(x,\varepsilon) \Rightarrow$$
+$$\Rightarrow \left(B(z,\delta)\setminus \{z\}\right)\cap A \subset \left(B(x,\varepsilon)\setminus\{x\}\right)\cap A = \emptyset\Rightarrow z \notin A' \Rightarrow \bar{A}\subset B$$
+
+\item $B\subset \bar{A}$
+
+Como $x\in A\Rightarrow x \in \bar{A}$, todo se reduce a probar que $A'\subset \bar{A}$:
+$$A'\subset \bar{A} \Leftrightarrow \forall F\supset A \mbox{ cerrado, } A'\subset F \Leftrightarrow \forall F \supset A \mbox{ cerrado, }(E\setminus A')\supset F^{c}$$
+Luego vamos a intentar tratar de probar dicho enunciado equivalente:
+$$z\notin F \Rightarrow z \in F^{c} \Rightarrow \exists \varepsilon > 0 : B(z,\varepsilon)\subset F^{c}\Rightarrow \left(B(z,\varepsilon)\setminus\{z\}\right)\cap A \subset B(z,\varepsilon)\cap A = \emptyset \Rightarrow$$
+$$\Rightarrow z \notin A' \Rightarrow z \in E\setminus A'$$
+\end{itemize}
+\end{demo}
+
+\subsection*{MIERCOLES}
+
+\begin{coro}
+$$x\in \bar{A}\Leftrightarrow \forall \varepsilon >0: B(x,\varepsilon)\cap A \neq \emptyset$$
+\end{coro}
+
+\underline{Observación}:
+$$x\in A' \Leftrightarrow \forall \varepsilon > 0: \exists x^{\varepsilon} \in A\setminus\{x\}: d(x_\varepsilon, x)< \varepsilon$$
+En particular, en $\mathbb{R}^{n}$:
+$$x\in A' \Leftrightarrow \exists \{x_k\}_l\subset A\setminus\{x\}: ||x-x_k||_{2}\xrightarrow{l\rightarrow\infty} 0$$
+
+\begin{defi}
+Sea $(E,d)$ un espacio métrico y $A\subset B \subset E$, se dice que $A$ es denso en $B$ si $B\subset \bar{A}$. En particular, si $B=E$, entonces $A$ es denso en $E$ si $\bar{A} = E$.
+\end{defi}
+
+\underline{Ejemplo}:
+\begin{itemize}
+\item El conjunto $\mathbb{Q}$ es denso dentro de $\mathbb{R}$.
+\end{itemize}
+
+\begin{defi}
+Sea $(E,d)$ un espacio métrico y $A\subset E$, se define la frontera de $A$ como:
+$$\partial(A) = \bar{A}\cap \overline{E\setminus{A}}$$
+\end{defi}
+
+\underline{Observaciones}:
+
+\begin{itemize}
+\item $\partial(A)$ es cerrado.
+\item $A=[0,1)$ en $\mathbb{R}$, implica que $\bar{A} = [0,1]$, luego $\partial(A)\{0,1\}$
+\item $\partial(A) = \partial(A^c)$
+\item Ejercicio: probar que $\partial(A)=\bar{A}\setminus{\mathring{A}} = \bar{A}\cap (E\setminus{\mathring{A}})$. Pista: probar que $E\setminus{{\mathring{A}}} = \overline{E\setminus{A}}$
+\item Ejercicio: probar que $A'$ es cerrado.
+\item Ejercicio: estudiar cómo son los abiertos y los cerrados en un espacio con la métrica discreta.
 \end{itemize}
 
 \end{document}
