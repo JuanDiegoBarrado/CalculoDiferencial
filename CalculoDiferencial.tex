@@ -122,7 +122,7 @@ $$||x|| = ||x||_2 = \sqrt{x_1^2+\cdots + x_n^2} : \forall x \in \mathbb R^n $$
 La demostración es trivial salvo el último apartado, que no se puede demostrar hasta más adelante puesto que se necesita de la \textit{Desigualdad de Cauchy-Schwarz}.
 \end{itemize}
 
-\begin{defi}[Norma ``\textit{p}'']
+\begin{defi}[Norma \textit{p}]
 Consideramos en $\mathbb R^n$ la siguiente norma:
 $$||x||_1=|x_1|+\cdots+|x_n|$$
 En general, se define la norma $p$ (con $1<p<\infty$) como:
@@ -137,11 +137,12 @@ $$d_{||\cdot||}(x,y)=||x-y||: \forall x, y \in E$$
 Cuya definición, por ser en base a una norma ya dada, hace fácilmente verificable las condiciones de métrica.
 \end{prop}
 
-\begin{defi}
+\begin{defi}[Métrica Euclídea]
 De este modo, se define la \textbf{métrica o distancia euclídea} en $\mathbb R^n$ como la métrica asociada a la norma euclídea:
 $$d(x,y)=d_2(x,y)=\sqrt{(x_1-y_1)^2+\cdots + (x_n-y_n)^2}$$
 \end{defi}
 
+\newpage
 \underline{\textbf{Ejemplos}}:
 \begin{itemize}
 \item Definimos el conjunto de las funciones continuas $E=\{f: [0,1]\rightarrow \mathbb R: f\mbox{ continua}\} = \mathbb C[0,1]$ y la función:
@@ -182,12 +183,12 @@ Al par $(E, \langle \cdot, \cdot\rangle)$ se le denomina espacio vectorial con p
 \newpage
 
 \underline{Ejemplos}
-\begin{enumerate}
+\begin{itemize}
 \item En $\mathbb{R}^n$, definimos $$\langle x,y\rangle = \sum_{j=1}^{n} x_j \cdot y_j : \forall x,y \in \mathbb{R}^n$$
 
 \item En $\mathcal{C}[0,1]$, definimos $$\langle f,g \rangle = \int_{0}^{1} f(x) \cdot g(x) dx$$
 Y es muy sencillo demostrar que ambas definiciones suponen un producto escalar en el espacio en el que están definidas.
-\end{enumerate}
+\end{itemize}
 
 \begin{theo}[Desigualdad de Cauchy-Schwarz]
 Sea $(E, \langle\cdot, \cdot\rangle)$ un espacio pre-Hilbert y sean $x,y \in E$ dos vectores cualesquiera. Entonces ocurre que:
@@ -239,30 +240,30 @@ $$\Rightarrow\sum_{j=1}^{\infty} |x_j|| y_j | \leq ||x||_{\ell^2} \cdot ||y||_{\
 $$\int_{0}^{1} |f(x) \cdot g(x)| \leq \left( \int_{0}^{1} |f(x)|^2 dx \right)^\frac{1}{2} \cdot \left( \int_{0}^{1} |g(x)|^2 dx \right)^\frac{1}{2} $$
 \end{itemize}
 
-\underline{Observación}
-
+\begin{defi}[Equivalencia de normas]
 Se dice que dos normas son equivalentes en un espacio vectorial $E$, $|| \cdot ||_1 \approx || \cdot ||_1$, si 
 $$\exists c_1,c_2 > 0 : c_1 \leq ||x||_2 \leq ||x||_1 \leq c_2 ||x||_2 : \forall x \in E$$
+\end{defi}
 
 \underline{Observación}
 
-Dado $(E,d)$, ¿cuándo existe una norma que genera $d$, tal que $d(x,y) = ||x-y||$?
-
+Dado un espacio métrico $(E,d)$, una pregunta razonable es cuándo existe una norma que genera $d$, tal que $d(x,y) = ||x-y||$. Esto ocurre cuando la métrica cumple dos condiciones:
 \begin{itemize}
 \item $d(x+z,y+z) = d(x,y)$ (Invariante por traslaciones)
 
 \item $d(\lambda x, \lambda y) = |\lambda | d(x,y)$ (Invariante por dilataciones)
 \end{itemize}
 
-\underline{Observación: Ley del Paralelogramo}
-
-Sea $(E, \langle \cdot , \cdot \rangle)$, $||x||^2 = \langle x,x\rangle$, se cumple que:
+\begin{theo}[Ley del Paralelogramo]
+Sea $(E, \langle \cdot , \cdot \rangle)$ un espacio vectorial normado, cuya norma es $||x||^2 = \langle x,x\rangle$, se cumple que:
 $$2||x||^2 + 2||y||^2 = ||x+y||^2 + ||x-y||^2$$
 
 Si se diese que $x \perp y \Rightarrow ||x+y|| = ||x-y||$, es decir, obtenemos el Teorema de Pitágoras:
 $$||x||^2 + ||y||^2 = ||x+y||^2$$
 
-Es interesante observar que el recíproco también es cierto. Dado un espacio normado $(E, || \cdot ||)$, si $|| \cdot ||$ satisface la Ley del Paralelogramo, entonces existe un producto escalar $\langle \cdot , \cdot \rangle$ tal que $||x||^2 = \langle x,x\rangle$. La demostración se deja como ejercicio.
+Es interesante observar que el recíproco también es cierto, es decir, dado un espacio normado $(E, || \cdot ||)$, si $|| \cdot ||$ satisface la Ley del Paralelogramo, entonces existe un producto escalar $\langle \cdot , \cdot \rangle$ tal que $||x||^2 = \langle x,x\rangle$. Concretamente es:
+$$\langle x,y\rangle = \frac{1}{4} \left(||x+y||^2 - ||x-y||^{2}\right)$$
+\end{theo}
 
 \section*{TOPOLOGÍA EN ESPACIOS MÉTRICOS}
 \begin{defi}[Bola]
@@ -285,7 +286,7 @@ B(x,2) = X && B(x,1) = \{x\} && \bar{B}(x,1) = X
 
 \begin{defi}[Conjunto abierto]
 Sea $(X,d)$ un espacio métrico, se dice que un conjunto $A \subset X$ es \textbf{abierto} si:
-$$\forall x \in A, \exists \varepsilon > 0 : B(x,\varepsilon) \subset A$$
+$$\forall x \in A : \exists \varepsilon > 0 : B(x,\varepsilon) \subset A$$
 \end{defi}
 
 \underline{Observaciones}:
@@ -334,11 +335,10 @@ $$\exists \varepsilon > 0 : B(x, \varepsilon) \subset A_\beta \subset \bigcup_{\
 \end{itemize}
 \end{demo}
 
-\underline{Observación}:
-En $(\mathbb{R}^n, d_2), A_j=(-\frac{1}{j}, \frac{1}{j})$ es abierto pero $\displaystyle\bigcap_{j=1}^\infty A_j = \{0\}$  \textbf{no} es abierto en $\mathbb{R}$.
+Cabe destacar que la condición de intersección finita es indispensable, puesto que en $(\mathbb{R}^n, d_2), A_j=\left(-\frac{1}{j}, \frac{1}{j}\right)$ es abierto, pero $\displaystyle\bigcap_{j=1}^\infty A_j = \{0\}$  \textbf{no} es abierto en $\mathbb{R}$.
 
 \begin{defi}[Topología]
-Toda familia de subconjuntos $T$ de un conjunto $X$, $T \subset \wp (X)$, que satisface:
+Toda familia de subconjuntos $T$ de un conjunto $X$, $T \subset \mathcal P (X)$, que satisface:
 \begin{itemize}
 \item $\emptyset, X \in T$
 
@@ -368,8 +368,6 @@ Denotamos como $\mathring{A} = int(A) = \{x \in A : x \mbox{ es punto interior}\
 \item $\mathring{A} = \bigcup_{\mathcal{U} \subset A} \mathcal{U}$ donde $U$ es abierto.
 \end{itemize}
 
-\section*{NUEVA SEMANA}
-
 \underline{Ejemplo}:
 
 Tomando $\mathbb{R}^{2}$ y el conjunto $A =\{(0,x): 0 < x < A\}$ vemos que $\mathring{A} = \emptyset$
@@ -391,10 +389,9 @@ En cualquier espacio métrico $(E,d)$ las bolas cerradas $\bar{B}(x,\varepsilon)
 \end{prop}
 
 \begin{demo}
-Se reduce todo a ver que el complementario es abierto. Sea $z\in E\setminus \bar{B}(x,\varepsilon)$, luego esto es así si y solo si:
-$$d(z,x) > \varepsilon$$
-Sea $0 < \delta < d(z,x) - \varepsilon$, ¿$B(z,\delta)\subset E\setminus \bar{B}(x,\varepsilon)$? o lo que es lo mismo, que la intersección de esta bola de centro z con la bola cerrada inicial es el vacío:
-$$y \in B(z,\delta)\Rightarrow d(y,x)\geq d(x,z) - d(z,y)> d(x,z) - \delta >\varepsilon$$
+Se reduce todo a ver que el complementario es abierto. Sea $z\in E\setminus \bar{B}(x,\varepsilon)$, entonces $d(z,x) > \varepsilon$.
+Si escogemos $0 < \delta < d(z,x) - \varepsilon$,  entonces ¿se podrá verificar que $B(z,\delta)\subset E\setminus \bar{B}(x,\varepsilon)$? o lo que es lo mismo, que la intersección de esta bola de centro z con la bola cerrada inicial es el vacío:
+$$y \in B(z,\delta)\Rightarrow d(y,x)\geq d(x,z) - d(z,y)> d(x,z) - \delta >\varepsilon \Rightarrow y \notin \bar{B}(x,\varepsilon)$$
 Luego ya tenemos lo que queríamos probar
 \end{demo}
 
@@ -409,22 +406,24 @@ Sea un espacio métrico (E,d) se cumple que:
 Se demuestra por las Leyes de De Morgan
 \end{demo}
 
+\newpage
+
 \begin{defi}[Punto de acumulación]
 Sea $(E,d)$ un espacio métrico, y sea $A \subset E$, se dice que $x \in E$ es un \textbf{punto de acumulación} de A si:
 $$\forall \varepsilon > 0: \left(B(x,\varepsilon)\setminus\{x\}\right)\cap A \neq \emptyset$$
+\end{defi}
 Es decir, para cualquier ``entorno'' alrededor de ese punto sin contar con el punto, la intersección con el conjunto original es no vacía. Al \textbf{conjunto de puntos de acumulación} se le conoce como $A'$
 
+\underline{Observaciones}:
+\begin{itemize}
 \item Sea $A=(0,1)$ en $\mathbb{R}$, entonces $A'=[0,1]$, de lo que se desprende que no tiene por qué darse $A'\subset A$
 \item $A = \{1\}$ en $\mathbb{R}$, entonces $A' = \emptyset$, de lo que se desprende que no tiene por qué darse $A\subset A'$
-\end{defi}
-
-\underline{\textbf{Observación}}:
-$$x\in A' \Leftrightarrow \forall U \mbox{ abierto} \subset E, \ x\in U \Rightarrow \left( U\setminus\{x\}\right) \cap A \neq \emptyset$$
-
-Tomamos $(E,d)$ siendo $d$ la métrica discreta y un conjunto $A\subset E$, entonces:
+\item $x\in A' \Leftrightarrow \forall U \mbox{ abierto} \subset E, \ x\in U \Rightarrow \left( U\setminus\{x\}\right) \cap A \neq \emptyset$
+\item Tomamos $(E,d)$ siendo $d$ la métrica discreta y un conjunto $A\subset E$, entonces:
 $$x\in A' \Leftrightarrow \forall \varepsilon > 0: \left( B(x,\varepsilon) \setminus\{x\}\right) \cap A \neq \emptyset$$
 Con lo cual, si tomamos $0 < \varepsilon \leq 1$, entonces
 $$B(x,\varepsilon)\setminus\{x\} =\emptyset \Rightarrow A' = \emptyset$$
+\end{itemize}
 
 \begin{prop}
 Sea $(E,d)$ un espacio métrico y $A\subset E$, entonces ocurre que:
@@ -452,6 +451,8 @@ Sea $(E,d)$ un espacio métrico y $A \subset E$, definimos \textbf{la adherencia
 $$\bar{A} = \bigcap_{A\subset F } F$$
 Donde $F$ debe ser cerrado
 \end{defi}
+
+\newpage
 
 \underline{\textbf{Observaciones}}:
 \begin{itemize}
@@ -497,24 +498,25 @@ $$\Rightarrow z \notin A' \Rightarrow z \in E\setminus A'$$
 \end{itemize}
 \end{demo}
 
-\subsection*{MIERCOLES}
-
 \begin{coro}
+Si un punto pertenece a la adherencia, entonces cualquier bola centrada en ese punto interseca con el conjunto:
 $$x\in \bar{A}\Leftrightarrow \forall \varepsilon >0: B(x,\varepsilon)\cap A \neq \emptyset$$
 \end{coro}
 
-\underline{Observación}:
-$$x\in A' \Leftrightarrow \forall \varepsilon > 0: \exists x^{\varepsilon} \in A\setminus\{x\}: d(x_\varepsilon, x)< \varepsilon$$
+\begin{prop}
+$$x\in A' \Leftrightarrow \forall \varepsilon > 0: \exists x_{\varepsilon} \in A\setminus\{x\}: d(x_\varepsilon, x)< \varepsilon$$
 En particular, en $\mathbb{R}^{n}$:
-$$x\in A' \Leftrightarrow \exists \{x_k\}_l\subset A\setminus\{x\}: ||x-x_k||_{2}\xrightarrow{l\rightarrow\infty} 0$$
+$$x\in A' \Leftrightarrow \exists \{x_k\}_{k\in \mathbb N}\subset A\setminus\{x\}: ||x-x_k||_{2}\xrightarrow{k\rightarrow\infty} 0$$
+\end{prop}
 
 \begin{defi}
-Sea $(E,d)$ un espacio métrico y $A\subset B \subset E$, se dice que $A$ es denso en $B$ si $B\subset \bar{A}$. En particular, si $B=E$, entonces $A$ es denso en $E$ si $\bar{A} = E$.
+Sea $(E,d)$ un espacio métrico y $A\subset B \subset E$, se dice que $A$ es denso en $B$ si $B\subset \bar{A}$. En particular, $A$ es denso en $E$ si $\bar{A} = E$.
 \end{defi}
 
 \underline{Ejemplo}:
 \begin{itemize}
 \item El conjunto $\mathbb{Q}$ es denso dentro de $\mathbb{R}$.
+\item El conjunto $\mathbb{I}$ es denso dentro de $\mathbb{R}$.
 \end{itemize}
 
 \begin{defi}
@@ -526,11 +528,23 @@ $$\partial(A) = \bar{A}\cap \overline{E\setminus{A}}$$
 
 \begin{itemize}
 \item $\partial(A)$ es cerrado.
-\item $A=[0,1)$ en $\mathbb{R}$, implica que $\bar{A} = [0,1]$, luego $\partial(A)\{0,1\}$
+\item $A=[0,1)$ en $\mathbb{R}$, implica que $\bar{A} = [0,1]$, luego $\partial(A) = \{0,1\}$
 \item $\partial(A) = \partial(A^c)$
 \item Ejercicio: probar que $\partial(A)=\bar{A}\setminus{\mathring{A}} = \bar{A}\cap (E\setminus{\mathring{A}})$. Pista: probar que $E\setminus{{\mathring{A}}} = \overline{E\setminus{A}}$
 \item Ejercicio: probar que $A'$ es cerrado.
 \item Ejercicio: estudiar cómo son los abiertos y los cerrados en un espacio con la métrica discreta.
 \end{itemize}
+
+\underline{Aclaraciones de Clase}:
+\begin{itemize}
+\item Vamos a poner un ejemplo donde $\bar{B}(x,r)\neq \overline{B(x,r)}$, tomamos $(E,d)$ espacio métrico donde $d$ es la métrica discreta. Escogemos $x\in E$ y $r=1$, tenemos que $B(x,1)=\{x\}\Rightarrow \overline{B(x,1)} = \{x\}$, pero vemos que $\bar{B}(x,1) = E \neq \{x\}$.
+
+\item Veamos que no siempre $Diam(A) = Diam (\partial A)$, si tomamos $E=[0,1]$, entonces $\partial E = \emptyset$, luego $Diam (E) =1 = Diam(\emptyset)$. Si tomamos $\mathbb{R}$ y $A=(0,\infty)$, vemos que $\partial A =\{0\}$, luego $Diam()A) = \infty$ pero $Diam (\partial A) = 0$. De nuevo, si tomamos $E=[0,1]$ y $A=(0,1]$, tenemos que $\partial(A) = \{0\}$ y se tiene que $Diam(A) = 1 \neq 0 = Diam (\partial(A))$
+
+\item Veamos que $Diam(A) = Diam (\bar{A})$, como $A\subset \bar{A}$ entonces $Diam(A) \leq Diam (\bar{A})$. Y la otra desigualdad es muy fácil de probar también.
+
+\item Una buena propiedad es $\mathring{(A\cap B)} = \mathring{A} \cap \mathring{B}$. Elemental la demostración.
+\end{itemize}
+
 
 \end{document}
