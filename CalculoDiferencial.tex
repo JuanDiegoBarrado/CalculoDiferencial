@@ -1,7 +1,7 @@
 \documentclass[10pt,a4paper,openright]{book}
 
 \title{CÁLCULO DIFERENCIAL}
-\author{Juan Diego Barrado Daganzo e Iker Muñox Martínez\\2º de Carrera} %\\ es salto de linea
+\author{Juan Diego Barrado Daganzo e Iker Muñoz Martínez\\2º de Carrera} %\\ es salto de linea
 \date{\today}
 \pagestyle{plain}
 \setlength{\parskip}{0.35cm} %edicion de espaciado
@@ -546,5 +546,129 @@ $$\partial(A) = \bar{A}\cap \overline{E\setminus{A}}$$
 \item Una buena propiedad es $\mathring{(A\cap B)} = \mathring{A} \cap \mathring{B}$. Elemental la demostración.
 \end{itemize}
 
+\section*{SUCESIONES, COMPLETITUD Y COMPACIDAD}
+
+\begin{defi}[Sucesión y Subsucesión]
+Sea $E$ un conjunto. Una \textbf{sucesión} $\{x_n\}_{n \in \mathbb{N}} = \{x_n\}_n = \{x_n\}$ es una función 
+\begin{align*}
+f : \mathbb{N} &\to E \\ n &\mapsto x_n
+\end{align*}
+Una \textbf{subsucesión} o \textbf{sucesión parcial} de $\{x_n\}_{n \in \mathbb{N}}$ es una sucesión:
+$$\{x_{n_j}\}_{j \in \mathbb{N}} \subset \{x_n\}_{n \in \mathbb{N}} \mbox{ donde } n_1 < n_2 < \ldots < n_j$$
+\end{defi}
+
+\begin{defi}[Convergencia]
+Sea $(E,d)$ un espacio métrico, y sea $\{x_n\}_{n \in \mathbb{N}}$ una sucesión de $E$, se dice que $\{x_n\}_{n \in \mathbb{N}}$ \textbf{converge a $x \in E$} si:
+$$\forall \mathcal{U} \mbox{ abierto } \subset E \mbox{ tal que } x\in \mathcal{U}, \ \exists n_0 \in \mathbb{N} : x_n \in \mathcal{U} : \forall n \geq n_0$$
+Y entonces, escribimos $\lim_{n \to \infty} x_n = x$.
+\end{defi}
+
+Esta definición que se ha dado de convergencia\footnote{Si $\{x_n\}_{n \in \mathbb{N}}$ converge, el límite es único.} es equivalente a las siguientes caracterizaciones:
+$$\forall \varepsilon > 0, \exists n_0 \in \mathbb{N} : x_n \in B(x, \varepsilon) : \forall n \geq n_0$$
+$$\forall \varepsilon > 0, \exists n_0 \in \mathbb{N} : \forall n \geq n_0 : d(x,x_n) < \varepsilon$$
+
+\begin{prop}
+Sea $(E, || \cdot ||)$ un espacio normado, si suponemos que dicha métrica anterior viene dada por la norma especificada ahora, entonces:
+\begin{itemize}
+\item Si $\lim_{n \to \infty} x_n = x \mbox{ y } \lim_{n \to \infty} y_n = y \Rightarrow \lim_{n \to \infty} (x_n + y_n) = x + y$
+\item Sea $\lambda_n \in \mathbb{R}$ y $\lambda \in \mathbb{R}$ donde $ \lambda_n \xrightarrow{n\rightarrow\infty}\lambda \in \mathbb{R}$ y $x_n \xrightarrow{n\rightarrow\infty} x \in E$, entonces se tiene que: $\lambda_n \cdot x_n \xrightarrow{n\rightarrow\infty} \lambda \cdot x \in E$
+\end{itemize}
+\end{prop}
+
+\underline{Demostración}
+
+El caso $x = 0$ se deja como ejercicio. Sea $x \neq 0$ y $\varepsilon > 0$. Entonces:
+$$\exists n_1, n_2 \in \mathbb{N} : | \lambda_n - \lambda | < \frac{\varepsilon}{2 \cdot ||x||} : \forall n \geq n_1 \mbox{ y } ||x_n - x||_E < \frac{\varepsilon}{2 \cdot C} : \forall n \geq n_2 : |\lambda_n| \geq C < \infty$$
+Sea $n_0 = \max\{n_1, n_2\}$ y $n \geq n_0$
+$$||\lambda_n x_n - \lambda x || = ||\lambda_n x_n - \lambda_n x + \lambda_n x - \lambda x || \leq |\lambda_n| \cdot ||x_n - x|| + |\lambda_n - \lambda | \cdot ||x|| \leq C \cdot \frac{\varepsilon}{2C} + \frac{\varepsilon}{2||x||}\cdot ||x|| = \varepsilon$$
+
+\underline{Observación}
+
+Si $||\cdot||_1, ||\cdot||_2$ son normas equivalentes en $E$, entonces ambas normas tienen las mismas sucesiones convergentes y al mismo límite.
+$$0 \leftarrow C||x_n - x||_1 \geq ||x_n - x||_2 \to 0$$
+
+\begin{prop}
+En $(\mathbb{R}^n, || \ ||_2)$ espacio euclídeo usual, la convergencia de sucesiones se puede caracterizar como:
+$$\{x_m\}_{m \in  \mathbb{N}}: x_m = (x_m^1, \cdots, x_m^n) \stackrel{n\rightarrow\infty}{\longrightarrow} x = (x^1, \ldots, x^n) \Leftrightarrow \forall j = 1, \cdots, n: x_m^j \xrightarrow{m\rightarrow\infty} x^j$$
+Es decir, se reduce a la convergencia de sucesiones en $\mathbb{R}$ sobre cada coordenada.
+\end{prop}
+
+\underline{Demostración}:
+
+Trivialmente, se tiene que $|x_m^j - x_j| \leq ||x_m - x||_2$, luego :
+$$x_m \rightarrow x \Rightarrow |x_m^j - x_j| \leq ||x_m - x||_2 \Rightarrow x_m^j \rightarrow x^j : \forall j = 1, \cdots, n$$
+Recíprocamente, podemos expresar la norma como:
+$$||x_m - x||_2^2 = \sum_{j=1}^{n} |x_m^j - x^j|^2$$
+De este modo, por lo probado en la proposición anterior:
+$$\lim_{m \rightarrow \infty} ||x_m - x||_2^2 = \sum_{j=1}^{n} \lim_{m \rightarrow \infty} |x_m^j - x^j|^2 = 0$$
+
+\begin{prop}
+Sea $(E,d)$ un espacio métrico. Se cumple que:
+\begin{enumerate}
+\item Un subconjunto $A \subset E$ es cerrado si y sólo si $\forall \{x_n\}_{n\in \mathbb{N}} \subset A : \left(\exists \lim_{n \rightarrow \infty} x_n = x \Rightarrow x \in A\right)$
+
+\item Un punto $x \in \bar{A} \Leftrightarrow \exists \{x_n\}_{n\in \mathbb{N}} \subset A : \lim_{n \rightarrow \infty} x_n = x$
+
+\item Un punto $x \in A' \Leftrightarrow \exists \{x_n\}_{n\in \mathbb{N}} \subset A : x_n \neq x: \lim_{n \rightarrow \infty} x_n = x$
+\end{enumerate}
+\end{prop}
+
+\underline{Demostración}
+
+El conjunto $A$ es cerrado si y sólo si $A' \subset A$. Por tanto, si escogemos una sucesión $\{x_n\}_{n\in \mathbb{N}} \subset A$ de forma que $\lim_{n \rightarrow \infty} x_n = x$, vamos a ver que $x\in A$. Supongamos que no, entonces tenemos una sucesión convergente a $x$ de forma que $\forall n \in \mathbb N: x_n \neq x$ porque está contenida en $A$. En consecuencia, por el apartado 3: $x \in A' \subset A \sharp$.
+
+\begin{prop}
+Sea $(E,d)$ un espacio métrico, podemos caracterizar de nuevo la convergencia. Sea $\{x_n\}_{n\in \mathbb{N}} \subset E$
+\begin{enumerate}
+\item $x_n \xrightarrow{n\rightarrow\infty} x \Leftrightarrow \forall\{x_{n_j}\}_{j \in \mathbb{N}} \subset \{x_n\}_{n\in \mathbb{N}} : x_{n_j} \xrightarrow{n\rightarrow\infty} x$ 
+
+\item $x_n \xrightarrow{n\rightarrow\infty} x \Leftrightarrow \forall\{x_{n_j}\}_{j \in \mathbb{N}} \subset \{x_n\}_{n\in \mathbb{N}} : \exists \{y_{m_k}\}_{k \in \mathbb{N}} \subset \{x_{n_j}\}_{j \in \mathbb{N}} : y_{m_k} \xrightarrow{n\rightarrow \infty} x$
+\end{enumerate}
+\end{prop}
+
+
+\underline{Demostración}
+\begin{itemize}
+\item $"\Rightarrow"$ 
+
+$\forall \varepsilon > 0, \exists n_0 \in \mathbb{N} : \forall n \geq n_0 : d(x_n,x) < \varepsilon$. Sea $n_{j_0} \geq n_0 : \forall n_j \geq n_{j_0} \geq n_0 : d(n_{j}, x) < \varepsilon$
+
+$"\Leftarrow"$
+
+Trivial
+
+\item  $"\Rightarrow"$
+
+Trivial por (i).
+
+$"\Leftarrow"$ Supongamos que $x_n  \nrightarrow x$. Entonces $\exists \varepsilon > 0 : \forall m \in \mathbb{N}, \exists n_m \geq m : d(x_{n_m}, x) \geq \varepsilon$
+
+$\{x_{n_m}\}_m \subset \{x_n\}_n$.
+
+Sea $\{y_{m_k}\}_k \subset \{x_{n_m}\}_m : d(y_{m_k}, x) \geq \varepsilon\Rightarrow y_{m_k} \nrightarrow x \sharp \Rightarrow x_n \rightarrow x$ 
+ 
+
+\end{itemize}
+
+\begin{defi}[Sucesión de Cauchy]
+Sea $(E,d)$ un espacio métrico, se dice que $\{x_n\}_{n\in \mathbb{N}} \subset E$ es \textbf{sucesión de Cauchy} si
+$$\forall \varepsilon > 0, \exists n_0 \in \mathbb{N} : \forall m,n : m > n \geq n_0 \Rightarrow d(x_m, x_n) < \varepsilon$$
+Sea dice que $(E,d)$ es \textbf{completo} si toda sucesión de Cauchy es convergente.
+\end{defi}
+
+\underline{Observaciones}
+
+\begin{itemize}
+\item $(\mathbb{R}, |\cdot|)$ es completo.
+
+\item $(\mathbb{Q}, |\cdot|)$ no es completo.
+
+\item Sea $E = \mathbb{R} \setminus \{0\}$ no es completo. Por ejemplo, la sucesión $x_n = \frac{1}{n} \in E$ es sucesión de Cauchy y no converge en $E$.
+\end{itemize}
+
+\begin{defi}[Conjunto Acotado]
+En $(E,d)$, un conjunto $A \subset E$ es \textbf{acotado} si
+$$\exists x \in E, \ \exists r > 0 : A \subset B(x,r) \Leftrightarrow : \forall y \in A: d(y,x) < r$$
+\end{defi}
 
 \end{document}
