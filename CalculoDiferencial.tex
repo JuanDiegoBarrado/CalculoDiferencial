@@ -18,6 +18,9 @@
 \usepackage{cancel} %Paquete tachar cosas
 \usepackage[top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry}
 
+\usepackage{centernot}
+\usepackage{mathtools}
+
 \usepackage{titlesec} %Formato de capitulos y secciones
 	\titleformat{\chapter}[display]{\normalfont\huge\bfseries\color{capitulos}}{\thechapter}{20pt}{\Huge}[\titlerule{}]
 	\titleformat{\section}{\normalfont\Large\bfseries\color{secciones}}{\thesection}{1em}{}
@@ -673,6 +676,253 @@ Sea dice que $(E,d)$ es \textbf{completo} si toda sucesión de Cauchy es converg
 
 \begin{defi}[Conjunto Acotado]
 En $(E,d)$, un conjunto $A \subset E$ es \textbf{acotado} si $\exists x \in E \mbox{ y } r > 0 : A \subset B(x,r)$, es decir, $d(y,x) < r : \forall y \in A$
+En el caso $(E, ||\cdot||)$ espacio normado, $A \subset E$ es \textbf{acotado} si $\exists r > 0 : ||a|| < r : \forall a \in A$, es decir, $A \subset B(0,r)$
+\end{defi}
+
+\begin{prop}
+Sea $(E,d)$ un espacio métrico. Entonces, se cumple que:
+\begin{itemize}
+\item Si $\{x_n\}_{n\in \mathbb{N}} \subset E$ es convergente, entonces es una sucesión de Cauchy.
+\item Si $\{x_n\}_{n\in \mathbb{N}} \subset E$ es una sucesión de Cauchy, entonces es acotada.
+\item Toda sucesión convergente es acotada.
+\item Si $\{x_n\}_{n\in \mathbb{N}} \subset E$ es una sucesión de Cauchy y $\exists \{ x_{n_k}\}_{n_k} $ parcial tal que $x_{n_k} \xrightarrow{n_k\rightarrow\infty} x$, entonces $x_n \xrightarrow[n\rightarrow\infty]{} x$.
+\end{itemize}
+\end{prop}
+
+\underline{Demostración}
+
+\begin{itemize}
+\item (i) y (iii) son triviales.
+\item Sea $\varepsilon = 1$. Entonces, $\exists n_0 \in \mathbb{N} : d(x_n, x_m) \leq : \forall m,n \geq n_0$. 
+$d(x_n, x_{n_0}) \leq 1 : \forall n \geq n_0$
+
+Sea $r = \max \{1, d(x_{n_0}, x_k : k=1, \ldots, n_0 + 1)\} + 1$. Entonces $x_n \in B(x_{n_0}, r) : \forall n \in \mathbb{N}$.
+
+\item $\varepsilon > 0 : \exists n_0 \in \mathbb{N} : d(x_n,x_m) < \frac{\varepsilon}{2} : m, n \geq n_0$
+
+$\exists m \in \mathbb{N} : n_k \geq m: d(x_{n_k}, x) < \frac{\varepsilon}{2}$
+
+Sea $k = \max\{n_0, m\} : n \geq k$. Por la desigualdad triangular:
+$d(x_n, x) \leq d(x_{n_j}, x_n) + d(x_{n_j},x)$. Elegimos $n_j \leq k$:
+$$d(x_n, x) \leq d(x_{n_j}, x_n) + d(x_{n_j},x) < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon$$
+\end{itemize}
+
+\begin{theo}
+$(\mathbb{R}^n, d_2)$ es un espacio métrico completo.
+\end{theo}
+
+\underline{Demostración}
+
+Sea $\{x_m\}_{m\in \mathbb{N}}$ una sucesión de Cauchy en $\mathbb{R}^n$. $x_m = (x_m^1, \ldots , x_m^n) : m \in \mathbb{N}$
+
+$$|x_m^j - x_\ell^j| \leq ||x_m - x_\ell ||_2 < \varepsilon : m,\ell \geq n_0 : \forall j \in \{ 1, \ldots,n\}$$
+
+Así, $\forall j \in \{ 1, \ldots,n\}$, $\{x_m^j\}_{m \in \mathbb{N}}$ es sucesión de Cauchy en $\mathbb{R}$. Como $\mathbb{R}$ es completo, $x_m^j \xrightarrow[m\rightarrow\infty]{} x^j$.
+
+Sea $x=(x^1, \ldots, x^n) \in \mathbb{R}^n$. Como converge componente a componente, $x_m \xrightarrow[m\rightarrow\infty]{} x$
+$\hfill \square$
+
+\begin{defi}[Conjunto Secuencialmente Acotado]
+Sea $(E,d)$ un espacio métrico. Se dice que $A \subset E$ es \textbf{secuencialmente compacto} si $\forall \{x_n\}_{n \in \mathbb{N}} \subset A, \exists \{ x_{n_k}\}_{n_k} \subset \{ x_n\}_n$ convergente a $x \in A$
+\end{defi}
+
+\underline{Observaciones}
+
+\begin{itemize}
+\item Si $A$ es secuencialmente compacto, por lo que $A' \subset A$ y por lo tanto es cerrado.
+
+\item Si $A$ es secuenciamente compacto, entonces $A$ es acotado. 
+
+En caso contrario, $\forall r = n, \forall x, \exists y_n \in A : d(y_n,x) \geq n$. Si cogemos un $x \in E$, entonces $d(y_n , x) \geq n : y_n \in A$
+
+Claramente $\nexists \{ y_{n_k}\}_{n_k} \subset \{ y_n\}_{n \in \mathbb{N}}$ convergente ya que si existiese $\{ y_{n_k}\}_{n_k}$ convergente a y, $d(y_{n_k}, y) < \varepsilon : \forall n_k \geq m$
+
+$d(y_m, y_n) \geq d(y_m,x) - d(x, y_n) \geq m - d(x, y_n) \xrightarrow[m\rightarrow\infty]{} \infty$
+
+\end{itemize}
+
+
+\begin{defi}[Recubrimiento Abierto]
+Sea $(E,d)$ un espacio métrico. Se dice que un \textbf{recubrimiento abierto} de $A \subset E$ es una familia $\mathcal{U} = \{ \mathcal{U}_i\}_{i \in I} : \mathcal{U}_i$ abierto tal que $A \subset \bigcup_{i \in I} \mathcal{U}_i$
+\end{defi}
+
+\begin{defi}[Subrecubrimiento Finito]
+Un \textbf{subrecubrimiento finito} de $A$ es una familia de $\mathcal{U}, \{ \mathcal{U}_1, \ldots, \mathcal{U}_m\} \subset \mathcal{U}$ tal que $A \subset \bigcup_{i \in \{1,\ldots,m\}} \mathcal{U}_i$
+\end{defi}
+
+\begin{defi}[Conjunto Compacto]
+Sea $(E,d)$ un espacio métrico. Se dice que $A \subset E$ es \textbf{compacto} si para todo recubrimiento abierto de $A$, existe un subrecubrimiento finito
+\end{defi}
+
+\underline{Observaciones}
+
+\begin{itemize}
+\item Si $A$ es compacto, entonces $A$ es acotado.
+
+Sea $x \in A \subset \bigcup_{n \in \mathbb{N}} B(x,n) \xRightarrow{\exists m \in \mathbb{N}} A \subset B(x,m)$
+
+\item $(0,1)$ no es compacto en $\mathbb{R}$.
+
+En efecto, sea $\mathcal{U}_n = (\frac{1}{n}, 1)$. Es claro que $(0,1) \subset \bigcup_{n \in \mathbb{N}} \mathcal{U}_i$, pero $\nexists m : (0,1) \subset \mathcal{U}_m$
+
+\end{itemize}
+
+\begin{defi}[Conjunto Totalmente Acotado]
+Sea $(E,d)$ un espacio métrico. Se dice que $A \subset E$ es \textbf{totalmente acotado} si $\forall \varepsilon >0, \exists \{x_1, \ldots, x_m\} \subset A : A \subset B(x_1, \varepsilon) \cup \ldots \cup B(x_m, \varepsilon)$
+\end{defi}
+
+\underline{Observaciones}
+
+\begin{itemize}
+\item Si $A$ es totalmente acotado, entonces $A$ es acotado.
+
+Sea $r = \max\{d(x_1, x_j) : j = 2, \ldots, n\}$ y sea $R= r + 3 \varepsilon$. Entonces $B(x_j, \varepsilon) \subset B(x_1, R) \Rightarrow A \subset B(x_1, R)$
+
+\item En $\mathbb{R}$ con la métrica discreta, $\mathbb{R} = B(0,2)$, es decir, $\mathbb{R}$ es acotado. Sin embargo $\mathbb{R}$ no es totalmente acotado.
+
+Sea $\varepsilon = \frac{1}{2}$. La bola $B(x, \frac{1}{2}) = \{x\}$, es decir, $\mathbb{R} \not\subset B(x_1, \frac{1}{2}) \cup \ldots \cup B(x_m, \frac{1}{2})$
+\end{itemize}
+
+\begin{lema}[Lema 1]
+Sea $(E,d)$ un espacio métrico. Entonces, si $A$ es compacto, entonces $A$ es cerrado.
+\end{lema}
+
+\underline{Demostración}
+
+Para ver que $A$ es cerrado, veamos que $E \setminus A$ es abierto, es decir, que todo punto es interior. Sea $x \in E \setminus A$, veamos que $\exists \delta > 0 : B(x, \delta) \subset E \setminus A$
+
+Sea $\mathcal{U}_n = E \setminus \bar{B}(x, \frac{1}{n})$ abierto. Veamos que $A \subset \bigcup_{n \in \mathbb{N}} \mathcal{U}_n$.
+
+Tomamos $y \in A$. $d(y,x) > 0 \Rightarrow \exists n \in \mathbb{N} : d(y,x) > \frac{1}{n}$ $y \notin \bar{B}(x, \frac{1}{n})$. Así $y \in \mathcal{U}_n$.
+
+Como $A$ es compacto, $A \subset \mathcal{U}_{n_1} \sup \ldots \cup \mathcal{U}_{n_k} = \mathcal{U}_{n_k} : n_1 < \ldots < n_k$
+$$\Rightarrow \forall y \in A, y \notin \bar{B}(x, \frac{1}{n_k}) \Rightarrow \bar{B}(x, \frac{1}{n_k}) \cap A = \emptyset$$
+Finalmente, $B(x, \frac{1}{n_k}) \subset E \setminus A$
+$\hfill\square$
+
+\begin{lema}[Lema 2]
+Sea $(E,d)$ un espacio métrico compacto y $A \subset E$ cerrado. Entonces $A$ es compacto.
+\end{lema}
+
+\underline{Demostración}
+
+Sea $A \subset \bigcup_{i \in I} \mathcal{U}_i : \mathcal{U}_i$ abierto. Así, $E \subset (E \setminus A) \cup  \bigcup_{i \in I} \mathcal{U}_i$.
+
+Como $E$ es compacto, $E \subset (E \setminus A) \cup \mathcal{U}_1 \cup \ldots \cup \mathcal{U}_m$
+
+$\Rightarrow A \subset \mathcal{U}_1 \cup \ldots \cup \mathcal{U}_m$
+
+
+\begin{lema}[Lema 3]
+Sea $(E,d)$ un espacio métrico y $A \subset E$ secuencialmente compacto. Entonces $A$ es totalmente acotado.
+\end{lema}
+
+\underline{Demostración}
+
+Supongamos que $A$ no es totalmente acotado, es decir, $$\exists r > 0 : \forall \{x_1, \ldots, x_m\} \subset A : A \not\subset B(x_1, r) \cup \ldots \cup B(x_m,r)$$
+
+Sea $z_1 \in A$. Entonces, $A \setminus B(z_1,r) \neq \emptyset$.
+
+Sea $z_2 \in A$. Entonces, $A \setminus \left( B(z_1,r) \cup B(z_2,r) \right) \neq \emptyset$. Es decir, $$z_n \in A \setminus \left( B(z_1,r) \cup \ldots \cup B(z_{n-1},r) \right) \neq \emptyset$$
+
+$\forall n \in \mathbb{N} : \{z_n\}_{n \in \mathbb{N}} \subset A$ y $d(z_m, z_n) \geq r : m \neq n$.
+
+Así, $\{z_m\}_{m \in \mathbb{N}}$ no posee ninguna subsucesión convergente, lo cual contradice que $A$ sea secuencialmente compacto.
+
+\begin{theo}[Bolzano - Weierstrass]
+Sea $(E,d)$ un espacio métrico. Entonces $A \subset E$ es compacto $\Leftrightarrow A$ es secuencialmente compacto.
+\end{theo}
+
+\underline{Demostración}
+
+\begin{itemize}
+\item \fbox{$\Rightarrow$}. Supongamos que $A$ compacto. Por reducción al absurdo, si $A$ no es secuencialmente compacto, entonces $\exists \{x_n\}_{n \in \mathbb{N}} \subset A$ tal que no posee parciales convergentes.
+
+Sin pérdida de generalidad, suponemos que $x_n \neq x_m : n \neq m$. Sea $B = \{x_n\}_{n \in \mathbb{N}} \Rightarrow B' = \emptyset \subset B$. Así, $B$ es cerrado, $B \subset A$ y $A$ compacto, y por el Lema 2, $B$ es cerrado(y su complementario abierto).
+$$\forall n \in \mathbb{N}, \exists \varepsilon_n > 0 : B(x_n, \varepsilon_n) \cap \left( \{x_m\}_{m \in \mathbb{N}} \setminus \{x_n\}\right) = \emptyset$$
+$B = \{x_n\}_{n \in \mathbb{N}}  \subset \bigcup_{n \in \mathbb{N}} B(x_n, \varepsilon_n)$. Como $B$ es compacto, $B \subset B(x_{n_1}, \varepsilon_{n_1}) \cup \ldots \cup B(x_{n_m}, \varepsilon_{n_m})$, lo cual es una contradicción pues $B$ no es un conjunto finito, por lo tanto $A$ es secuencialmente compacto.
+
+\item \fbox{$\Leftarrow$}. Supongamos ahora que $A$ es secuencialmente compacto. Veamos que $A$ es compacto, es decir, que si $A \subset \bigcup_{i \in I} \mathcal{U}_i$, entonces $A \subset \mathcal{U}_{i_1} \cup \ldots \cup  \mathcal{U}_{i_m}$.
+
+Para proceder a la demostración, usaremos la siguiente propiedad que será probada más adelante:
+$$ \exists \varepsilon > 0 : \forall x \in A, \exists i_0 \in I : B(x, \varepsilon) \subset \mathcal{U}_{i_0}$$
+
+Como $A$ es totalmente acotado por el Lema 3, entonces, dado $\varepsilon > 0$ que existe por la propiedad anterior, sabemos que $A \subset B(z_1, \varepsilon) \cup \ldots \cup B(z_m, \varepsilon) : z_1, \ldots, z_m \in A$. Por lo tanto:
+$$A \subset \mathcal{U}_{i_{z_1}} \cup \ldots \cup \mathcal{U}_{i_{z_m}}$$
+\end{itemize}
+
+\underline{Ejercicios}
+\begin{itemize}
+\item Caracterizar los compactos de un espacio métrico con la distacia discreta
+
+\item Ver cuales son ciertos. Sean $A, B \begin{cases} \mbox{abiertos} \\ \mbox{cerrados} \\ \mbox{compactos} \end{cases}$. Entonces $A + B$ también lo es.
+\end{itemize}
+
+\begin{prop}[Constante de Lebesgue]
+Si $A$ es secuencialmente compacto, $A \subset \bigcup_{i \in I} \mathcal{U}_i$, entonces
+$$\exists \varepsilon > 0 : \forall x \in A, \exists i_x \in I : B(x, \varepsilon) \subset \mathcal{U}_{i_x}$$
+\end{prop}
+
+\underline{Demostración}
+
+En efecto, si suponemos lo contrario, $$\forall n \in \mathbb{N} : \varepsilon_n = \frac{1}{n}, \exists x_n \in A : \forall i \in I, B(x_n, \frac{1}{n}) \not\subset \mathcal{U}_i$$
+
+Como $A$ es secuencialmente compacto, $\exists \{y_m\}_{m \in \mathbb{N}} \subset \{ x_n\}_{n \in \mathbb{N}} : y_m \to y \in A$ 
+
+Como $y \in A \subset \bigcup_{i \in I} \mathcal{U}_i$, entonces $y \in \mathcal{U}_{i_0}$, es decir, que $\exists \delta > 0 : B(y, \delta) \subset \mathcal{U}_{i_0}$
+
+Sea $n_0 \in \mathbb{N} : \frac{1}{n_0} < \frac{\delta}{2}$ y $d(y_n, y)< \frac{\delta}{2} : n \geq n_0$
+
+Veamos que la bola $B(y_n, \frac{1}{n}) \subset B(y,\delta) : n\geq n_0$.
+
+Sea $z \in B(y_n, \frac{1}{n})$. 
+$$d(z, y_n) < \frac{1}{n} : d(z,y) \leq d(z,y_n)+ d(y_n,y) < \frac{1}{n} + \frac{\delta}{2} < \frac{\delta}{2} + \frac{\delta}{2} = \delta$$
+
+Así, $B(x_m, \frac{1}{n})=B(y_n,\frac{1}{n})\subset B(y,\delta) \subset \mathcal{U}_{i_0}$, lo cual contradice que$B(x_n, \frac{1}{n}) \not\subset \mathcal{U}_i$
+
+\underline{Observaciones}
+\begin{itemize}
+\item $[0,1]$ es compacto en $\mathbb{R}$. En efecto, sea $\{x_n\}_{n \in \mathbb{N}} \subset [0,1]$. Entonces, es una sucesión acotada y tiene por lo tanto una parcial convergente: $$\{x_{n_k}\}_{n_k} \subset \{x_n\}_n, x_{n_k} \to x \in \mathbb{R}$$
+Como $[0,1]$ cerrado $\Rightarrow x \in [0,1] \subset [0,1]$.
+
+Análogamente, para $\{x \in \mathbb{R}^n : ||x|| < 1\}$ es compacto.
+
+\item Sea $(E,d)$ un espacio métrico. Decir que $A \subset E$ es compacto $\Leftrightarrow (A,d)$ es compacto.
+
+\end{itemize}
+
+\begin{theo}[]
+$(E,d)$ es compacto $\Leftrightarrow E$ es completo y totalmente acotado.
+\end{theo}
+
+\underline{Demostración}
+
+\begin{itemize}
+\item \fbox{$\Rightarrow$}.
+Como $E$ es compacto, por el Teorema de Bolzano - Weierstrass $E$ es secuencialmente acotado, y por el Lema 3 $E$ es totalmente acotado.
+
+Ahora, sea $\{x_n\}_{n \in \mathbb{N}} \subset E$ una sucesión de Cauchy. Así, por el Teorema de Bolzano - Weierstrass existe una parcial convergente, y por ser de Cauchy, la sucesión converge.
+ 
+\item \fbox{$\Leftarrow$}.
+Veamos que es secuencialmente compacto para poder aplicar el Teorema de Bolzano - Weierstrass. Sea $\{x_n\}_n \subset E$. Sin pérdida de generalidad, podemos suponer que $x_n \neq x_m, n \neq m$.
+
+Como $E$ es totalmente acotado, $E \subset B(y_1^1, 1) \cup \ldots \cup B(y_{m_1}^1,1)$. Entonces, 
+$$\{x^1_n\}_{n \in \mathbb{N}} \subset \{x_n\}_{n \in \mathbb{N}}, \exists j : \{x_n^1\}_{n \in \mathbb{N}} \subset B(y_j^1, 1)$$
+
+Iterativamente,  $E \subset B(y_1^2, \frac{1}{2}) \cup \ldots \cup B(y_{m_1}^2,\frac{1}{2})$. Entonces, 
+$$\{x^2_n\}_{n \in \mathbb{N}} \subset \{x_n^1\}_{n \in \mathbb{N}}, \exists j : \{x_n^2\}_{n \in \mathbb{N}} \subset B(y_j^2, 1)$$
+
+En general, $\{x_n^m\} \subset \{x_n^{m-1}\}_n$ y $\{x_n^m\} \subset B(y_{j_m}^m, \frac{1}{m})$. Finalmente, sea $z_n = x^n_n : \{z_n\}_{n \in \mathbb{N}} \subset \{x_m\}_{m \in \mathbb{N}}$.
+
+Dado $\varepsilon > 0$, sea $n_0 \in \mathbb{N} : \frac{1}{n_0} < \frac{\varepsilon}{2}$. Sean $m,n \geq n_0 : x_m^m = z_m ,  x^n_n = z_n \in B(y_j^{n_0}, \frac{1}{n_0}) \Rightarrow d(z_m, z_n) < \frac{2}{n_0} < \varepsilon$. Entonces, $\{z_m\}_m$ es una sucesión de Cauchy. 
+
+Como $E$ es completo, $\{z_m\}_{m \in \mathbb{N}}$ es parcial de $\{x_n\}_{n \in \mathbb{N}}$ es convergente, por lo que $E$ es secuencialmente compacto. 
+
+\end{itemize}
+
+
+\begin{defi}[]
+
 \end{defi}
 
 \end{document}
