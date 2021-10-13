@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 \contentsline {defi}{{Definición}{1}{métrica}}{3}%
 \contentsline {defi}{{Definición}{2}{Espacios normados}}{4}%
 \contentsline {defi}{{Definición}{3}{Norma \textit {p}}}{4}%
@@ -41,3 +42,62 @@
 \contentsline {prop}{{Proposición}{13}{}}{15}%
 \contentsline {defi}{{Definición}{18}{Sucesión de Cauchy}}{16}%
 \contentsline {defi}{{Definición}{19}{Conjunto Acotado}}{16}%
+=======
+\contentsline {defi}{{Definición}{1}{métrica}}{3}{}%
+\contentsline {defi}{{Definición}{2}{Espacios normados}}{4}{}%
+\contentsline {defi}{{Definición}{3}{Norma \textit {p}}}{4}{}%
+\contentsline {prop}{{Proposición}{1}{Métrica asociada a una norma}}{4}{}%
+\contentsline {defi}{{Definición}{4}{Métrica Euclídea}}{4}{}%
+\contentsline {defi}{{Definición}{5}{Producto escalar}}{5}{}%
+\contentsline {theo}{{Teorema}{1}{Desigualdad de Cauchy-Schwarz}}{6}{}%
+\contentsline {demo}{{\underline {Demostración}:}{1}{}}{6}{}%
+\contentsline {prop}{{Proposición}{2}{}}{6}{}%
+\contentsline {demo}{{\underline {Demostración}:}{2}{}}{6}{}%
+\contentsline {defi}{{Definición}{6}{Equivalencia de normas}}{7}{}%
+\contentsline {theo}{{Teorema}{2}{Ley del Paralelogramo}}{7}{}%
+\contentsline {defi}{{Definición}{7}{Bola}}{8}{}%
+\contentsline {defi}{{Definición}{8}{Conjunto abierto}}{8}{}%
+\contentsline {prop}{{Proposición}{3}{}}{8}{}%
+\contentsline {demo}{{\underline {Demostración}:}{3}{}}{8}{}%
+\contentsline {prop}{{Proposición}{4}{}}{9}{}%
+\contentsline {demo}{{\underline {Demostración}:}{4}{}}{9}{}%
+\contentsline {defi}{{Definición}{9}{Topología}}{9}{}%
+\contentsline {defi}{{Definición}{10}{Punto interior}}{9}{}%
+\contentsline {defi}{{Definición}{11}{}}{10}{}%
+\contentsline {prop}{{Proposición}{5}{}}{10}{}%
+\contentsline {demo}{{\underline {Demostración}:}{5}{}}{10}{}%
+\contentsline {prop}{{Proposición}{6}{}}{10}{}%
+\contentsline {demo}{{\underline {Demostración}:}{6}{}}{10}{}%
+\contentsline {defi}{{Definición}{12}{Punto de acumulación}}{11}{}%
+\contentsline {prop}{{Proposición}{7}{}}{11}{}%
+\contentsline {demo}{{\underline {Demostración}:}{7}{}}{11}{}%
+\contentsline {defi}{{Definición}{13}{Adherencia}}{11}{}%
+\contentsline {prop}{{Proposición}{8}{}}{12}{}%
+\contentsline {demo}{{\underline {Demostración}:}{8}{}}{12}{}%
+\contentsline {coro}{{Corolario}{1}{}}{12}{}%
+\contentsline {prop}{{Proposición}{9}{}}{13}{}%
+\contentsline {defi}{{Definición}{14}{}}{13}{}%
+\contentsline {defi}{{Definición}{15}{}}{13}{}%
+\contentsline {defi}{{Definición}{16}{Sucesión y Subsucesión}}{14}{}%
+\contentsline {defi}{{Definición}{17}{Convergencia}}{14}{}%
+\contentsline {prop}{{Proposición}{10}{}}{14}{}%
+\contentsline {prop}{{Proposición}{11}{}}{14}{}%
+\contentsline {prop}{{Proposición}{12}{}}{15}{}%
+\contentsline {prop}{{Proposición}{13}{}}{15}{}%
+\contentsline {defi}{{Definición}{18}{Sucesión de Cauchy}}{15}{}%
+\contentsline {defi}{{Definición}{19}{Conjunto Acotado}}{16}{}%
+\contentsline {prop}{{Proposición}{14}{}}{16}{}%
+\contentsline {theo}{{Teorema}{3}{}}{16}{}%
+\contentsline {defi}{{Definición}{20}{Conjunto Secuencialmente Acotado}}{17}{}%
+\contentsline {defi}{{Definición}{21}{Recubrimiento Abierto}}{17}{}%
+\contentsline {defi}{{Definición}{22}{Subrecubrimiento Finito}}{17}{}%
+\contentsline {defi}{{Definición}{23}{Conjunto Compacto}}{17}{}%
+\contentsline {defi}{{Definición}{24}{Conjunto Totalmente Acotado}}{17}{}%
+\contentsline {lema}{{Lema}{1}{Lema 1}}{18}{}%
+\contentsline {lema}{{Lema}{2}{Lema 2}}{18}{}%
+\contentsline {lema}{{Lema}{3}{Lema 3}}{18}{}%
+\contentsline {theo}{{Teorema}{4}{Bolzano - Weierstrass}}{18}{}%
+\contentsline {prop}{{Proposición}{15}{Constante de Lebesgue}}{19}{}%
+\contentsline {theo}{{Teorema}{5}{}}{20}{}%
+\contentsline {defi}{{Definición}{25}{}}{20}{}%
+>>>>>>> ed74d1dc8b8fd6279428c2d3e0bafc6c469eacb4
