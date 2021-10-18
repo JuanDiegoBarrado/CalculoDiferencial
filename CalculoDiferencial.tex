@@ -878,7 +878,7 @@ Análogamente, para $\{x \in \mathbb{R}^n : ||x|| < 1\}$ es compacto.
 
 \end{itemize}
 
-\begin{theo}[]
+\begin{theo}
 $(E,d)$ es compacto $\Leftrightarrow E$ es completo y totalmente acotado.
 \end{theo}
 
@@ -899,12 +899,64 @@ $$\{x^1_n\}_{n \in \mathbb{N}} \subset \{x_n\}_{n \in \mathbb{N}}, \exists j : \
 Iterativamente,  $E \subset B(y_1^2, \frac{1}{2}) \cup \ldots \cup B(y_{m_1}^2,\frac{1}{2})$. Entonces, 
 $$\{x^2_n\}_{n \in \mathbb{N}} \subset \{x_n^1\}_{n \in \mathbb{N}}, \exists j : \{x_n^2\}_{n \in \mathbb{N}} \subset B(y_j^2, 1)$$
 
-En general, $\{x_n^m\} \subset \{x_n^{m-1}\}_n$ y $\{x_n^m\} \subset B(y_{j_m}^m, \frac{1}{m})$. Finalmente, sea $z_n = x^n_n : \{z_n\}_{n \in \mathbb{N}} \subset \{x_m\}_{m \in \mathbb{N}}$.
-
+En general, $\{x_n^m\} \subset \{x_n^{m-1}\}_n$ y $\{x_n^m\} \subset B(y_{j_m}^m, \frac{1}{m})$. Finalmente, sea $$z_n = x^n_n : \{z_n\}_{n \in \mathbb{N}} \subset \{x_m\}_{m \in \mathbb{N}}$$
 Dado $\varepsilon > 0$, sea $n_0 \in \mathbb{N} : \frac{1}{n_0} < \frac{\varepsilon}{2}$. Sean $m,n \geq n_0 : x_m^m = z_m ,  x^n_n = z_n \in B(y_j^{n_0}, \frac{1}{n_0}) \Rightarrow d(z_m, z_n) < \frac{2}{n_0} < \varepsilon$. Entonces, $\{z_m\}_m$ es una sucesión de Cauchy. 
 
 Como $E$ es completo, $\{z_m\}_{m \in \mathbb{N}}$ es parcial de $\{x_n\}_{n \in \mathbb{N}}$ es convergente, por lo que $E$ es secuencialmente compacto. 
 
 \end{itemize}
+
+\begin{coro}
+Sea $(E,d)$ espacio métrico completo. Entonces, $A \subset E$ es compacto $\Leftrightarrow A$ es cerrado y totalmente acotado.
+\end{coro}
+
+\underline{Demostración}
+\begin{itemize}
+\item \fbox{$\Rightarrow$}. Por la proposición anterior, basta probar que $A$ es cerrado. 
+
+Sea $x\in A'$, y sea $\{x_n\}_{n \in \mathbb{N}} \subset A: x_n \to x, x_n \neq x$. Veamos que $x \in A$.
+
+Como $\{x_n\}_{n \in \mathbb{N}}$ es sucesión de Cauchy en $A$, y $A$ es completo, $x_n \to x \in A$.
+\item \fbox{$\Leftarrow$}. Sabemos que $E$ es completo y $A$ es cerrado y totalmente acotado. Veamos que $A$ es completo.
+
+Sea $\{x_n\}_{n \in \mathbb{N}} \subset A$ una sucesión de Cauchy. Entonces $\{x_n\}_{n \in \mathbb{N}} \subset E$ es sucesión de Cauchy, y como $E$ es completo, $x_n \to x \in E$, y como $A$ es cerrado por hipótesis, $x \in A$.
+\end{itemize}
+
+\begin{theo}[Heine - Borel]
+$A \subset \mathbb{R}^n \Leftrightarrow A$ es cerrado y acotado.
+\end{theo}
+
+\underline{Demostración}
+\begin{itemize}
+\item \fbox{$\Rightarrow$}. Como hemos probado que $\mathbb{R}^n$ es completo, esta implicación es trivial a partir del corolario anterior.
+
+\item \fbox{$\Leftarrow$}. Sea $A$ cerrado y acotado en $\mathbb{R}^n$. Veamos que $A$ es secuencialmente acotado.
+
+Sea $\{x_m\}_{m \in \mathbb{N}} \subset A$. Entonces, $\{x_m\}_{m \in \mathbb{N}}$ es acotada en $\mathbb{R}^n$. Entonces, $\exists \{y_k\}_{k \in \mathbb{N}} \subset \{x_m\}_{m \in \mathbb{N}}$ parcial convergente en $\mathbb{R}^n$.
+$$y_k \to y \in \bar{A} = A$$
+Por lo que $A$ es compacto.
+\end{itemize}
+
+Ejercicio**: En $\mathbb{R}^n$, $A$ es acotado $\Leftrightarrow$ A es totalmente compacto.
+
+Ejercicio*:  $\mathbb{R}^n$, $A$ es acotado $\Leftrightarrow \bar{A}$ es compacto.
+
+\begin{theo}[Principio de Conjuntos Encajados]
+Sea $(E,d)$ espacio métrico y sea $\{A_n\}_{n \in \mathbb{N}}, A_n \subset E$ y $A_n \neq \emptyset$ compacto tal que $A_{n+1} \subset A_n$. Entonces, $$\bigcap_{n \in \mathbb{N}} A_n \neq \emptyset$$ 
+\end{theo}
+
+\underline{Demostración}
+
+Sea $x_n \in A_n \subset A_m : m \in \{1,\ldots,n\}$. Entonces, $\{x_n\}_{n \in \mathbb{N}} \subset A_1$, y como $A_1$ es compacto, $\exists \{x_{n_k}\}_{k \in \mathbb{N}}$ convergente $x_{n_k} \to x \in A_1$.
+
+Fijado $m \in \mathbb{N}, \exists k_m \in \mathbb{N} : m_k \geq m, k \geq k_m$
+$$\left\lbrace x_{n_k} \right\rbrace_{k \geq k_m} \mbox{ converge a } x$$
+
+Además, $\{x_{n_k}\} \subset A_m : k \geq k_m$, y como $A_m$  es compacto, $x \in A_m : \forall m \in \mathbb{N}$. Entonces, $$x \in \bigcap_{m \in \mathbb{N}} A_m \neq \emptyset$$
+\begin{defi}[]
+
+\end{defi}
+
+
 
 \end{document}

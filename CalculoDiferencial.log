@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.8)  15 OCT 2021 10:45
+=======
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.1)  18 OCT 2021 14:21
+>>>>>>> 091ec29 (Principio Conjuntos Encajados)
 entering extended mode
 **./CalculoDiferencial.tex
 (CalculoDiferencial.tex
@@ -1381,16 +1385,34 @@ Package xcolor Warning: Incompatible color definition on input line 803.
 Package xcolor Warning: Incompatible color definition on input line 819.
 
 
+<<<<<<< HEAD
 Package xcolor Warning: Incompatible color definition on input line 848.
+=======
+Package xcolor Warning: Incompatible color definition on input line 895.
+>>>>>>> 091ec29 (Principio Conjuntos Encajados)
 
 [19]
 
+<<<<<<< HEAD
 Package xcolor Warning: Incompatible color definition on input line 881.
+=======
+Package xcolor Warning: Incompatible color definition on input line 923.
+
+
+Package xcolor Warning: Incompatible color definition on input line 938.
+
+[20]
+
+Package xcolor Warning: Incompatible color definition on input line 957.
+
+
+Package xcolor Warning: Incompatible color definition on input line 969.
+>>>>>>> 091ec29 (Principio Conjuntos Encajados)
 
 \tf@thm=\write4
 \openout4 = `CalculoDiferencial.thm'.
 
-[20] (CalculoDiferencial.aux
+[21] (CalculoDiferencial.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 LaTeX Info: Redefining \. on input line 9.
@@ -1403,6 +1425,7 @@ Here is how much of TeX's memory you used:
  45608 multiletter control sequences out of 15000+200000
  545377 words of font info for 76 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
+<<<<<<< HEAD
  68i,12n,98p,737b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\jdbar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcr
 m0800.pk> <C:\Users\jdbar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi6
@@ -1436,6 +1459,38 @@ ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
 Output written on CalculoDiferencial.pdf (20 pages, 348808 bytes).
 PDF statistics:
  200 PDF objects out of 1000 (max. 8388607)
+=======
+ 102i,12n,111p,737b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Mi Equipo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600
+\tcrm0800.pk> <C:\Users\Mi Equipo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen
+/ec/dpi600\tcrm1200.pk><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Mi Equipo/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/Mi Eq
+uipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C
+:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmmi10.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/amsfonts/cm/cmmi5.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Mi Equipo/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Mi Equipo/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/User
+s/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.p
+fb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
+s/cm/cmr6.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmr7.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Mi Equipo/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Mi Equip
+o/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/U
+sers/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbol
+s/msam10.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/symbols/msbm10.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on CalculoDiferencial.pdf (21 pages, 318314 bytes).
+PDF statistics:
+ 187 PDF objects out of 1000 (max. 8388607)
+>>>>>>> 091ec29 (Principio Conjuntos Encajados)
  0 named destinations out of 1000 (max. 500000)
  109 words of extra memory for PDF output out of 10000 (max. 10000000)
 
