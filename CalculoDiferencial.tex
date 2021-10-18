@@ -318,12 +318,12 @@ $$d(x,z) \leq d(x,y) + d(y,z) < d(x,y) + \varepsilon = r$$
 
 \begin{prop}
 Sea el espacio métrico $(E,d)$, entonces\footnote{Para la 2ª afirmación no es necesario que la familia sea finita} ocurre:
-\end{prop}
 \begin{enumerate}
 \item $\forall A_1, \ldots, A_n$ familia de conjuntos abiertos en $E$, $\displaystyle\bigcap_{j=1}^N A_j$ es abierto en $E$.
 
 \item $\forall \{A_\alpha\}_{\alpha \in I}$ familia arbitraria de conjuntos abiertos en $E$, $\displaystyle \bigcup_{\alpha \in I} A_\alpha$ es abierto en $E$.
 \end{enumerate}
+\end{prop}
 
 \begin{demo}
 \begin{itemize}
@@ -372,11 +372,12 @@ Denotamos como $\mathring{A} = int(A) = \{x \in A : x \mbox{ es punto interior}\
 \end{itemize}
 
 \underline{Ejemplo}:
-
-Tomando $\mathbb{R}^{2}$ y el conjunto $A =\{(0,x): 0 < x < A\}$ vemos que $\mathring{A} = \emptyset$
+\begin{itemize}
+\item Tomando $\mathbb{R}^{2}$ y el conjunto $A =\{(0,x): 0 < x < A\}$ vemos que $\mathring{A} = \emptyset$
+\end{itemize}
 
 \begin{defi}
-En un espacio métrico $(E,d)$ decimos que un conjunto $A\subset E$ es cerrado si $E\setminus{A}$ es abierto.
+En un espacio métrico $(E,d)$, decimos que un conjunto $A\subset E$ es cerrado si $E\setminus{A}$ es abierto.
 \end{defi}
 
 \underline{Ejemplos}:
@@ -388,7 +389,7 @@ En un espacio métrico $(E,d)$ decimos que un conjunto $A\subset E$ es cerrado s
 \end{itemize}
 
 \begin{prop}
-En cualquier espacio métrico $(E,d)$ las bolas cerradas $\bar{B}(x,\varepsilon)$ son conjuntos cerrados.
+En cualquier espacio métrico $(E,d)$, las bolas cerradas $\bar{B}(x,\varepsilon)$ son conjuntos cerrados.
 \end{prop}
 
 \begin{demo}
@@ -414,8 +415,9 @@ Se demuestra por las Leyes de De Morgan
 \begin{defi}[Punto de acumulación]
 Sea $(E,d)$ un espacio métrico, y sea $A \subset E$, se dice que $x \in E$ es un \textbf{punto de acumulación} de A si:
 $$\forall \varepsilon > 0: \left(B(x,\varepsilon)\setminus\{x\}\right)\cap A \neq \emptyset$$
+ Al \textbf{conjunto de puntos de acumulación} se le conoce como $A'$.
 \end{defi}
-Es decir, para cualquier ``entorno'' alrededor de ese punto sin contar con el punto, la intersección con el conjunto original es no vacía. Al \textbf{conjunto de puntos de acumulación} se le conoce como $A'$
+Es decir, para cualquier ``entorno'' alrededor de ese punto sin contar con el punto, la intersección con el conjunto original es no vacía.
 
 \underline{Observaciones}:
 \begin{itemize}
@@ -501,19 +503,22 @@ $$\Rightarrow z \notin A' \Rightarrow z \in E\setminus A'$$
 \end{itemize}
 \end{demo}
 
-\begin{coro}
+\begin{coro}[Caracterización de adherencia]
 Si un punto pertenece a la adherencia, entonces cualquier bola centrada en ese punto interseca con el conjunto:
 $$x\in \bar{A}\Leftrightarrow \forall \varepsilon >0: B(x,\varepsilon)\cap A \neq \emptyset$$
 \end{coro}
 
-\begin{prop}
+\begin{prop}[Caracterización de puntos de acumulación]
+Podemos caracterizar los puntos de acumulación como:
 $$x\in A' \Leftrightarrow \forall \varepsilon > 0: \exists x_{\varepsilon} \in A\setminus\{x\}: d(x_\varepsilon, x)< \varepsilon$$
 En particular, en $\mathbb{R}^{n}$:
 $$x\in A' \Leftrightarrow \exists \{x_k\}_{k\in \mathbb N}\subset A\setminus\{x\}: ||x-x_k||_{2}\xrightarrow{k\rightarrow\infty} 0$$
 \end{prop}
 
-\begin{defi}
-Sea $(E,d)$ un espacio métrico y $A\subset B \subset E$, se dice que $A$ es denso en $B$ si $B\subset \bar{A}$. En particular, $A$ es denso en $E$ si $\bar{A} = E$.
+\begin{defi}[Densidad]
+Sea $(E,d)$ un espacio métrico y $A\subset B \subset E$, se dice que:
+$$A \mbox{ es denso en }B \Leftrightarrow B\subset \bar{A}$$
+En particular, $A$ es denso en $E$ si $\bar{A} = E$.
 \end{defi}
 
 \underline{Ejemplo}:
@@ -522,7 +527,7 @@ Sea $(E,d)$ un espacio métrico y $A\subset B \subset E$, se dice que $A$ es den
 \item El conjunto $\mathbb{I}$ es denso dentro de $\mathbb{R}$.
 \end{itemize}
 
-\begin{defi}
+\begin{defi}[Frontera]
 Sea $(E,d)$ un espacio métrico y $A\subset E$, se define la frontera de $A$ como:
 $$\partial(A) = \bar{A}\cap \overline{E\setminus{A}}$$
 \end{defi}
@@ -550,7 +555,6 @@ $$\partial(A) = \bar{A}\cap \overline{E\setminus{A}}$$
 \end{itemize}
 
 \section*{SUCESIONES, COMPLETITUD Y COMPACIDAD}
-
 \begin{defi}[Sucesión y Subsucesión]
 Sea $E$ un conjunto. Una \textbf{sucesión} $\{x_n\}_{n \in \mathbb{N}} = \{x_n\}_n = \{x_n\}$ es una función 
 \begin{align*}
@@ -578,37 +582,37 @@ Sea $(E, || \cdot ||)$ un espacio normado, si suponemos que dicha métrica anter
 \end{itemize}
 \end{prop}
 
-\underline{Demostración}
-
+\begin{demo}
 El caso $x = 0$ se deja como ejercicio. Sea $x \neq 0$ y $\varepsilon > 0$. Entonces:
 $$\exists n_1, n_2 \in \mathbb{N} : | \lambda_n - \lambda | < \frac{\varepsilon}{2 \cdot ||x||} : \forall n \geq n_1 \mbox{ y } ||x_n - x||_E < \frac{\varepsilon}{2 \cdot C} : \forall n \geq n_2 : |\lambda_n| \geq C < \infty$$
 Sea $n_0 = \max\{n_1, n_2\}$ y $n \geq n_0$
 $$||\lambda_n x_n - \lambda x || = ||\lambda_n x_n - \lambda_n x + \lambda_n x - \lambda x || \leq |\lambda_n| \cdot ||x_n - x|| + |\lambda_n - \lambda | \cdot ||x|| \leq C \cdot \frac{\varepsilon}{2C} + \frac{\varepsilon}{2||x||}\cdot ||x|| = \varepsilon$$
+\end{demo}
 
 \underline{Observación}
 
 Si $||\cdot||_1, ||\cdot||_2$ son normas equivalentes en $E$, entonces ambas normas tienen las mismas sucesiones convergentes y al mismo límite.
 $$0 \leftarrow C||x_n - x||_1 \geq ||x_n - x||_2 \to 0$$
 
-\begin{prop}
-En $(\mathbb{R}^n, || \ ||_2)$ espacio euclídeo usual, la convergencia de sucesiones se puede caracterizar como:
-$$\{x_m\}_{m \in  \mathbb{N}}: x_m = (x_m^1, \cdots, x_m^n) \stackrel{n\rightarrow\infty}{\longrightarrow} x = (x^1, \ldots, x^n) \Leftrightarrow \forall j = 1, \cdots, n: x_m^j \xrightarrow{m\rightarrow\infty} x^j$$
-Es decir, se reduce a la convergencia de sucesiones en $\mathbb{R}$ sobre cada coordenada.
+\begin{prop}[Convergencia en $\mathbb{R}^n$]
+En $(\mathbb{R}^n, || \ ||_2)$ espacio euclídeo usual, sea $\{x_m\}_{m \in  \mathbb{N}}: x_m = (x_m^1, \cdots, x_m^n)$ la convergencia se caracteriza como:
+$$x_m \xrightarrow{m \rightarrow \infty} x = (x^1, \ldots, x^n) \Leftrightarrow \forall j = 1, \cdots, n: x_m^j \xrightarrow{m\rightarrow\infty} x^j$$
+Es decir, se reduce la convergencia en $\mathbb{R}^n$ a la convergencia de componentes en $\mathbb{R}$.
 \end{prop}
 
-\underline{Demostración}:
-
+\begin{demo}
 Trivialmente, se tiene que $|x_m^j - x_j| \leq ||x_m - x||_2$, luego :
 $$x_m \rightarrow x \Rightarrow |x_m^j - x_j| \leq ||x_m - x||_2 \Rightarrow x_m^j \rightarrow x^j : \forall j = 1, \cdots, n$$
 Recíprocamente, podemos expresar la norma como:
 $$||x_m - x||_2^2 = \sum_{j=1}^{n} |x_m^j - x^j|^2$$
 De este modo, por lo probado en la proposición anterior:
 $$\lim_{m \rightarrow \infty} ||x_m - x||_2^2 = \sum_{j=1}^{n} \lim_{m \rightarrow \infty} |x_m^j - x^j|^2 = 0$$
+\end{demo}
 
-\begin{prop}
+\begin{prop}[Caracterización de la topología vía sucesiones]
 Sea $(E,d)$ un espacio métrico. Se cumple que:
 \begin{enumerate}
-\item Un subconjunto $A \subset E$ es cerrado si y sólo si $\forall \{x_n\}_{n\in \mathbb{N}} \subset A : \left(\exists \lim_{n \rightarrow \infty} x_n = x \Rightarrow x \in A\right)$
+\item Un subconjunto $A \subset E$ es cerrado $\Leftrightarrow \forall \{x_n\}_{n\in \mathbb{N}} \subset A : \left(\exists \lim_{n \rightarrow \infty} x_n = x \Rightarrow x \in A\right)$
 
 \item Un punto $x \in \bar{A} \Leftrightarrow \exists \{x_n\}_{n\in \mathbb{N}} \subset A : \lim_{n \rightarrow \infty} x_n = x$
 
@@ -616,12 +620,12 @@ Sea $(E,d)$ un espacio métrico. Se cumple que:
 \end{enumerate}
 \end{prop}
 
-\underline{Demostración}
-
+\begin{demo}
 El conjunto $A$ es cerrado si y sólo si $A' \subset A$. Por tanto, si escogemos una sucesión $\{x_n\}_{n\in \mathbb{N}} \subset A$ de forma que $\lim_{n \rightarrow \infty} x_n = x$, vamos a ver que $x\in A$. Supongamos que no, entonces tenemos una sucesión convergente a $x$ de forma que $\forall n \in \mathbb N: x_n \neq x$ porque está contenida en $A$. En consecuencia, por el apartado 3: $x \in A' \subset A \sharp$.
+\end{demo}
 
 \begin{prop}
-Sea $(E,d)$ un espacio métrico, podemos caracterizar de nuevo la convergencia. Sea $\{x_n\}_{n\in \mathbb{N}} \subset E$
+Sea $(E,d)$ un espacio métrico y $\{x_n\}_{n\in \mathbb{N}} \subset E$, podemos caracterizar de nuevo la convergencia en base a subsucesiones:
 \begin{enumerate}
 \item $x_n \xrightarrow{n\rightarrow\infty} x \Leftrightarrow \forall\{x_{n_j}\}_{j \in \mathbb{N}} \subset \{x_n\}_{n\in \mathbb{N}} : x_{n_j} \xrightarrow{n\rightarrow\infty} x$ 
 
@@ -654,13 +658,12 @@ Sea $\{y_{m_k}\}_k \subset \{x_{n_m}\}_m : d(y_{m_k}, x) \geq \varepsilon\Righta
 \end{itemize}
 
 \begin{defi}[Sucesión de Cauchy]
-Sea $(E,d)$ un espacio métrico, se dice que $\{x_n\}_{n\in \mathbb{N}} \subset E$ es \textbf{sucesión de Cauchy} si
-$$\forall \varepsilon > 0, \exists n_0 \in \mathbb{N} : \forall m,n : m > n \geq n_0 \Rightarrow d(x_m, x_n) < \varepsilon$$
-Sea dice que $(E,d)$ es \textbf{completo} si toda sucesión de Cauchy es convergente.
+Sea $(E,d)$ un espacio métrico, se dice que $\{x_n\}_{n\in \mathbb{N}} \subset E$ es \textbf{sucesión de Cauchy} si:
+$$\forall \varepsilon > 0: \exists n_0 \in \mathbb{N} : \forall m,n \geq n_0 \Rightarrow d(x_m, x_n) < \varepsilon$$
+Se dice que $(E,d)$ es \textbf{completo} si toda sucesión de Cauchy es convergente.
 \end{defi}
 
 \underline{Observaciones}
-
 \begin{itemize}
 \item $(\mathbb{R}, |\cdot|)$ es completo.
 
@@ -670,9 +673,10 @@ Sea dice que $(E,d)$ es \textbf{completo} si toda sucesión de Cauchy es converg
 \end{itemize}
 
 \begin{defi}[Conjunto Acotado]
-En $(E,d)$, un conjunto $A \subset E$ es \textbf{acotado} si
-$$\exists x \in E, \ \exists r > 0 : A \subset B(x,r) \Leftrightarrow : \forall y \in A: d(y,x) < r$$
-En el caso $(E, ||\cdot||)$ espacio normado, $A \subset E$ es \textbf{acotado} si $\exists r > 0 : ||a|| < r : \forall a \in A$, es decir, $A \subset B(0,r)$
+En $(E,d)$ un espacio métrico, un conjunto $A \subset E$ es \textbf{acotado} si:
+$$\exists x \in E: \exists r > 0 : A \subset B(x,r) \Leftrightarrow \forall y \in A: d(y,x) < r$$
+En el caso $(E, ||\cdot||)$ espacio normado, $A \subset E$ es \textbf{acotado} si:
+$$\exists r > 0 : \forall a \in A: ||a|| < r  \Leftrightarrow A \subset B(0,r)$$
 \end{defi}
 
 \begin{prop}
@@ -680,7 +684,7 @@ Sea $(E,d)$ un espacio métrico. Entonces, se cumple que:
 \begin{itemize}
 \item Si $\{x_n\}_{n\in \mathbb{N}} \subset E$ es convergente, entonces es una sucesión de Cauchy.
 \item Si $\{x_n\}_{n\in \mathbb{N}} \subset E$ es una sucesión de Cauchy, entonces es acotada.
-\item Toda sucesión convergente es acotada.
+\item Si $\{x_n\}_{n\in \mathbb{N}} \subset E$ es convergente, entonces  es acotada.
 \item Si $\{x_n\}_{n\in \mathbb{N}} \subset E$ es una sucesión de Cauchy y $\exists \{ x_{n_k}\}_{n_k} $ parcial tal que $x_{n_k} \xrightarrow{n_k\rightarrow\infty} x$, entonces $x_n \xrightarrow[n\rightarrow\infty]{} x$.
 \end{itemize}
 \end{prop}
@@ -689,65 +693,53 @@ Sea $(E,d)$ un espacio métrico. Entonces, se cumple que:
 
 \begin{itemize}
 \item (i) y (iii) son triviales.
-\item Sea $\varepsilon = 1$. Entonces, $\exists n_0 \in \mathbb{N} : d(x_n, x_m) \leq : \forall m,n \geq n_0$. 
-$d(x_n, x_{n_0}) \leq 1 : \forall n \geq n_0$
+\item Sea $\varepsilon = 1$. Entonces, $\exists n_0\in \mathbb{N} : \forall m,n \geq n_0 : d(x_n, x_m) \leq 1$, luego se tiene que $\forall n \geq n_0: d(x_n, x_{n_0}) \leq 1$. Por tanto, sea $r = \max \{1, d(x_{n_0}, x_k : k=1, \ldots, n_0 + 1)\} + 1$, se tiene que $\forall n \in \mathbb{N}x_n \in B(x_{n_0}, r)$.
 
-Sea $r = \max \{1, d(x_{n_0}, x_k : k=1, \ldots, n_0 + 1)\} + 1$. Entonces $x_n \in B(x_{n_0}, r) : \forall n \in \mathbb{N}$.
-
-\item $\varepsilon > 0 : \exists n_0 \in \mathbb{N} : d(x_n,x_m) < \frac{\varepsilon}{2} : m, n \geq n_0$
-
-$\exists m \in \mathbb{N} : n_k \geq m: d(x_{n_k}, x) < \frac{\varepsilon}{2}$
-
-Sea $k = \max\{n_0, m\} : n \geq k$. Por la desigualdad triangular:
-$d(x_n, x) \leq d(x_{n_j}, x_n) + d(x_{n_j},x)$. Elegimos $n_j \leq k$:
+\item Sea $\varepsilon > 0$, entonces $\exists n_0 \in \mathbb{N} :\forall  m, n \geq n_0: d(x_n,x_m) < \frac{\varepsilon}{2}$. Del mismo modo, para el mismo \textit{epsilon} $\exists m \in \mathbb{N} : n_k \geq m: d(x_{n_k}, x) < \frac{\varepsilon}{2}$. Luego, sea $k = \max\{n_0, m\} : \forall n \geq k$ se tiene que por la desigualdad triangular:
+$d(x_n, x) \leq d(x_{n_j}, x_n) + d(x_{n_j},x)$. Elegimos $n_j \geq k$ y vemos que:
 $$d(x_n, x) \leq d(x_{n_j}, x_n) + d(x_{n_j},x) < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon$$
 \end{itemize}
 
-\begin{theo}
-$(\mathbb{R}^n, d_2)$ es un espacio métrico completo.
+\begin{theo}[de Completitud de $\mathbb{R}^n$]
+El espacio euclídeo habitual $(\mathbb{R}^n, d_2)$ es un espacio métrico completo.
 \end{theo}
 
 \underline{Demostración}
 
-Sea $\{x_m\}_{m\in \mathbb{N}}$ una sucesión de Cauchy en $\mathbb{R}^n$. $x_m = (x_m^1, \ldots , x_m^n) : m \in \mathbb{N}$
-
+Sea $\{x_m\}_{m\in \mathbb{N}}$ una sucesión de Cauchy en $\mathbb{R}^n$ de la forma $x_m = (x_m^1, \ldots , x_m^n) : m \in \mathbb{N}$, entonces:
 $$|x_m^j - x_\ell^j| \leq ||x_m - x_\ell ||_2 < \varepsilon : m,\ell \geq n_0 : \forall j \in \{ 1, \ldots,n\}$$
+Así que $\forall j \in \{ 1, \ldots,n\}$, la sucesión de la componente $\{x_m^j\}_{m \in \mathbb{N}}$ es sucesión de Cauchy en $\mathbb{R}$ y como $\mathbb{R}$ es completo, $x_m^j \xrightarrow[m\rightarrow\infty]{} x^j$. Por tanto, por la definición que se dio de convergencia en $\mathbb{R}^{n}$, si el límite es $x=(x^1, \ldots, x^n) \in \mathbb{R}^n$, entonces componente a componente $x_m \xrightarrow[m\rightarrow\infty]{} x$
 
-Así, $\forall j \in \{ 1, \ldots,n\}$, $\{x_m^j\}_{m \in \mathbb{N}}$ es sucesión de Cauchy en $\mathbb{R}$. Como $\mathbb{R}$ es completo, $x_m^j \xrightarrow[m\rightarrow\infty]{} x^j$.
-
-Sea $x=(x^1, \ldots, x^n) \in \mathbb{R}^n$. Como converge componente a componente, $x_m \xrightarrow[m\rightarrow\infty]{} x$
-$\hfill \square$
-
-\begin{defi}[Conjunto Secuencialmente Acotado]
-Sea $(E,d)$ un espacio métrico. Se dice que $A \subset E$ es \textbf{secuencialmente compacto} si $\forall \{x_n\}_{n \in \mathbb{N}} \subset A, \exists \{ x_{n_k}\}_{n_k} \subset \{ x_n\}_n$ convergente a $x \in A$
+\begin{defi}[Conjunto Secuencialmente Compacto]
+Sea $(E,d)$ un espacio métrico. Se dice que $A \subset E$ es \textbf{secuencialmente compacto} si:
+$$\forall \{x_n\}_{n \in \mathbb{N}} \subset A : \exists \{ x_{n_k}\}_{n_k} \subset \{ x_n\}_n : x_{n_{k}}\xrightarrow{k\rightarrow\infty} x \in A$$
 \end{defi}
 
 \underline{Observaciones}
 
 \begin{itemize}
-\item Si $A$ es secuencialmente compacto, por lo que $A' \subset A$ y por lo tanto es cerrado.
+\item Si $A$ es secuencialmente compacto, entonces $A' \subset A$ y, por lo tanto,  $A$ es cerrado.
 
-\item Si $A$ es secuenciamente compacto, entonces $A$ es acotado. 
+\item Si $A$ es secuenciamente compacto, entonces $A$ es acotado (porque hay una bola que lo contiene completamente). 
 
-En caso contrario, $\forall r = n, \forall x, \exists y_n \in A : d(y_n,x) \geq n$. Si cogemos un $x \in E$, entonces $d(y_n , x) \geq n : y_n \in A$
+En caso contrario, ocurriría que $\forall \varepsilon > 0 : \forall x \in A: A \not\subset B(x,\varepsilon)$, peros si escogemos $\varepsilon = n$, entonces $A\not\subset B(x,\varepsilon)$, luego $\exists y_n \in A : d(y_n,x) \geq n$, es decir, podemos formar $\{y_n\}_{n\in \mathbb{N}}\subset A$.
 
-Claramente $\nexists \{ y_{n_k}\}_{n_k} \subset \{ y_n\}_{n \in \mathbb{N}}$ convergente ya que si existiese $\{ y_{n_k}\}_{n_k}$ convergente a y, $d(y_{n_k}, y) < \varepsilon : \forall n_k \geq m$
-
-$d(y_m, y_n) \geq d(y_m,x) - d(x, y_n) \geq m - d(x, y_n) \xrightarrow[m\rightarrow\infty]{} \infty$
-
+Claramente $\nexists \{ y_{n_k}\}_{n_k} \subset \{ y_n\}_{n \in \mathbb{N}}\subset A$ convergente, ya que si existiese:
+$$d(y_{n_k}, y) < \varepsilon : \forall n_k \geq m \Rightarrow d(y_m, y_n) \geq d(y_m,x) - d(x, y_n) \geq m - d(x, y_n) \xrightarrow[m\rightarrow\infty]{} \infty \Rightarrow \#$$
+Por tanto, llegamos a una contradicción.
 \end{itemize}
 
 
-\begin{defi}[Recubrimiento Abierto]
-Sea $(E,d)$ un espacio métrico. Se dice que un \textbf{recubrimiento abierto} de $A \subset E$ es una familia $\mathcal{U} = \{ \mathcal{U}_i\}_{i \in I} : \mathcal{U}_i$ abierto tal que $A \subset \bigcup_{i \in I} \mathcal{U}_i$
-\end{defi}
-
-\begin{defi}[Subrecubrimiento Finito]
-Un \textbf{subrecubrimiento finito} de $A$ es una familia de $\mathcal{U}, \{ \mathcal{U}_1, \ldots, \mathcal{U}_m\} \subset \mathcal{U}$ tal que $A \subset \bigcup_{i \in \{1,\ldots,m\}} \mathcal{U}_i$
-\end{defi}
-
 \begin{defi}[Conjunto Compacto]
-Sea $(E,d)$ un espacio métrico. Se dice que $A \subset E$ es \textbf{compacto} si para todo recubrimiento abierto de $A$, existe un subrecubrimiento finito
+Sea $(E,d)$ un espacio métrico:
+\begin{itemize}
+\item Se dice que un \textbf{recubrimiento abierto} de $A \subset E$ es una familia de abiertos en cuya unión se encuentra $A$:
+$$\mathcal{U} = \{ \mathcal{U}_i\}_{i \in I} : \mathcal{U}_i \mbox{ abierto } \ \wedge \ A \subset \bigcup_{i \in I} \mathcal{U}_i$$
+
+\item Un \textbf{subrecubrimiento finito} de $A$ es una familia finita de intervalos abiertos en cuya unión se encuentra $A$:
+$$\mathcal{U} = \{ \mathcal{U}_1, \ldots, \mathcal{U}_m\} \subset \mathcal{U}: A \subset \bigcup_{i =1}^{m} \mathcal{U}_i$$
+
+\item Se dice que $A \subset E$ es \textbf{compacto} si para todo recubrimiento abierto de $A$ se puede extraer un subrecubrimiento finito.\end{itemize}
 \end{defi}
 
 \underline{Observaciones}
@@ -760,11 +752,13 @@ Sea $x \in A \subset \bigcup_{n \in \mathbb{N}} B(x,n) \xRightarrow{\exists m \i
 \item $(0,1)$ no es compacto en $\mathbb{R}$.
 
 En efecto, sea $\mathcal{U}_n = (\frac{1}{n}, 1)$. Es claro que $(0,1) \subset \bigcup_{n \in \mathbb{N}} \mathcal{U}_i$, pero $\nexists m : (0,1) \subset \mathcal{U}_m$
-
 \end{itemize}
 
+\newpage
+
 \begin{defi}[Conjunto Totalmente Acotado]
-Sea $(E,d)$ un espacio métrico. Se dice que $A \subset E$ es \textbf{totalmente acotado} si $\forall \varepsilon >0, \exists \{x_1, \ldots, x_m\} \subset A : A \subset B(x_1, \varepsilon) \cup \ldots \cup B(x_m, \varepsilon)$
+Sea $(E,d)$ un espacio métrico, se dice que $A \subset E$ es \textbf{totalmente acotado} si ocurre que:
+$$\forall \varepsilon >0: \exists \{x_1, \ldots, x_m\} \subset A : A \subset B(x_1, \varepsilon) \cup \cdots \cup B(x_m, \varepsilon)$$
 \end{defi}
 
 \underline{Observaciones}
@@ -785,16 +779,13 @@ Sea $(E,d)$ un espacio métrico. Entonces, si $A$ es compacto, entonces $A$ es c
 
 \underline{Demostración}
 
-Para ver que $A$ es cerrado, veamos que $E \setminus A$ es abierto, es decir, que todo punto es interior. Sea $x \in E \setminus A$, veamos que $\exists \delta > 0 : B(x, \delta) \subset E \setminus A$
+Hay que ver que $E \setminus A$ es abierto, es decir, que todo punto es interior: $\forall x \in E \setminus A: \exists \delta > 0 : B(x, \delta) \subset E \setminus A$.
 
-Sea $\mathcal{U}_n = E \setminus \bar{B}(x, \frac{1}{n})$ abierto. Veamos que $A \subset \bigcup_{n \in \mathbb{N}} \mathcal{U}_n$.
+Primero, sea $\mathcal{U}_n = E \setminus \bar{B}\left(x, \frac{1}{n}\right)$ abierto. Vamos a probar que $A \subset \bigcup_{n \in \mathbb{N}} \mathcal{U}_n$. Tomamos $y \in A$, luego $d(y,x) > 0$ para $x\notin A$, luego $\exists n \in \mathbb{N} : d(y,x) > \frac{1}{n} \Rightarrow y \notin \bar{B}(x, \frac{1}{n})\Rightarrow y \in \mathcal{U}_n$.
 
-Tomamos $y \in A$. $d(y,x) > 0 \Rightarrow \exists n \in \mathbb{N} : d(y,x) > \frac{1}{n}$ $y \notin \bar{B}(x, \frac{1}{n})$. Así $y \in \mathcal{U}_n$.
-
-Como $A$ es compacto, $A \subset \mathcal{U}_{n_1} \sup \ldots \cup \mathcal{U}_{n_k} = \mathcal{U}_{n_k} : n_1 < \ldots < n_k$
-$$\Rightarrow \forall y \in A, y \notin \bar{B}(x, \frac{1}{n_k}) \Rightarrow \bar{B}(x, \frac{1}{n_k}) \cap A = \emptyset$$
-Finalmente, $B(x, \frac{1}{n_k}) \subset E \setminus A$
-$\hfill\square$
+Como $A$ es compacto, podemos extraer un subrecubrimiento finito, luego $A \subset \mathcal{U}_{n_1} \cup \cdots \cup \mathcal{U}_{n_k} = \mathcal{U}_{n_k} : n_1 < \ldots < n_k$ porque la sucesión de conjuntos es creciente.
+$$\forall y \in A : y \in U_{n_k} \mbox{ para } \exists! n_k \Rightarrow y \notin \bar{B}\left(x, \frac{1}{n_k}\right) \Rightarrow \bar{B}\left(x, \frac{1}{n_k}\right) \cap A = \emptyset$$
+Finalmente, $B\left(x, \frac{1}{n_k}\right) \subset E \setminus A$
 
 \begin{lema}[Lema 2]
 Sea $(E,d)$ un espacio métrico compacto y $A \subset E$ cerrado. Entonces $A$ es compacto.
