@@ -946,10 +946,204 @@ $$\left\lbrace x_{n_k} \right\rbrace_{k \geq k_m} \mbox{ converge a } x$$
 
 Además, $\{x_{n_k}\} \subset A_m : k \geq k_m$, y como $A_m$  es compacto, $x \in A_m : \forall m \in \mathbb{N}$. Entonces, $$x \in \bigcap_{m \in \mathbb{N}} A_m \neq \emptyset$$
 \end{demo}
+
+\section*{LÍMITES Y CONTINUIDAD}
+
+\begin{defi}[Límite]
+Sean $(E,d),(F,d')$ espacios métricos, $A\subset E, f:A \to F, x_0 \in A'$. Se dice que $L \in F$ es el \textbf{límite de $f$ en $x_0$}, $ \displaystyle\lim_{x \to x_0} f(x) = L$ si 
+$$\forall \varepsilon > 0, \exists \delta > 0 : x \in A \cap (B(x_0, \delta) \setminus \{x_0\}) : d'(f(x), L) < \varepsilon$$
+\end{defi}
+
+\underline{Observación}
+
+$$\lim_{x \to x_0} f(x) = L \Leftrightarrow \forall \varepsilon > 0, \exists \delta > 0 : f(A \cap (B_d(x_0, \delta) \setminus \{x_0\})) \subset B_{d'}(L, \varepsilon)$$
+
+
+\begin{defi}[Continuidad]
+Sean $(E,d),(F,d')$ espacios métricos, $A \subset E, f:A \to F, x_0 \in A$. Se dice que $f$ es \textbf{continua en $x_0$} si o bien $x_0 \notin A'$ o si $x_0 \in A'$, entonces, 
+$$\lim_{x \to x_0} f(x)=f(x_0)$$
+
+Diremos que $f$ es continua en $A$ si es continua en todos los puntos de $A$.   
+\end{defi}
+
+\begin{theo}
+Sean $(E,d),(F,d')$ espacios métricos, $A \subset E, f:A \to F$. Son equivalentes:
+\begin{itemize}
+\item $f$ es continua en $A$
+\item Si $\{x_n\}_{n \in \mathbb{N}} \subset A, x_n \xrightarrow{n\rightarrow\infty} x_0 \in A$, entonces $f(x_n) \xrightarrow[n\rightarrow\infty]{} f(x_0)$
+\item Si $\mathcal{U} \subset F$ es abierto, entonces $f^{-1}(\mathcal{U})$ es abierto en $A$.
+\item Si $B\subset F$ es cerrado, entonces $f^{-1}(B)$ es cerrado en $A$.
+\end{itemize}
+\end{theo}
+
+\begin{demo}
+\begin{itemize}
+\item $(i) \Rightarrow (ii)$ 
+
+Sea $\{x_n\}_{n \in \mathbb{N}} \subset A : x_n \to x_0 \in A$. Si $x_0 \notin A', \exists n_0 \in \mathbb{N} : x_n = x_0 : \forall n \geq n$
+$\Rightarrow f(x_n) = f(x_0) \xrightarrow[n\rightarrow\infty]{} f(x_0) : \forall n \geq n_0$
+
+Si $x_0 \in A' : \forall\varepsilon > 0, \exists \delta > 0 : x \in A \cap (B(x_0, \delta) \setminus \{x_0\}) \Rightarrow d'(f(x), f(x_0)) < \varepsilon$
+
+$\exists n_0 \in \mathbb{N} : \forall n \geq n_0 : d(x_n, x_0) < \delta$
+
+$x_n \in B(x_0, \delta) \Rightarrow d'(f(x_n), f(x_0)) < \varepsilon$
+
+\item $(ii) \Rightarrow (iv)$
+
+Sea $B \subset F$ cerrado. Veamos que $f^{-1}(B)$ es cerrado en $A$. Sea $x_n \in (f^{-1}(B) \cap A) : x_n \to x_0 \in A$
+
+Veamos que $x_0 \in f^{-1}(B)$, es decir, que $f(x_0) \in B$. Por $(ii)$, $f(x_n) \to f(x_0)$. $f(x_n) \in B$, y como $B$ es cerrado, $f(x_0) \in \bar{B} = B$
+
+\item $(iv) \Rightarrow (iii)$
+
+Sea $\mathcal{U} \subset F$ abierto, es decir, $B = F \setminus \mathcal{U}$ es abierto.
+$$f^{-1}(B)\mbox{ cerrado } = (E \setminus f^{-1} (\mathcal{U})) \cap A \Rightarrow f^{-1}(\mathcal{U}) \mbox{ es abiertyo en } A$$
+
+\item $(iii) \Rightarrow (i)$
+
+Sea $x_0 \in A $ y $\varepsilon > 0$. Sea $\mathcal{U} = B(f(x_0), \varepsilon) \Rightarrow x_0 \in f^{-1} (\mathcal{U})$ abierto $\Rightarrow \exists d > 0 : B(x_0, \delta) \subset f^{-1} (\mathcal{U}) \Rightarrow$
+$$f(B(x_0, \delta)) \subset f(f^{-1} (\mathcal{U})) \subset \mathcal{U} = B(f(x_0, \varepsilon))$$ 
+\end{itemize}
+\end{demo}
+
+\underline{Observación}
+
+Si $f: A \subset E \to F, x_0 \in A'$, entonces $$\lim_{n \to x_0} f(x) = L \Leftrightarrow \forall \{x_n\}_{n \in \mathbb{N}} \subset A \setminus \{x_0\}, \mbox{ si } x_n \to x_0 \Rightarrow \lim_{n \to \infty} f(x_n) = L$$
+
+\begin{theo}
+Sean $(E,d),(F,d')$ espacios métricos, $A \subset E$ compacto y $f : A \to F$ continua. Entonces, $f(A)$ es compacto.
+\end{theo}
+
+\begin{demo}
+Sea $f(A) \subset \bigcup_{i \in I} \mathcal{U}_i, \mathcal{U}_i$ abierto de $F : \forall i \in I$.
+
+$$A \subset f^{-1} (f(A)) \subset f^{-1} (\bigcup_{i \in I} \mathcal{U}_i) = \bigcup_{i \in I} \underbrace{f^{-1}(\mathcal{U}_i)}_{\mbox{abierto}}$$
+Entonces, $A \subset f^{-1}(\mathcal{U})_{i_1} \cup \ldots \cup f^{-1}(\mathcal{U})_{i_m}$
+
+Entonces, $$f(A) \subset f(f^{-1}(\mathcal{U})_{i_1} \cup \ldots \cup f^{-1}(\mathcal{U})_{i_m}) \subset f(f^{-1}(\mathcal{U})_{i_1}) \cup \ldots \cup f(f^{-1}(\mathcal{U})_{i_m}) \subset \mathcal{U}_{i_1} \cup \ldots \cup \mathcal{U}_{i_m}$$
+\end{demo}
+
+\underline{Observación}
+
+Sea $f$ continua. Consideramos $A \to f(A)$. Si $A$ es cerrado, $f(A)$ \textbf{no} tiene por qué ser cerrado, al igual que si $A$ es abierto, $f(A)$ \textbf{no} tiene por qué ser abierto, al igual que si $A$ es acotado, $f(A)$ \textbf{no} tiene por qué ser acotado ($\tan(0, \frac{\pi}{2})$). Sin embargo, si trabajamos en $\mathbb{R}^n$ se cumple que la imagen de un acotado es acotada.
+
+Recordamos la definición de continuidad en $\mathbb{R}$:
+$$f : (a,b) \to \mathbb{R}, x_0 \in (a,b), f \mbox{ es continua en } x_0 \mbox{ si } \forall \varepsilon > 0, \exists \delta > 0 : |x - x_0| < \delta , x\in (a,b) \Rightarrow |f(x) - f(x_0)| < \varepsilon  $$
+
+Utilizando la extensión de la definición de continuidad, si $E = \mathbb{R}, d = | \cdot |,F = \mathbb{R}, d' = | \cdot | $ y $A = (a,b)$
+$$f(B_d(x_0, \delta) \cap A) \subset B_{d'} (f(x_0), \varepsilon)$$
+
+\underline{Observación}
+\begin{itemize}
+\item $f : A \to F, f \equiv$ constante, entonces $f$ es continua.
+\item Si $(E,d)$ y $d$ es la métrica discreta, entonces $f: A \to F$ es continua siempre.
+\item Sea $f$ continua. Consideramos $f : B \to f^{-1}(B)$. Si $B$ es cerrado o abierto, $f^{-1}(B)$ siempre es abierto o cerrado respectivamente, sin embargo, no es cierto en general si $B$ es compacto o acotado.
+\end{itemize}
+ 
+ 
+\begin{theo}
+Sean $(E, d_1), (F, d_2), (G, d_3)$ espacios métricos y supongamos $A \subset E, B \subset F$ tal que $f: A \to B, g: B \to G$ continuas. Entonces, $$g \circ f : A \to G \mbox{ es continua }$$
+\end{theo}
+
+\begin{demo}
+Sea $\mathcal{U} \subset G$ abierto. La composición $$(g \circ f)^{-1} (\mathcal{U}) = f^{-1}(g^{-1} (\mathcal{U}))$$
+Como $g$ es continua, entonces $g^{-1}(\mathcal{U})$ es abierto de $B$, y como $f$ es continua, $f^{-1}(g^{-1} (\mathcal{U}))$ es abierto de $A$
+\end{demo}
+
+\begin{prop}
+Sean $(E,d)$ espacio métrico y $(F, || \cdot ||)$ espacio normado, y sean $A \subset E, x_0 \in A'$.
+\begin{itemize}
+\item Si $f,g : A \to F$, si $\exists \lim_{x \to x_0} f(x) = L_1$ y $\exists \lim_{x \to x_0} g(x) = L_2$, entonces $$\exists \lim_{x \to x_0} (f(x) + g(x)) = L_1 + L_2$$
+
+\item Si $f: A \to \mathbb{R}, g: A \to F$, si $\exists \lim_{x \to x_0} f(x) = L_1 \in \mathbb{R}$ y $\exists \lim_{x \to x_0} g(x) = L_2 \in F$, entonces $$\exists \lim_{x \to x_0} (f(x) \cdot g(x)) = L_1 \cdot L_2$$
+
+\item Si $f: A \to \mathbb{R}, g: A \to F$, si $\exists \lim_{x \to x_0} f(x) = L_1 \neq 0$ y $\exists \lim_{x \to x_0} g(x) = L_2 \in F$, entonces $$\exists \lim_{x \to x_0} \frac{g(x)}{f(x)} = \frac{L_2}{L_1}$$
+\end{itemize}
+\end{prop}
+
+\begin{demo}
+\begin{itemize}
+\item $(i), (ii)$ son fáciles
+\item $(iii)$. Sin pérdida de generalidad, supongamos $L_1 > 0$. Sea $\varepsilon = \frac{L_1}{3} > 0$. Entonces $$\exists \delta > 0 : f\left((B(x_0, \delta) \setminus \{x_0\}) \cap A\right) \subset (L_1 - \frac{L_1}{\varepsilon}, L_1 + \frac{L_1}{\varepsilon})$$
+Entonces, $f(x) > 0 : \forall x \in B(x_0, \delta)$
+
+Veamos que $\lim_{x \to x_0} \frac{1}{f(x)} = \frac{1}{L_1}$, es decir, $\left| \frac{1}{f(x)}  - \frac{1}{L_1} \right| < \varepsilon: d(x, x_0) < \delta, x \neq x_0, x \in A$
+
+Vemos que $f(x) > \frac{2 \cdot L_1}{3}$, entonces, $\frac{1}{|L_1 \cdot f(x)|} < \frac{3}{2 \cdot L_1^2}$
+
+$$\left| \frac{1}{f(x)}  - \frac{1}{L_1} \right| = \left| \frac{L_1 - f(x)}{L_1 \cdot f(x)} \right| \leq \frac{3 \varepsilon}{2 L_1^2} : \forall \varepsilon >0, d(x,x_0) < \delta', x \neq x_0, x \in A$$
+\end{itemize}
+\end{demo}
+
+\begin{coro}
+Sean $(E,d)$ espacio métrico y $(F, || \cdot ||)$ espacio normado, y sean $A \subset F, x_0 \in A \cap A'$.
+\begin{itemize}
+\item Si $f, g : A \to F$ son continuas en $x_0$, entonces $f + g: A \to F$ es continua en $x_0$
+\item Si $f: A \to \mathbb{R}, g : A \to F$ son continuas en $x_0$, entonces $f \cdot g: A \to F$ es continua en $x_0$
+\item  Si $f: A \to \mathbb{R}, g : A \to F$ son continuas en $x_0$ y $f(x) \neq 0 : \forall x \in A$, entonces $\frac{g}{f} A \to F$ es continua en $x_0$
+\end{itemize}
+\end{coro}
+
+\begin{prop}
+Sea $(E,d)$ espacio métrico, $A \subset E$,  $f : A \to \mathbb{R}^n$ tal que $f = (f_1, \ldots , f_n), f_j : A \to \mathbb{R}$ y sea $x_0 \in A'$. Entonces, $$\lim_{x \to x_0} f(x) = L : L = (L_1, \ldots, L_n)\Leftrightarrow \forall j \in \{ 1, \ldots, n\} : \lim_{x \to x_0} f_j (x)= L_j $$
+\end{prop}
+
+\begin{theo}[Regla del Bocadillo]
+Si $f,g,h : A \subset E \to \mathbb{R}$, $x_0 \in A'$, satisfacen que $\exists \delta > 0 : g(x) \leq f(x) \leq h(x) : \forall x \in \left( B(x_0, \delta) \setminus \{x_0\} \right) \cap A$ y $\exists \lim_{x \to x_0} g(x) = \lim_{x \to x_0} h(x) = L$, entonces 
+$$\exists \lim_{x \to x_0} f(x) = L$$
+\end{theo}
+
+\begin{theo}[Límites reiterados]
+Sea $f: \mathbb{R}^2 \to \mathbb{R}, (a,b) \in \mathbb{R}^2$ satisfaciendo:
+\begin{itemize}
+\item $\exists \lim_{(x,y) \to (a,b)} f(x,y) = L$
+\item $\forall y \in \mathbb{R}, \exists \lim_{x \to a} f(x,y) = L_1 (y)$
+\item $\forall x \in \mathbb{R}, \exists \lim_{y \to b} f(x,y)$
+\end{itemize}
+Entonces, existen los límites reiterados y son iguales:
+$$ \lim_{y \to b} \lim_{x \to a} f(x,y) =   \lim_{x \to a} \lim_{y \to b} f(x,y) = L$$
+\end{theo}
+
+\begin{demo}
+Por hipótesis, $\forall \varepsilon > 0, \exists \delta > 0 : 0 < || (x,y) - (a,b) || < \delta \Rightarrow |f(x,y) - L | < \frac{\varepsilon}{2}$
+
+También sabemos que $\forall y \in \mathbb{R}, \exists \delta_1 = \delta_1 (y) > 0 : 0 < |x-a| < \delta_1 (y) \Rightarrow |f(x,y) - L_1 (y)| < \frac{\varepsilon}{2}$. Veamos que $L_1 (y) \xrightarrow[y\rightarrow b]{} L$
+
+Suponemos que $|y-b| < \delta$, y sea $x$ tal que $|x - a| < \min\{d_1 (y), \delta\}$. 
+$$|L_1 (y) - L | \leq |L_1 (y) - f(x,y)| + |f(x,y) - L| < \frac{\varepsilon}{2}  + \frac{\varepsilon}{2}$$
+El primer sumando es menor que $\frac{\varepsilon}{2}$ por hipótesis, y para el segundo sumando, si tomamos la métrica $||\cdot||_\infty$, observamos que $||(x,y) - (a,b)||_\infty < \delta$
+\end{demo}
+
+\underline{Ejemplos}
+\begin{itemize}
+\item Sea $f(x,y) = \begin{cases} \frac{x^2 - y^2}{x^2 + y^2} & (x,y) \neq (0,0) \\ 0 & (x,y) = (0,0)\end{cases}$
+
+Si $y \neq 0, \lim_{x \to 0} f(x,y) = -1$
+
+Si $x \neq 0, \lim_{y \to 0} f(x,y) = 1$
+
+Como los límites reiterados existen pero no coinciden, $\nexists \lim_{(x,y) \to (0,0)} f(x,y)$
+
+\item Sea $f(x,y) = \begin{cases} \frac{|x| + |y|}{\sqrt{x^2 + y^2}}  & (x,y) \neq (0,0) \\ 0 & (x,y) = (0,0)\end{cases}$
+
+Si $y \neq 0, \lim_{x \to 0} f(x,y) = 1$
+
+Si $x \neq 0, \lim_{y \to 0} f(x,y) = 1$
+
+$$f(x,x) = \frac{2 \cdot |x|}{\sqrt{2 \cdot x^2}} = \frac{2}{\sqrt{2}} = \sqrt{2}$$
+
+Sea $y = \lambda \cdot x, \lambda \in \mathbb{R}$
+
+$$f(x, \lambda \cdot x) = \frac{|x|(\lambda + 1)}{\sqrt{x^2 (1 + \lambda^2)}} = \frac{\lambda + 1}{\sqrt{\lambda^2 + 1 }}$$
+
+Entonces, $\exists \lim_{(x,y) \to (0,0)} f(x,y)$
+
+\end{itemize}
+
 \begin{defi}[]
 
 \end{defi}
-
 
 
 \end{document}
