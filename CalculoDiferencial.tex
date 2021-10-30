@@ -1142,7 +1142,101 @@ $$f(x,x) = \frac{2 \cdot |x|}{\sqrt{2 \cdot x^2}} = \frac{2}{\sqrt{2}} = \sqrt{2
 Más generalmente, para una recta cualquiera que pase por el origen, es decir, $y = \lambda \cdot x, \lambda \in \mathbb{R}$ se tiene:
 $$f(x, \lambda \cdot x) = \frac{|x|(\lambda + 1)}{\sqrt{x^2 (1 + \lambda^2)}} = \frac{\lambda + 1}{\sqrt{\lambda^2 + 1 }}$$
 Como $\forall\{x_n\}\subset \mathcal{R}: x_n \rightarrow (0,0)$ se tiene que $f(x_n)=\frac{\lambda + 1}{\sqrt{\lambda^2 + 1}} \nrightarrow 0$, entonces el límite no existe. Lo cual pone de manifiesto que la existencia de los límites reiterados no implica la existencia del límite.
+
+\item Sea $f(x,y) = \begin{cases} \frac{x}{y} \sen (x^2 + y^2) & y \neq 0 \\ 0 & y = 0 \end{cases}$
+
+Fijando la $y$,$y \neq 0$, calculamos el límite $$\lim_{x \to 0} \frac{x}{y} \sen (x^2 + y^2) = 0$$
+Además, observamos que si fijamos la $x \in \mathbb{R}$, $$\nexists \lim_{y \to 0} \frac{x}{y} \sen (x^2 + y^2) $$
+
+\item Sea $f(x,y) = \begin{cases} y \sen \frac{1}{x} & x \neq 0 \\ 0 & x = 0 \end{cases}$
+
+Fijando la $x$,$x \neq 0$, calculamos el límite $$\lim_{y \to 0}  y \sen \frac{1}{x} = 0$$
+Además, observamos que si fijamos la $y \in \mathbb{R}$, $$\nexists \lim_{x \to 0}  y \sen \frac{1}{x} $$
+Pero el límite $$\lim_{(x,y) \to (0,0)} f(x,y) = 0$$
+
 \end{itemize}
+
+
+\begin{theo}
+Sea $f: \mathbb{R}^2 \to \mathbb{R}$. Se cumple que 
+$$\lim_{(x,y) \to (0,0)} f(x,y) = L \Leftrightarrow \begin{cases}x=r\cos\theta \\ y=r \sen\theta  \end{cases} \lim_{r \to 0^+} f(r \cos\theta,r \sen\theta) = L \mbox{ uniformemente en } \theta \in [0, 2\pi)$$
+\end{theo}
+
+\begin{demo}
+\begin{itemize}
+\item $\Rightarrow$. Inmediato por la definición de límite
+\item $\Leftarrow$. Sabemos que $\forall \varepsilon, \exists \delta > 0 : |f(r \cos\theta,r \sen\theta) - L| < \varepsilon : \forall 0 < r < \delta, \forall \theta \in [0,2\pi)$, y queremos ver que $\forall \varepsilon > 0, \exists \delta > 0 : ||(x,y)|| < \delta \Rightarrow |f(x,y) - L| < \varepsilon$
+
+A través de un cambio de variable se demuestra [COMPLETAR]
+
+\end{itemize}
+\end{demo}
+
+\underline{Ejemplos}
+\begin{itemize}
+\item Sea $f(x,y)= \begin{cases} \frac{xy^3}{x^2  + y^2} & (x,y) = (0,0) \\ 0 & (x,y) = (0,0) \end{cases}$
+$$\lim_{(x,y) \to (0,0)} f(x,y) = \lim_{r \to 0^+} \frac{r^4 \cos\theta \sen^3 \theta}{r^2} = \lim_{r \to 0^+} r^2 \cos\theta \sen^3 \theta = 0$$
+Es decir, el límite es uniforme en $\theta$
+\item Sea $f(x,y) = \begin{cases} \frac{x}{y} \sen (x^2 + y^2) & y \neq 0 \\ 0 & y = 0 \end{cases}$
+$$\lim_{(x,y) \to (0,0)} f(x,y) = \lim_{r \to 0^+} \frac{r \cos\theta}{r \sen\theta} \sen r^2 \nrightarrow 0 \mbox{ uniformemente en } \theta \in [0,2\pi)$$
+COMPLETAR ALGO SUPREMO
+\end{itemize}
+
+\begin{prop}
+Sea $f: \mathcal{U} \subset \mathbb{R}^2 \to \mathbb{R}$, tal que $\mathcal{U}$ es abierto, $(a,b) \in \mathcal{U}$, y sea $\alpha: [-1,1] \to \mathcal{U}$ continua y cumpliendo que $\alpha(0) = (a,b)$. Entonces, si $\lim_{(x,y) \to (a,b)} f(x,y) = L$, entonces $$\lim_{t \to 0} f(\alpha(t)) = L$$
+\end{prop}
+
+\begin{demo}
+Trivial a partir de la definición.
+\end{demo}
+
+\underline{Ejemplos}
+\begin{itemize}
+\item Sea $f(x,y) = \begin{cases} \frac{xy^2}{x^2 + y^2} & (x,y) = (0,0) \\ 0 & (x,y) = (0,0) \end{cases}$
+
+Buscamos rectas de la forma $y = \lambda x, \lambda \in \mathbb{R}$
+$$f(x,\lambda x) = \frac{\lambda^2x^3}{(\lambda^2 + 1) \lambda^2} = \frac{\lambda^2}{(\lambda^2 + 1)} x \xrightarrow[x \to 0]{} 0$$
+Consideremos la curva $\alpha(t)= (t^2, t)$
+$$f(\alpha(t)) = \frac{t^2 \cdot t}{t^4 + t^2} = \frac{t^2}{t^2 + 1} \xrightarrow[t \to 0]{} 0$$
+
+$$f(r \cos \theta, r \sen \theta) = \frac{r^3 \cos\theta \sen^2 \theta}{r^2} = r \cos \theta \sen^2 \theta \rightarrow 0 \mbox{ uniformemente en } \theta $$
+
+\item 31 d) COMPLETAR
+
+\end{itemize}
+
+\begin{theo}
+Sea $(E,d)$ espacio métrico, sea $f: A \to \mathbb{R}$ continua y sea $B \subset A$ compacto. Entonces, $\exists x_1, x_2 \in B$ tal que $$f(x_1) = \max_{x \in B} f(x) \ \ \ f(x_2) = \min_{x \in B} f(x)$$
+\end{theo}
+
+\begin{demo}
+Sabemos que $f(B) \subset \mathbb{R}$ es compacto, y por el Teorema de Heine - Borel, $f(B)$ es cerrado y acotado. Por ser acotado, sabemos que $$\begin{cases} \exists M = \sup_{x \in B} f(x) \\ \exists m = \inf_{x \in B} f(x) \end{cases}$$, y por ser cerrado, $M = f(x_1), m = f(x_2) : x_1, x_2 \in B$
+\end{demo}
+
+\begin{defi}[Continuidad Uniforme]
+Sean $(E,d), (F, d')$ espacios métricos. Se dice que $f: A \to F, A \subset E$ es \textbf{uniformemente continua} en $A$ si $$\forall \varepsilon > 0, \exists \delta > 0 : d'(f(x), f(y)) < \varepsilon \mbox{ si } d(x,y) < \delta, \forall x,y \in A$$
+\end{defi}
+
+\underline{Observación}
+\begin{itemize}
+\item Si $f$ es uniformemente continua en $A$, entonces $f$ es continua en $A$
+\end{itemize}
+
+\begin{theo}
+Sea $f: A \to F, A \subset E$ y supongamos que $f$ es continua y $A$ es compacto. Entonces, $f$ es uniformemente continua.
+\end{theo}
+
+\begin{demo}
+Sea $\varepsilon > 0$ y sea $x \in A$. Como $f$ es continua en $x$, $\exists \delta_x > 0 : f(B(x, \delta_x)) \subset B(f(x), \frac{\varepsilon}{2})$
+
+Como $A \subset \bigcup_{x \in A} B(x, \frac{\delta_x}{2})$, entonces $A \subset B(x_1, \frac{d_{x_1}}{2}) \cup \ldots \cup B(x_m,  \frac{d_{x_m}}{2})$
+
+Sea $\delta = \min\{ \frac{d_{x_1}}{2}, \ldots,  \frac{d_{x_m}}{2}\} > 0$, y sean $x,y \in A : d(x,y) < \delta$
+
+Como $x\in A$, $\exists j : 1 \leq j \leq m : B(x_j,  \frac{d_{x_j}}{2}))$. Entonces, $d'(f(x), f(x_j)) < \frac{\varepsilon}{2}$. Por la desigualdad triangular, $$d(y,x_j) \leq d(y,x) + d(x,x_j) \leq < \frac{\delta _{x_j}}{2} + \frac{\delta _{x_j}}{2} < \delta _{x_j}$$
+
+$$d'(f(x), f(y)) \leq d'(f(x), f(x_j)) + d'(f(x_j), f(y)) < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon$$
+\end{demo}
 
 \begin{defi}[]
 
