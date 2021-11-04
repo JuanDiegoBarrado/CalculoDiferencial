@@ -362,10 +362,15 @@ $$\exists \varepsilon > 0 : B(x, \varepsilon) \subset A$$
 Denotamos como $\mathring{A} = int(A) = \{x \in A : x \mbox{ es punto interior}\}$
 \end{defi}
 
+\begin{prop}[Caracterización de abierto]
+Dado un espacio métrico $(E,d)$, decimos que $A\subset E$ es abierto si y sólo si:
+$$A = \mathring{A}$$
+O lo que es lo mismo, todos los puntos son interiores.
+\end{prop}
+
 \underline{Observaciones}:
 \begin{itemize}
 \item $\mathring{A} \subset A$
-\item $A$ es abierto $\Leftrightarrow A = \mathring{A}$
 \item $x \in \mathring{A} \Leftrightarrow \exists U$ abierto $: x \in U \subset A$
 \item $A=\{0\}\Rightarrow \mathring{A} = \emptyset$
 \item $A = [0,1]\Rightarrow\mathring{A} = (0,1)$
@@ -411,27 +416,31 @@ Sea un espacio métrico (E,d) se cumple que:
 Se demuestra por las Leyes de De Morgan
 \end{demo}
 
-\newpage
-
 \begin{defi}[Punto de acumulación]
 Sea $(E,d)$ un espacio métrico, y sea $A \subset E$, se dice que $x \in E$ es un \textbf{punto de acumulación} de A si:
 $$\forall \varepsilon > 0: \left(B(x,\varepsilon)\setminus\{x\}\right)\cap A \neq \emptyset$$
  Al \textbf{conjunto de puntos de acumulación} se le conoce como $A'$.
 \end{defi}
-Es decir, para cualquier ``entorno'' alrededor de ese punto sin contar con el punto, la intersección con el conjunto original es no vacía.
 
 \underline{Observaciones}:
 \begin{itemize}
 \item Sea $A=(0,1)$ en $\mathbb{R}$, entonces $A'=[0,1]$, de lo que se desprende que no tiene por qué darse $A'\subset A$
 \item $A = \{1\}$ en $\mathbb{R}$, entonces $A' = \emptyset$, de lo que se desprende que no tiene por qué darse $A\subset A'$
 \item $x\in A' \Leftrightarrow \forall U \mbox{ abierto} \subset E, \ x\in U \Rightarrow \left( U\setminus\{x\}\right) \cap A \neq \emptyset$
-\item Tomamos $(E,d)$ siendo $d$ la métrica discreta y un conjunto $A\subset E$, entonces:
+\item La acumulación en un espacio métrico con la métrica discreta es siempre el vacío. En efecto, tomamos $(E,d)$ siendo $d$ la métrica discreta y un conjunto $A\subset E$, entonces:
 $$x\in A' \Leftrightarrow \forall \varepsilon > 0: \left( B(x,\varepsilon) \setminus\{x\}\right) \cap A \neq \emptyset$$
 Con lo cual, si tomamos $0 < \varepsilon \leq 1$, entonces
 $$B(x,\varepsilon)\setminus\{x\} =\emptyset \Rightarrow A' = \emptyset$$
 \end{itemize}
 
-\begin{prop}
+\begin{prop}[Caracterización de puntos de acumulación]
+Podemos caracterizar los puntos de acumulación como:
+$$x\in A' \Leftrightarrow \forall \varepsilon > 0: \exists x_{\varepsilon} \in A\setminus\{x\}: d(x_\varepsilon, x)< \varepsilon$$
+En particular, en $\mathbb{R}^{n}$:
+$$x\in A' \Leftrightarrow \exists \{x_k\}_{k\in \mathbb N}\subset A\setminus\{x\}: ||x-x_k||_{2}\xrightarrow{k\rightarrow\infty} 0$$
+\end{prop}
+
+\begin{prop}[Caracterización de los cerrados]
 Sea $(E,d)$ un espacio métrico y $A\subset E$, entonces ocurre que:
 $$A'\subset A \Leftrightarrow A \mbox{ cerrado}$$
 \end{prop}
@@ -454,17 +463,14 @@ $$\exists \varepsilon > 0 : \left(B(x,\varepsilon)\setminus\{x\}\right)\cap A = 
 
 \begin{defi}[Adherencia]
 Sea $(E,d)$ un espacio métrico y $A \subset E$, definimos \textbf{la adherencia} de $A$ como:
-$$\bar{A} = \bigcap_{A\subset F } F$$
-Donde $F$ debe ser cerrado
+$$\bar{A} = \bigcap_{A\subset F } F \mbox{ donde F es cerrado}$$
+Es decir, es el menor cerrado en el cual $A$ está contenido.
 \end{defi}
-
-\newpage
 
 \underline{\textbf{Observaciones}}:
 \begin{itemize}
 \item Esto siempre está bien definido porque $F=E\supset A$ y $E$ es cerrado.
 \item $\bar{A}\supset A$
-\item $\bar{A}$ es el menor cerrado que contiene a $A$
 \item $A\subset B\Rightarrow \bar{A}\subset \bar{B}$
 \end{itemize}
 
@@ -474,7 +480,7 @@ Donde $F$ debe ser cerrado
 \item $A = \mathbb{Q}$ en $\mathbb{R}$, entonces $\bar{A} = \mathbb{R}$
 \end{itemize}
 
-\begin{prop}
+\begin{prop}[Caracterización de la adherencia]
 Sea $(E,d)$ un espacio métrico y $A\subset E$, entonces:
 $$\bar{A} = A \cup A'$$
 \end{prop}
@@ -504,17 +510,10 @@ $$\Rightarrow z \notin A' \Rightarrow z \in E\setminus A'$$
 \end{itemize}
 \end{demo}
 
-\begin{coro}[Caracterización de adherencia]
+\begin{coro}[Caracterización de los puntos de adherencia]
 Si un punto pertenece a la adherencia, entonces cualquier bola centrada en ese punto interseca con el conjunto:
 $$x\in \bar{A}\Leftrightarrow \forall \varepsilon >0: B(x,\varepsilon)\cap A \neq \emptyset$$
 \end{coro}
-
-\begin{prop}[Caracterización de puntos de acumulación]
-Podemos caracterizar los puntos de acumulación como:
-$$x\in A' \Leftrightarrow \forall \varepsilon > 0: \exists x_{\varepsilon} \in A\setminus\{x\}: d(x_\varepsilon, x)< \varepsilon$$
-En particular, en $\mathbb{R}^{n}$:
-$$x\in A' \Leftrightarrow \exists \{x_k\}_{k\in \mathbb N}\subset A\setminus\{x\}: ||x-x_k||_{2}\xrightarrow{k\rightarrow\infty} 0$$
-\end{prop}
 
 \begin{defi}[Densidad]
 Sea $(E,d)$ un espacio métrico y $A\subset B \subset E$, se dice que:
@@ -530,7 +529,7 @@ En particular, $A$ es denso en $E$ si $\bar{A} = E$.
 
 \begin{defi}[Frontera]
 Sea $(E,d)$ un espacio métrico y $A\subset E$, se define la frontera de $A$ como:
-$$\partial(A) = \bar{A}\cap \overline{E\setminus{A}}$$
+$$\partial(A) = \bar{A}\cap \overline{E\setminus{A}} = \bar{A}\setminus{\mathring{A}}$$
 \end{defi}
 
 \underline{Observaciones}:
@@ -543,6 +542,11 @@ $$\partial(A) = \bar{A}\cap \overline{E\setminus{A}}$$
 \item Ejercicio: probar que $A'$ es cerrado.
 \item Ejercicio: estudiar cómo son los abiertos y los cerrados en un espacio con la métrica discreta.
 \end{itemize}
+
+\begin{prop}[Caracterización de la frontera]
+Si un punto pertenece a la frontera, entonces cualquier bola centrada en él interseca con el conjunto y con el complementario del conjunto:
+$$p\in \partial(A) \Leftrightarrow \forall \varepsilon: B(p,\varepsilon)\cap A \neq \emptyset \mbox{ y } B(p,\varepsilon)\cap A^c \neq \emptyset$$
+\end{prop}
 
 \underline{Aclaraciones de Clase}:
 \begin{itemize}
@@ -572,7 +576,7 @@ Y entonces, escribimos $\lim_{n \to \infty} x_n = x$.
 \end{defi}
 
 Esta definición que se ha dado de convergencia\footnote{Si $\{x_n\}_{n \in \mathbb{N}}$ converge, el límite es único.} es equivalente a las siguientes caracterizaciones:
-$$\forall \varepsilon > 0, \exists n_0 \in \mathbb{N} : x_n \in B(x, \varepsilon) : \forall n \geq n_0$$
+$$\forall \varepsilon > 0, \exists n_0 \in \mathbb{N} :  \forall n \geq n_0: x_n \in B(x, \varepsilon )$$
 $$\forall \varepsilon > 0, \exists n_0 \in \mathbb{N} : \forall n \geq n_0 : d(x,x_n) < \varepsilon$$
 
 \begin{prop}
@@ -590,10 +594,10 @@ Sea $n_0 = \max\{n_1, n_2\}$ y $n \geq n_0$
 $$||\lambda_n x_n - \lambda x || = ||\lambda_n x_n - \lambda_n x + \lambda_n x - \lambda x || \leq |\lambda_n| \cdot ||x_n - x|| + |\lambda_n - \lambda | \cdot ||x|| \leq C \cdot \frac{\varepsilon}{2C} + \frac{\varepsilon}{2||x||}\cdot ||x|| = \varepsilon$$
 \end{demo}
 
-\underline{Observación}
-
-Si $||\cdot||_1, ||\cdot||_2$ son normas equivalentes en $E$, entonces ambas normas tienen las mismas sucesiones convergentes y al mismo límite.
+\begin{prop}
+Si $||\cdot||_1, ||\cdot||_2$ son normas equivalentes en $E$, entonces ambas normas tienen las mismas sucesiones convergentes y el límite coincide en ambas.
 $$0 \leftarrow C||x_n - x||_1 \geq ||x_n - x||_2 \to 0$$
+\end{prop}
 
 \begin{prop}[Convergencia en $\mathbb{R}^n$]
 En $(\mathbb{R}^n, || \ ||_2)$ espacio euclídeo usual, sea $\{x_m\}_{m \in  \mathbb{N}}: x_m = (x_m^1, \cdots, x_m^n)$ la convergencia se caracteriza como:
@@ -948,8 +952,8 @@ $$\left\lbrace x_{n_k} \right\rbrace_{k \geq k_m} \mbox{ converge a } x$$
 Además, $\{x_{n_k}\} \subset A_m : k \geq k_m$, y como $A_m$  es compacto, $x \in A_m : \forall m \in \mathbb{N}$. Entonces, $$x \in \bigcap_{m \in \mathbb{N}} A_m \neq \emptyset$$
 \end{demo}
 
-\section*{LÍMITES Y CONTINUIDAD}
-
+\chapter*{CONTINUIDAD Y \\ DIFERENCIABILIDAD}
+\section*{DEFINICIÓN DE CONTINUIDAD}
 \begin{defi}[Límite]
 Sean $(E,d),(F,d')$ espacios métricos, $A\subset E$ de forma que $f:A \to F$ y $x_0 \in A'$ un punto de acumulación, se dice que $L \in F$ es el \textbf{límite\footnote{En caso de existir, este debe ser único} de $f$ en $x_0$} si:
 $$\forall \varepsilon > 0, \exists \delta > 0 : x \in A \cap (B(x_0, \delta) \setminus \{x_0\}) : d'(f(x), L) < \varepsilon$$
@@ -968,7 +972,7 @@ $$\begin{cases} nada & \mbox{ si }x_0 \notin A' \\ \lim_{x \to x_0} f(x)=f(x_0) 
 Diremos que $f$ es continua en $A$ si es continua en todos los puntos de $A$.   
 \end{defi}
 
-\begin{theo}
+\begin{theo}[Caracterización de la continuidad]
 Sean $(E,d),(F,d')$ espacios métricos, $A \subset E, f:A \to F$. Son equivalentes:
 \begin{enumerate}
 \item $f$ es continua en $A$
@@ -1143,32 +1147,29 @@ Más generalmente, para una recta cualquiera que pase por el origen, es decir, $
 $$f(x, \lambda \cdot x) = \frac{|x|(\lambda + 1)}{\sqrt{x^2 (1 + \lambda^2)}} = \frac{\lambda + 1}{\sqrt{\lambda^2 + 1 }}$$
 Como $\forall\{x_n\}\subset \mathcal{R}: x_n \rightarrow (0,0)$ se tiene que $f(x_n)=\frac{\lambda + 1}{\sqrt{\lambda^2 + 1}} \nrightarrow 0$, entonces el límite no existe. Lo cual pone de manifiesto que la existencia de los límites reiterados no implica la existencia del límite.
 
-\item Sea $f(x,y) = \begin{cases} \frac{x}{y} \sen (x^2 + y^2) & y \neq 0 \\ 0 & y = 0 \end{cases}$
-
-Fijando la $y$,$y \neq 0$, calculamos el límite $$\lim_{x \to 0} \frac{x}{y} \sen (x^2 + y^2) = 0$$
-Además, observamos que si fijamos la $x \in \mathbb{R}$, $$\nexists \lim_{y \to 0} \frac{x}{y} \sen (x^2 + y^2) $$
-
 \item Sea $f(x,y) = \begin{cases} y \sen \frac{1}{x} & x \neq 0 \\ 0 & x = 0 \end{cases}$
 
-Fijando la $x$,$x \neq 0$, calculamos el límite $$\lim_{y \to 0}  y \sen \frac{1}{x} = 0$$
-Además, observamos que si fijamos la $y \in \mathbb{R}$, $$\nexists \lim_{x \to 0}  y \sen \frac{1}{x} $$
-Pero el límite $$\lim_{(x,y) \to (0,0)} f(x,y) = 0$$
-
+Fijando la $x \neq 0$, calculamos el límite:
+$$\lim_{y \to 0}  y \sen \frac{1}{x} = 0$$
+Además, observamos que si fijamos la $y \in \mathbb{R}$, entonces:
+$$\nexists \lim_{x \to 0}  y \sen \frac{1}{x} $$
+Pero, por la regla del Bocadillo, el  límite $\exists \lim_{(x,y) \to (0,0)} f(x,y) = 0$, luego se pone de manifiesto la necesidad de que se den las 3 condiciones simultáneamente.
 \end{itemize}
 
-
-\begin{theo}
-Sea $f: \mathbb{R}^2 \to \mathbb{R}$. Se cumple que 
-$$\lim_{(x,y) \to (0,0)} f(x,y) = L \Leftrightarrow \begin{cases}x=r\cos\theta \\ y=r \sen\theta  \end{cases} \lim_{r \to 0^+} f(r \cos\theta,r \sen\theta) = L \mbox{ uniformemente en } \theta \in [0, 2\pi)$$
+\begin{theo}[Convergencia por coordenadas polares]
+Sea $f: \mathbb{R}^2 \to \mathbb{R}$ y tomando $x=r\cos\theta$ y $y=r \sen\theta$, tenemos que:
+$$\lim_{(x,y) \to (0,0)} f(x,y) = L \Leftrightarrow \lim_{r \to 0^+} f(r \cos\theta,r \sen\theta) = L \mbox{ uniformemente en } \theta \in [0, 2\pi)$$
+Es decir, que la convergencia de la función debe ser independiente de $\theta$.
 \end{theo}
 
 \begin{demo}
 \begin{itemize}
-\item $\Rightarrow$. Inmediato por la definición de límite
-\item $\Leftarrow$. Sabemos que $\forall \varepsilon, \exists \delta > 0 : |f(r \cos\theta,r \sen\theta) - L| < \varepsilon : \forall 0 < r < \delta, \forall \theta \in [0,2\pi)$, y queremos ver que $\forall \varepsilon > 0, \exists \delta > 0 : ||(x,y)|| < \delta \Rightarrow |f(x,y) - L| < \varepsilon$
+\item $\Rightarrow$: inmediato por la definición de límite
+\item $\Leftarrow$:
 
-A través de un cambio de variable se demuestra [COMPLETAR]
-
+Sabemos por la definición que se ha dado de convergencia uniforme que:
+$$\forall \varepsilon > 0 ,\ \exists \delta > 0 :  \forall 0 < r < \delta: |f(r \cos\theta,r \sen\theta) - L| < \varepsilon : \forall \theta \in [0,2\pi)$$
+Y queremos ver que $\forall \varepsilon > 0, \exists \delta > 0 : ||(x,y)|| < \delta \Rightarrow |f(x,y) - L| < \varepsilon$. En consecuencia, basta hacer un cambio de variable [COMPLETAR].
 \end{itemize}
 \end{demo}
 
@@ -1176,16 +1177,17 @@ A través de un cambio de variable se demuestra [COMPLETAR]
 \begin{itemize}
 \item Sea $f(x,y)= \begin{cases} \frac{xy^3}{x^2  + y^2} & (x,y) = (0,0) \\ 0 & (x,y) = (0,0) \end{cases}$
 $$\lim_{(x,y) \to (0,0)} f(x,y) = \lim_{r \to 0^+} \frac{r^4 \cos\theta \sen^3 \theta}{r^2} = \lim_{r \to 0^+} r^2 \cos\theta \sen^3 \theta = 0$$
-Es decir, el límite es uniforme en $\theta$
+Porque la convergencia a 0, en este caso, es independiente del valor que tome $\theta$.
 \item Sea $f(x,y) = \begin{cases} \frac{x}{y} \sen (x^2 + y^2) & y \neq 0 \\ 0 & y = 0 \end{cases}$
 $$\lim_{(x,y) \to (0,0)} f(x,y) = \lim_{r \to 0^+} \frac{r \cos\theta}{r \sen\theta} \sen r^2 \nrightarrow 0 \mbox{ uniformemente en } \theta \in [0,2\pi)$$
-COMPLETAR ALGO SUPREMO
+Porque como $\sup \{\cot \theta\} = \infty$, entonces podemos tomar valores en $\theta$ que no conviertan a 0 el denominador.
 \end{itemize}
 
-\begin{prop}
-Sea $f: \mathcal{U} \subset \mathbb{R}^2 \to \mathbb{R}$, tal que $\mathcal{U}$ es abierto, $(a,b) \in \mathcal{U}$, y sea $\alpha: [-1,1] \to \mathcal{U}$ continua y cumpliendo que $\alpha(0) = (a,b)$. Entonces, si $\lim_{(x,y) \to (a,b)} f(x,y) = L$, entonces $$\lim_{t \to 0} f(\alpha(t)) = L$$
+\begin{prop}[Convergencia por curvas]
+Sea $f: \mathbb{R}^2 \subset \to \mathbb{R}$ y un abierto $\mathcal{U}$ de forma que $(a,b) \in \mathcal{U}$, entonces podemos definir\footnote{Donde $c$ puede ser el valor que más nos interese (se suele coger 1 o un valor cercano al punto)}
+$$\alpha: [-c,c] \to \mathcal{U} \mbox{ continua} : \alpha(0) = (a,b)$$ Entonces podemos decir que:
+$$\lim_{(x,y) \to (a,b)} f(x,y) = L\Rightarrow\lim_{t \to 0} f(\alpha(t)) = L$$
 \end{prop}
-
 \begin{demo}
 Trivial a partir de la definición.
 \end{demo}
@@ -1194,27 +1196,29 @@ Trivial a partir de la definición.
 \begin{itemize}
 \item Sea $f(x,y) = \begin{cases} \frac{xy^2}{x^2 + y^2} & (x,y) = (0,0) \\ 0 & (x,y) = (0,0) \end{cases}$
 
-Buscamos rectas de la forma $y = \lambda x, \lambda \in \mathbb{R}$
+Veamos que ocurre con las rectas de la forma $y = \lambda x, \lambda \in \mathbb{R}$:
 $$f(x,\lambda x) = \frac{\lambda^2x^3}{(\lambda^2 + 1) \lambda^2} = \frac{\lambda^2}{(\lambda^2 + 1)} x \xrightarrow[x \to 0]{} 0$$
-Consideremos la curva $\alpha(t)= (t^2, t)$
+Lo que nos indica que es posible que dicho límite exista, luego consideremos la curva $\alpha(t)= (t^2, t)$ y tenemos entonces que:
 $$f(\alpha(t)) = \frac{t^2 \cdot t}{t^4 + t^2} = \frac{t^2}{t^2 + 1} \xrightarrow[t \to 0]{} 0$$
-
+Por tanto, teniendo las suficientes garantías de que parece que converge, demostramos:
 $$f(r \cos \theta, r \sen \theta) = \frac{r^3 \cos\theta \sen^2 \theta}{r^2} = r \cos \theta \sen^2 \theta \rightarrow 0 \mbox{ uniformemente en } \theta $$
 
 \item 31 d) COMPLETAR
-
 \end{itemize}
 
 \begin{theo}
-Sea $(E,d)$ espacio métrico, sea $f: A \to \mathbb{R}$ continua y sea $B \subset A$ compacto. Entonces, $\exists x_1, x_2 \in B$ tal que $$f(x_1) = \max_{x \in B} f(x) \ \ \ f(x_2) = \min_{x \in B} f(x)$$
+Sea $(E,d)$ espacio métrico, sea $f: A \to \mathbb{R}$ continua y un compacto $B \subset A$, entonces:
+$$\exists x_1, x_2 \in B : f(x_1) = \max_{x \in B} f(x) \ \ \ f(x_2) = \min_{x \in B} f(x)$$
+Es decir, que se alcanza el supremo y el ínfimo en las imágenes de los compactos de las funciones continuas.
 \end{theo}
 
 \begin{demo}
-Sabemos que $f(B) \subset \mathbb{R}$ es compacto, y por el Teorema de Heine - Borel, $f(B)$ es cerrado y acotado. Por ser acotado, sabemos que $$\begin{cases} \exists M = \sup_{x \in B} f(x) \\ \exists m = \inf_{x \in B} f(x) \end{cases}$$, y por ser cerrado, $M = f(x_1), m = f(x_2) : x_1, x_2 \in B$
+Sabemos que $f(B) \subset \mathbb{R}$ es compacto y, por el Teorema de Heine - Borel, $f(B)$ es cerrado y acotado. Por ser acotado, sabemos que $\exists M = \sup_{x \in B} f(x)$ y $\exists m = \inf_{x \in B} f(x)$ y por ser cerrado, $M = f(x_1), m = f(x_2) : x_1, x_2 \in B$.
 \end{demo}
 
 \begin{defi}[Continuidad Uniforme]
-Sean $(E,d), (F, d')$ espacios métricos. Se dice que $f: A \to F, A \subset E$ es \textbf{uniformemente continua} en $A$ si $$\forall \varepsilon > 0, \exists \delta > 0 : d'(f(x), f(y)) < \varepsilon \mbox{ si } d(x,y) < \delta, \forall x,y \in A$$
+Sean $(E,d), (F, d')$ espacios métricos. Se dice que $f: A \to F, A \subset E$ es \textbf{uniformemente continua} en $A$ si:
+$$\forall \varepsilon > 0, \ \exists \delta > 0 : d'(f(x), f(y)) < \varepsilon \mbox{ si } d(x,y) < \delta, \forall x,y \in A$$
 \end{defi}
 
 \underline{Observación}
@@ -1223,9 +1227,8 @@ Sean $(E,d), (F, d')$ espacios métricos. Se dice que $f: A \to F, A \subset E$ 
 \end{itemize}
 
 \begin{theo}
-Sea $f: A \to F, A \subset E$ y supongamos que $f$ es continua y $A$ es compacto. Entonces, $f$ es uniformemente continua.
+Sea $f: A \to F$ y supongamos que $f$ es continua y $A$ es compacto, entonces $f$ es uniformemente continua.
 \end{theo}
-
 \begin{demo}
 Sea $\varepsilon > 0$ y sea $x \in A$. Como $f$ es continua en $x$, $\exists \delta_x > 0 : f(B(x, \delta_x)) \subset B(f(x), \frac{\varepsilon}{2})$
 
@@ -1240,7 +1243,6 @@ $$d'(f(x), f(y)) \leq d'(f(x), f(x_j)) + d'(f(x_j), f(y)) < \frac{\varepsilon}{2
 
 \begin{defi}[]
 
-\end{defi}
-
+\end{defi} 
 
 \end{document}
