@@ -1,4 +1,4 @@
-﻿\documentclass[10pt,a4paper,openright]{book}
+\documentclass[10pt,a4paper,openright]{book}
 
 \title{CÁLCULO DIFERENCIAL}
 \author{Juan Diego Barrado Daganzo e Iker Muñoz Martínez\\2º de Carrera} %\\ es salto de linea
@@ -1149,6 +1149,7 @@ Como $\forall\{x_n\}\subset \mathcal{R}: x_n \rightarrow (0,0)$ se tiene que $f(
 
 \item Sea $f(x,y) = \begin{cases} y \sen \frac{1}{x} & x \neq 0 \\ 0 & x = 0 \end{cases}$
 
+<<<<<<< HEAD
 Fijando la $x \neq 0$, calculamos el límite:
 $$\lim_{y \to 0}  y \sen \frac{1}{x} = 0$$
 Además, observamos que si fijamos la $y \in \mathbb{R}$, entonces:
@@ -1160,12 +1161,31 @@ Pero, por la regla del Bocadillo, el  límite $\exists \lim_{(x,y) \to (0,0)} f(
 Sea $f: \mathbb{R}^2 \to \mathbb{R}$ y tomando $x=r\cos\theta$ y $y=r \sen\theta$, tenemos que:
 $$\lim_{(x,y) \to (0,0)} f(x,y) = L \Leftrightarrow \lim_{r \to 0^+} f(r \cos\theta,r \sen\theta) = L \mbox{ uniformemente en } \theta \in [0, 2\pi)$$
 Es decir, que la convergencia de la función debe ser independiente de $\theta$.
+=======
+Fijando la $x$,$x \neq 0$, calculamos el límite $$\lim_{y \to 0}  y \sen \frac{1}{x} = 0$$
+Además, observamos que si fijamos la $y \in \mathbb{R}$, $$\nexists \lim_{x \to 0}  y \sen \frac{1}{x} $$
+Pero el límite, por la regla del bocadillo, $$\lim_{(x,y) \to (0,0)} f(x,y) = 0$$ 
+
+\end{itemize}
+
+
+\begin{theo}[Coordenadas Polares]
+Sea $f: \mathbb{R}^2 \to \mathbb{R}$. Se cumple que 
+$$\lim_{(x,y) \to (0,0)} f(x,y) = L \Leftrightarrow \begin{cases}x=r\cos\theta \\ y=r \sen\theta  \end{cases} \lim_{r \to 0^+} f(r \cos\theta,r \sen\theta) = L \mbox{ uniformemente en } \theta \in [0, 2\pi)$$
+>>>>>>> Iker
 \end{theo}
 
 \begin{demo}
 \begin{itemize}
+<<<<<<< HEAD
 \item $\Rightarrow$: inmediato por la definición de límite
 \item $\Leftarrow$:
+=======
+\item $\Rightarrow$. Inmediato por la definición de límite
+\item $\Leftarrow$. Sabemos que $\forall \varepsilon, \exists \delta > 0 : |f(r \cos\theta,r \sen\theta) - L| < \varepsilon : \forall 0 < r < \delta, \forall \theta \in [0,2\pi)$, y queremos ver que $\forall \varepsilon > 0, \exists \delta > 0 : ||(x,y)|| < \delta \Rightarrow |f(x,y) - L| < \varepsilon$
+
+A través de un cambio de variable, escribiendo $x,y$ en sus coordenadas polares, $\begin{cases}x=r\cos\theta \\ y=r \sen\theta  \end{cases}$, observamos que la norma del vector $(x,y)$, $||(x,y)|| = r < \delta$. Por lo tanto, independientemente del ángulo $\theta$, se tiene que $|f(x,y) - L| < \varepsilon$.
+>>>>>>> Iker
 
 Sabemos por la definición que se ha dado de convergencia uniforme que:
 $$\forall \varepsilon > 0 ,\ \exists \delta > 0 :  \forall 0 < r < \delta: |f(r \cos\theta,r \sen\theta) - L| < \varepsilon : \forall \theta \in [0,2\pi)$$
@@ -1177,10 +1197,17 @@ Y queremos ver que $\forall \varepsilon > 0, \exists \delta > 0 : ||(x,y)|| < \d
 \begin{itemize}
 \item Sea $f(x,y)= \begin{cases} \frac{xy^3}{x^2  + y^2} & (x,y) = (0,0) \\ 0 & (x,y) = (0,0) \end{cases}$
 $$\lim_{(x,y) \to (0,0)} f(x,y) = \lim_{r \to 0^+} \frac{r^4 \cos\theta \sen^3 \theta}{r^2} = \lim_{r \to 0^+} r^2 \cos\theta \sen^3 \theta = 0$$
-Es decir, el límite es uniforme en $\theta$, porque la convergencia a 0, en este caso, es independiente del valor que tome $\theta$.
+<<<<<<< HEAD
+Porque la convergencia a 0, en este caso, es independiente del valor que tome $\theta$.
 \item Sea $f(x,y) = \begin{cases} \frac{x}{y} \sen (x^2 + y^2) & y \neq 0 \\ 0 & y = 0 \end{cases}$
 $$\lim_{(x,y) \to (0,0)} f(x,y) = \lim_{r \to 0^+} \frac{r \cos\theta}{r \sen\theta} \sen r^2 \nrightarrow 0 \mbox{ uniformemente en } \theta \in [0,2\pi)$$
 Porque como $\sup \{\cot \theta\} = \infty$, entonces podemos tomar valores en $\theta$ que no conviertan a 0 el denominador.
+=======
+Es decir, el límite es uniforme en $\theta$ ya que $0 < | r^2 \cos\theta \sen^3 \theta | < r^2$
+\item Sea $f(x,y) = \begin{cases} \frac{x}{y} \sen (x^2 + y^2) & y \neq 0 \\ 0 & y = 0 \end{cases}$
+$$\lim_{(x,y) \to (0,0)} f(x,y) = \lim_{r \to 0^+} \frac{r \cos\theta}{r \sen\theta} \sen r^2 \nrightarrow 0 \mbox{ uniformemente en } \theta \in [0,2\pi)$$
+Ya que $ \displaystyle \sup_{ \theta \in [0,2\pi)} \left|\frac{\cos\theta}{\sen\theta}\right| \cdot |\sen r^2| = \infty$
+>>>>>>> Iker
 \end{itemize}
 
 \begin{prop}[Convergencia por curvas]
@@ -1213,7 +1240,11 @@ Es decir, que se alcanza el supremo y el ínfimo en las imágenes de los compact
 \end{theo}
 
 \begin{demo}
+<<<<<<< HEAD
 Sabemos que $f(B) \subset \mathbb{R}$ es compacto y, por el Teorema de Heine - Borel, $f(B)$ es cerrado y acotado. Por ser acotado, sabemos que $\exists M = \sup_{x \in B} f(x)$ y $\exists m = \inf_{x \in B} f(x)$ y por ser cerrado, $M = f(x_1), m = f(x_2) : x_1, x_2 \in B$.
+=======
+Sabemos que $f(B) \subset \mathbb{R}$ es compacto, y por el Teorema de Heine - Borel, $f(B)$ es cerrado y acotado. Por ser acotado, sabemos que $$\begin{cases} \exists M = \displaystyle \sup_{x \in B} f(x) \\ \exists m =  \displaystyle \inf_{x \in B} f(x) \end{cases}$$, y por ser cerrado, $M = f(x_1), m = f(x_2) : x_1, x_2 \in B$
+>>>>>>> Iker
 \end{demo}
 
 \begin{defi}[Continuidad Uniforme]
@@ -1240,6 +1271,53 @@ Como $x\in A$, $\exists j : 1 \leq j \leq m : B(x_j,  \frac{d_{x_j}}{2}))$. Ento
 
 $$d'(f(x), f(y)) \leq d'(f(x), f(x_j)) + d'(f(x_j), f(y)) < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon$$
 \end{demo}
+
+
+\chapter*{CÁLCULO DIFERENCIAL}
+\section*{DIFERENCIABILIDAD}
+
+Recordemos que si $f: I \to \mathbb{R}, I \subset \mathbb{R}$ intervalo abierto, y $x_0 \in I$, se define la derivada como 
+$$f'(x_0)= \lim_{t \to 0} \frac{f(x_0 + t) - f(x_0) }{t} = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0}$$
+
+$y= f(x_0) + f'(x_0)(x - x_0) \Leftrightarrow \langle (x-x_0, y - f(x_0), (f'(x_0), - 1)) \rangle = 0$
+
+\begin{defi}[Derivada]
+Sea $f:A \subset \mathbb{R}^n \to \mathbb{R}, A$ abierto, $x_0 \in A$, y sea $v \in \mathbb{R}^n$. Se define como la \textbf{derivada} de $f$ en la dirección $v$ en el punto $x_0$ como:
+$$D_v f(x_0) = \lim_{t \to 0} \frac{f(x_0 + tv) - f(x_0)}{t}$$
+También se conoce como \textbf{derivada direccional}
+\end{defi}
+
+\underline{Observaciones}
+\begin{itemize}
+\item $D_{\lambda v} f(x_0) = \lambda D_v f(x_0)$
+\item Fijados $x_0 \in A, v \in \mathbb{R}^n$, si llamamos $\phi(t) = f(x_0 + tv)$
+$$D_v f(x_0) = \phi'(0)$$
+\end{itemize}
+
+\underline{Ejemplos}
+\begin{itemize}
+\item Sea $f(x,y) = |x^2 - y^2|^{\frac{1}{2}}$. Estudiemos cuando existe $D_v f(0,0)$. Sin pérdida de generalidad, suponemos $v$ vector unitario de la forma $v = (\cos \theta, \sen \theta) : \theta \in [0,2\pi)$.
+$$\frac{f(t\cos\theta , t \sen \theta) - 0}{t} = \frac{|t|}{t} |\cos^2\theta - \sen^2\theta|^\frac{1}{2}$$
+Lo cual converge a $0$ si $\cos^2\theta = \sen^2\theta$. Es decir, $f$ es derivable en $(0,0)$ en las direcciones 
+$$\left( \frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2} \right), \left( -\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2} \right),\left( -\frac{\sqrt{2}}{2},-\frac{\sqrt{2}}{2} \right),\left( \frac{\sqrt{2}}{2},-\frac{\sqrt{2}}{2} \right)  $$
+
+\end{itemize}
+
+\begin{defi}[Derivada Parcial]
+Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}, A$ abierto y $x_0 \in A$. La \textbf{derivada parcial j-ésima} de $f$ en $x_0:$
+$$D_j f(x_0) = \frac{\partial f}{\partial x_j} (x_0) = D_{e_j} f(x_0)$$
+donde $e_j = (0, \ldots, \underbrace{1}_{j-\acute{e}sima}, \ldots, 0)$
+\end{defi}
+
+\underline{Observación}
+
+Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}, x_0 \in A$. Entonces, $\frac{\partial f}{\partial x_j} (x_0) =\phi'(0) $
+
+$\phi(t) = f(x_0 + (0, \ldots,  \underbrace{t}_{j-\acute{e}sima}, \ldots, 0))$
+
+Es decir, equivale a derivar $f$ en la variable $x_j$, fijando el resto $x_1, \ldots x_{j-1}, x_{j+1}, \ldots, x_n$ como si fueran constantes.
+
+
 
 \begin{defi}[]
 Si $f: A \subset \mathbb{R}^n \to \mathbb{R}, x_0 \in A$ tiene todas las derivadas parciales, se define el \textbf{gradiente de f en $x_0$}, $\nabla f(x_0)$:
@@ -1299,6 +1377,9 @@ Supongamos que $f: I \subset \mathbb{R} \to \mathbb{R}$ es derivable en $x_0 \in
 
 $$\frac{f(x_0 + t) - f(x_0)}{t} \to f'(x_0) \Leftrightarrow \frac{f(x_0 + t) - (f(x_0) + tf'(x_0))}{t} \to 0 \Leftrightarrow \frac{f(x_0 + t) - (f(x_0) + tf'(x_0))}{|t|} \to 0$$
 
+<<<<<<< HEAD
+\end{defi} 
+=======
 
 \begin{defi}[Función Diferenciable]
 Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}$, $A$ abierto, $x_0 \in A$. Se dice que $f$ es \textbf{diferenciable en $x_0$} si $$\exists L_{x_0} \in \mathcal{L}(\mathbb{R}^n, \mathbb{R}) : \frac{f(x_0 + h) - \left( f(x_0) + L_{x_0}(h)\right)}{||h||} \xrightarrow[h\to 0]{} 0$$
@@ -1392,5 +1473,6 @@ $$\frac{|f(x,y) - f(a,b) - \nabla f(a,b) \cdot (x-a, y - b)|}{||(x-a, y-b) ||} \
 \begin{defi}[]
 
 \end{defi}
+>>>>>>> Iker
 
 \end{document}

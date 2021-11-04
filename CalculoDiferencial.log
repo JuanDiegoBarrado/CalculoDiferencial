@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.8)  4 NOV 2021 19:54
+=======
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.1)  4 NOV 2021 19:52
+>>>>>>> Iker
 entering extended mode
 **./CalculoDiferencial.tex
 (CalculoDiferencial.tex
@@ -1481,18 +1485,33 @@ Package xcolor Warning: Incompatible color definition on input line 1106.
 
 [26]
 
+<<<<<<< HEAD
 Package xcolor Warning: Incompatible color definition on input line 1159.
 
 [27]
+=======
+Package xcolor Warning: Incompatible color definition on input line 1160.
+
+[26]
+Overfull \hbox (2.0491pt too wide) in paragraph at lines 1170--1171
+[]\OT1/cmr/m/n/10 A traves de un cam-bio de va-ria-ble, es-cri-bien-do $\OML/c
+mm/m/it/10 x; y$ \OT1/cmr/m/n/10 en sus coor-de-na-das po-la-res, $[]$,
+ []
+
+>>>>>>> Iker
 
 Package xcolor Warning: Incompatible color definition on input line 1186.
 
+[27]
 
 Package xcolor Warning: Incompatible color definition on input line 1210.
 
+<<<<<<< HEAD
 [28]
 
 Package xcolor Warning: Incompatible color definition on input line 1219.
+=======
+>>>>>>> Iker
 
 
 Package xcolor Warning: Incompatible color definition on input line 1230.
@@ -1523,13 +1542,83 @@ r/m/n/10 ) = \OML/cmm/m/it/10 D[]f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr
 /m/n/10 )
  []
 
+[28]
 
+Package xcolor Warning: Incompatible color definition on input line 1242.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1243.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1250.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1272.
+
+[29
+
+]
+
+Package xcolor Warning: Incompatible color definition on input line 1288.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1322.
+
+
+Overfull \hbox (59.80151pt too wide) detected at line 1327
+\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 L\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr
+/m/n/10 ) \OMS/cmsy/m/n/10   \OML/cmm/m/it/10 L\OT1/cmr/m/n/10 (\OML/cmm/m/it/1
+0 y\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 j \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 j\OML
+/cmm/m/it/10 L\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x \OMS/cmsy/m/n/10   \OML/cmm/m
+/it/10 y\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 j \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 
+jh\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a[]; [] ; a[]\OT1/cmr/m/n/10 )\OML/cmm/m/it
+/10 ; x \OMS/cmsy/m/n/10   \OML/cmm/m/it/10 y\OMS/cmsy/m/n/10 ij  jj\OT1/cmr/m
+/n/10 (\OML/cmm/m/it/10 a[]; [] ; a[]\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 jj[]  j
+j\OML/cmm/m/it/10 x \OMS/cmsy/m/n/10   \OML/cmm/m/it/10 y\OMS/cmsy/m/n/10 jj[] 
+ \OML/cmm/m/it/10 " \OT1/cmr/m/n/10 : \OMS/cmsy/m/n/10 jj\OML/cmm/m/it/10 x \O
+MS/cmsy/m/n/10   \OML/cmm/m/it/10 y\OMS/cmsy/m/n/10 jj[] \OML/cmm/m/it/10 <  \
+OT1/cmr/m/n/10 = []
+ []
+
+[30]
+Overfull \hbox (23.55394pt too wide) detected at line 1344
+[] \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]
+\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 , [] ! \OT1/cmr/m/n/10 0 \OMS/cmsy/m/n/10 , 
+[] ! \OT1/cmr/m/n/10 0
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 1347.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1356.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1371.
+
+[31]
+
+Package xcolor Warning: Incompatible color definition on input line 1411.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1420.
+
+[32]
+
+<<<<<<< HEAD
 Package xcolor Warning: Incompatible color definition on input line 1268.
+=======
+Package xcolor Warning: Incompatible color definition on input line 1436.
+>>>>>>> Iker
 
 \tf@thm=\write4
 \openout4 = `CalculoDiferencial.thm'.
 
+<<<<<<< HEAD
 [30] (CalculoDiferencial.aux
+=======
+[33] (CalculoDiferencial.aux
+>>>>>>> Iker
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 LaTeX Info: Redefining \. on input line 9.
@@ -1546,6 +1635,7 @@ Here is how much of TeX's memory you used:
  45857 multiletter control sequences out of 15000+200000
  546601 words of font info for 82 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
+<<<<<<< HEAD
  68i,13n,98p,737b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\jdbar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 0800.pk> <C:\Users\jdbar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
@@ -1582,6 +1672,45 @@ y10.pfb>
 Output written on CalculoDiferencial.pdf (30 pages, 407004 bytes).
 PDF statistics:
  239 PDF objects out of 1000 (max. 8388607)
+=======
+ 102i,13n,111p,737b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Mi Equipo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
+tcrm0800.pk> <C:\Users\Mi Equipo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/
+ec/dpi600\tcrm1200.pk><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Mi Equipo/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/Mi Equ
+ipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:
+/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
+mmi10.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmmi5.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Mi Equipo/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Mi Equipo/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><C:
+/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
+mr10.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmr12.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmr17.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Mi Equipo/AppData/Local/P
+rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Mi Equipo/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Mi 
+Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C
+:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmsy10.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/amsfonts/cm/cmsy5.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Mi Equipo/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Mi Equipo/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Use
+rs/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/
+msbm10.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/amsfonts/symbols/msbm7.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/hoekwater/stmary10.pfb>
+Output written on CalculoDiferencial.pdf (33 pages, 423330 bytes).
+PDF statistics:
+ 249 PDF objects out of 1000 (max. 8388607)
+>>>>>>> Iker
  0 named destinations out of 1000 (max. 500000)
  109 words of extra memory for PDF output out of 10000 (max. 10000000)
 
