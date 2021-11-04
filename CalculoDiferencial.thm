@@ -86,7 +86,7 @@
 \contentsline {theo}{{Teorema}{11}{Regla del Bocadillo}}{25}{}%
 \contentsline {theo}{{Teorema}{12}{Límites reiterados}}{25}{}%
 \contentsline {demo}{{\underline {Demostración}:}{28}{}}{25}{}%
-\contentsline {theo}{{Teorema}{13}{}}{26}{}%
+\contentsline {theo}{{Teorema}{13}{Coordenadas Polares}}{27}{}%
 \contentsline {demo}{{\underline {Demostración}:}{29}{}}{27}{}%
 \contentsline {prop}{{Proposición}{19}{}}{27}{}%
 \contentsline {demo}{{\underline {Demostración}:}{30}{}}{27}{}%
@@ -95,4 +95,17 @@
 \contentsline {defi}{{Definición}{25}{Continuidad Uniforme}}{28}{}%
 \contentsline {theo}{{Teorema}{15}{}}{28}{}%
 \contentsline {demo}{{\underline {Demostración}:}{32}{}}{28}{}%
-\contentsline {defi}{{Definición}{26}{}}{28}{}%
+\contentsline {defi}{{Definición}{26}{Derivada}}{29}{}%
+\contentsline {defi}{{Definición}{27}{Derivada Parcial}}{29}{}%
+\contentsline {defi}{{Definición}{28}{}}{30}{}%
+\contentsline {prop}{{Proposición}{20}{}}{30}{}%
+\contentsline {demo}{{\underline {Demostración}:}{33}{}}{30}{}%
+\contentsline {defi}{{Definición}{29}{Función Diferenciable}}{31}{}%
+\contentsline {theo}{{Teorema}{16}{}}{31}{}%
+\contentsline {demo}{{\underline {Demostración}:}{34}{}}{31}{}%
+\contentsline {theo}{{Teorema}{17}{}}{31}{}%
+\contentsline {demo}{{\underline {Demostración}:}{35}{}}{31}{}%
+\contentsline {prop}{{Proposición}{21}{}}{32}{}%
+\contentsline {theo}{{Teorema}{18}{}}{32}{}%
+\contentsline {demo}{{\underline {Demostración}:}{36}{}}{32}{}%
+\contentsline {defi}{{Definición}{30}{}}{33}{}%

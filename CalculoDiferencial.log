@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.1)  26 OCT 2021 13:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.1)  4 NOV 2021 19:52
 entering extended mode
 **./CalculoDiferencial.tex
 (CalculoDiferencial.tex
@@ -1491,29 +1491,96 @@ Package xcolor Warning: Incompatible color definition on input line 1102.
 
 [25]
 
-Package xcolor Warning: Incompatible color definition on input line 1161.
+Package xcolor Warning: Incompatible color definition on input line 1160.
 
 [26]
+Overfull \hbox (2.0491pt too wide) in paragraph at lines 1170--1171
+[]\OT1/cmr/m/n/10 A traves de un cam-bio de va-ria-ble, es-cri-bien-do $\OML/c
+mm/m/it/10 x; y$ \OT1/cmr/m/n/10 en sus coor-de-na-das po-la-res, $[]$,
+ []
+
 
 Package xcolor Warning: Incompatible color definition on input line 1186.
 
+[27]
 
 Package xcolor Warning: Incompatible color definition on input line 1209.
 
-[27]
 
 Package xcolor Warning: Incompatible color definition on input line 1216.
 
 
 Package xcolor Warning: Incompatible color definition on input line 1226.
 
+[28]
 
-Package xcolor Warning: Incompatible color definition on input line 1241.
+Package xcolor Warning: Incompatible color definition on input line 1242.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1243.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1250.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1272.
+
+[29
+
+]
+
+Package xcolor Warning: Incompatible color definition on input line 1288.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1322.
+
+
+Overfull \hbox (59.80151pt too wide) detected at line 1327
+\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 L\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr
+/m/n/10 ) \OMS/cmsy/m/n/10   \OML/cmm/m/it/10 L\OT1/cmr/m/n/10 (\OML/cmm/m/it/1
+0 y\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 j \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 j\OML
+/cmm/m/it/10 L\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x \OMS/cmsy/m/n/10   \OML/cmm/m
+/it/10 y\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 j \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 
+jh\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a[]; [] ; a[]\OT1/cmr/m/n/10 )\OML/cmm/m/it
+/10 ; x \OMS/cmsy/m/n/10   \OML/cmm/m/it/10 y\OMS/cmsy/m/n/10 ij  jj\OT1/cmr/m
+/n/10 (\OML/cmm/m/it/10 a[]; [] ; a[]\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 jj[]  j
+j\OML/cmm/m/it/10 x \OMS/cmsy/m/n/10   \OML/cmm/m/it/10 y\OMS/cmsy/m/n/10 jj[] 
+ \OML/cmm/m/it/10 " \OT1/cmr/m/n/10 : \OMS/cmsy/m/n/10 jj\OML/cmm/m/it/10 x \O
+MS/cmsy/m/n/10   \OML/cmm/m/it/10 y\OMS/cmsy/m/n/10 jj[] \OML/cmm/m/it/10 <  \
+OT1/cmr/m/n/10 = []
+ []
+
+[30]
+Overfull \hbox (23.55394pt too wide) detected at line 1344
+[] \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]
+\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 , [] ! \OT1/cmr/m/n/10 0 \OMS/cmsy/m/n/10 , 
+[] ! \OT1/cmr/m/n/10 0
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 1347.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1356.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1371.
+
+[31]
+
+Package xcolor Warning: Incompatible color definition on input line 1411.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1420.
+
+[32]
+
+Package xcolor Warning: Incompatible color definition on input line 1436.
 
 \tf@thm=\write4
 \openout4 = `CalculoDiferencial.thm'.
 
-[28] (CalculoDiferencial.aux
+[33] (CalculoDiferencial.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 LaTeX Info: Redefining \. on input line 9.
@@ -1564,9 +1631,9 @@ rs/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/
 msbm10.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public
 /amsfonts/symbols/msbm7.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/f
 onts/type1/public/hoekwater/stmary10.pfb>
-Output written on CalculoDiferencial.pdf (28 pages, 399603 bytes).
+Output written on CalculoDiferencial.pdf (33 pages, 423330 bytes).
 PDF statistics:
- 233 PDF objects out of 1000 (max. 8388607)
+ 249 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  109 words of extra memory for PDF output out of 10000 (max. 10000000)
 
