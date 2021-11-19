@@ -1,3 +1,5 @@
+﻿This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.1)  4 NOV 2021 19:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.1)  19 NOV 2021 09:26
 This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.8)  19 NOV 2021 10:48
 entering extended mode
 **./CalculoDiferencial.tex
@@ -1553,11 +1555,108 @@ Package xcolor Warning: Incompatible color definition on input line 1376.
 Package xcolor Warning: Incompatible color definition on input line 1403.
 
 
+Package xcolor Warning: Incompatible color definition on input line 1436.
+Package xcolor Warning: Incompatible color definition on input line 1452.
+
+[33]
+Overfull \hbox (41.82368pt too wide) detected at line 1508
+\OML/cmm/m/it/10 d\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 f \OMS/cmsy/m/n/10  \OML/c
+mm/m/it/10 g\OT1/cmr/m/n/10 )(\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) = [] [] \U/la
+sy/m/n/10 ; \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/1
+0 )\OML/cmm/m/it/10 dg\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) + \O
+ML/cmm/m/it/10 g\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )\OML/cmm/m/
+it/10 df\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 1510.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1536.
+
+[34]
+
+Package xcolor Warning: Incompatible color definition on input line 1556.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1564.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1572.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1591.
+
+[35]
+
+Package xcolor Warning: Incompatible color definition on input line 1599.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1625.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1629.
+
+[36]
+
+Package xcolor Warning: Incompatible color definition on input line 1641.
+
+
+LaTeX Warning: Command \textbullet invalid in math mode on input line 1652.
+
+Missing character: There is no � in font cmr10!
+
+Package xcolor Warning: Incompatible color definition on input line 1671.
+
+
+Overfull \hbox (12.86172pt too wide) in paragraph at lines 1674--1675
+[]$\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[] \OT1/cmr/m/n/10 + \O
+ML/cmm/m/it/10 h\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm
+/m/it/10 x[]\OT1/cmr/m/n/10 ) + [] \OML/cmm/m/it/10 D[]f\OT1/cmr/m/n/10 (\OML/c
+mm/m/it/10 x[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 h[] \OT1/cm
+r/m/n/10 + [] [] \OML/cmm/m/it/10 D[]f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1
+/cmr/m/n/10 ) \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 h[] \OMS/cmsy/m/n/10  \OML/c
+mm/m/it/10 h[] \OT1/cmr/m/n/10 + [] + [] [] \OML/cmm/m/it/10 D[]f\OT1/cmr/m/n/1
+0 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 
+ []
+
+[37]
+
+Package xcolor Warning: Incompatible color definition on input line 1704.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1714.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1737.
+
+[38]
+
+Package xcolor Warning: Incompatible color definition on input line 1746.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1751.
+
+[39]
+
+Package xcolor Warning: Incompatible color definition on input line 1794.
+
+[40]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 184
+8.
+
+(C:\Users\Mi Equipo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
+
+Package xcolor Warning: Incompatible color definition on input line 1850.
 Package xcolor Warning: Incompatible color definition on input line 1412.
 
 \tf@thm=\write4
 \openout4 = `CalculoDiferencial.thm'.
 
+[33] (CalculoDiferencial.aux
+[41] (CalculoDiferencial.aux
 [34] (CalculoDiferencial.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
@@ -1569,12 +1668,98 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
+ 30362 strings out of 479334
+ 747188 string characters out of 2855147
+ 1163690 words of memory out of 3000000
+ 47178 multiletter control sequences out of 15000+200000
+ 417693 words of font info for 85 fonts, out of 3000000 for 9000
+ 30392 strings out of 479334
+ 747650 string characters out of 2855147
+ 1163690 words of memory out of 3000000
+ 47196 multiletter control sequences out of 15000+200000
+ 420843 words of font info for 97 fonts, out of 3000000 for 9000
  30489 strings out of 480790
  750062 string characters out of 2897301
  1110018 words of memory out of 3000000
  45859 multiletter control sequences out of 15000+200000
  547243 words of font info for 84 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
+ 102i,13n,111p,737b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Mi Equipo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
+tcrm0800.pk> <C:\Users\Mi Equipo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/
+ec/dpi600\tcrm1200.pk><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Mi Equipo/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/Mi Equ
+ipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:
+/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
+mmi10.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmmi5.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Mi Equipo/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Mi Equipo/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><C:
+/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
+mr10.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmr12.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmr17.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Mi Equipo/AppData/Local/P
+rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Mi Equipo/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Mi 
+Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C
+:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmsy10.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/amsfonts/cm/cmsy5.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Mi Equipo/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Mi Equipo/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Use
+rs/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/
+msbm10.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/amsfonts/symbols/msbm7.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/hoekwater/stmary10.pfb>
+Output written on CalculoDiferencial.pdf (33 pages, 423330 bytes).
+ 102i,13n,111p,737b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Mi Equipo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
+tcrm1000.pk> <C:\Users\Mi Equipo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/
+ec/dpi600\tcrm0800.pk> <C:\Users\Mi Equipo\AppData\Local\MiKTeX\fonts/pk/ljfour
+/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/Mi Equipo/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Mi Equipo/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Mi Equipo/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Us
+ers/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex
+10.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmmi10.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Mi Equipo/AppData/Local/P
+rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Mi Equipo/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/M
+i Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmi
+b7.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmr10.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmr12.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Mi Equipo/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Mi Equipo/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Mi E
+quipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:
+/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
+mr8.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmss10.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Mi Equipo/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Mi Equipo/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users
+/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.p
+fb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
+s/cm/cmti10.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmtt10.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/
+fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Users/Mi Equipo/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/lasy10.pfb><C:/Users/Mi Eq
+uipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.p
+fb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
+s/symbols/msbm7.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/hoekwater/stmary10.pfb>
+Output written on CalculoDiferencial.pdf (41 pages, 487603 bytes).
  68i,13n,98p,737b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\jdbar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1000.pk> <C:\Users\jdbar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
@@ -1611,6 +1796,8 @@ s/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7
 /stmary10.pfb>
 Output written on CalculoDiferencial.pdf (34 pages, 436015 bytes).
 PDF statistics:
+ 249 PDF objects out of 1000 (max. 8388607)
+ 297 PDF objects out of 1000 (max. 8388607)
  257 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  109 words of extra memory for PDF output out of 10000 (max. 10000000)

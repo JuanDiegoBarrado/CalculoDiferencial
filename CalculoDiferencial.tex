@@ -1,4 +1,4 @@
-\documentclass[10pt,a4paper,openright]{book}
+﻿\documentclass[10pt,a4paper,openright]{book}
 
 \title{CÁLCULO DIFERENCIAL}
 \author{Juan Diego Barrado Daganzo e Iker Muñoz Martínez\\2º de Carrera} %\\ es salto de linea
@@ -421,6 +421,7 @@ Sea $(E,d)$ un espacio métrico, y sea $A \subset E$, se dice que $x \in E$ es u
 $$\forall \varepsilon > 0: \left(B(x,\varepsilon)\setminus\{x\}\right)\cap A \neq \emptyset$$
  Al \textbf{conjunto de puntos de acumulación} se le conoce como $A'$.
 \end{defi}
+Es decir, para cualquier ``entorno'' alrededor de ese punto sin contar con el punto, la intersección con el conjunto original es no vacía.
 
 \underline{Observaciones}:
 \begin{itemize}
@@ -1134,7 +1135,6 @@ $$f(x,x) = \frac{2 \cdot |x|}{\sqrt{2 \cdot x^2}} = \frac{2}{\sqrt{2}} = \sqrt{2
 Más generalmente, para una recta cualquiera que pase por el origen, es decir, $y = \lambda \cdot x, \lambda \in \mathbb{R}$ se tiene:
 $$f(x, \lambda \cdot x) = \frac{|x|(\lambda + 1)}{\sqrt{x^2 (1 + \lambda^2)}} = \frac{\lambda + 1}{\sqrt{\lambda^2 + 1 }}$$
 Como $\forall\{x_n\}\subset \mathcal{R}: x_n \rightarrow (0,0)$ se tiene que $f(x_n)=\frac{\lambda + 1}{\sqrt{\lambda^2 + 1}} \nrightarrow 0$, entonces el límite no existe. Lo cual pone de manifiesto que la existencia de los límites reiterados no implica la existencia del límite.
-
 \item Sea $f(x,y) = \begin{cases} y \sen \frac{1}{x} & x \neq 0 \\ 0 & x = 0 \end{cases}$
 
 Fijando la $x \neq 0$, calculamos el límite:
@@ -1425,4 +1425,841 @@ Dado $\varepsilon > 0, \exists \delta > 0 : ||(x-a, y-b)|| < \delta \Rightarrow 
 
 $$\frac{|f(x,y) - f(a,b) - \nabla f(a,b) \cdot (x-a, y - b)|}{||(x-a, y-b) ||} \leq \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon$$
 \end{demo}
+
+
+COMPLETAR PULL
+
+COMPLETAR PRINCIPIO DE CLASE
+
+----------
+
+\underline{Notación}
+
+$f: A \subset \mathbb{R}^n \to \mathbb{R}^m$ diferenciable, $f(f_1, \ldots, f_m)$
+
+$$M_{m \times n} \ni df(x_0) = \begin{pmatrix} \nabla f_1 \\ \vdots \\ \nabla f_m
+\end{pmatrix} = \left( \frac{\partial f_j}{\partial x_k} (x_0) \right)_{\begin{matrix}
+1 \leq j \leq m \\ 1 \leq k \leq n
+\end{matrix}}$$
+
+\begin{theo}[Regla de la Cadena]
+Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}^m$, $A$ abierto y $f$ diferenciable en $x_0 \in A$, y sea $g: B \mathbb{R}^m \to \mathbb{R}^p$ tal que $B$ abierto, $f(A) \subset B$ y $g$ diferenciable en $f(x_0)$. Entonces, $g \circ f : A \subset \mathbb{R}^n \to \mathbb{R}^p$ es diferenciable en $x_0 \in A$ y 
+$$d(g \circ f)(x_0) = dg(f(x_0)) \cdot df(x_0)$$
+\end{theo}
+
+\underline{Observación}
+$$ M_{p \times n} \ni d(g \circ f)(x_0) = \left( \frac{\partial (g \circ f)_j}{\partial x_k} (x_0) \right)_{\begin{matrix}
+1 \leq j \leq p \\ 1 \leq k \leq n
+\end{matrix}}$$
+
+Así, $$\frac{\partial (g \circ f)_j}{\partial x_k} (x_0) = \sum_{l = \ell}^{m} \frac{\partial g_j}{\partial x_\ell} (f(x_0)) \cdot \frac{\partial f_\ell}{\partial x_k}(x_0)$$
+
+\underline{Ejemplo}
+
+Sean $f: \mathbb{R}^2 \to \mathbb{R}^2$, tal que $f(x,y) = (x^2 y^3, xy)$, y $g: \mathbb{R}^2 \to \mathbb{R}^3$ tal que $g(a,b) = (ab, a^2, b^2)$
+
+\begin{align*}
+g \circ f: \mathbb{R}^2 &\to \mathbb{R}^3 \\ (x,y) &\mapsto (x^3y^4, x^4y^6,x^2y^2)
+\end{align*}
+
+$d(g \circ f) (x,y) = \begin{pmatrix} 3x^2y^4 & 4x^3y^3  \\ 4x^3y^6 & 6x^4y^5  \\ 2xy^2 & 2x^2y \\
+
+\end{pmatrix}$
+
+$d g (f(x,y)) = \begin{pmatrix}
+xy & x^2 y^3 \\ 2x^2y^3 & 0 \\ 0 & 2xy
+\end{pmatrix}$
+
+$df(x,y) = \begin{pmatrix}
+2x^3 & 3x^2y^2 \\ y & x
+\end{pmatrix}$
+
+$$d g (f(x,y)) \cdot df(x,y) = \begin{pmatrix}
+xy & x^2 y^3 \\ 2x^2y^3 & 0 \\ 0 & 2xy
+\end{pmatrix} \cdot  \begin{pmatrix}
+2x^3 & 3x^2y^2 \\ y & x
+\end{pmatrix} = \begin{pmatrix}
+3x^2y^4 & 4x^3y^3 \\ 4x^3y^6 & 6x^4y^5 \\ 2xy^2 & 2x^2y
+\end{pmatrix}$$
+
+\underline{Ejemplo}
+Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}$ diferenciable, y queremos calcular $d(f^2)(x)$
+
+Sea \begin{align*}
+h: \mathbb{R} &\to \mathbb{R} \\ h(x) &\mapsto x^2
+\end{align*} 
+
+Observamos que $dh(x) = 2x$
+
+$$d(f^2)(x) = d(h \circ f)(x) = d h(f(x)) \cdot df(x) = 2 f(x) \cdot df(x)$$
+
+
+Si $g: A \subset \mathbb{R}^n \to \mathbb{R}$ diferenciable, y queremos calcular $d(f \cdot g) (x)$
+
+Observamos que $f(x) g(x) = \frac{1}{4} [(f(x) + g(x))^2 - (f(x) - g(x))^2]$
+
+$$d(f \cdot g) (x) = \frac{1}{4}\left[ 2 (f(x) + g(x)) \cdot (df(x) + dg(x)) - 2 (f(x) - g(x)) \cdot (d(f(x) - dg(x)) \right] \leadsto f(x)dg(x) + g(x) df(x)$$
+
+\begin{defi}[Conjunto convexo]
+Sea $A \subset \mathbb{R}^n$. Se dice que $A$ es \textbf{convexo} si 
+$$\forall x,y \in A : L[x,y] = \left\lbrace tx + (1-t) y : 0 \leq t \leq 1 \right\rbrace \subset A$$
+\end{defi}
+
+\underline{Ejemplos}
+
+METER EJEMPLOS
+
+\underline{Observación}
+
+Sea $f: I \subset \mathbb{R} \to \mathbb{R}$ derivable. Entonces, $\forall x,y \in I, \exists c \in L[x,y] : f(y) - f(x) = f'(c)(y-x)$
+
+Esta observación, conocida como Teorema del Valor Medio (visto en AR) en general es falso en el caso vectorial. Por ejemplo sea:
+\begin{align*}
+f: \mathbb{R} &\to \mathbb{R}^2 \\ t &\mapsto (t^2, t^3)
+\end{align*}
+
+Sean $x = 0, y=1 \in \mathbb{R}$
+
+$(1,1) = f(1) - f(0) = df(c)(1-0) = df(c) : c \in [0,1]$
+
+$df(c) = (2c,3c^2) = (1,1) \Rightarrow \begin{cases} c = \frac{1}{2} \\ c = \frac{1}{\sqrt{3}}\end{cases} \sharp$
+
+
+\begin{lema}
+Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}^m$ diferenciable en el abierto $A$. 
+
+Entonces, $\forall x,y \in A : L[x,y] = \{tx + (1-t)y : t \in [0,1]\} \subset A$ y $\forall z \in \mathbb{R}^m$
+$$\exists c_z \in L [x,y] : \langle z, f(y) - f(x)\rangle = \langle z, df(c_z) \cdot (y-x) \rangle$$
+\end{lema}
+
+\begin{demo}
+Sea $\psi:[0,1] \to \mathbb{R}$ $$\psi(t) = \langle z, f(x+t(y-x)) \rangle$$
+$$\psi ' (t) = \frac{d}{dt}  \sum_{j=1}^{m} z_j \cdot f_j (x + t(y-x))$$  $$=   \sum_{j=1}^{m} z_j \cdot \frac{d}{dt} f_j (x + t(y-x))$$ $$= \sum_{j=1}^{m} z_j \cdot d f_j (x + t(y-x)) \cdot (y-x)$$ $$= \langle z, df(x + t(y-x)) \cdot (y-x) \rangle$$
+
+Entonces, $\psi$ es derivable : $\psi (1) - \psi (0) = \psi'(\alpha) (1-0) : \alpha \in (0,1)$
+
+Es decir,
+$$ \langle z, f(y) - f(x)\rangle = \langle z, df(x + \alpha (y-x)) \cdot(y-x) \rangle$$
+Si llamamos $x + \alpha (y-x) = c_z = \alpha y + (1 - \alpha ) x \in L[x,y]$
+
+\end{demo}
+
+
+\begin{coro}
+Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}$, diferenciable en el abierto $A$. Entonces, si $L[x,y] \subset A$
+$$\exists c \in L[x,y] : f(y) - f(x) = df(c) \cdot (y-x)$$
+\end{coro}
+
+\begin{demo}
+En el lema anterior, basta coger $z = 1$
+\end{demo}
+
+\begin{defi}[Norma de una aplicación lineal]
+Sea $h: \mathbb{R}^n \to \mathbb{R}^m$ lineal. La norma de h se define como $$||h|| = \sup_{x \in \mathbb{R}^n \setminus \{0\}} = \frac{||h(x)||}{||x||} = \sup_{||x|| = 1} || h(x)|| $$
+\end{defi}
+
+\underline{Observación}
+
+$(M_{m \times n}, || \cdot || ) $ es espacio normado
+
+\begin{theo}[Teorema de los incrementos finitos]
+Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}^m$ diferenciable en el abierto $A$. Entonces, si $L[x,y] \subset A$, se satisface que
+$$|| f(y) - f(x) || \leq \sup _{c \in L[x,y]} || df(c) || \cdot || y - x||$$
+\end{theo}
+
+\begin{demo}
+Si  $f(x) = f(y)$ se cumple trivialmente. Supongamos $f(x) \neq f(y)$.
+
+Sea $z = \frac{f(y) - f(x)}{|| f(y) - f(x) ||} \in \mathbb{R}^m$. Por el lema anterior, 
+$$\exists c_z \in L[x,y] :  \langle z, f(y) - f(x)\rangle = \langle z, df(c_z) \cdot (y-x) \rangle$$
+Sustituyendo $z$:
+
+$\langle z, f(y) - f(x)\rangle = \langle \frac{f(y) - f(x)}{|| f(y) - f(x) ||}, f(y) - f(x)\rangle = \frac{1}{|| f(y) - f(x) ||} \langle f(y) - f(x), f(y) - f(x) \rangle = \frac{1}{|| f(y) - f(x) ||} \cdot || f(y) - f(x) ||^2 = || f(y) - f(x) ||$
+
+Por la desigualdad de Cauchy - Schwarz 
+$$|| f(y) - f(x) || \leq 1 \cdot || df(c_z) \cdot (y-x) || \leq || df(c_z) || \cdot ||y-x|| \leq sup_{c \in L[x,y]} || df(c)|| \cdot || y - x|| $$
+\end{demo}
+
+\begin{coro}
+Si $f: A \subset \mathbb{R}^n \to \mathbb{R}^m$ diferenciable en el abierto y convexo, y $df \equiv 0$ en $A$, entonces $f$ es constante.
+\end{coro}
+
+\begin{demo}
+Sean $x,x_0 \in A$. Como $A$ es convexo, $L[x,x_0] \subset A$. Por el Teorema de los Incrementos Finitos, 
+$$|| f(x) - f(x_0) || \leq \sup_{c \in L[x,x_0]} || d f(c) || \cdot || x - x_0 || = 0 \Rightarrow f(x) = f(x_0)$$
+\end{demo}
+
+\begin{defi}[Derivada Segunda]
+Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}^m$, $A$ abierto, y $u,v \in \mathbb{R}^n$. La \textbf{derivada segunda} de $F$ se define como 
+$$D_{u,v} = D_u (D_v f)$$
+siempre que existan. 
+
+Si $u = e_i, v = e_j$, $$D_{e_i, e_j} f = D_{i,j} f = \frac{\partial^2 f}{\partial x_i \partial x_j} = f_{ij} = f_{x_i x_j}$$
+
+Si $i = j$, $\frac{\partial^2 f}{\partial x_i^2} = f_{ii} = f_{x_i x_i}$
+\end{defi}
+
+\underline{Ejemplo}
+Sea $f(x,y)= yx^2 + xy^3$
+\begin{itemize}
+\item $\frac{\partial f}{\partial x} = 2xy + y^3$
+\item $\frac{\partial f}{\partial y} = x^2 + 3xy^2$
+\item $\frac{\partial^2 f}{\partial x^2} = 2y$
+\item $\frac{\partial^2 f}{\partial y^2} = 6xy$
+\item $\frac{\partial^2 f}{\partial y \partial x} = 2x + 3y^2$
+\item $\frac{\partial^2 f}{ \partial x\partial y} = 2x + 3y^2$
+\end{itemize}
+
+\underline{Observación}
+
+De manera análoga, se definen las derivadas de cualquier orden.
+$$D_{i_k, \ldots, i_1} f = \frac{\partial^k f}{\partial x_{i_k} \ldots \partial x_{i_1}} : i_1, \ldots, i_k \in \{1, \ldots, n\}$$
+
+\begin{defi}[Función de Clase k]
+Se dice que $f \in \mathcal{C}^{k)} (A), A \subset \mathbb{R}^n$ abierto, si $\exists D_{i_k, \ldots, i_1} f : \forall \{i_1, \ldots, i_k\} \subset \{1, \ldots, n\}$ y son funciones continuas.
+\end{defi}
+
+\begin{theo}[Teorema de Schwarz - Clairaut]
+Sea $f \in \mathcal{C}^{2)} (A),  A \subset \mathbb{R}^n$ abierto. Entonces, $\forall i,j \in \{1, \ldots, n\}$ se cumple que 
+$$\frac{\partial^2 f}{\partial x_i \partial x_j} = \frac{\partial^2 f}{\partial x_j \partial x_i}$$
+\end{theo}
+
+\underline{Observación}
+
+En general, la igualdad no es cierta si $f \notin \mathcal{C}^{2)} (A)$. Por ejemplo, $f(x,y) = \begin{cases} \frac{xy^3}{x^2 + y^2} & (x,y) \neq (0,0) \\ 0 & (x,y) = (0,0) \end{cases}$. $f$ tiene derivadas de orden 2 en $\mathbb{R}^n$ y $\frac{\partial^2 f }{\partial x \partial y} (0,0) \neq \frac{\partial^2 f }{ \partial y\partial x} (0,0)$
+
+Se deja la demostración como ejercicio *.
+
+\begin{coro}
+Si $f \in \mathcal{C}^{k)} (A), A \subset \mathbb{R}^n, \sigma \in \mathcal{S}_k$ (permutación de $\{1, \ldots, k\}$), entonces 
+$$D_{i_1, \ldots, i_k} f = D_{\sigma (\{1, \ldots, k\})} f$$
+\end{coro}
+
+\underline{Notación}
+
+Sea $f : A \subset \mathbb{R}^n \to \mathbb{R}^m$. 
+
+Llamamos el \textbf{Jacobiano de $F$ en $x_0 \in A$} $$J_f (x_0) = df(x_0) \in M_{m \times n}$$
+
+Si $m =1$, es decir, estamos en $\mathbb{R}$, llamamos en \textbf{Hessiano} de $f$ en $x_0$
+$$H_f (x_0) = \begin{pmatrix} D_{11} f(x_0) & \ldots & D_{1n}f(x_0) \\ \vdots & • & \vdots \\ D_{n1}f(x_0) & \ldots & D_{nn}f(x_0) \\
+
+\end{pmatrix} = \left( \frac{\partial^2 f}{\partial x_i \partial x_j } (x_0)\right)_{1 \leq i,j \leq n}$$
+
+\underline{Ejemplos}
+\begin{enumerate}
+\item Sea $f(x,y) = (x^2 y , y^3 x, x+y)$
+
+$J_f (x,y) = \begin{pmatrix} 2xy & x^2 \\ y^3 & 3y^2 x  \\ 1 & 1  \\
+
+\end{pmatrix} \in M_{3 \times 2}$
+
+\item Sea $g(x,y) = x^2y$
+
+$H_g (x,y) = \begin{pmatrix} 2y & 2x  \\ 2x & 0 
+
+\end{pmatrix}$
+\end{enumerate}
+
+\begin{theo}[Teorema de Taylor]
+Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}, A$ abierto, una función de clase $\mathcal{C}^{k+1)} (A)$. Sean $x_0 \in A, h \in \mathbb{R}^n \setminus \{0\}, L[x_0,x_0 + h] \subset A$. Entonces, $\exists c \in L[x_0, x_0 + h]$ tal que 
+
+$f(x_0 + h) = \displaystyle f(x_0) + \sum_{i_1=1}^{n} D_{i_1} f(x_0) \cdot h_{i_1} + \frac{1}{2} \sum_{i_1 = 1, i_2 = 1}^{n} D_{i_1, i_2} f(x_0) \cdot h_{i_1} \cdot h_{i_2} + \ldots + \frac{1}{k!} \sum_{i_1 = 1, \ldots, i_k = 1}^{n} D_{i_1, \ldots, i_k} f(x_0) \cdot h_{i_1} \cdot \ldots \cdot h_{i_k} + \frac{1}{(k+1)!} \sum_{i_1 = 1, \ldots, i_{k+1} = 1}^{n} D_{i_1, \ldots, i_{k+1}} f(c) \cdot h_{i_1} \cdot \ldots \cdot h_{i_{k+1}}$
+\end{theo}
+
+\underline{Ejemplo}
+
+Sea $f(x,y) = x^2 - 2y^2 + 4xy - 3$. Calculemos el Polinomio de Taylor de orden 2 en el punto $(1,1) \in \mathbb{R}^2$
+
+Observamos que \begin{itemize}
+\item $\nabla f(x,y) = (2x + 4y, -4y + 4x)$
+\item $H_f (x,y) = \begin{pmatrix}
+2 & 4 \\ 4 & -4
+\end{pmatrix}$
+\item $h = (x,y) - (1,1) = (x-1, y-1)$
+\end{itemize}
+$$P2 ((x,y); (1,1)) = 0 + \langle (6,0),(x-1, y-1) \rangle + \frac{1}{2} \cdot \begin{pmatrix}
+x-1 & y-1
+\end{pmatrix} \cdot \begin{pmatrix}
+2 & 4 \\ 4 & -4
+\end{pmatrix} \cdot \begin{pmatrix}
+x-1 \\ y-1
+\end{pmatrix} $$
+$$= 6(x-1) + \frac{1}{2} \cdot \begin{pmatrix}
+2(x-1) + 4 (y-1) & 4(x-1) - 4 (y-1)
+\end{pmatrix}\cdot \begin{pmatrix}
+x-1 \\ y-1
+\end{pmatrix} $$
+$$= 6(x-1) + \frac{1}{2} \left( 2 (x-1)^2 + 4 (x-1)(y-1) + 4 (x-1)(y-1) - 4 (y-1)^2 \right)$$
+$$= x^2 - 2y^2 + 4xy - 3$$
+
+\begin{defi}
+Sea $f: A \subset \mathbb{R}^n \to  \mathbb{R}, x_0 \in A$
+\begin{itemize}
+\item Decimos que $x_0$ es un mínimo relativo si $f(x) \geq f(x_0) : \forall x \in B(x_0, \varepsilon) \subset A$
+\item Decimos que $x_0$ es un mínimo relativo si $f(x) \leq f(x_0) : \forall x \in B(x_0, \varepsilon) \subset A$
+\item Decimos que un extremo es absoluto si la desigualdad correspondiente es cierta $\forall x \in A$
+\item Decimos que $x_0$ es un punto crítico si $\nabla f(x_0) = 0$
+\end{itemize}
+\end{defi}
+
+\begin{theo}
+Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}, A$ abierto, y supongamos que existe $\nabla f(x_0), x_0 \in A$ siendo $x_0$ un extremo relativo. Entonces, $\nabla f (x_0) = 0$.
+\end{theo}
+
+\begin{demo}
+Sea $j \in \{1, \ldots, n\}$. Supongamos que $x_0$ es un máximo relativo (razonamos de forma análoga para el caso del mínimo relativo). Entonces
+$$\frac{f(x_0 + t \cdot e_j) - f(x_0)}{t} = \begin{cases} \leq 0 & t> 0 \\ \geq 0 & t < 0 \end{cases}$$
+Entonces, $\frac{\partial f}{\partial x_j} (x_0) = 0$
+\end{demo}
+
+\underline{Observación}
+
+Si $f \in \mathcal{C}^{2)}(A), x_0$, definimos el Hessiano como $ H_f (x_0) = \begin{pmatrix}
+\frac{\partial^2 f}{\partial x_j \partial x_k}
+\end{pmatrix}_{1 \leq j,k \leq n}$. Es decir, es una , matriz cuadrada simétrica.
+
+Si recordamos del curso de Álgebra Lineal, definíamos las formas cuadráticas como las aplicaciones $Q \in M_{n \times n}$ tales que
+\begin{align*}
+Q: \mathbb{R}^n &\to \mathbb{R} \\ x &\mapsto Q(x) = x Q(x)x^t
+\end{align*}
+
+Es decir, los Hessianos son formas cuadráticas.
+
+\begin{defi}
+Una forma cuadrática $Q \in M_{n \times n}$ se denomina:
+\begin{itemize}
+\item Definida positiva si $Q(x) > 0 : \forall x \in \mathbb{R}^n \setminus \{0\}$
+\item Definida negativa si $Q(x) < 0 : \forall x \in \mathbb{R}^n \setminus \{0\}$
+\item Semidefinida positiva si $Q(x) \geq 0 : \forall x \in \mathbb{R}^n$
+\item Semidefinida negativa si $Q(x) \leq 0 : \forall x \in \mathbb{R}^n$
+\end{itemize}
+\end{defi}
+
+\begin{defi}[Punto Silla]
+Un \textbf{punto silla} es un punto crítico que no es un extremo.
+\end{defi}
+
+\begin{theo}
+Sea $f \in \mathcal{C}^{2)} (A), A \subset \mathbb{R}^n \mbox{ abierto,} x_0 \in A \mbox{ y } \nabla f(x_0) = 0$
+\begin{itemize}
+\item Si $H_f (x_0)$ es definida negativa, entonces $x_0$ es un máximo relativo.
+\item  Si $H_f (x_0)$ es definida positiva, entonces $x_0$ es un mínimo relativo.
+\item  Si $x_0$ es un máximo relativo, entonces $H_f (x_0)$ es semidefinida negativa.
+\item   Si $x_0$ es un mínimo relativo, entonces $H_f (x_0)$ es semidefinida positiva.
+\item  Si $H_f (x_0)$ es indefinida, entonces $x_0$ es un punto silla.
+\end{itemize}
+\end{theo}
+
+\begin{demo}
+$(i)$. Sea $S = \{x \in \mathbb{R}^n : || x || = 1\}$ compacto de $\mathbb{R}^n$. La aplicación $H_f (x_0) = Q : \mathbb{R}^n \to \mathbb{R}$ es continua, y por lo tanto, alcanza un máximo en $S$ (compacto en $\mathbb{R}^n$ por Heine-Borel es cerrado y acotado, y por Weierstrass existe el máximo). Además, como $Q$ es definida negativa por hipótesis $$\exists \tilde{x} \in S : 0 > Q(\tilde{x}) \geq Q(x) : \forall x \in S$$
+Sea $-\varepsilon_0 = Q(\tilde{x})$. Debido a la continuidad de las derivadas parciales de segundo orden de $f$, 
+$$\mbox{ Dado } \varepsilon_0 > 0, \exists \delta > 0 : || x - x_0 || < \delta \Rightarrow \left| D_{ij} f(x) - D_{ij} f(x_0) \right| < \frac{\varepsilon}{2n^2} : \forall i,j = 1, \ldots, n$$
+Por otra parte, si $h \in \mathbb{R}^n, h \neq 0$, se verifica que $$Q(h)= || h||^2 \cdot Q(\frac{h}{||h||}) \leq ||h||^2 Q(\tilde{x}) = -\varepsilon_0 \cdot ||h||^2$$
+Por el Teorema de Taylor, $\exists c \in L[x_0, x_0 + h]$ tal que $$f(x_0 + h) - f(x_0) = \frac{1}{2} h \cdot H_f(c) \cdot h^t = \frac{1}{2} \sum_{i,j = 1}^{n} D_{ij} f(c) \cdot h_i \cdot h_j $$
+$$= \frac{1}{2} \left[ \left(\sum_{i,j = 1}^{n} D_{ij} f(c) - D_{ij} f(x_0)  \right) \cdot h_i \cdot h_j + \underbrace{\sum_{i,j = 1}^{n} D_{ij} f(x_0) \cdot h_i \cdot h_j}_{Q(h)} \right]$$
+$$\leq \frac{1}{2} \left[ n^2 \frac{\varepsilon}{2n^2} \cdot ||h||^2 - ||h||^2 \varepsilon_0 \right] < 0$$
+Teniendo en cuenta que $||h|| < \delta$
+
+El resto de apartados se demuestran de forma análoga.
+\end{demo}
+
+
+
+---- METER CLASE DÍA 17 DE NOVIEMBRE ---
+
+\underline{Extremos relativos, $n=2$}
+
+Sea $f : A \subset \mathbb{R}^2 \to \mathbb{R}, (x_0, y_0) \in A, A$ abierto, $f \in \mathcal{C}^{2)} (A)$.
+
+$$H_f (x_0, y_0) = \begin{pmatrix} \frac{\partial^2 f}{\partial x^2} (x_0, y_0) & \frac{\partial^2 f}{\partial x \partial y} (x_0, y_0) \\ \frac{\partial^2 f}{\partial x \partial y} (x_0, y_0) & \frac{\partial^2 f}{\partial y^2} (x_0, y_0) \\
+
+\end{pmatrix} = \begin{pmatrix}
+a & b \\ b & c
+\end{pmatrix}$$
+
+Denotamos al determinante Hessiano con $\Delta = det(H_f (x_0, y_0)) = ac - b^2$
+
+Observamos que si $h = (h_1, h_2) \in \mathbb{R}^2$
+$$h H_f (x_0, y_0) h^t = a \cdot h_1^2 + 2 b \cdot h_1 \cdot h_2 + c \cdot h_2^2$$
+
+\begin{theo}
+Sea $\nabla f (x_0, y_0) = 0$.
+\begin{itemize}
+\item $\Delta > 0 = \begin{cases} a > 0 & (x_0, y_0) \mbox{ mínimo relativo} \\ a < 0 & (x_0, y_0) \mbox{ máximo relativo}\end{cases}$
+\item $\Delta < 0 \Rightarrow (x_0, y_0)$ es punto silla
+\item $\Delta = 0$
+\end{itemize}
+\end{theo}
+
+\begin{demo}
+(i)
+
+Lo que queremos ver es que si $h \neq 0$, entonces $ah_1^2 + 2bh_1h_2 + ch_2^2 > 0$. Sabemos que, por hipótesis, $ac - b^2 > 0$, y que $a > 0$
+
+Entonces, si escribimos $ah_1^2 + 2bh_1h_2 + ch_2^2 = a \left( h_1 + \frac{b}{a} h_2 \right)^2 + \frac{\Delta}{a} h_2^2$, vamos a ver que es positivo. Desarrollando la igualdad de la derecha:
+$$ a \left( h_1 + \frac{b}{a} h_2 \right)^2 + \frac{\Delta}{a} h_2^2 = a \left( h_1^2 + \frac{b^2}{a^2} h_2^2 + 2 \cdot \frac{b}{a} h_1 h_2\right) + \left( c - \frac{b^2}{a} h_2^2 \right)$$
+
+
+
+Tenemos que $ a \left( h_1 + \frac{b}{a} h_2 \right)^2 + \frac{\Delta}{a} h_2^2 >0 $, ya que aunque podría darse que $ h_1 + \frac{b}{a} h_2 $ pueda anularse, el segundo término no. Entonces, $\forall h = (h_1, h_2) \neq 0$ 
+\end{demo}
+
+-- Dibujo paraboloide hiperbólico como ejemplo de punto silla --
+
+\underline{Ejemplo}
+
+Ejercicio $52d)$ Estudia los puntos críticos de las siguiente función y determina si son máximos o mínimos locales : $f(x,y) = x^3 + y^3 - 3 \cdot a xy$
+
+Calculamos el gradiente en un punto cualquiera: $\nabla f(x,y) = (3x^2 - 3ay, 3y^2 - 3ax)$.
+
+\begin{itemize}
+\item Supongamos $a \neq 0$. Igualando a 0 ambas componentes:
+$y = \frac{x^2}{a}$, $\frac{x^4}{a^2} - ax = 0 \Rightarrow x (x^3 - a^3) = 0 = \begin{cases} x = 0 & y = 0 \\ x = a & y =a \end{cases}$
+
+\item Si $a = 0 : (0,0)$
+\end{itemize}
+
+$$H_f (x,y) = \begin{pmatrix} 6x & -3a \\ -3a & 6y  \\
+
+\end{pmatrix}$$
+
+$\Delta = 36 xy - 9 a^2$
+
+\begin{itemize}
+\item Si $a \neq 0$
+\begin{itemize}
+\item $(0,0) \Rightarrow \Delta = -9a^2 < 0 \Rightarrow $ punto silla
+\item $(a,a) \Rightarrow \Delta = 27a^2 > 0 \Rightarrow \begin{cases} a > 0 & \mbox{ mínimo relativo} \\ a < 0 & \mbox{ máximo relativo} \end{cases}$
+\end{itemize}
+
+\item Si $a = 0, \Delta = 0$
+$f(0,0) = 0$
+completar
+\end{itemize}
+
+$\mathfrak{i} \mathit{i}  \mathbf{i} \mathtt{i} \mathrm{i} \mathsf{i}$
+
+\begin{defi}[]
+
+\end{defi}
+
+
+COMPLETAR PULL
+
+COMPLETAR PRINCIPIO DE CLASE
+
+----------
+
+\underline{Notación}
+
+$f: A \subset \mathbb{R}^n \to \mathbb{R}^m$ diferenciable, $f(f_1, \ldots, f_m)$
+
+$$M_{m \times n} \ni df(x_0) = \begin{pmatrix} \nabla f_1 \\ \vdots \\ \nabla f_m
+\end{pmatrix} = \left( \frac{\partial f_j}{\partial x_k} (x_0) \right)_{\begin{matrix}
+1 \leq j \leq m \\ 1 \leq k \leq n
+\end{matrix}}$$
+
+\begin{theo}[Regla de la Cadena]
+Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}^m$, $A$ abierto y $f$ diferenciable en $x_0 \in A$, y sea $g: B \mathbb{R}^m \to \mathbb{R}^p$ tal que $B$ abierto, $f(A) \subset B$ y $g$ diferenciable en $f(x_0)$. Entonces, $g \circ f : A \subset \mathbb{R}^n \to \mathbb{R}^p$ es diferenciable en $x_0 \in A$ y 
+$$d(g \circ f)(x_0) = dg(f(x_0)) \cdot df(x_0)$$
+\end{theo}
+
+\underline{Observación}
+$$ M_{p \times n} \ni d(g \circ f)(x_0) = \left( \frac{\partial (g \circ f)_j}{\partial x_k} (x_0) \right)_{\begin{matrix}
+1 \leq j \leq p \\ 1 \leq k \leq n
+\end{matrix}}$$
+
+Así, $$\frac{\partial (g \circ f)_j}{\partial x_k} (x_0) = \sum_{l = \ell}^{m} \frac{\partial g_j}{\partial x_\ell} (f(x_0)) \cdot \frac{\partial f_\ell}{\partial x_k}(x_0)$$
+
+\underline{Ejemplo}
+
+Sean $f: \mathbb{R}^2 \to \mathbb{R}^2$, tal que $f(x,y) = (x^2 y^3, xy)$, y $g: \mathbb{R}^2 \to \mathbb{R}^3$ tal que $g(a,b) = (ab, a^2, b^2)$
+
+\begin{align*}
+g \circ f: \mathbb{R}^2 &\to \mathbb{R}^3 \\ (x,y) &\mapsto (x^3y^4, x^4y^6,x^2y^2)
+\end{align*}
+
+$d(g \circ f) (x,y) = \begin{pmatrix} 3x^2y^4 & 4x^3y^3  \\ 4x^3y^6 & 6x^4y^5  \\ 2xy^2 & 2x^2y \\
+
+\end{pmatrix}$
+
+$d g (f(x,y)) = \begin{pmatrix}
+xy & x^2 y^3 \\ 2x^2y^3 & 0 \\ 0 & 2xy
+\end{pmatrix}$
+
+$df(x,y) = \begin{pmatrix}
+2x^3 & 3x^2y^2 \\ y & x
+\end{pmatrix}$
+
+$$d g (f(x,y)) \cdot df(x,y) = \begin{pmatrix}
+xy & x^2 y^3 \\ 2x^2y^3 & 0 \\ 0 & 2xy
+\end{pmatrix} \cdot  \begin{pmatrix}
+2x^3 & 3x^2y^2 \\ y & x
+\end{pmatrix} = \begin{pmatrix}
+3x^2y^4 & 4x^3y^3 \\ 4x^3y^6 & 6x^4y^5 \\ 2xy^2 & 2x^2y
+\end{pmatrix}$$
+
+\underline{Ejemplo}
+Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}$ diferenciable, y queremos calcular $d(f^2)(x)$
+
+Sea \begin{align*}
+h: \mathbb{R} &\to \mathbb{R} \\ h(x) &\mapsto x^2
+\end{align*} 
+
+Observamos que $dh(x) = 2x$
+
+$$d(f^2)(x) = d(h \circ f)(x) = d h(f(x)) \cdot df(x) = 2 f(x) \cdot df(x)$$
+
+
+Si $g: A \subset \mathbb{R}^n \to \mathbb{R}$ diferenciable, y queremos calcular $d(f \cdot g) (x)$
+
+Observamos que $f(x) g(x) = \frac{1}{4} [(f(x) + g(x))^2 - (f(x) - g(x))^2]$
+
+$$d(f \cdot g) (x) = \frac{1}{4}\left[ 2 (f(x) + g(x)) \cdot (df(x) + dg(x)) - 2 (f(x) - g(x)) \cdot (d(f(x) - dg(x)) \right] \leadsto f(x)dg(x) + g(x) df(x)$$
+
+\begin{defi}[Conjunto convexo]
+Sea $A \subset \mathbb{R}^n$. Se dice que $A$ es \textbf{convexo} si 
+$$\forall x,y \in A : L[x,y] = \left\lbrace tx + (1-t) y : 0 \leq t \leq 1 \right\rbrace \subset A$$
+\end{defi}
+
+\underline{Ejemplos}
+
+METER EJEMPLOS
+
+\underline{Observación}
+
+Sea $f: I \subset \mathbb{R} \to \mathbb{R}$ derivable. Entonces, $\forall x,y \in I, \exists c \in L[x,y] : f(y) - f(x) = f'(c)(y-x)$
+
+Esta observación, conocida como Teorema del Valor Medio (visto en AR) en general es falso en el caso vectorial. Por ejemplo sea:
+\begin{align*}
+f: \mathbb{R} &\to \mathbb{R}^2 \\ t &\mapsto (t^2, t^3)
+\end{align*}
+
+Sean $x = 0, y=1 \in \mathbb{R}$
+
+$(1,1) = f(1) - f(0) = df(c)(1-0) = df(c) : c \in [0,1]$
+
+$df(c) = (2c,3c^2) = (1,1) \Rightarrow \begin{cases} c = \frac{1}{2} \\ c = \frac{1}{\sqrt{3}}\end{cases} \sharp$
+
+
+\begin{lema}
+Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}^m$ diferenciable en el abierto $A$. 
+
+Entonces, $\forall x,y \in A : L[x,y] = \{tx + (1-t)y : t \in [0,1]\} \subset A$ y $\forall z \in \mathbb{R}^m$
+$$\exists c_z \in L [x,y] : \langle z, f(y) - f(x)\rangle = \langle z, df(c_z) \cdot (y-x) \rangle$$
+\end{lema}
+
+\begin{demo}
+Sea $\psi:[0,1] \to \mathbb{R}$ $$\psi(t) = \langle z, f(x+t(y-x)) \rangle$$
+$$\psi ' (t) = \frac{d}{dt}  \sum_{j=1}^{m} z_j \cdot f_j (x + t(y-x))$$  $$=   \sum_{j=1}^{m} z_j \cdot \frac{d}{dt} f_j (x + t(y-x))$$ $$= \sum_{j=1}^{m} z_j \cdot d f_j (x + t(y-x)) \cdot (y-x)$$ $$= \langle z, df(x + t(y-x)) \cdot (y-x) \rangle$$
+
+Entonces, $\psi$ es derivable : $\psi (1) - \psi (0) = \psi'(\alpha) (1-0) : \alpha \in (0,1)$
+
+Es decir,
+$$ \langle z, f(y) - f(x)\rangle = \langle z, df(x + \alpha (y-x)) \cdot(y-x) \rangle$$
+Si llamamos $x + \alpha (y-x) = c_z = \alpha y + (1 - \alpha ) x \in L[x,y]$
+
+\end{demo}
+
+
+\begin{coro}
+Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}$, diferenciable en el abierto $A$. Entonces, si $L[x,y] \subset A$
+$$\exists c \in L[x,y] : f(y) - f(x) = df(c) \cdot (y-x)$$
+\end{coro}
+
+\begin{demo}
+En el lema anterior, basta coger $z = 1$
+\end{demo}
+
+\begin{defi}[Norma de una aplicación lineal]
+Sea $h: \mathbb{R}^n \to \mathbb{R}^m$ lineal. La norma de h se define como $$||h|| = \sup_{x \in \mathbb{R}^n \setminus \{0\}} = \frac{||h(x)||}{||x||} = \sup_{||x|| = 1} || h(x)|| $$
+\end{defi}
+
+\underline{Observación}
+
+$(M_{m \times n}, || \cdot || ) $ es espacio normado
+
+\begin{theo}[Teorema de los incrementos finitos]
+Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}^m$ diferenciable en el abierto $A$. Entonces, si $L[x,y] \subset A$, se satisface que
+$$|| f(y) - f(x) || \leq \sup _{c \in L[x,y]} || df(c) || \cdot || y - x||$$
+\end{theo}
+
+\begin{demo}
+Si  $f(x) = f(y)$ se cumple trivialmente. Supongamos $f(x) \neq f(y)$.
+
+Sea $z = \frac{f(y) - f(x)}{|| f(y) - f(x) ||} \in \mathbb{R}^m$. Por el lema anterior, 
+$$\exists c_z \in L[x,y] :  \langle z, f(y) - f(x)\rangle = \langle z, df(c_z) \cdot (y-x) \rangle$$
+Sustituyendo $z$:
+
+$\langle z, f(y) - f(x)\rangle = \langle \frac{f(y) - f(x)}{|| f(y) - f(x) ||}, f(y) - f(x)\rangle = \frac{1}{|| f(y) - f(x) ||} \langle f(y) - f(x), f(y) - f(x) \rangle = \frac{1}{|| f(y) - f(x) ||} \cdot || f(y) - f(x) ||^2 = || f(y) - f(x) ||$
+
+Por la desigualdad de Cauchy - Schwarz 
+$$|| f(y) - f(x) || \leq 1 \cdot || df(c_z) \cdot (y-x) || \leq || df(c_z) || \cdot ||y-x|| \leq sup_{c \in L[x,y]} || df(c)|| \cdot || y - x|| $$
+\end{demo}
+
+\begin{coro}
+Si $f: A \subset \mathbb{R}^n \to \mathbb{R}^m$ diferenciable en el abierto y convexo, y $df \equiv 0$ en $A$, entonces $f$ es constante.
+\end{coro}
+
+\begin{demo}
+Sean $x,x_0 \in A$. Como $A$ es convexo, $L[x,x_0] \subset A$. Por el Teorema de los Incrementos Finitos, 
+$$|| f(x) - f(x_0) || \leq \sup_{c \in L[x,x_0]} || d f(c) || \cdot || x - x_0 || = 0 \Rightarrow f(x) = f(x_0)$$
+\end{demo}
+
+\begin{defi}[Derivada Segunda]
+Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}^m$, $A$ abierto, y $u,v \in \mathbb{R}^n$. La \textbf{derivada segunda} de $F$ se define como 
+$$D_{u,v} = D_u (D_v f)$$
+siempre que existan. 
+
+Si $u = e_i, v = e_j$, $$D_{e_i, e_j} f = D_{i,j} f = \frac{\partial^2 f}{\partial x_i \partial x_j} = f_{ij} = f_{x_i x_j}$$
+
+Si $i = j$, $\frac{\partial^2 f}{\partial x_i^2} = f_{ii} = f_{x_i x_i}$
+\end{defi}
+
+\underline{Ejemplo}
+Sea $f(x,y)= yx^2 + xy^3$
+\begin{itemize}
+\item $\frac{\partial f}{\partial x} = 2xy + y^3$
+\item $\frac{\partial f}{\partial y} = x^2 + 3xy^2$
+\item $\frac{\partial^2 f}{\partial x^2} = 2y$
+\item $\frac{\partial^2 f}{\partial y^2} = 6xy$
+\item $\frac{\partial^2 f}{\partial y \partial x} = 2x + 3y^2$
+\item $\frac{\partial^2 f}{ \partial x\partial y} = 2x + 3y^2$
+\end{itemize}
+
+\underline{Observación}
+
+De manera análoga, se definen las derivadas de cualquier orden.
+$$D_{i_k, \ldots, i_1} f = \frac{\partial^k f}{\partial x_{i_k} \ldots \partial x_{i_1}} : i_1, \ldots, i_k \in \{1, \ldots, n\}$$
+
+\begin{defi}[Función de Clase k]
+Se dice que $f \in \mathcal{C}^{k)} (A), A \subset \mathbb{R}^n$ abierto, si $\exists D_{i_k, \ldots, i_1} f : \forall \{i_1, \ldots, i_k\} \subset \{1, \ldots, n\}$ y son funciones continuas.
+\end{defi}
+
+\begin{theo}[Teorema de Schwarz - Clairaut]
+Sea $f \in \mathcal{C}^{2)} (A),  A \subset \mathbb{R}^n$ abierto. Entonces, $\forall i,j \in \{1, \ldots, n\}$ se cumple que 
+$$\frac{\partial^2 f}{\partial x_i \partial x_j} = \frac{\partial^2 f}{\partial x_j \partial x_i}$$
+\end{theo}
+
+\underline{Observación}
+
+En general, la igualdad no es cierta si $f \notin \mathcal{C}^{2)} (A)$. Por ejemplo, $f(x,y) = \begin{cases} \frac{xy^3}{x^2 + y^2} & (x,y) \neq (0,0) \\ 0 & (x,y) = (0,0) \end{cases}$. $f$ tiene derivadas de orden 2 en $\mathbb{R}^n$ y $\frac{\partial^2 f }{\partial x \partial y} (0,0) \neq \frac{\partial^2 f }{ \partial y\partial x} (0,0)$
+
+Se deja la demostración como ejercicio *.
+
+\begin{coro}
+Si $f \in \mathcal{C}^{k)} (A), A \subset \mathbb{R}^n, \sigma \in \mathcal{S}_k$ (permutación de $\{1, \ldots, k\}$), entonces 
+$$D_{i_1, \ldots, i_k} f = D_{\sigma (\{1, \ldots, k\})} f$$
+\end{coro}
+
+\underline{Notación}
+
+Sea $f : A \subset \mathbb{R}^n \to \mathbb{R}^m$. 
+
+Llamamos el \textbf{Jacobiano de $F$ en $x_0 \in A$} $$J_f (x_0) = df(x_0) \in M_{m \times n}$$
+
+Si $m =1$, es decir, estamos en $\mathbb{R}$, llamamos en \textbf{Hessiano} de $f$ en $x_0$
+$$H_f (x_0) = \begin{pmatrix} D_{11} f(x_0) & \ldots & D_{1n}f(x_0) \\ \vdots & • & \vdots \\ D_{n1}f(x_0) & \ldots & D_{nn}f(x_0) \\
+
+\end{pmatrix} = \left( \frac{\partial^2 f}{\partial x_i \partial x_j } (x_0)\right)_{1 \leq i,j \leq n}$$
+
+\underline{Ejemplos}
+\begin{enumerate}
+\item Sea $f(x,y) = (x^2 y , y^3 x, x+y)$
+
+$J_f (x,y) = \begin{pmatrix} 2xy & x^2 \\ y^3 & 3y^2 x  \\ 1 & 1  \\
+
+\end{pmatrix} \in M_{3 \times 2}$
+
+\item Sea $g(x,y) = x^2y$
+
+$H_g (x,y) = \begin{pmatrix} 2y & 2x  \\ 2x & 0 
+
+\end{pmatrix}$
+\end{enumerate}
+
+\begin{theo}[Teorema de Taylor]
+Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}, A$ abierto, una función de clase $\mathcal{C}^{k+1)} (A)$. Sean $x_0 \in A, h \in \mathbb{R}^n \setminus \{0\}, L[x_0,x_0 + h] \subset A$. Entonces, $\exists c \in L[x_0, x_0 + h]$ tal que 
+
+$f(x_0 + h) = \displaystyle f(x_0) + \sum_{i_1=1}^{n} D_{i_1} f(x_0) \cdot h_{i_1} + \frac{1}{2} \sum_{i_1 = 1, i_2 = 1}^{n} D_{i_1, i_2} f(x_0) \cdot h_{i_1} \cdot h_{i_2} + \ldots + \frac{1}{k!} \sum_{i_1 = 1, \ldots, i_k = 1}^{n} D_{i_1, \ldots, i_k} f(x_0) \cdot h_{i_1} \cdot \ldots \cdot h_{i_k} + \frac{1}{(k+1)!} \sum_{i_1 = 1, \ldots, i_{k+1} = 1}^{n} D_{i_1, \ldots, i_{k+1}} f(c) \cdot h_{i_1} \cdot \ldots \cdot h_{i_{k+1}}$
+\end{theo}
+
+\underline{Ejemplo}
+
+Sea $f(x,y) = x^2 - 2y^2 + 4xy - 3$. Calculemos el Polinomio de Taylor de orden 2 en el punto $(1,1) \in \mathbb{R}^2$
+
+Observamos que \begin{itemize}
+\item $\nabla f(x,y) = (2x + 4y, -4y + 4x)$
+\item $H_f (x,y) = \begin{pmatrix}
+2 & 4 \\ 4 & -4
+\end{pmatrix}$
+\item $h = (x,y) - (1,1) = (x-1, y-1)$
+\end{itemize}
+$$P2 ((x,y); (1,1)) = 0 + \langle (6,0),(x-1, y-1) \rangle + \frac{1}{2} \cdot \begin{pmatrix}
+x-1 & y-1
+\end{pmatrix} \cdot \begin{pmatrix}
+2 & 4 \\ 4 & -4
+\end{pmatrix} \cdot \begin{pmatrix}
+x-1 \\ y-1
+\end{pmatrix} $$
+$$= 6(x-1) + \frac{1}{2} \cdot \begin{pmatrix}
+2(x-1) + 4 (y-1) & 4(x-1) - 4 (y-1)
+\end{pmatrix}\cdot \begin{pmatrix}
+x-1 \\ y-1
+\end{pmatrix} $$
+$$= 6(x-1) + \frac{1}{2} \left( 2 (x-1)^2 + 4 (x-1)(y-1) + 4 (x-1)(y-1) - 4 (y-1)^2 \right)$$
+$$= x^2 - 2y^2 + 4xy - 3$$
+
+\begin{defi}
+Sea $f: A \subset \mathbb{R}^n \to  \mathbb{R}, x_0 \in A$
+\begin{itemize}
+\item Decimos que $x_0$ es un mínimo relativo si $f(x) \geq f(x_0) : \forall x \in B(x_0, \varepsilon) \subset A$
+\item Decimos que $x_0$ es un mínimo relativo si $f(x) \leq f(x_0) : \forall x \in B(x_0, \varepsilon) \subset A$
+\item Decimos que un extremo es absoluto si la desigualdad correspondiente es cierta $\forall x \in A$
+\item Decimos que $x_0$ es un punto crítico si $\nabla f(x_0) = 0$
+\end{itemize}
+\end{defi}
+
+\begin{theo}
+Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}, A$ abierto, y supongamos que existe $\nabla f(x_0), x_0 \in A$ siendo $x_0$ un extremo relativo. Entonces, $\nabla f (x_0) = 0$.
+\end{theo}
+
+\begin{demo}
+Sea $j \in \{1, \ldots, n\}$. Supongamos que $x_0$ es un máximo relativo (razonamos de forma análoga para el caso del mínimo relativo). Entonces
+$$\frac{f(x_0 + t \cdot e_j) - f(x_0)}{t} = \begin{cases} \leq 0 & t> 0 \\ \geq 0 & t < 0 \end{cases}$$
+Entonces, $\frac{\partial f}{\partial x_j} (x_0) = 0$
+\end{demo}
+
+\underline{Observación}
+
+Si $f \in \mathcal{C}^{2)}(A), x_0$, definimos el Hessiano como $ H_f (x_0) = \begin{pmatrix}
+\frac{\partial^2 f}{\partial x_j \partial x_k}
+\end{pmatrix}_{1 \leq j,k \leq n}$. Es decir, es una , matriz cuadrada simétrica.
+
+Si recordamos del curso de Álgebra Lineal, definíamos las formas cuadráticas como las aplicaciones $Q \in M_{n \times n}$ tales que
+\begin{align*}
+Q: \mathbb{R}^n &\to \mathbb{R} \\ x &\mapsto Q(x) = x Q(x)x^t
+\end{align*}
+
+Es decir, los Hessianos son formas cuadráticas.
+
+\begin{defi}
+Una forma cuadrática $Q \in M_{n \times n}$ se denomina:
+\begin{itemize}
+\item Definida positiva si $Q(x) > 0 : \forall x \in \mathbb{R}^n \setminus \{0\}$
+\item Definida negativa si $Q(x) < 0 : \forall x \in \mathbb{R}^n \setminus \{0\}$
+\item Semidefinida positiva si $Q(x) \geq 0 : \forall x \in \mathbb{R}^n$
+\item Semidefinida negativa si $Q(x) \leq 0 : \forall x \in \mathbb{R}^n$
+\end{itemize}
+\end{defi}
+
+\begin{defi}[Punto Silla]
+Un \textbf{punto silla} es un punto crítico que no es un extremo.
+\end{defi}
+
+\begin{theo}
+Sea $f \in \mathcal{C}^{2)} (A), A \subset \mathbb{R}^n \mbox{ abierto,} x_0 \in A \mbox{ y } \nabla f(x_0) = 0$
+\begin{itemize}
+\item Si $H_f (x_0)$ es definida negativa, entonces $x_0$ es un máximo relativo.
+\item  Si $H_f (x_0)$ es definida positiva, entonces $x_0$ es un mínimo relativo.
+\item  Si $x_0$ es un máximo relativo, entonces $H_f (x_0)$ es semidefinida negativa.
+\item   Si $x_0$ es un mínimo relativo, entonces $H_f (x_0)$ es semidefinida positiva.
+\item  Si $H_f (x_0)$ es indefinida, entonces $x_0$ es un punto silla.
+\end{itemize}
+\end{theo}
+
+\begin{demo}
+$(i)$. Sea $S = \{x \in \mathbb{R}^n : || x || = 1\}$ compacto de $\mathbb{R}^n$. La aplicación $H_f (x_0) = Q : \mathbb{R}^n \to \mathbb{R}$ es continua, y por lo tanto, alcanza un máximo en $S$ (compacto en $\mathbb{R}^n$ por Heine-Borel es cerrado y acotado, y por Weierstrass existe el máximo). Además, como $Q$ es definida negativa por hipótesis $$\exists \tilde{x} \in S : 0 > Q(\tilde{x}) \geq Q(x) : \forall x \in S$$
+Sea $-\varepsilon_0 = Q(\tilde{x})$. Debido a la continuidad de las derivadas parciales de segundo orden de $f$, 
+$$\mbox{ Dado } \varepsilon_0 > 0, \exists \delta > 0 : || x - x_0 || < \delta \Rightarrow \left| D_{ij} f(x) - D_{ij} f(x_0) \right| < \frac{\varepsilon}{2n^2} : \forall i,j = 1, \ldots, n$$
+Por otra parte, si $h \in \mathbb{R}^n, h \neq 0$, se verifica que $$Q(h)= || h||^2 \cdot Q(\frac{h}{||h||}) \leq ||h||^2 Q(\tilde{x}) = -\varepsilon_0 \cdot ||h||^2$$
+Por el Teorema de Taylor, $\exists c \in L[x_0, x_0 + h]$ tal que $$f(x_0 + h) - f(x_0) = \frac{1}{2} h \cdot H_f(c) \cdot h^t = \frac{1}{2} \sum_{i,j = 1}^{n} D_{ij} f(c) \cdot h_i \cdot h_j $$
+$$= \frac{1}{2} \left[ \left(\sum_{i,j = 1}^{n} D_{ij} f(c) - D_{ij} f(x_0)  \right) \cdot h_i \cdot h_j + \underbrace{\sum_{i,j = 1}^{n} D_{ij} f(x_0) \cdot h_i \cdot h_j}_{Q(h)} \right]$$
+$$\leq \frac{1}{2} \left[ n^2 \frac{\varepsilon}{2n^2} \cdot ||h||^2 - ||h||^2 \varepsilon_0 \right] < 0$$
+Teniendo en cuenta que $||h|| < \delta$
+
+El resto de apartados se demuestran de forma análoga.
+\end{demo}
+
+
+
+---- METER CLASE DÍA 17 DE NOVIEMBRE ---
+
+\underline{Extremos relativos, $n=2$}
+
+Sea $f : A \subset \mathbb{R}^2 \to \mathbb{R}, (x_0, y_0) \in A, A$ abierto, $f \in \mathcal{C}^{2)} (A)$.
+
+$$H_f (x_0, y_0) = \begin{pmatrix} \frac{\partial^2 f}{\partial x^2} (x_0, y_0) & \frac{\partial^2 f}{\partial x \partial y} (x_0, y_0) \\ \frac{\partial^2 f}{\partial x \partial y} (x_0, y_0) & \frac{\partial^2 f}{\partial y^2} (x_0, y_0) \\
+
+\end{pmatrix} = \begin{pmatrix}
+a & b \\ b & c
+\end{pmatrix}$$
+
+Denotamos al determinante Hessiano con $\Delta = det(H_f (x_0, y_0)) = ac - b^2$
+
+Observamos que si $h = (h_1, h_2) \in \mathbb{R}^2$
+$$h H_f (x_0, y_0) h^t = a \cdot h_1^2 + 2 b \cdot h_1 \cdot h_2 + c \cdot h_2^2$$
+
+\begin{theo}
+Sea $\nabla f (x_0, y_0) = 0$.
+\begin{itemize}
+\item $\Delta > 0 = \begin{cases} a > 0 & (x_0, y_0) \mbox{ mínimo relativo} \\ a < 0 & (x_0, y_0) \mbox{ máximo relativo}\end{cases}$
+\item $\Delta < 0 \Rightarrow (x_0, y_0)$ es punto silla
+\item $\Delta = 0$
+\end{itemize}
+\end{theo}
+
+\begin{demo}
+(i)
+
+Lo que queremos ver es que si $h \neq 0$, entonces $ah_1^2 + 2bh_1h_2 + ch_2^2 > 0$. Sabemos que, por hipótesis, $ac - b^2 > 0$, y que $a > 0$
+
+Entonces, si escribimos $ah_1^2 + 2bh_1h_2 + ch_2^2 = a \left( h_1 + \frac{b}{a} h_2 \right)^2 + \frac{\Delta}{a} h_2^2$, vamos a ver que es positivo. Desarrollando la igualdad de la derecha:
+$$ a \left( h_1 + \frac{b}{a} h_2 \right)^2 + \frac{\Delta}{a} h_2^2 = a \left( h_1^2 + \frac{b^2}{a^2} h_2^2 + 2 \cdot \frac{b}{a} h_1 h_2\right) + \left( c - \frac{b^2}{a} h_2^2 \right)$$
+
+
+
+Tenemos que $ a \left( h_1 + \frac{b}{a} h_2 \right)^2 + \frac{\Delta}{a} h_2^2 >0 $, ya que aunque podría darse que $ h_1 + \frac{b}{a} h_2 $ pueda anularse, el segundo término no. Entonces, $\forall h = (h_1, h_2) \neq 0$ 
+\end{demo}
+
+-- Dibujo paraboloide hiperbólico como ejemplo de punto silla --
+
+\underline{Ejemplo}
+
+Ejercicio $52d)$ Estudia los puntos críticos de las siguiente función y determina si son máximos o mínimos locales : $f(x,y) = x^3 + y^3 - 3 \cdot a xy$
+
+Calculamos el gradiente en un punto cualquiera: $\nabla f(x,y) = (3x^2 - 3ay, 3y^2 - 3ax)$.
+
+\begin{itemize}
+\item Supongamos $a \neq 0$. Igualando a 0 ambas componentes:
+$y = \frac{x^2}{a}$, $\frac{x^4}{a^2} - ax = 0 \Rightarrow x (x^3 - a^3) = 0 = \begin{cases} x = 0 & y = 0 \\ x = a & y =a \end{cases}$
+
+\item Si $a = 0 : (0,0)$
+\end{itemize}
+
+$$H_f (x,y) = \begin{pmatrix} 6x & -3a \\ -3a & 6y  \\
+
+\end{pmatrix}$$
+
+$\Delta = 36 xy - 9 a^2$
+
+\begin{itemize}
+\item Si $a \neq 0$
+\begin{itemize}
+\item $(0,0) \Rightarrow \Delta = -9a^2 < 0 \Rightarrow $ punto silla
+\item $(a,a) \Rightarrow \Delta = 27a^2 > 0 \Rightarrow \begin{cases} a > 0 & \mbox{ mínimo relativo} \\ a < 0 & \mbox{ máximo relativo} \end{cases}$
+\end{itemize}
+
+\item Si $a = 0, \Delta = 0$
+$f(0,0) = 0$
+completar
+\end{itemize}
+
+$\mathfrak{i} \mathit{i}  \mathbf{i} \mathtt{i} \mathrm{i} \mathsf{i}$
+
+\begin{defi}[]
+
+\end{defi}
+
 \end{document}
