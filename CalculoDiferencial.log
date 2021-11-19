@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.8)  4 NOV 2021 19:54
-=======
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.1)  4 NOV 2021 19:52
->>>>>>> Iker
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.8)  19 NOV 2021 10:48
 entering extended mode
 **./CalculoDiferencial.tex
 (CalculoDiferencial.tex
@@ -1344,193 +1340,197 @@ Package xcolor Warning: Incompatible color definition on input line 563.
 
 [13]
 
-Package xcolor Warning: Incompatible color definition on input line 572.
+Package xcolor Warning: Incompatible color definition on input line 566.
 
 
-Package xcolor Warning: Incompatible color definition on input line 583.
+Package xcolor Warning: Incompatible color definition on input line 575.
 
 
-Package xcolor Warning: Incompatible color definition on input line 598.
+Package xcolor Warning: Incompatible color definition on input line 586.
 
 
-Package xcolor Warning: Incompatible color definition on input line 602.
+Package xcolor Warning: Incompatible color definition on input line 601.
+
+
+Package xcolor Warning: Incompatible color definition on input line 605.
 
 
 LaTeX Font Warning: Font shape `U/stmry/b/n' undefined
-(Font)              using `U/stmry/m/n' instead on input line 602.
+(Font)              using `U/stmry/m/n' instead on input line 605.
 
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 602.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 605.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 602.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 605.
 [14]
 
-Package xcolor Warning: Incompatible color definition on input line 617.
+Package xcolor Warning: Incompatible color definition on input line 621.
 
 
-Package xcolor Warning: Incompatible color definition on input line 633.
-
-
-Package xcolor Warning: Incompatible color definition on input line 664.
+Package xcolor Warning: Incompatible color definition on input line 642.
 
 [15]
 
-Package xcolor Warning: Incompatible color definition on input line 679.
+Package xcolor Warning: Incompatible color definition on input line 659.
 
 
-Package xcolor Warning: Incompatible color definition on input line 687.
+Package xcolor Warning: Incompatible color definition on input line 660.
 
 
-Package xcolor Warning: Incompatible color definition on input line 707.
+Package xcolor Warning: Incompatible color definition on input line 668.
+
+
+Package xcolor Warning: Incompatible color definition on input line 688.
+
+
+Package xcolor Warning: Incompatible color definition on input line 698.
 
 [16]
 
 Package xcolor Warning: Incompatible color definition on input line 717.
 
 
-Package xcolor Warning: Incompatible color definition on input line 737.
+Package xcolor Warning: Incompatible color definition on input line 734.
 
 [17]
 
-Package xcolor Warning: Incompatible color definition on input line 763.
+Package xcolor Warning: Incompatible color definition on input line 759.
 
 
-Package xcolor Warning: Incompatible color definition on input line 780.
+Package xcolor Warning: Incompatible color definition on input line 776.
 
 
-Package xcolor Warning: Incompatible color definition on input line 794.
+Package xcolor Warning: Incompatible color definition on input line 790.
 
 
-Package xcolor Warning: Incompatible color definition on input line 807.
+Package xcolor Warning: Incompatible color definition on input line 803.
 
 [18]
 
-Package xcolor Warning: Incompatible color definition on input line 821.
+Package xcolor Warning: Incompatible color definition on input line 817.
 
 
-Package xcolor Warning: Incompatible color definition on input line 853.
+Package xcolor Warning: Incompatible color definition on input line 849.
 
 [19]
 
-Package xcolor Warning: Incompatible color definition on input line 883.
+Package xcolor Warning: Incompatible color definition on input line 879.
 
 [20]
 
-Package xcolor Warning: Incompatible color definition on input line 908.
+Package xcolor Warning: Incompatible color definition on input line 904.
 
 
-Package xcolor Warning: Incompatible color definition on input line 923.
+Package xcolor Warning: Incompatible color definition on input line 919.
 
 
-Package xcolor Warning: Incompatible color definition on input line 942.
+Package xcolor Warning: Incompatible color definition on input line 938.
 
-[21] [22
+[21] [22]
+
+Package xcolor Warning: Incompatible color definition on input line 951.
+
+
+Package xcolor Warning: Incompatible color definition on input line 952.
+
+
+Package xcolor Warning: Incompatible color definition on input line 953.
+
+
+Package xcolor Warning: Incompatible color definition on input line 960.
+
+
+Package xcolor Warning: Incompatible color definition on input line 965.
+
+
+Package xcolor Warning: Incompatible color definition on input line 971.
+
+[23
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 955.
+Package xcolor Warning: Incompatible color definition on input line 1008.
 
 
-Package xcolor Warning: Incompatible color definition on input line 956.
-
-
-Package xcolor Warning: Incompatible color definition on input line 957.
-
-
-Package xcolor Warning: Incompatible color definition on input line 964.
-
-
-Package xcolor Warning: Incompatible color definition on input line 969.
-
-
-Package xcolor Warning: Incompatible color definition on input line 975.
-
-[23]
-
-Package xcolor Warning: Incompatible color definition on input line 1012.
-
-
-Overfull \hbox (35.08618pt too wide) detected at line 1039
-\OML/cmm/m/it/10 f \OT1/cmr/m/n/10 : (\OML/cmm/m/it/10 a; b\OT1/cmr/m/n/10 ) \O
-MS/cmsy/m/n/10 ! \U/msb/m/n/10 R\OML/cmm/m/it/10 ; x[] \OMS/cmsy/m/n/10 2 \OT1/
-cmr/m/n/10 (\OML/cmm/m/it/10 a; b\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; f[]x[][]\O
-MS/cmsy/m/n/10 8\OML/cmm/m/it/10 " > \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 ; \OMS/c
-msy/m/n/10 9\OML/cmm/m/it/10  > \OT1/cmr/m/n/10 0 : \OMS/cmsy/m/n/10 j\OML/cmm
-/m/it/10 x \OMS/cmsy/m/n/10   \OML/cmm/m/it/10 x[]\OMS/cmsy/m/n/10 j \OML/cmm/m
-/it/10 < ; x \OMS/cmsy/m/n/10 2 \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a; b\OT1/cmr
-/m/n/10 ) \OMS/cmsy/m/n/10 ) j\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/
-10 x\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10   \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OM
-L/cmm/m/it/10 x[]\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 j \OML/cmm/m/it/10 < "
- []
+Package xcolor Warning: Incompatible color definition on input line 1034.
 
 [24]
 
-Package xcolor Warning: Incompatible color definition on input line 1046.
+Package xcolor Warning: Incompatible color definition on input line 1043.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1055.
+Package xcolor Warning: Incompatible color definition on input line 1070.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1082.
+Package xcolor Warning: Incompatible color definition on input line 1078.
 
 [25]
 
-Package xcolor Warning: Incompatible color definition on input line 1090.
+Package xcolor Warning: Incompatible color definition on input line 1084.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1096.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1106.
+Package xcolor Warning: Incompatible color definition on input line 1094.
 
 [26]
 
-<<<<<<< HEAD
-Package xcolor Warning: Incompatible color definition on input line 1159.
-
-[27]
-=======
-Package xcolor Warning: Incompatible color definition on input line 1160.
-
-[26]
-Overfull \hbox (2.0491pt too wide) in paragraph at lines 1170--1171
-[]\OT1/cmr/m/n/10 A traves de un cam-bio de va-ria-ble, es-cri-bien-do $\OML/c
-mm/m/it/10 x; y$ \OT1/cmr/m/n/10 en sus coor-de-na-das po-la-res, $[]$,
- []
-
->>>>>>> Iker
-
-Package xcolor Warning: Incompatible color definition on input line 1186.
+Package xcolor Warning: Incompatible color definition on input line 1147.
 
 [27]
 
-Package xcolor Warning: Incompatible color definition on input line 1210.
+Package xcolor Warning: Incompatible color definition on input line 1174.
 
-<<<<<<< HEAD
+
+Package xcolor Warning: Incompatible color definition on input line 1198.
+
 [28]
 
-Package xcolor Warning: Incompatible color definition on input line 1219.
-=======
->>>>>>> Iker
+Package xcolor Warning: Incompatible color definition on input line 1207.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1230.
+Package xcolor Warning: Incompatible color definition on input line 1218.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1244.
+Package xcolor Warning: Incompatible color definition on input line 1232.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1248.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1249.
+Package xcolor Warning: Incompatible color definition on input line 1242.
 
 [29]
 
-Package xcolor Warning: Incompatible color definition on input line 1256.
+Package xcolor Warning: Incompatible color definition on input line 1263.
+
+[30]
+
+Package xcolor Warning: Incompatible color definition on input line 1281.
 
 
-Overfull \hbox (35.81529pt too wide) detected at line 1264
+Package xcolor Warning: Incompatible color definition on input line 1298.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1311.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1320.
+
+[31]
+
+Package xcolor Warning: Incompatible color definition on input line 1333.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1342.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1352.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1353.
+
+[32]
+
+Package xcolor Warning: Incompatible color definition on input line 1360.
+
+
+Overfull \hbox (35.81529pt too wide) detected at line 1368
 \OML/cmm/m/it/10 df\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 )(\OML/
 cmm/m/it/10 v\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 df\OT1/cmr/m/n/10 (\OML/cmm/m
 /it/10 x[]\OT1/cmr/m/n/10 ) [] = \OMS/cmsy/m/n/10 jj\OML/cmm/m/it/10 v\OMS/cmsy
@@ -1542,83 +1542,23 @@ r/m/n/10 ) = \OML/cmm/m/it/10 D[]f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr
 /m/n/10 )
  []
 
-[28]
 
-Package xcolor Warning: Incompatible color definition on input line 1242.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1243.
+Package xcolor Warning: Incompatible color definition on input line 1372.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1250.
+Package xcolor Warning: Incompatible color definition on input line 1376.
+
+[33]
+
+Package xcolor Warning: Incompatible color definition on input line 1403.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1272.
-
-[29
-
-]
-
-Package xcolor Warning: Incompatible color definition on input line 1288.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1322.
-
-
-Overfull \hbox (59.80151pt too wide) detected at line 1327
-\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 L\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr
-/m/n/10 ) \OMS/cmsy/m/n/10   \OML/cmm/m/it/10 L\OT1/cmr/m/n/10 (\OML/cmm/m/it/1
-0 y\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 j \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 j\OML
-/cmm/m/it/10 L\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x \OMS/cmsy/m/n/10   \OML/cmm/m
-/it/10 y\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 j \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 
-jh\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a[]; [] ; a[]\OT1/cmr/m/n/10 )\OML/cmm/m/it
-/10 ; x \OMS/cmsy/m/n/10   \OML/cmm/m/it/10 y\OMS/cmsy/m/n/10 ij  jj\OT1/cmr/m
-/n/10 (\OML/cmm/m/it/10 a[]; [] ; a[]\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 jj[]  j
-j\OML/cmm/m/it/10 x \OMS/cmsy/m/n/10   \OML/cmm/m/it/10 y\OMS/cmsy/m/n/10 jj[] 
- \OML/cmm/m/it/10 " \OT1/cmr/m/n/10 : \OMS/cmsy/m/n/10 jj\OML/cmm/m/it/10 x \O
-MS/cmsy/m/n/10   \OML/cmm/m/it/10 y\OMS/cmsy/m/n/10 jj[] \OML/cmm/m/it/10 <  \
-OT1/cmr/m/n/10 = []
- []
-
-[30]
-Overfull \hbox (23.55394pt too wide) detected at line 1344
-[] \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]
-\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 , [] ! \OT1/cmr/m/n/10 0 \OMS/cmsy/m/n/10 , 
-[] ! \OT1/cmr/m/n/10 0
- []
-
-
-Package xcolor Warning: Incompatible color definition on input line 1347.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1356.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1371.
-
-[31]
-
-Package xcolor Warning: Incompatible color definition on input line 1411.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1420.
-
-[32]
-
-<<<<<<< HEAD
-Package xcolor Warning: Incompatible color definition on input line 1268.
-=======
-Package xcolor Warning: Incompatible color definition on input line 1436.
->>>>>>> Iker
+Package xcolor Warning: Incompatible color definition on input line 1412.
 
 \tf@thm=\write4
 \openout4 = `CalculoDiferencial.thm'.
 
-<<<<<<< HEAD
-[30] (CalculoDiferencial.aux
-=======
-[33] (CalculoDiferencial.aux
->>>>>>> Iker
+[34] (CalculoDiferencial.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 LaTeX Info: Redefining \. on input line 9.
@@ -1629,88 +1569,49 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 30486 strings out of 480790
- 750025 string characters out of 2897301
+ 30489 strings out of 480790
+ 750062 string characters out of 2897301
  1110018 words of memory out of 3000000
- 45857 multiletter control sequences out of 15000+200000
- 546601 words of font info for 82 fonts, out of 3000000 for 9000
+ 45859 multiletter control sequences out of 15000+200000
+ 547243 words of font info for 84 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
-<<<<<<< HEAD
  68i,13n,98p,737b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\jdbar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
-0800.pk> <C:\Users\jdbar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\tcrm1200.pk><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmbx10.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmbx12.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/f
-onts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/jdbar/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/jdbar/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/jdbar/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/
-jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C
-:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi
-7.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmmi8.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cmextra/cmmib7.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/jdbar/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/jdbar/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/jdbar/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/jdb
-ar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Us
-ers/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb
-><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
-msy10.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
-onts/cm/cmsy5.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/amsfonts/cm/cmsy6.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmsy7.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/jdbar/AppData/Local/Program
-s/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/jdbar/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/jdba
-r/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb><
-C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/public/hoekwater/stmar
-y10.pfb>
-Output written on CalculoDiferencial.pdf (30 pages, 407004 bytes).
+1000.pk> <C:\Users\jdbar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
+0\tcrm0800.pk> <C:\Users\jdbar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
+/dpi600\tcrm1200.pk><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmbx10.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/jdbar/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/jdbar/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/jdbar/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/jd
+bar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/
+Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.
+pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmmi7.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmmi8.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cmextra/cmmib7.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/jdbar/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/jdbar/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/jdbar/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/jdba
+r/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Use
+rs/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb>
+<C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+r8.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
+s/cm/cmsy10.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmsy5.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmsy6.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/jdbar/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/jdbar/AppData/Local/P
+rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/jdbar/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/User
+s/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7
+.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/public/hoekwater
+/stmary10.pfb>
+Output written on CalculoDiferencial.pdf (34 pages, 436015 bytes).
 PDF statistics:
- 239 PDF objects out of 1000 (max. 8388607)
-=======
- 102i,13n,111p,737b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Mi Equipo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
-tcrm0800.pk> <C:\Users\Mi Equipo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/
-ec/dpi600\tcrm1200.pk><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/M
-iKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Mi Equipo/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/Mi Equ
-ipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:
-/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
-mmi10.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmmi5.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Mi Equipo/AppData/Local
-/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Mi Equipo/A
-ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><C:
-/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
-mr10.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmr12.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmr17.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Mi Equipo/AppData/Local/P
-rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Mi Equipo/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Mi 
-Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C
-:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmsy10.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmsy5.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/M
-iKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Mi Equipo/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Mi Equipo/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Use
-rs/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/
-msbm10.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/amsfonts/symbols/msbm7.pfb><C:/Users/Mi Equipo/AppData/Local/Programs/MiKTeX/f
-onts/type1/public/hoekwater/stmary10.pfb>
-Output written on CalculoDiferencial.pdf (33 pages, 423330 bytes).
-PDF statistics:
- 249 PDF objects out of 1000 (max. 8388607)
->>>>>>> Iker
+ 257 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  109 words of extra memory for PDF output out of 10000 (max. 10000000)
 

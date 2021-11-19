@@ -1,4 +1,4 @@
-﻿\documentclass[10pt,a4paper,openright]{book}
+\documentclass[10pt,a4paper,openright]{book}
 
 \title{CÁLCULO DIFERENCIAL}
 \author{Juan Diego Barrado Daganzo e Iker Muñoz Martínez\\2º de Carrera} %\\ es salto de linea
@@ -560,6 +560,9 @@ $$p\in \partial(A) \Leftrightarrow \forall \varepsilon: B(p,\varepsilon)\cap A \
 \end{itemize}
 
 \section*{SUCESIONES, COMPLETITUD Y COMPACIDAD}
+\subsection*{\underline{Convergencia y sucesiones sobre espacios métricos}}
+En Análisis de Variable Real definimos los conceptos de sucesiones y convergencia para el espacio métrico $(\mathbb{R}, |\cdot|)$, por tanto, es necesario redefinir dichos conceptos y prescindir de las particularidades de $\mathbb{R}$ para poder hacerlos extensible a cualquier espacio métrico en el que trabajemos.
+
 \begin{defi}[Sucesión y Subsucesión]
 Sea $E$ un conjunto. Una \textbf{sucesión} $\{x_n\}_{n \in \mathbb{N}} = \{x_n\}_n = \{x_n\}$ es una función 
 \begin{align*}
@@ -583,7 +586,7 @@ $$\forall \varepsilon > 0, \exists n_0 \in \mathbb{N} : \forall n \geq n_0 : d(x
 Sea $(E, || \cdot ||)$ un espacio normado, si suponemos que dicha métrica anterior viene dada por la norma especificada ahora, entonces:
 \begin{itemize}
 \item Si $\lim_{n \to \infty} x_n = x \mbox{ y } \lim_{n \to \infty} y_n = y \Rightarrow \lim_{n \to \infty} (x_n + y_n) = x + y$
-\item Sea $\lambda_n \in \mathbb{R}$ y $\lambda \in \mathbb{R}$ donde $ \lambda_n \xrightarrow{n\rightarrow\infty}\lambda \in \mathbb{R}$ y $x_n \xrightarrow{n\rightarrow\infty} x \in E$, entonces se tiene que: $\lambda_n \cdot x_n \xrightarrow{n\rightarrow\infty} \lambda \cdot x \in E$
+\item Sea $\{\lambda_n\} \subset \mathbb{R}$ y $\lambda \in \mathbb{R}$ donde $ \lambda_n \xrightarrow{n\rightarrow\infty}\lambda$ y $x_n \xrightarrow{n\rightarrow\infty} x \in E$, entonces se tiene que: $\lambda_n \cdot x_n \xrightarrow{n\rightarrow\infty} \lambda \cdot x \in E$
 \end{itemize}
 \end{prop}
 
@@ -614,21 +617,6 @@ De este modo, por lo probado en la proposición anterior:
 $$\lim_{m \rightarrow \infty} ||x_m - x||_2^2 = \sum_{j=1}^{n} \lim_{m \rightarrow \infty} |x_m^j - x^j|^2 = 0$$
 \end{demo}
 
-\begin{prop}[Caracterización de la topología vía sucesiones]
-Sea $(E,d)$ un espacio métrico. Se cumple que:
-\begin{enumerate}
-\item Un subconjunto $A \subset E$ es cerrado $\Leftrightarrow \forall \{x_n\}_{n\in \mathbb{N}} \subset A : \left(\exists \lim_{n \rightarrow \infty} x_n = x \Rightarrow x \in A\right)$
-
-\item Un punto $x \in \bar{A} \Leftrightarrow \exists \{x_n\}_{n\in \mathbb{N}} \subset A : \lim_{n \rightarrow \infty} x_n = x$
-
-\item Un punto $x \in A' \Leftrightarrow \exists \{x_n\}_{n\in \mathbb{N}} \subset A : x_n \neq x: \lim_{n \rightarrow \infty} x_n = x$
-\end{enumerate}
-\end{prop}
-
-\begin{demo}
-El conjunto $A$ es cerrado si y sólo si $A' \subset A$. Por tanto, si escogemos una sucesión $\{x_n\}_{n\in \mathbb{N}} \subset A$ de forma que $\lim_{n \rightarrow \infty} x_n = x$, vamos a ver que $x\in A$. Supongamos que no, entonces tenemos una sucesión convergente a $x$ de forma que $\forall n \in \mathbb N: x_n \neq x$ porque está contenida en $A$. En consecuencia, por el apartado 3: $x \in A' \subset A \sharp$.
-\end{demo}
-
 \begin{prop}
 Sea $(E,d)$ un espacio métrico y $\{x_n\}_{n\in \mathbb{N}} \subset E$, podemos caracterizar de nuevo la convergencia en base a subsucesiones:
 \begin{enumerate}
@@ -641,23 +629,13 @@ Sea $(E,d)$ un espacio métrico y $\{x_n\}_{n\in \mathbb{N}} \subset E$, podemos
 
 \begin{demo}
 \begin{itemize}
-\item $"\Rightarrow"$ 
+\item $\Rightarrow$: Tenemos que $\forall \varepsilon > 0, \exists n_0 \in \mathbb{N} : \forall n \geq n_0 : d(x_n,x) < \varepsilon$, luego entonces si consideramos $n_{j_0} \geq n_0 : \forall n_j \geq n_{j_0} \geq n_0 : d(n_{j}, x) < \varepsilon$ se tiene trivialmente.
 
-$\forall \varepsilon > 0, \exists n_0 \in \mathbb{N} : \forall n \geq n_0 : d(x_n,x) < \varepsilon$. Sea $n_{j_0} \geq n_0 : \forall n_j \geq n_{j_0} \geq n_0 : d(n_{j}, x) < \varepsilon$
+$\Leftarrow$: Trivial.
 
-$"\Leftarrow"$
+\item  $\Rightarrow$: Trivial por 1.
 
-Trivial
-
-\item  $"\Rightarrow"$
-
-Trivial por (i).
-
-$"\Leftarrow"$ Supongamos que $x_n  \nrightarrow x$. Entonces $\exists \varepsilon > 0 : \forall m \in \mathbb{N}, \exists n_m \geq m : d(x_{n_m}, x) \geq \varepsilon$
-
-$\{x_{n_m}\}_m \subset \{x_n\}_n$.
-
-Sea $\{y_{m_k}\}_k \subset \{x_{n_m}\}_m : d(y_{m_k}, x) \geq \varepsilon\Rightarrow y_{m_k} \nrightarrow x \sharp \Rightarrow x_n \rightarrow x$ 
+$\Leftarrow$: Supongamos que $x_n  \nrightarrow x$, entonces $\exists \varepsilon > 0 : \forall m \in \mathbb{N}, \exists n_m \geq m : d(x_{n_m}, x) \geq \varepsilon$. Si consideramos ahora $\{x_{n_m}\}_m \subset \{x_n\}_n$ y escogemos una subsucesión de esta $\{y_{m_k}\}_k \subset \{x_{n_m}\}_m : d(y_{m_k}, x) \geq \varepsilon\Rightarrow y_{m_k} \nrightarrow x \#$
 \end{itemize}
 \end{demo}
 
@@ -666,6 +644,8 @@ Sea $(E,d)$ un espacio métrico, se dice que $\{x_n\}_{n\in \mathbb{N}} \subset 
 $$\forall \varepsilon > 0: \exists n_0 \in \mathbb{N} : \forall m,n \geq n_0 \Rightarrow d(x_m, x_n) < \varepsilon$$
 Se dice que $(E,d)$ es \textbf{completo} si toda sucesión de Cauchy es convergente.
 \end{defi}
+
+\newpage
 
 \underline{Observaciones}
 \begin{itemize}
@@ -676,6 +656,7 @@ Se dice que $(E,d)$ es \textbf{completo} si toda sucesión de Cauchy es converge
 \item Sea $E = \mathbb{R} \setminus \{0\}$ no es completo. Por ejemplo, la sucesión $x_n = \frac{1}{n} \in E$ es sucesión de Cauchy y no converge en $E$.
 \end{itemize}
 
+\subsection*{\underline{Concepto de compacidad y propiedades}}
 \begin{defi}[Conjunto Acotado]
 En $(E,d)$ un espacio métrico, un conjunto $A \subset E$ es \textbf{acotado} si:
 $$\exists x \in E: \exists r > 0 : A \subset B(x,r) \Leftrightarrow \forall y \in A: d(y,x) < r$$
@@ -733,6 +714,22 @@ $$d(y_{n_k}, y) < \varepsilon : \forall n_k \geq m \Rightarrow d(y_m, y_n) \geq 
 Por tanto, llegamos a una contradicción.
 \end{itemize}
 
+\begin{prop}[Caracterización de la topología vía sucesiones]
+Sea $(E,d)$ un espacio métrico. Se cumple que:
+\begin{enumerate}
+\item Un subconjunto $A \subset E$ es cerrado $\Leftrightarrow \forall \{x_n\}_{n\in \mathbb{N}} \subset A : \left(\exists \lim_{n \rightarrow \infty} x_n = x \Rightarrow x \in A\right)$
+
+\item Un punto $x \in \bar{A} \Leftrightarrow \exists \{x_n\}_{n\in \mathbb{N}} \subset A : \lim_{n \rightarrow \infty} x_n = x$
+
+\item Un punto $x \in A' \Leftrightarrow \exists \{x_n\}_{n\in \mathbb{N}} \subset A : x_n \neq x: \lim_{n \rightarrow \infty} x_n = x$
+\end{enumerate}
+\end{prop}
+
+\begin{demo}
+El conjunto $A$ es cerrado si y sólo si $A' \subset A$. Por tanto, si escogemos una sucesión $\{x_n\}_{n\in \mathbb{N}} \subset A$ de forma que $\lim_{n \rightarrow \infty} x_n = x$, vamos a ver que $x\in A$. Supongamos que no, entonces tenemos una sucesión convergente a $x$ de forma que $\forall n \in \mathbb N: x_n \neq x$ porque está contenida en $A$. En consecuencia, por el apartado 3: $x \in A' \subset A \sharp$.
+\end{demo}
+
+
 
 \begin{defi}[Conjunto Compacto]
 Sea $(E,d)$ un espacio métrico:
@@ -746,6 +743,7 @@ $$\mathcal{U} = \{ \mathcal{U}_1, \ldots, \mathcal{U}_m\} \subset \mathcal{U}: A
 \item Se dice que $A \subset E$ es \textbf{compacto} si para todo recubrimiento abierto de $A$ se puede extraer un subrecubrimiento finito.\end{itemize}
 \end{defi}
 
+\newpage
 \underline{Observaciones}
 
 \begin{itemize}
@@ -757,8 +755,6 @@ Sea $x \in A \subset \bigcup_{n \in \mathbb{N}} B(x,n) \xRightarrow{\exists m \i
 
 En efecto, sea $\mathcal{U}_n = (\frac{1}{n}, 1)$. Es claro que $(0,1) \subset \bigcup_{n \in \mathbb{N}} \mathcal{U}_i$, pero $\nexists m : (0,1) \subset \mathcal{U}_m$
 \end{itemize}
-
-\newpage
 
 \begin{defi}[Conjunto Totalmente Acotado]
 Sea $(E,d)$ un espacio métrico, se dice que $A \subset E$ es \textbf{totalmente acotado} si ocurre que:
@@ -1033,14 +1029,6 @@ compacto & \longmapsto compacto & compacto & \not\longmapsfrom compacto
 \end{align*}
 Sin embargo, tomando el espacio $\mathbb{R}^n$ podemos consdierar como cierto que los acotados van a acotados.
 \end{itemize}
-
-NO SE QUE ES ESTO
-Recordamos la definición de continuidad en $\mathbb{R}$:
-$$f : (a,b) \to \mathbb{R}, x_0 \in (a,b), f \mbox{ es continua en } x_0 \mbox{ si } \forall \varepsilon > 0, \exists \delta > 0 : |x - x_0| < \delta , x\in (a,b) \Rightarrow |f(x) - f(x_0)| < \varepsilon  $$
-
-Utilizando la extensión de la definición de continuidad, si $E = \mathbb{R}, d = | \cdot |,F = \mathbb{R}, d' = | \cdot | $ y $A = (a,b)$
-$$f(B_d(x_0, \delta) \cap A) \subset B_{d'} (f(x_0), \varepsilon)$$
- 
  
 \begin{theo}
 Sean $(E, d_1), (F, d_2), (G, d_3)$ espacios métricos y supongamos $A \subset E, B \subset F$ tal que $A \xrightarrow{f} B \xrightarrow{g} G$ ambas continuas, entonces:
@@ -1241,122 +1229,170 @@ Como $x\in A$, $\exists j : 1 \leq j \leq m : B(x_j,  \frac{d_{x_j}}{2}))$. Ento
 $$d'(f(x), f(y)) \leq d'(f(x), f(x_j)) + d'(f(x_j), f(y)) < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon$$
 \end{demo}
 
-\begin{defi}[]
-Si $f: A \subset \mathbb{R}^n \to \mathbb{R}, x_0 \in A$ tiene todas las derivadas parciales, se define el \textbf{gradiente de f en $x_0$}, $\nabla f(x_0)$:
+\section*{DIFERENCIABILIDAD}
+Cuando trabajábamos en una dimensión, $f: I \to \mathbb{R}$ con $I \subset \mathbb{R}$ intervalo abierto y $x_0 \in I$, definíamos la derivada como: 
+$$f'(x_0)= \lim_{t \to 0} \frac{f(x_0 + t) - f(x_0) }{t} = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0}$$
+$$DIBUJO$$
+Donde podemos expresar la recta tangente como:
+\begin{align*}
+y= f(x_0) + f'(x_0)(x - x_0) & & \langle (x-x_0, y - f(x_0), (f'(x_0), - 1)) \rangle = 0 
+\end{align*}
+Más adelante, recuperaremos este ejemplo para poder explicar la interpretación geométrica que tiene este concepto en $\mathbb{R}^n$
 
+\begin{defi}[Derivada Direccional]
+Sea $f:A \subset \mathbb{R}^n \to \mathbb{R}, A$ abierto, $x_0 \in A$, y sea $v \in \mathbb{R}^n$. Se define como la \textbf{derivada} de $f$ en la dirección $v$ en el punto $x_0$ como:
+$$D_v f(x_0) = \lim_{t \to 0} \frac{f(x_0 + tv) - f(x_0)}{t}$$
+También se conoce como \textbf{derivada direccional}.
+\end{defi}
+
+\underline{Observaciones}
+
+El módulo del vector que se emplee para calcular dicha derivada no hace más que dilatar el resultado de la misma, es decir, para calcular la derivada del vector unitario basta con dividir por el módulo del vector:
+$$D_{\lambda v} f(x_0) = \lambda D_v f(x_0)$$
+Asímismo, fijados el punto $x_0$ y la dirección $v$ sobre la que se va a calcular la derivada, podemos definir la función $\phi(t) = f(x_0 + tv)$ de modo que la derivada direccional se reduce a una derivada usual sobre 1 variable, en este caso t:
+$$D_v f(x_0) = \phi'(0)$$
+\underline{Ejemplos}
+\begin{itemize}
+\item Sea $f(x,y) = |x^2 - y^2|^{\frac{1}{2}}$ podemos estudiar cuando existe $D_v f(0,0)$. Sin pérdida de generalidad, suponemos $v$ vector unitario de la forma $v = (\cos \theta, \sen \theta) : \theta \in [0,2\pi)$ que es trivialmente de dirección arbitraria:
+$$D_vf(0,0) = \lim_{t\rightarrow 0} \frac{f(t\cos\theta , t \sen \theta) - 0}{t} = \frac{|t|}{t} |\cos^2\theta - \sen^2\theta|^\frac{1}{2}$$
+Como el término $\frac{|t|}{t}$ no converge por ambos lados cuando $t\rightarrow 0$, tiene que ocurrir que $\cos^2\theta = \sen^2\theta$ para que se anule todo. Es decir, $f$ es derivable en $(0,0)$ en las direcciones:
+$$\left( \frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2} \right), \left( -\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2} \right),\left( -\frac{\sqrt{2}}{2},-\frac{\sqrt{2}}{2} \right),\left( \frac{\sqrt{2}}{2},-\frac{\sqrt{2}}{2} \right)  $$
+
+\end{itemize}
+
+\begin{defi}[Derivada Parcial]
+Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}$ donde $A$ es abierto y $x_0 \in A$, definimos \textbf{derivada parcial j-ésima} de $f$ en $x_0$ como:
+$$D_j f(x_0) = \frac{\partial f}{\partial x_j} (x_0) = D_{e_j} f(x_0)$$
+Donde $e_j = (0, \cdots, \underbrace{1}_{j}, \cdots, 0)$ denota a los vectores de la base canónica.
+\end{defi}
+
+\underline{Observación}
+
+Recuperando la observación hecha anteriormente, si consideramos $\phi(t) = f(x_0+e_it)$ podemos definir la derivada parcial como:
+$$\frac{\partial f}{\partial x_j} (x_0) =\phi'(0)$$
+Es decir, que el cálculo de derivadas parciales se reduce a la derivación de la función $\phi(t)$ en $t=0$ dejando fijas todas las variables que no sean $x_j$.
+
+\underline{Ejemplo}
+
+Sea $f(x,y) = y\sen(xy^{2})$, entonces vemos que:
+$$D_1 f = \frac{\partial f}{\partial x} (x,y)= y \cdot \cos(xy^{2})\cdot y^{2} = y^{3}\cos(xy^{2})$$
+$$D_2 f = \frac{\partial f}{\partial y} (x,y)= \sen(xy^{2}) +  2xy^{2}\cos(xy^{2})$$
+
+\begin{defi}[Gradiente]
+Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}$ donde $A$ es abierto y $x_0 \in A$, si existen todas las derivadas parciales, se define \textbf{el gradiente de f en $x_0$} como:
 $$\nabla f(x_0) = \left( \frac{\partial f}{\partial x_1} (x_0), \ldots, \frac{\partial f}{\partial x_n} (x_0) \right) \in  \mathbb{R}^n$$
+Cabe mencionar que dicha definición genera un \textbf{vector} del espacio de partida.
 \end{defi}
 
 \underline{Ejemplo}
 
-Sea $f(x,y) = y \sen(xy^2)$. Entonces:
-\begin{itemize}
-\item $D_1 f(x,y) = \frac{\partial f}{\partial x} (x,y) = y^3 cos(xy^2)$
-\item $D_2 f(x,y) = \frac{\partial f}{\partial y} (x,y) = \sen(xy^2) + 2xy^2 cos(xy^2)$
-
-$\nabla f(0,1) = (1,0)$
-\end{itemize}
+Tomando la función de antes $f(x,y) = y \sen(xy^2)$ y habiendo calculado sus derivadas direccionales, tenemos que:
+$$\nabla(x,y) = (y^{3}\cos(xy^{2}), \sen(xy^{2}) +  2xy^{2}\cos(xy^{2})) \Rightarrow \nabla f(0,1) = (1,0)$$
 
 \underline{Observación}
 
-Si tenemos una función vectorial del tipo $f: A \subset \mathbb{R}^n \to \mathbb{R}^m$, se pueden definir análogamente las derivadas direccionales como el vector de las derivadas de cada componente:
-$$D_v f(x_0) = \left( D_v f_1(x_0), \ldots, D_v f_m(x_0)) \in \mathbb{R}^m \right)$$
+En ocasiones trabajaremos con funciones del tipo $f: A \subset \mathbb{R}^n \to \mathbb{R}^m$. En este caso, basta con considerar la función como $f(z) = (f_1(z), \cdots, f_m(z))$ y hacer los cálculos relativos sobre cada componente, es decir, sobre la función $f_i: \mathbb{R}^n \rightarrow \mathbb{R}$ siendo la derivada direccional resultante:
+$$D_v f(x_0) = \left( D_v f_1(x_0), \cdots, D_v f_m(x_0)\right) \in \mathbb{R}^m$$
+En cuyo caso, el gradiente se convierte en una matriz: la fila $i-\acute{e}sima$ es el gradiente sobre la función $f_i$.
 
-\underline{Observación}
-
-Sea $L: \mathbb{R}^n \to \mathbb{R}$ una aplicación lineal, $L \in \mathcal{L}(\mathbb{R}^n, \mathbb{R}) = M_{1,m}$
-
-$L(x) = \begin{pmatrix}
+\begin{defi}[Forma lineal]
+Sea $L: \mathbb{R}^n \to \mathbb{R}$ una aplicación lineal, por estar definida de $\mathbb{R}^n$ a $\mathbb{R}$, entonces decimos que se llama \textbf{forma lineal sobre $\mathbb{R}^n$} de modo que:
+$$L(x) = \begin{pmatrix}
 a_1 & \ldots & a_n
 \end{pmatrix} \begin{pmatrix}
 x_1 \\ \vdots \\ x_n
 \end{pmatrix}
- = a_1 x_1 + \ldots + a_n x_n$
+ = a_1 x_1 + \ldots + a_n x_n$$
+Esto puede ser expresado como $L \in \mathcal{L}(\mathbb{R}^n, \mathbb{R}) = M_{1,m}$, es decir, hay una matriz que representa dicha forma lineal (mejor dicho un vector fila) cuyos coeficientes podemos calcular de la siguiente forma:
 $$x = \sum_{j=1}^{n} x_j e_j , L(x) = \sum_{j=1}^{n} x_j \underbrace{L(e_j)}_{a_j}$$
+\end{defi}
 
 \begin{prop}
 Si $L \in \mathcal{L} (\mathbb{R}^n, \mathbb{R})$, entonces $L$ es uniformemente continua en $\mathbb{R}^n$
 \end{prop}
 
 \begin{demo}
-Sea $\varepsilon >0 :$
-$$|L(x) - L(y)| = |L(x-y)| = |\langle (a_1, \ldots, a_n), x-y\rangle| \leq || (a_1, \ldots, a_n)||_2 \cdot || x-y||_2 \leq \varepsilon : || x-y||_2 < \delta = \frac{\varepsilon}{2||| (a_1, \ldots, a_n)||} $$
+Dado un $\varepsilon >0$, si tomamos $\delta = \frac{\varepsilon}{2||| (a_1, \ldots, a_n)||}$, entonces:
+$$|L(x) - L(y)| = |L(x-y)| = |\langle (a_1, \ldots, a_n), (x-y)\rangle| \leq || (a_1, \ldots, a_n)||_2 \cdot || x-y||_2 \leq \varepsilon$$
+Para los vectores que verifican $|| x-y||_2 < \delta$.
 \end{demo}
 
-\underline{Obsevación}
-
-Un \textbf{hiperplano afín}, $H \subset \mathbb{R}^m$, es un subespacio afín de dimensión $m-1$
-$$H = \{x \in \mathbb{R}^m : L(x) = d \} : L \in \mathcal{L}(\mathbb{R}^m, \mathbb{R}) , d \in \mathbb{R}$$
-
-\underline{Ejemplo}
-
-Sea $m = 2$, y sea $L(x, y) = x+y$. El hiperplano afín $H = \{(x,y) \in \mathbb{R}^2 : x + y = d\}$
-
-
-\underline{Observación}
-
-Supongamos que $f: I \subset \mathbb{R} \to \mathbb{R}$ es derivable en $x_0 \in I$
-
-$$\frac{f(x_0 + t) - f(x_0)}{t} \to f'(x_0) \Leftrightarrow \frac{f(x_0 + t) - (f(x_0) + tf'(x_0))}{t} \to 0 \Leftrightarrow \frac{f(x_0 + t) - (f(x_0) + tf'(x_0))}{|t|} \to 0$$
-
-
-\begin{defi}[Función Diferenciable]
-Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}$, $A$ abierto, $x_0 \in A$. Se dice que $f$ es \textbf{diferenciable en $x_0$} si $$\exists L_{x_0} \in \mathcal{L}(\mathbb{R}^n, \mathbb{R}) : \frac{f(x_0 + h) - \left( f(x_0) + L_{x_0}(h)\right)}{||h||} \xrightarrow[h\to 0]{} 0$$
+\begin{defi}[Hiperplano tangente]
+Definimos un \textbf{hiperplano afín} como un subespacio afín $H \subset \mathbb{R}^m$ de dimensión $m-1$, es decir:
+$$H = \{x \in \mathbb{R}^m : L(x) = d \} : L \in \mathcal{L}(\mathbb{R}^m, \mathbb{R}) \mbox{ y } d \in \mathbb{R}$$
+Luego podemos expresar dicho espacio afín como el conjunto de soluciones de la ecuación definida por la forma lineal y $d$.
 \end{defi}
 
-\underline{Demostración}
+\underline{Observación}:
 
-Sea $f: I \subset \mathbb{R} \to \mathbb{R}, x_0 \in I$. $f$ es diferenciable en $x_0 \Leftrightarrow f$ es derivable en $x_0$. Además, $L_{x_0} (t) = t \cdot f'(x_0) : t \in \mathbb{R}$
+Cuando trabajábamos en $\mathbb{R}$ con funciones de una variable del tipo $f: I \subset \mathbb{R} \to \mathbb{R}$ que eran derivables en un punto $x_0 \in I$, podíamos definir el concepto de recta tangente en el punto $x_0$ como la recta de pendiente $f'(x_0)$ y que pasa por el punto $(x_0, f(x_0))$. De este modo, podemos reescribir el concepto de derivada como:
+$$  \lim_{t\rightarrow 0} \frac{f(x_0 + t) - f(x_0)}{t} = f'(x_0) \Leftrightarrow \lim_{t\rightarrow 0} \frac{f(x_0 + t) - \overbrace{(f(x_0) + tf'(x_0))}^{\mbox{recta tangente}}}{t} = 0 \Leftrightarrow$$
+$$ \Leftrightarrow \lim_{t\rightarrow 0} \frac{f(x_0 + t) - (f(x_0) + tf'(x_0))}{|t|} = 0$$
+De modo análogo, podemos definir el siguiente concepto fundamental a la hora de entender el cálculo diferencial.
+
+\begin{defi}[Función Diferenciable]
+Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}$ donde $A$ es abierto y $x_0 \in A$, se dice que $f$ es \textbf{diferenciable en $x_0$} si:
+$$\exists L_{x_0} \in \mathcal{L}(\mathbb{R}^n, \mathbb{R}) : \lim_{h\rightarrow 0} \frac{f(x_0 + h) - \overbrace{\left( f(x_0) + L_{x_0}(h)\right)}^{\mbox{hiperplano tangente}}}{||h||}  = 0$$
+Es decir, las funciones diferenciables introducen el concepto de \textbf{hiperplano tangente}, que sería el homólogo a las rectas tangentes definidas en $\mathbb{R}$.
+\end{defi}
+
+Cabe destacar que esta definición y la definición de derivada coincide para las funciones de una variable, es decir, que dada $f: I \subset \mathbb{R} \to \mathbb{R}$, entonces $f$ es diferenciable en $x_0$ si y sólo si $f$ es derivable en $x_0$ y, además, $L_{x_0} (t) = t \cdot f'(x_0)$.
 
 \begin{theo}
-Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}, A$ abierto, $x_0 \in A$ y $v \in \mathbb{R}^n$. Si $f$ es diferenciable en $x_0$, entonces existe $D_v f(x_0)$. Además, si existe $L'_{x_0} \in \mathcal{L}(\mathbb{R}^n, \mathbb{R})$ tal que $\frac{f(x_0 + h) - \left( f(x_0) + L'_{x_0}(h)\right)}{||h||} \xrightarrow[h\to 0]{} 0$, entonces $L'_{x_0} (v) = D_v f(x_0) : ||v|| = 1$
+Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}$ donde $A$ es abierto, $x_0 \in A$ y $v \in \mathbb{R}^n$, si $f$ es diferenciable en $x_0$, entonces existe la derivada direccional en cualquier dirección.
+$$f \mbox{diferenciable} \Rightarrow \forall v \in \mathbb R: \exists D_vf(x_0)$$
+Además, se tiene que $L_{x_0}(v)= D_v f(x_0)$ para $||v|| = 1$.
 \end{theo}
 
 \begin{demo}
-Sea $h = t \cdot v : t \in \mathbb{R}$
-
-$$\frac{f(x_0 + tv) - f(x_0) - tL_{x_0} (v)}{|t|} \xrightarrow[t\to 0]{} 0 \Leftrightarrow \frac{f(x_0 + tv) - f(x_0)}{t} \to L_{x_0} (v)$$
-Es decir, $D_v f(x_0) = L_{x_0}(v)$
-
+Como conocemos la certeza de la existencia del límite, podemos aproximarnos desde la dirección o curva que deseemos, luego si consideramos $h = t \cdot v$  con $t \in \mathbb{R}$, tenemos que:
+$$\lim_{t\rightarrow 0} \frac{f(x_0 + tv) - f(x_0) - tL_{x_0} (v)}{|t|} = 0 \Leftrightarrow  \lim_{t\rightarrow 0} \frac{f(x_0 + tv) - f(x_0)}{t} = L_{x_0}(v)$$
 \end{demo}
 
-
----- METER CLASE JUANDI 03/11/2021 --- 
-
-\begin{theo}
-Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}$ diferenciable en $x_0 \in A$. Entonces, $f$ es continua en $x_0$.
-\end{theo}
-
-\begin{demo}
-Sea $\varepsilon = 1$, y sea $\delta' > 0 : || x - x_0 || < \delta'$
-
-$|f(x) - f(x_0) - d f(x_0) (x - x_0)| < || x - x_0 ||$
-
-Así, 
-$$|f(x) - f(x_0)| \leq |f(x) - f(x_0) - df(x_0) (x - x_0)| + |df(x_0) (x - x_0)| < \leq ||x-x_0|| (1 + || \nabla f(x_0) ||)$$
-
-Tomando $\varepsilon > 0$ arbitrario, y $\delta = \min\{ \frac{\delta'}{||\nabla f || + 1}, \frac{\varepsilon}{1 + || \nabla f||}\}$, obtenemos 
-$$|f(x) - f(x_0)| < \varepsilon : ||x - x_0|| < \delta$$
-\end{demo}
-
-\underline{Observación}
-
-Si $f$ es diferenciable en $x_0$, entonces existe $D_v f(x_0) : \forall v$ y además $f$ es continua en $x_0$
-
-\underline{Ejemplo}
-
-Sea $f(x,y) = \begin{cases} \frac{xy^2}{x^2 + y^4} & (x,y) \neq (0,0) \\ 0 & (x,y) = (0,0) \end{cases}$. Sea $v = (\cos\theta , \sen\theta)$
-
-$$\frac{f(t\cos\theta, t \sen\theta)}{t} = \frac{1}{t} \cdot \frac{t^3 \cos\theta \sen^2 \theta}{t^2 \cos^2 \theta + t^4 \sen^4 \theta}$$
-
+\section*{CLASE 03/11/2021}
+\begin{defi}[Diferencial]
+Si $f$ es diferenciable en $x_0\in A$, entonces llamamos \textbf{diferencial} de $f$ en $x_0$:
+$$df(x_0) = L_{x_0}\in L(\mathbb{R}^n, \mathbb{R})$$
+De esta forma, tenemos que:
+$$\lim_{h\rightarrow (0,\cdots, 0)} \frac{f(x_0+h) -f(x_0) -df(x_0)(h)}{||h||}$$
+\end{defi}
+\begin{coro}
+Si $f$ es diferenciable en $x_0\in A$, entonces:
 \begin{itemize}
-\item $\cos\theta = 0$
+\item La diferencial en $x_0$ es el gradiente en $x_0$:
+	\begin{align*}
+df(x_0) = \nabla f(x_0)& & df(x_0)(v) = \langle \nabla f(x_0), v\rangle = \nabla f(x_0) \cdot v = \sum_{j = 1}^{n}v_j \frac{\partial f}{\partial x_j}(x_0)
+	\end{align*}
+	
+\item La demostración anterior no depende de que el vector sea unitario:
+$$df(x_0)(v) = df(x_0)\left(||v|| \cdot \frac{v}{||v||}\right) = ||v|| \cdot df(x_0)\left(\frac{v}{||v||}\right) = ||v|| \cdot D_{\frac{v}{||v||}}f(x_0) = \frac{||v||}{||v||}\cdot D_v f(x_0)= D_v f(x_0)$$
+\end{itemize}
+\end{coro}
 
-$= 0 \xrightarrow[t \to 0]{} 0 = D_v f(0,0)$
+\subsubsection*{Interpretación geométrica de la diferencial}
+Cuando trabajamos en funciones de una variable,
 
-\item $\cos\theta \neq 0$
+\begin{theo}
+Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}$ diferenciable en $x_0 \in A$, entonces $f$ es continua en $x_0$.
+\end{theo}
+\begin{demo}
+Sea $\varepsilon = 1$ existe $\delta' > 0$ de modo que $|| x - x_0 || < \delta' \Rightarrow |f(x) - f(x_0) - d f(x_0) (x - x_0)| < || x - x_0 ||$ por ser diferenciable. De este modo:
+$$|f(x) - f(x_0)| \leq |f(x) - f(x_0) - df(x_0)\cdot (x - x_0)| + |df(x_0) \cdot (x - x_0)| \leq ||x-x_0|| \cdot (1 + || \nabla f(x_0) ||)$$
+Luego, para cualquier $\varepsilon > 0$ arbitrario, tomando como $\delta = \min\left\lbrace \frac{\delta'}{||\nabla f || + 1}, \frac{\varepsilon}{1 + || \nabla f||}\right\rbrace$, obtenemos que $|f(x) - f(x_0)| < \varepsilon$ para $||x - x_0|| < \delta$.
+\end{demo}
 
-$= \frac{\cos\theta \sen^2\theta}{\cos^2 \theta + t^2 \sen^4 \theta} \xrightarrow[t \to 0]{} \frac{\sen^2 \theta}{\cos\theta} = D_v f(0,0)$
+\underline{Ejemplo} (REVISAR PORQUE NO LO ENTIENDO)
+
+Sea $f(x,y) = \begin{cases} \frac{xy^2}{x^2 + y^4} & (x,y) \neq (0,0) \\ 0 & (x,y) = (0,0) \end{cases}$ queremos comprobar si es diferenciable en el $(0,0)$.
+
+Tomamos un vector unitario de dirección arbitraria $v = (\cos\theta , \sen\theta)$, entonces resulta :
+$$\lim_{t\rightarrow 0}\frac{f((0,0) + tv) - f(0,0) -}{asldjfk}=\frac{f(t\cos\theta, t \sen\theta)}{t} = \frac{1}{t} \cdot \frac{t^3 \cos\theta \sen^2 \theta}{t^2 \cos^2 \theta + t^4 \sen^4 \theta}$$
+Basta ahora con distinguir casos para evaluar la continuidad:
+	\begin{itemize}
+		\item $\cos\theta = 0$:
+		$$f(v) = 0 \xrightarrow[t \to 0]{} 0 = D_v f(0,0)$$
+		\item $\cos\theta \neq 0$:
+		$$= \frac{\cos\theta \sen^2\theta}{\cos^2 \theta + t^2 \sen^4 \theta} \xrightarrow[t \to 0]{} \frac{\sen^2 \theta}{\cos\theta} = D_v f(0,0)$$
 \end{itemize}
 
 Entonces, $f$ no es continua en $(0,0)$
@@ -1364,23 +1400,24 @@ Entonces, $f$ no es continua en $(0,0)$
 También podemos verlo por la aproximación por la curva $(y^2,y)$. Entonces, $f(y^2, y) = \frac{y^4}{y^4 + y^4} = \frac{1}{2} \Rightarrow \nexists \lim_{(x,y) \to (0,0)} f(x,y)$
 
 \begin{prop}
-Sean $f,g: A \subset \mathbb{R}^n \to \mathbb{R}, x_0 \in A$. Si $f,g$ son diferenciables en $x_0$, entonces se cumple:
+Sean $f,g: A \subset \mathbb{R}^n \to \mathbb{R}$ y $x_0 \in A$. Si $f,g$ son diferenciables en $x_0$, entonces se cumple:
 \begin{itemize}
 \item $f + g$ es diferenciable y $d(f + g)(x_0) = d f (x_0)  + d g (x_0)$
-\item $f \cdot g$ es diferenciable en $x_0$ y $d(f \cdot g)(x_0) = g(x_0) \cdot df(x_0) + f(x_0) \cdot dg(x_0)$
+\item $f \cdot g$ es diferenciable en $x_0$ y $d(f \cdot g)(x_0) = df(x_0) \cdot g(x_0) + f(x_0) \cdot dg(x_0)$
 \item Si $f(x_0) \neq 0$, entonces $\frac{1}{f}$ es diferenciable en $x_0$ y $d \left( \frac{f}{g} \right) (x_0) = \frac{f(x_0) \cdot d g(x_0) - g(x_0) \cdot d f(x_0)}{f^2(x_0)}$
 \end{itemize}
 \end{prop}
 
 \begin{theo}
-Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}, x_0 \in A$. Supongamos que $\exists \frac{\partial f}{\partial x_j} (x) : x \in A, j = 1, \ldots, n$ y la función $x \mapsto \frac{\partial f}{\partial x_j} (x)$ en continua en $x_0 : \forall j = 1, \ldots, n$. Entonces, $f$ es diferenciable.
+Sea $f: A \subset \mathbb{R}^n \rightarrow \mathbb{R}$ y $x_0 \in A$. Supongamos que $\forall j \in \{1, \cdots, n\}:\exists \frac{\partial f}{\partial x_j} (x)$ y además es continua en $x_0$ como función de una variable, entonces, $f$ es diferenciable.
 \end{theo}
-
 \begin{demo}
-Supongamos $n = 2$, y sean $(x,y) \in \mathbb{R}^2, x_0 = (a,b) \in A$
+Para la demostración vamos a suponer que $n = 2$, puesto que para más dimensión basta con extrapolar esta demostración a dicha dimensión.
 
-$$f(x,y) - f(a,b) = f(x,y) - f(a,y) + f(a,y) - f(a,b) = (f(x,y) - f(a,y)) + (f(a,y) - f(a,b)) =$$
-$$ \mbox{ [TVM] }= \left(\frac{\partial f}{\partial x} (\mu, y)\right) \cdot (x-a) + \left(\frac{\partial f}{\partial y} (a, \nu)\right) \cdot (y-b)$$
+Sean $(x,y) \in \mathbb{R}^2$ y $x_0 = (a,b) \in A$, entonces:
+$$f(x,y) - f(a,b) = f(x,y) - f(a,y) + f(a,y) - f(a,b) = (f(x,y) - f(a,y)) + (f(a,y) - f(a,b))$$
+Considerando en el primer paréntesis la $y$ fija, entonces por el Tª. V. M. se tiene que $\exists \mu \in (x,a)\cup (a,x)$ que verifica las condiciones de abajo. Además, si consideramos en el segundo paréntesis la función como una función sobre una variable, la $y$, entonces por el mismo teorema $\exists v \in (y,b)\cup (b,y)$ que verifica la iguadad de abajo: 
+$$\left(\frac{\partial f}{\partial x} (\mu, y)\right) \cdot (x-a) + \left(\frac{\partial f}{\partial y} (a, \nu)\right) \cdot (y-b)$$
 
 $$|f(x,y) - f(a,b) - \nabla f(a,b) \cdot (x-a, y - b)| \leq |\frac{\partial f}{\partial x} (\mu, y) - \frac{\partial f}{\partial x} (a,b)| \cdot |x-a| + |\frac{\partial f}{\partial y} (a, \nu) - \frac{\partial f}{\partial y} (a,b)| \cdot |y-b|$$
 
@@ -1388,9 +1425,4 @@ Dado $\varepsilon > 0, \exists \delta > 0 : ||(x-a, y-b)|| < \delta \Rightarrow 
 
 $$\frac{|f(x,y) - f(a,b) - \nabla f(a,b) \cdot (x-a, y - b)|}{||(x-a, y-b) ||} \leq \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon$$
 \end{demo}
-
-\begin{defi}[]
-
-\end{defi}
-
 \end{document}
