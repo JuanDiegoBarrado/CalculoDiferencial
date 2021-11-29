@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.8)  22 NOV 2021 20:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.8)  29 NOV 2021 20:31
 entering extended mode
 **./CalculoDiferencial.tex
 (CalculoDiferencial.tex
@@ -1517,17 +1517,17 @@ Package xcolor Warning: Incompatible color definition on input line 1319.
 Package xcolor Warning: Incompatible color definition on input line 1332.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1341.
+Package xcolor Warning: Incompatible color definition on input line 1340.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1351.
+Package xcolor Warning: Incompatible color definition on input line 1348.
 
 [32]
 
 Package xcolor Warning: Incompatible color definition on input line 1359.
 
 
-Overfull \hbox (35.81529pt too wide) detected at line 1367
+Overfull \hbox (35.81529pt too wide) detected at line 1369
 \OML/cmm/m/it/10 df\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 )(\OML/
 cmm/m/it/10 v\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 df\OT1/cmr/m/n/10 (\OML/cmm/m
 /it/10 x[]\OT1/cmr/m/n/10 ) [] = \OMS/cmsy/m/n/10 jj\OML/cmm/m/it/10 v\OMS/cmsy
@@ -1540,129 +1540,124 @@ r/m/n/10 ) = \OML/cmm/m/it/10 D[]f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 1371.
+Package xcolor Warning: Incompatible color definition on input line 1374.
 
-<./fotos/diferencial1.png, id=158, 1450.41875pt x 865.2325pt>
+[33]
+<./fotos/diferencial1.png, id=161, 1450.41875pt x 865.2325pt>
 File: ./fotos/diferencial1.png Graphic file (type png)
 <use ./fotos/diferencial1.png>
-Package pdftex.def Info: ./fotos/diferencial1.png  used on input line 1390.
+Package pdftex.def Info: ./fotos/diferencial1.png  used on input line 1393.
 (pdftex.def)             Requested size: 435.12898pt x 259.57175pt.
 
-Overfull \hbox (8.33763pt too wide) in paragraph at lines 1390--1391
+Overfull \hbox (8.33763pt too wide) in paragraph at lines 1393--1394
  [] 
  []
 
-[33] [34 <./fotos/diferencial1.png>]
+[34 <./fotos/diferencial1.png>]
 <./fotos/diferencial2.png, id=167, 1836.8625pt x 865.2325pt>
 File: ./fotos/diferencial2.png Graphic file (type png)
 <use ./fotos/diferencial2.png>
-Package pdftex.def Info: ./fotos/diferencial2.png  used on input line 1422.
+Package pdftex.def Info: ./fotos/diferencial2.png  used on input line 1425.
 (pdftex.def)             Requested size: 385.75252pt x 181.70418pt.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1427.
+Package xcolor Warning: Incompatible color definition on input line 1430.
 
 [35 <./fotos/diferencial2.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 1454.
+Package xcolor Warning: Incompatible color definition on input line 1455.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1463.
+Package xcolor Warning: Incompatible color definition on input line 1464.
 
 [36]
 
-Package xcolor Warning: Incompatible color definition on input line 1496.
+Package xcolor Warning: Incompatible color definition on input line 1489.
 
+
+LaTeX Warning: Command \textbullet invalid in math mode on input line 1492.
+
+Missing character: There is no ˆ in font cmr10!
 [37]
 
-Package xcolor Warning: Incompatible color definition on input line 1545.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1563.
+Package xcolor Warning: Incompatible color definition on input line 1505.
 
 [38]
 
-Package xcolor Warning: Incompatible color definition on input line 1577.
+Package xcolor Warning: Incompatible color definition on input line 1554.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1570.
 
 
 Package xcolor Warning: Incompatible color definition on input line 1584.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1594.
+Package xcolor Warning: Incompatible color definition on input line 1591.
 
 [39]
 
-Package xcolor Warning: Incompatible color definition on input line 1611.
+Package xcolor Warning: Incompatible color definition on input line 1601.
 
 
 Package xcolor Warning: Incompatible color definition on input line 1618.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1636.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1640.
+Package xcolor Warning: Incompatible color definition on input line 1625.
 
 [40]
 
-Package xcolor Warning: Incompatible color definition on input line 1654.
+Package xcolor Warning: Incompatible color definition on input line 1643.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1660.
+Package xcolor Warning: Incompatible color definition on input line 1647.
 
+[41]
+Overfull \hbox (8.81859pt too wide) detected at line 1664
+\OML/cmm/m/it/10 j[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 y \OT1/cmr/m/n/10 + \OML/
+cmm/m/it/10 k\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10   \OML/cmm/m/it/10 j[]\OT1/cmr/
+m/n/10 (\OML/cmm/m/it/10 y\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 j[]\OT1/cmr/m/n/
+10 (\OML/cmm/m/it/10 d[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10  \OT1/cmr/m/n/10 (\
+OML/cmm/m/it/10 k \OMS/cmsy/m/n/10   \OT1/cmr/m/n/10 0) = [] \OMS/cmsy/m/n/10 
+ \OML/cmm/m/it/10 k \OT1/cmr/m/n/10 = [] [] \OMS/cmsy/m/n/10  \OML/cmm/m/it/10
+ h \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 k
+ []
 
-LaTeX Warning: Command \textbullet invalid in math mode on input line 1663.
-
-Missing character: There is no ˆ in font cmr10!
 
 Package xcolor Warning: Incompatible color definition on input line 1675.
 
 
-Overfull \hbox (12.86172pt too wide) in paragraph at lines 1678--1679
-[]$\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[] \OT1/cmr/m/n/10 + \O
-ML/cmm/m/it/10 h\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm
-/m/it/10 x[]\OT1/cmr/m/n/10 ) + [] \OML/cmm/m/it/10 D[]f\OT1/cmr/m/n/10 (\OML/c
-mm/m/it/10 x[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 h[] \OT1/cm
-r/m/n/10 + [] [] \OML/cmm/m/it/10 D[]f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1
-/cmr/m/n/10 ) \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 h[] \OMS/cmsy/m/n/10  \OML/c
-mm/m/it/10 h[] \OT1/cmr/m/n/10 + [] + [] [] \OML/cmm/m/it/10 D[]f\OT1/cmr/m/n/1
-0 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 
- []
+Package xcolor Warning: Incompatible color definition on input line 1680.
 
-[41]
+[42]
 
-Package xcolor Warning: Incompatible color definition on input line 1708.
+Package xcolor Warning: Incompatible color definition on input line 1707.
 
 
 Package xcolor Warning: Incompatible color definition on input line 1718.
 
-[42]
 
-Package xcolor Warning: Incompatible color definition on input line 1741.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1750.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1755.
+Package xcolor Warning: Incompatible color definition on input line 1737.
 
 [43]
 
-Package xcolor Warning: Incompatible color definition on input line 1798.
+Package xcolor Warning: Incompatible color definition on input line 1747.
+
+
+Overfull \hbox (9.16354pt too wide) detected at line 1768
+\OT1/cmr/m/n/10 = [] [] \OMS/cmsy/m/n/10  [] [] \OML/cmm/m/it/10 < \OT1/cmr/m/
+n/10 0
+ []
 
 [44]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 185
-2.
- (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\ueuf.fd
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)
 
-Package xcolor Warning: Incompatible color definition on input line 1854.
+Package xcolor Warning: Incompatible color definition on input line 1785.
 
+[45]
 \tf@thm=\write4
 \openout4 = `CalculoDiferencial.thm'.
 
-[45] (CalculoDiferencial.aux
+ [46] (CalculoDiferencial.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 LaTeX Info: Redefining \. on input line 9.
@@ -1673,13 +1668,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 30535 strings out of 480790
- 750855 string characters out of 2897301
- 1110018 words of memory out of 3000000
- 45891 multiletter control sequences out of 15000+200000
- 550435 words of font info for 96 fonts, out of 3000000 for 9000
+ 30508 strings out of 480790
+ 750437 string characters out of 2897301
+ 1112018 words of memory out of 3000000
+ 45875 multiletter control sequences out of 15000+200000
+ 547620 words of font info for 85 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,13n,98p,949b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 68i,14n,98p,949b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\jdbar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1000.pk> <C:\Users\jdbar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
 0\tcrm0800.pk> <C:\Users\jdbar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
@@ -1703,22 +1698,20 @@ r/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Use
 rs/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb>
 <C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
 r8.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
-s/cm/cmss10.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmsy10.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmsy5.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/
-fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/jdbar/AppData/Local/Programs
-/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/jdbar/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/jdbar/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/jdb
-ar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/
-Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/euf
-m10.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/symbols/msbm10.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/symbols/msbm7.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTe
-X/fonts/type1/public/hoekwater/stmary10.pfb>
-Output written on CalculoDiferencial.pdf (45 pages, 687706 bytes).
+s/cm/cmsy10.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmsy5.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmsy6.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/jdbar/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/jdbar/AppData/Local/P
+rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/jdbar/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/line10.pfb><C:/Use
+rs/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm
+10.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
+s/symbols/msbm7.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/hoekwater/stmary10.pfb>
+Output written on CalculoDiferencial.pdf (46 pages, 677978 bytes).
 PDF statistics:
- 312 PDF objects out of 1000 (max. 8388607)
+ 307 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  119 words of extra memory for PDF output out of 10000 (max. 10000000)
 

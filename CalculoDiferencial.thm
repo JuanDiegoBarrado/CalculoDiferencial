@@ -106,40 +106,38 @@
 \contentsline {demo}{{\underline {Demostración}:}{33}{}}{31}%
 \contentsline {defi}{{Definición}{30}{Hiperplano tangente}}{32}%
 \contentsline {defi}{{Definición}{31}{Función Diferenciable}}{32}%
+\contentsline {defi}{{Definición}{32}{Diferencial}}{32}%
 \contentsline {theo}{{Teorema}{16}{}}{32}%
-\contentsline {demo}{{\underline {Demostración}:}{34}{}}{32}%
-\contentsline {defi}{{Definición}{32}{Diferencial}}{33}%
+\contentsline {demo}{{\underline {Demostración}:}{34}{}}{33}%
 \contentsline {coro}{{Corolario}{4}{}}{33}%
-\contentsline {theo}{{Teorema}{17}{}}{35}%
-\contentsline {demo}{{\underline {Demostración}:}{35}{}}{35}%
+\contentsline {theo}{{Teorema}{17}{}}{36}%
+\contentsline {demo}{{\underline {Demostración}:}{35}{}}{36}%
 \contentsline {prop}{{Proposición}{24}{}}{36}%
 \contentsline {theo}{{Teorema}{18}{}}{36}%
 \contentsline {demo}{{\underline {Demostración}:}{36}{}}{36}%
-\contentsline {theo}{{Teorema}{19}{Regla de la Cadena}}{37}%
-\contentsline {defi}{{Definición}{33}{Conjunto convexo}}{38}%
+\contentsline {defi}{{Definición}{33}{}}{37}%
+\contentsline {theo}{{Teorema}{19}{Regla de la Cadena}}{38}%
+\contentsline {defi}{{Definición}{34}{Conjunto convexo}}{39}%
 \contentsline {lema}{{Lema}{4}{}}{39}%
 \contentsline {demo}{{\underline {Demostración}:}{37}{}}{39}%
 \contentsline {coro}{{Corolario}{5}{}}{39}%
-\contentsline {demo}{{\underline {Demostración}:}{38}{}}{39}%
-\contentsline {defi}{{Definición}{34}{Norma de una aplicación lineal}}{39}%
-\contentsline {theo}{{Teorema}{20}{Teorema de los incrementos finitos}}{39}%
-\contentsline {demo}{{\underline {Demostración}:}{39}{}}{39}%
+\contentsline {demo}{{\underline {Demostración}:}{38}{}}{40}%
+\contentsline {defi}{{Definición}{35}{Norma de una aplicación lineal}}{40}%
+\contentsline {theo}{{Teorema}{20}{Teorema de los incrementos finitos}}{40}%
+\contentsline {demo}{{\underline {Demostración}:}{39}{}}{40}%
 \contentsline {coro}{{Corolario}{6}{}}{40}%
 \contentsline {demo}{{\underline {Demostración}:}{40}{}}{40}%
-\contentsline {defi}{{Definición}{35}{Derivada Segunda}}{40}%
-\contentsline {defi}{{Definición}{36}{Función de Clase k}}{40}%
+\contentsline {defi}{{Definición}{36}{Derivada Segunda}}{41}%
+\contentsline {defi}{{Definición}{37}{Función de Clase k}}{41}%
 \contentsline {theo}{{Teorema}{21}{de Schwarz - Clairaut}}{41}%
 \contentsline {demo}{{\underline {Demostración}:}{41}{}}{41}%
-\contentsline {coro}{{Corolario}{7}{}}{41}%
-\contentsline {defi}{{Definición}{37}{}}{41}%
+\contentsline {coro}{{Corolario}{7}{}}{42}%
 \contentsline {theo}{{Teorema}{22}{Teorema de Taylor}}{42}%
-\contentsline {defi}{{Definición}{38}{}}{42}%
-\contentsline {theo}{{Teorema}{23}{}}{42}%
-\contentsline {demo}{{\underline {Demostración}:}{42}{}}{42}%
-\contentsline {defi}{{Definición}{39}{}}{43}%
-\contentsline {defi}{{Definición}{40}{Punto Silla}}{43}%
-\contentsline {theo}{{Teorema}{24}{}}{43}%
-\contentsline {demo}{{\underline {Demostración}:}{43}{}}{43}%
-\contentsline {theo}{{Teorema}{25}{}}{44}%
-\contentsline {demo}{{\underline {Demostración}:}{44}{}}{44}%
-\contentsline {defi}{{Definición}{41}{}}{45}%
+\contentsline {defi}{{Definición}{38}{}}{43}%
+\contentsline {theo}{{Teorema}{23}{}}{43}%
+\contentsline {demo}{{\underline {Demostración}:}{42}{}}{43}%
+\contentsline {defi}{{Definición}{39}{}}{44}%
+\contentsline {theo}{{Teorema}{24}{}}{44}%
+\contentsline {demo}{{\underline {Demostración}:}{43}{}}{44}%
+\contentsline {theo}{{Teorema}{25}{}}{45}%
+\contentsline {demo}{{\underline {Demostración}:}{44}{}}{45}%

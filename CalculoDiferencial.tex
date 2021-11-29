@@ -1236,7 +1236,7 @@ Donde podemos expresar la recta tangente como:
 \begin{align*}
 y= f(x_0) + f'(x_0)(x - x_0) & & \langle (x-x_0, y - f(x_0), (f'(x_0), - 1)) \rangle = 0 
 \end{align*}
-Más adelante, recuperaremos este ejemplo para poder explicar la interpretación geométrica que tiene este concepto en $\mathbb{R}^n$
+En esta sección vamos a tratar de definir quién juega el papel de $f'(x_0)$ en funciones multivariable. Más adelante, recuperaremos este ejemplo para poder explicar la interpretación geométrica que tiene este concepto en $\mathbb{R}^n$
 
 \begin{defi}[Derivada Direccional]
 Sea $f:A \subset \mathbb{R}^n \to \mathbb{R}$ donde $A$ es abierto\footnote{En general y aunque no se especifique los enunciados de esta sección siempre son para funciones definidas en abiertos}, $x_0 \in A$ y sea $v \in \mathbb{R}^n$. Se define como la \textbf{derivada} de $f$ en la dirección $v$ en el punto $x_0$ como:
@@ -1319,7 +1319,7 @@ Para los vectores que verifican $|| x-y||_2 < \delta$.
 \begin{defi}[Hiperplano tangente]
 Definimos un \textbf{hiperplano afín} como un subespacio afín $H \subset \mathbb{R}^m$ de dimensión $m-1$, es decir:
 $$H = \{x \in \mathbb{R}^m : L(x) = d \} : L \in \mathcal{L}(\mathbb{R}^m, \mathbb{R}) \mbox{ y } d \in \mathbb{R}$$
-Luego podemos expresar dicho espacio afín como el conjunto de soluciones de la ecuación definida por la forma lineal y $d$.
+Luego podemos expresar dicho espacio afín como el conjunto de soluciones de la ecuación definida por la forma lineal y $d$. Dicho hiperplano se denomina \textbf{tangente en un punto} cuando su vector normal es paralelo al gradiente de la gráfica en un punto y solo interseca en el punto con la misma.
 \end{defi}
 
 \underline{Observación}:
@@ -1337,23 +1337,23 @@ Es decir, las funciones diferenciables introducen el concepto de \textbf{hiperpl
 
 Cabe destacar que esta definición y la definición de derivada coincide para las funciones de una variable, es decir, que dada $f: I \subset \mathbb{R} \to \mathbb{R}$, entonces $f$ es diferenciable en $x_0$ si y sólo si $f$ es derivable en $x_0$ y, además, $L_{x_0} (t) = t \cdot f'(x_0)$.
 
-\begin{theo}
-Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}$ donde $A$ es abierto, $x_0 \in A$ y $v \in \mathbb{R}^n$, si $f$ es diferenciable en $x_0$, entonces existe la derivada direccional en cualquier dirección.
-$$f \mbox{diferenciable} \Rightarrow \forall v \in \mathbb R: \exists D_vf(x_0)$$
-Además, se tiene que $L_{x_0}(v)= D_v f(x_0)$ para $||v|| = 1$.
-\end{theo}
-
-\begin{demo}
-Como conocemos la certeza de la existencia del límite, podemos aproximarnos desde la dirección o curva que deseemos, luego si consideramos $h = t \cdot v$  con $t \in \mathbb{R}$, tenemos que:
-$$\lim_{t\rightarrow 0} \frac{f(x_0 + tv) - f(x_0) - tL_{x_0} (v)}{|t|} = 0 \Leftrightarrow  \underbrace{\lim_{t\rightarrow 0} \frac{f(x_0 + tv) - f(x_0)}{t}}_{D_vf(x_0)} = L_{x_0}(v)$$
-\end{demo}
-
 \begin{defi}[Diferencial]
 Si $f$ es diferenciable en $x_0\in A$, entonces llamamos \textbf{diferencial}\footnote{De hecho, de la unicidad del límite se desprende la unidad de la diferencial y, en consecuencia, del gradiente.} de $f$ en $x_0$:
 $$df(x_0) = L_{x_0}\in L(\mathbb{R}^n, \mathbb{R})$$
 De esta forma, tenemos que:
 $$\lim_{h\rightarrow (0,\cdots, 0)} \frac{f(x_0+h) -f(x_0) -df(x_0)(h)}{||h||}$$
 \end{defi}
+
+\begin{theo}
+Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}$ donde $A$ es abierto, $x_0 \in A$ y $v \in \mathbb{R}^n$, si $f$ es diferenciable en $x_0$, entonces existe la derivada direccional en cualquier dirección.
+$$f \mbox{diferenciable} \Rightarrow \forall v \in \mathbb R: \exists D_vf(x_0)$$
+Además, se tiene que:
+$$L_{x_0}(v)= D_v f(x_0) \mbox{ para } ||v|| = 1$$
+\end{theo}
+\begin{demo}
+Como conocemos la certeza de la existencia del límite, podemos aproximarnos desde la dirección o curva que deseemos, luego si consideramos $h = t \cdot v$  con $t \in \mathbb{R}$, tenemos que:
+$$\lim_{t\rightarrow 0} \frac{f(x_0 + tv) - f(x_0) - tL_{x_0} (v)}{|t|} = 0 \Leftrightarrow  \underbrace{\lim_{t\rightarrow 0} \frac{f(x_0 + tv) - f(x_0)}{t}}_{D_vf(x_0)} = L_{x_0}(v)$$
+\end{demo}
 
 \begin{coro}
 Si $f$ es diferenciable en $x_0\in A$, entonces:
@@ -1362,11 +1362,14 @@ Si $f$ es diferenciable en $x_0\in A$, entonces:
 	\begin{align*}
 df(x_0) = \nabla f(x_0)& & df(x_0)(v) = \langle \nabla f(x_0), v\rangle = \nabla f(x_0) \cdot v = \sum_{j = 1}^{n}v_j \frac{\partial f}{\partial x_j}(x_0)
 	\end{align*}
-	
+	Porque,  si consideramos $L_{x_0} = (a_1, \cdots , a_n)$, por el teorema que hemos demostrado antes, tenemos que:
+	$$\begin{cases} a_1 \cdot 1 + 0 + \cdots + 0 = L_{x_0}(e_1)= D_{e_1} f(x_0) = \frac{\partial f}{\partial x_1} \\ \vdots \\ a_n \cdot 1 + 0 + \cdots + 0 = L_{x_0}(e_n)= D_{e_n} f(x_0) = \frac{\partial f}{\partial x_n} \end{cases} \Rightarrow df(x_0) = \nabla f(x_0)$$
+		
 \item La demostración anterior no depende de que el vector sea unitario:
 $$df(x_0)(v) = df(x_0)\left(||v|| \cdot \frac{v}{||v||}\right) = ||v|| \cdot df(x_0)\left(\frac{v}{||v||}\right) = ||v|| \cdot D_{\frac{v}{||v||}}f(x_0) = \frac{||v||}{||v||}\cdot D_v f(x_0)= D_v f(x_0)$$
 \end{itemize}
 \end{coro}
+Es decir, cuando trabajábamos en $\mathbb{R}$ el papel de la diferencial (o como hemos visto el gradiente porque son lo mismo) lo hacía $f'(x_0)$ que en el fondo es un vector en $\mathbb{R}$. Consecuentemente, tiene sentido definir $df(x_0)$ como un vector en $\mathbb{R}^n$ porque al restringirse a $\mathbb{R}$ sigue siendo aplicable dicha definición.
 
 \subsubsection*{Interpretación geométrica de la diferencial}
 Cuando trabajamos en funciones de una variable, para hallar la ecuación de la recta tangente (que hace las veces de hiperplano tangente en 2 dimensiones) en un punto a la función teníamos en cuenta la siguiente ecuación:
@@ -1432,23 +1435,21 @@ $$|f(x) - f(x_0)| \leq |f(x) - f(x_0) - df(x_0)\cdot (x - x_0)| + |df(x_0) \cdot
 Luego, para cualquier $\varepsilon > 0$ arbitrario, tomando como $\delta = \min\left\lbrace \frac{\delta'}{||\nabla f || + 1}, \frac{\varepsilon}{1 + || \nabla f||}\right\rbrace$, obtenemos que $|f(x) - f(x_0)| < \varepsilon$ para $||x - x_0|| < \delta$.
 \end{demo}
 
-\underline{Ejemplo} (REVISAR PORQUE NO LO ENTIENDO)
+\underline{Ejemplo}
 
-Sea $f(x,y) = \begin{cases} \frac{xy^2}{x^2 + y^4} & (x,y) \neq (0,0) \\ 0 & (x,y) = (0,0) \end{cases}$ queremos comprobar si es diferenciable en el $(0,0)$.
+Sea $f(x,y) = \begin{cases} \frac{xy^2}{x^2 + y^4} & (x,y) \neq (0,0) \\ 0 & (x,y) = (0,0) \end{cases}$ para ver que no es continua veamos que no es diferenciable en el $(0,0)$.
 
 Tomamos un vector unitario de dirección arbitraria $v = (\cos\theta , \sen\theta)$, entonces resulta :
-$$\lim_{t\rightarrow 0}\frac{f((0,0) + tv) - f(0,0) -}{asldjfk}=\frac{f(t\cos\theta, t \sen\theta)}{t} = \frac{1}{t} \cdot \frac{t^3 \cos\theta \sen^2 \theta}{t^2 \cos^2 \theta + t^4 \sen^4 \theta}$$
+$$\lim_{t\rightarrow 0}\frac{f((0,0) + tv) - f(0,0) -}{t}=\lim_{t\rightarrow 0} \frac{f(t\cos\theta, t \sen\theta)}{t} =\lim_{t\rightarrow 0} \frac{1}{t} \cdot \frac{t^3 \cos\theta \sen^2 \theta}{t^2 \cos^2 \theta + t^4 \sen^4 \theta}$$
 Basta ahora con distinguir casos para evaluar la continuidad:
 	\begin{itemize}
 		\item $\cos\theta = 0$:
-		$$f(v) = 0 \xrightarrow[t \to 0]{} 0 = D_v f(0,0)$$
+		$$\frac{1}{t} \cdot \frac{t^3 \cos\theta \sen^2 \theta}{t^2 \cos^2 \theta + t^4 \sen^4 \theta} \xrightarrow[t \to 0]{} 0 = D_v f(0,0)$$
 		\item $\cos\theta \neq 0$:
-		$$= \frac{\cos\theta \sen^2\theta}{\cos^2 \theta + t^2 \sen^4 \theta} \xrightarrow[t \to 0]{} \frac{\sen^2 \theta}{\cos\theta} = D_v f(0,0)$$
+		$$\frac{\cos\theta \sen^2\theta}{\cos^2 \theta + t^2 \sen^4 \theta} \xrightarrow[t \to 0]{} \frac{\sen^2 \theta}{\cos\theta} = D_v f(0,0)$$
 \end{itemize}
 
-Entonces, $f$ no es continua en $(0,0)$
-
-También podemos verlo por la aproximación por la curva $(y^2,y)$. Entonces, $f(y^2, y) = \frac{y^4}{y^4 + y^4} = \frac{1}{2} \Rightarrow \nexists \lim_{(x,y) \to (0,0)} f(x,y)$
+Entonces, $f$ no es continua en $(0,0)$. También podíamos verlo por la aproximación por la curva $(y^2,y)\Rightarrow f(y^2, y) = \frac{y^4}{y^4 + y^4} = \frac{1}{2} \Rightarrow \nexists \lim_{(x,y) \to (0,0)} f(x,y)$.
 
 \begin{prop}
 Sean $f,g: A \subset \mathbb{R}^n \to \mathbb{R}$ y $x_0 \in A$. Si $f,g$ son diferenciables en $x_0$, entonces se cumple:
@@ -1460,38 +1461,46 @@ Sean $f,g: A \subset \mathbb{R}^n \to \mathbb{R}$ y $x_0 \in A$. Si $f,g$ son di
 \end{prop}
 
 \begin{theo}
-Sea $f: A \subset \mathbb{R}^n \rightarrow \mathbb{R}$ y $x_0 \in A$. Supongamos que $\forall j \in \{1, \cdots, n\}:\exists \frac{\partial f}{\partial x_j} (x)$ y además es continua en $x_0$ como función de una variable, entonces, $f$ es diferenciable.
+Sea $f: A \subset \mathbb{R}^n \rightarrow \mathbb{R}$ y $x_0 \in A$. Si $\forall j \in \{1, \cdots, n\}: \exists \frac{\partial f}{\partial x_j} (x)$ y son funciones continuas en $x_0$, entonces $f$ es diferenciable.
 \end{theo}
 \begin{demo}
 Para la demostración vamos a suponer que $n = 2$, puesto que para más dimensión basta con extrapolar esta demostración a dicha dimensión.
 
 Sean $(x,y) \in \mathbb{R}^2$ y $x_0 = (a,b) \in A$, entonces:
-$$f(x,y) - f(a,b) = f(x,y) - f(a,y) + f(a,y) - f(a,b) = (f(x,y) - f(a,y)) + (f(a,y) - f(a,b))$$
-Considerando en el primer paréntesis la $y$ fija, entonces por el Tª. V. M. se tiene que $\exists \mu \in (x,a)\cup (a,x)$ que verifica las condiciones de abajo. Además, si consideramos en el segundo paréntesis la función como una función sobre una variable, la $y$, entonces por el mismo teorema $\exists v \in (y,b)\cup (b,y)$ que verifica la iguadad de abajo: 
-$$\left(\frac{\partial f}{\partial x} (\mu, y)\right) \cdot (x-a) + \left(\frac{\partial f}{\partial y} (a, \nu)\right) \cdot (y-b)$$
-
-$$|f(x,y) - f(a,b) - \nabla f(a,b) \cdot (x-a, y - b)| \leq |\frac{\partial f}{\partial x} (\mu, y) - \frac{\partial f}{\partial x} (a,b)| \cdot |x-a| + |\frac{\partial f}{\partial y} (a, \nu) - \frac{\partial f}{\partial y} (a,b)| \cdot |y-b|$$
-
-Dado $\varepsilon > 0, \exists \delta > 0 : ||(x-a, y-b)|| < \delta \Rightarrow |\frac{\partial f}{\partial x} (x, y) - \frac{\partial f}{\partial x} (a,b)| <  \frac{\varepsilon}{2} \mbox{ y } |\frac{\partial f}{\partial y} (x, y) - \frac{\partial f}{\partial y} (a,b)| <  \frac{\varepsilon}{2}$
-
+$$f(x,y) - f(a,b) = f(x,y) - f(a,y) + f(a,y) - f(a,b) = (f(x,y) - f(a,y)) + (f(a,y) - f(a,b)) = $$
+Considerando en el primer paréntesis la $y$ fija, entonces por el Tª. V. M. se tiene que $\exists \mu \in (x,a)\cup (a,x)$ que verifica las condiciones de abajo. Además, si consideramos en el segundo paréntesis la función como una función sobre una variable; la $y$, entonces por el mismo teorema $\exists v \in (y,b)\cup (b,y)$ que verifica la iguadad de abajo: 
+$$=\left(\frac{\partial f}{\partial x} (\mu, y)\right) \cdot (x-a) + \left(\frac{\partial f}{\partial y} (a, \nu)\right) \cdot (y-b)$$
+Veamos ahora la siguiente expresión:
+$$|f(x,y) - f(a,b) - \nabla f(a,b) \cdot (x-a, y - b)| \leq \left|\frac{\partial f}{\partial x} (\mu, y) - \frac{\partial f}{\partial x} (a,b)\right| \cdot |x-a| + \left|\frac{\partial f}{\partial y} (a, \nu) - \frac{\partial f}{\partial y} (a,b)\right| \cdot |y-b|$$
+Como las derivadas parciales son funciones continuas sobre $\mathbb{R}$, entonces:
+$$\forall \varepsilon > 0, \ \exists \delta > 0 : ||(x-a, y-b)|| < \delta \Rightarrow \left|\frac{\partial f}{\partial x} (x, y) - \frac{\partial f}{\partial x} (a,b)\right| <  \frac{\varepsilon}{2} \mbox{ y } \left|\frac{\partial f}{\partial y} (x, y) - \frac{\partial f}{\partial y} (a,b)\right| <  \frac{\varepsilon}{2}$$
+Luego los valores absolutos de las parciales los tenemos acotados y como los términos $|x-a|$ e $|y-a|$ al dividirse por la norma $||(x-a, y-b)||$ son menores o iguales que 1, tenemos que:
 $$\frac{|f(x,y) - f(a,b) - \nabla f(a,b) \cdot (x-a, y - b)|}{||(x-a, y-b) ||} \leq \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon$$
 \end{demo}
+\underline{Observación}
 
+Del ejemplo anterior, deducimos que
+$$C^{1)}\Rightarrow \mbox{Diferenciable} \Rightarrow \forall x_0 \in A: \exists \nabla f(x_0)$$
+Pero de ahí no podemos deducir que la función diferencial (que es la función gradiente) sea una función continua:
+$$f(x,y) = \begin{cases} x^2 \cdot \sen\left(\frac{1}{x}\right)  & x \neq 0 \\ 0 & x = 0 \end{cases} \Rightarrow \forall x_0\in \mathbb R^2: \exists\nabla f(x_0) \mbox{ y diferenciable en }(0,0)$$
+Sin embargo, la función $\nabla f(x,y) = (\frac{\partial f}{\partial x}f(x,y), \frac{\partial f}{\partial y} f(x,y))$ no es una función continua en $\mathbb{R}^2 \to \mathbb{R}^2$.
 
-COMPLETAR PULL
+\begin{defi}
+Sea $f : A \subset \mathbb{R}^n \to \mathbb{R}^m$, definimos el \textbf{Jacobiano de $F$ en $x_0 \in A$} a:
+$$J_f (x_0) = df(x_0) = \begin{pmatrix} \nabla f_1(x_0) \\ \vdots \\ \nabla f_m (x_0)\end{pmatrix} = \left(\frac{\partial f_j}{\partial x_k}(x_1, \cdots , x_n)\right)_{1 <= j <= m}^{1<= k <= n} \in M_{m \times n}$$
+De modo análogo, cuando el espacio de llegada es $\mathbb{R}$, llamamos  \textbf{Hessiano} de $f$ en $x_0$ a:
+$$H_f (x_0) = \begin{pmatrix} D_{11} f(x_0) & \ldots & D_{1n}f(x_0) \\ \vdots & • & \vdots \\ D_{n1}f(x_0) & \ldots & D_{nn}f(x_0) \\
+\end{pmatrix} = \left( \frac{\partial^2 f}{\partial x_i \partial x_j } (x_0)\right)_{1 \leq i,j \leq n}$$
+\end{defi}
 
-COMPLETAR PRINCIPIO DE CLASE
+\underline{Ejemplos}
+\begin{enumerate}
+\item Sea $f(x,y) = (x^2 y , y^3 x, x+y)$, entonces el jacobiano queda como:
+$$J_f (x,y) = \begin{pmatrix} 2xy & x^2 \\ y^3 & 3y^2 x  \\ 1 & 1  \\\end{pmatrix} \in M_{3 \times 2}$$
+\item Sea $g(x,y) = x^2y$, entonces el hessiano queda como:
+$$H_g (x,y) = \begin{pmatrix} 2y & 2x  \\ 2x & 0 \end{pmatrix}$$
+\end{enumerate}
 
-----------
-
-\underline{Notación}
-
-$f: A \subset \mathbb{R}^n \to \mathbb{R}^m$ diferenciable, $f(f_1, \ldots, f_m)$
-
-$$M_{m \times n} \ni df(x_0) = \begin{pmatrix} \nabla f_1 \\ \vdots \\ \nabla f_m
-\end{pmatrix} = \left( \frac{\partial f_j}{\partial x_k} (x_0) \right)_{\begin{matrix}
-1 \leq j \leq m \\ 1 \leq k \leq n
-\end{matrix}}$$
 
 \begin{theo}[Regla de la Cadena]
 Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}^m$ una función diferenciable en $x_0 \in A$ y $g: B \subset \mathbb{R}^m \to \mathbb{R}^p$ de modo que $f(A) \subset B$ y diferenciable en $f(x_0)$, entonces $\left(g \circ f\right) : A \subset \mathbb{R}^n \to \mathbb{R}^p$ es diferenciable en $x_0 \in A$ y su diferencial se calcula como:
@@ -1549,9 +1558,7 @@ Donde la definición que se ha dado de $L[x,y]$ representa geométricamente el s
 \end{defi}
 
 \underline{Ejemplos}
-
-DIBUJO EJEMPLOS
-
+$$ DIBUJO EJEMPLOS$$
 \underline{Observación}
 
 Cuando manejábamos funciones de una variable tales como $f: I \subset \mathbb{R} \to \mathbb{R}$ derivable, podíamos afirmar que $\forall x,y \in I, \exists c \in L[x,y] : f(y) - f(x) = f'(c)(y-x)$ gracias al Teorema del Valor Medio. Sin embargo, en general es falso en el caso vectorial, por ejemplo sea $f: \mathbb{R} \to \mathbb{R}^2$ definida como $f(t)=(t^2, t^3)$ si tomamos $x = 0$ y $y=1$ podríamos suponer que:
@@ -1597,7 +1604,7 @@ $$|| f(y) - f(x) || \leq \sup _{c \in L[x,y]} || df(c) || \cdot || y - x||$$
 \end{theo}
 
 \begin{demo}
-Si  $f(x) = f(y)$ se cumple trivialmente, así que vamos a suponer que $f(x) \neq f(y)$. Sea $z = \frac{f(y) - f(x)}{|| f(y) - f(x) ||} \in \mathbb{R}^m$. Por el lema anterior:
+Si  $f(x) = f(y)$ se cumple trivialmente, así que vamos a suponer que $f(x) \neq f(y)$. Sea $z = \frac{f(y) - f(x)}{|| f(y) - f(x) ||} \in \mathbb{R}^m$, por el lema anterior:
 $$\exists c_z \in L[x,y] :  \langle z, f(y) - f(x)\rangle = \langle z, df(c_z) \cdot (y-x) \rangle$$
 Sustituyendo $z$ en la expresión anterior:
 $$\langle z, f(y) - f(x)\rangle = \left\langle \frac{f(y) - f(x)}{|| f(y) - f(x) ||}, f(y) - f(x)\right\rangle = \frac{1}{|| f(y) - f(x) ||} \langle f(y) - f(x), f(y) - f(x) \rangle =$$
@@ -1608,7 +1615,7 @@ $$|| f(y) - f(x) || \leq 1 \cdot || df(c_z) \cdot (y-x) || \leq || df(c_z) || \c
 \end{demo}
 
 \begin{coro}
-Si $f: A \subset \mathbb{R}^n \to \mathbb{R}^m$ diferenciable en el abierto $A$ donde también es convexo y $df = 0$ en $A$, entonces $f$ es constante.
+Si $f: A \subset \mathbb{R}^n \to \mathbb{R}^m$, donde $A$ es convexo y abierto, es diferenciable y $df = 0$ en $A$, entonces $f$ es constante.
 \end{coro}
 \begin{demo}
 Sean $x,x_0 \in A$, por la convexidad de $A$, $L[x,x_0] \subset A$ y, por el Teorema de los Incrementos Finitos, se tiene que:
@@ -1643,7 +1650,21 @@ $$\frac{\partial^2 f}{\partial x_i \partial x_j} = \frac{\partial^2 f}{\partial 
 Es decir, las derivadas ``cruzadas'' coinciden (la diagonal de derecha a izquierda en la matriz de la diferencial).
 \end{theo}
 \begin{demo}
-La demostración se deja como ejercicio entregable para subir nota.
+Podemos suponer que $n = 2$ y $m = 1$ porque por inducción se puede hacer extensible para $n$. Además si $m> 1$, entonces al tener que hacerlo sobre cada componente y unir en un vector los resultados se tiene trivialmente por haberlo demostrado para $m=1$. Considerando $(x,y)\in A$ y $h,k\in \mathbb R$ definimos las siguientes funciones:
+\begin{align*}
+g_k(u)=f(u,y+k)-f(u, y) && j_h(u) = f(x +h,u) - f(x, u)
+\end{align*}
+Y determinamos el siguiente conjunto:
+$$A_{h,k} = f(x+h, y+k) - f(x+h, y) - f(x,y+k) + f(x,y) \Rightarrow \begin{cases} A_{h,k} = g_k(x+h) - g_k (x) \\ A_{h,k} = j_{h}(y+k) - j_h(y) \end{cases}$$
+Por hipótesis, la función $g_k$ es continua y derivable por serlo $f$ y ser suma y composición de $f$ y funciones continuas, luego por el Teorema del Valor Medio, tenemos $c_{h,k}\in (x, x+h)$ y $d_{h,k}\in (y, y+k)$ (en caso de ser negativo se da la vuelta a los intervalos) tal que:
+$$g_k(x+h) - g_k (x) = g'_k(c_{h,k}) \cdot (h-0) = \left( \frac{\partial f}{\partial x}\left(c_{h,k}, y+k\right) - \frac{\partial f}{\partial x}\left(c_{h,k}, y\right)\right) \cdot h = \frac{\partial^{2}f}{\partial y \partial x}\left(c_{h,k}, d_{h,k}\right) \cdot h \cdot k$$
+En concreto, la última igualdad viene de considerar la función $\frac{\partial f}{\partial x}(c_{h,k}, y)$ como una función (continua y derivable por ser $f\in C^{2)}(A)$) sobre la variable $y$ y aplicar también el teorema del valor medio para la misma.
+
+De este modo, si consideramos el mismo razonamiento sobre la función $j_h(u)$, tenemos $c'_{h,k}\in (x, x+h)$ y $d'_{h,k}\in (y, y+k)$ tal que:
+$$j_h(y+k) - j_h (y) = j'_h(d'_{h,k}) \cdot (k-0) = \left( \frac{\partial f}{\partial y}\left(x + h, d'_{h,k}\right) - \frac{\partial f}{\partial y}\left(x+h, d'_{h,k}\right)\right) \cdot k = \frac{\partial^{2}f}{\partial x \partial y}\left(c'_{h,k}, d'_{h,k}\right) \cdot h \cdot k$$
+Luego, como ambas cosas son iguales a $A_{h,k}$, se tiene que:
+$$\frac{\partial^{2}f}{\partial x \partial y}\left(c'_{h,k}, d'_{h,k}\right) \cdot \cancel{h} \cdot \cancel{k} = \frac{\partial^{2}f}{\partial y \partial x}\left(c_{h,k}, d_{h,k}\right) \cdot \cancel{h} \cdot \cancel{k} \xrightarrow[k\rightarrow 0]{h\rightarrow 0} \frac{\partial^{2}f}{\partial x \partial y}\left(x,y \right)= \frac{\partial^{2}f}{\partial y \partial x}\left( x,y\right) $$
+Y, en particular, cuando pasamos al límite en el último paso, podemos afirmar la igualdad porque $f\in C^{2)}(A)$ ya que como $c_{h,k}$ y $d_{h,k}$ se aproximan a los valores de $x$ e $y$, la función toma el mismo valor en el límite que en la imagen a consecuencia de la continuidad que le confiere $f\in C^{2)}(A)$.
 \end{demo}
 
 \underline{Observación}
@@ -1656,44 +1677,22 @@ $$D_{i_1, \ldots, i_k} f = D_{\sigma (\{1, \ldots, k\})} f$$
 Es decir, el orden de derivación sobre cada dirección no influye en el resultado final.
 \end{coro}
 
-\begin{defi}
-Sea $f : A \subset \mathbb{R}^n \to \mathbb{R}^m$, definimos el \textbf{Jacobiano de $F$ en $x_0 \in A$} a:
-$$J_f (x_0) = df(x_0) = \begin{pmatrix} \nabla f_1(x_0) \\ \vdots \\ \nabla f_m (x_0)\end{pmatrix} \in M_{m \times n}$$
-De modo análogo, cuando el espacio de llegada es $\mathbb{R}$, llamamos  \textbf{Hessiano} de $f$ en $x_0$ a:
-$$H_f (x_0) = \begin{pmatrix} D_{11} f(x_0) & \ldots & D_{1n}f(x_0) \\ \vdots & • & \vdots \\ D_{n1}f(x_0) & \ldots & D_{nn}f(x_0) \\
-\end{pmatrix} = \left( \frac{\partial^2 f}{\partial x_i \partial x_j } (x_0)\right)_{1 \leq i,j \leq n}$$
-\end{defi}
-
-\underline{Ejemplos}
-\begin{enumerate}
-\item Sea $f(x,y) = (x^2 y , y^3 x, x+y)$, entonces el jacobiano queda como:
-$$J_f (x,y) = \begin{pmatrix} 2xy & x^2 \\ y^3 & 3y^2 x  \\ 1 & 1  \\\end{pmatrix} \in M_{3 \times 2}$$
-\item Sea $g(x,y) = x^2y$, entonces el hessiano queda como:
-$$H_g (x,y) = \begin{pmatrix} 2y & 2x  \\ 2x & 0 \end{pmatrix}$$
-\end{enumerate}
-
 \begin{theo}[Teorema de Taylor]
-Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}, A$ abierto, una función de clase $\mathcal{C}^{k+1)} (A)$. Sean $x_0 \in A, h \in \mathbb{R}^n \setminus \{0\}, L[x_0,x_0 + h] \subset A$. Entonces, $\exists c \in L[x_0, x_0 + h]$ tal que 
-
-$f(x_0 + h) = \displaystyle f(x_0) + \sum_{i_1=1}^{n} D_{i_1} f(x_0) \cdot h_{i_1} + \frac{1}{2} \sum_{i_1 = 1, i_2 = 1}^{n} D_{i_1, i_2} f(x_0) \cdot h_{i_1} \cdot h_{i_2} + \ldots + \frac{1}{k!} \sum_{i_1 = 1, \ldots, i_k = 1}^{n} D_{i_1, \ldots, i_k} f(x_0) \cdot h_{i_1} \cdot \ldots \cdot h_{i_k} + \frac{1}{(k+1)!} \sum_{i_1 = 1, \ldots, i_{k+1} = 1}^{n} D_{i_1, \ldots, i_{k+1}} f(c) \cdot h_{i_1} \cdot \ldots \cdot h_{i_{k+1}}$
+Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}$ donde $A$ es abierto y $f\in \mathcal{C}^{k+1)} (A)$. Si tomamos dos puntos $x_0 \in A, h \in \mathbb{R}^n \setminus \{0\}, L[x_0,x_0 + h] \subset A$, entonces $\exists c \in L[x_0, x_0 + h]$ tal que:
+$$f(x_0 + h) = f(x_0) + \sum_{i_1=1}^{n} D_{i_1} f(x_0) \cdot h_{i_1} + \frac{1}{2} \sum_{\substack{i_1 = 1 \\ i_2 = 1}}^{n} D_{i_1, i_2} f(x_0) \cdot h_{i_1} \cdot h_{i_2} + \cdots$$
+$$\cdots + \frac{1}{k!} \sum_{\substack{i_1 = 1 \\ \cdots \\ i_k = 1}}^{n} D_{i_1, \ldots, i_k} f(x_0) \cdot h_{i_1} \cdot \ldots \cdot h_{i_k} + \frac{1}{(k+1)!} \sum_{\substack{i_1 = 1 \\ \cdots \\ i_{k+1} = 1}}^{n} D_{i_1, \ldots, i_{k+1}} f(c) \cdot h_{i_1} \cdot \ldots \cdot h_{i_{k+1}}$$
 \end{theo}
 
 \underline{Ejemplo}
 
-Sea $f(x,y) = x^2 - 2y^2 + 4xy - 3$. Calculemos el Polinomio de Taylor de orden 2 en el punto $(1,1) \in \mathbb{R}^2$
-
-Observamos que \begin{itemize}
-\item $\nabla f(x,y) = (2x + 4y, -4y + 4x)$
-\item $H_f (x,y) = \begin{pmatrix}
-2 & 4 \\ 4 & -4
-\end{pmatrix}$
-\item $h = (x,y) - (1,1) = (x-1, y-1)$
-\end{itemize}
-$$P2 ((x,y); (1,1)) = 0 + \langle (6,0),(x-1, y-1) \rangle + \frac{1}{2} \cdot \begin{pmatrix}
+Sea $f(x,y) = x^2 - 2y^2 + 4xy - 3$, calculemos el Polinomio de Taylor de orden 2 en el punto $(1,1) \in \mathbb{R}^2$. Observamos que por la definición que se ha dado, el polinomio de Taylor de orden dos se puede expresar como:
+$$\begin{cases} \nabla f(x,y) = (2x + 4y, -4y + 4x) \\ H_f (x,y) =\begin{pmatrix} 2 & 4 \\ 4 & -4 \end{pmatrix} \\ h = (x,y) - (1,1) = (x-1, y-1) \end{cases} \Rightarrow P_2\left((x,y), x_0\right) = f(x_0) + \nabla f(x_0) \cdot h + h \cdot H_f(x_0) \cdot h^t$$
+Luego sustituyendo tenemos:
+$$P_2((x,y); (1,1)) = 0 + \langle \overbrace{(6,0)}^{\nabla f(x_0)},(x-1, y-1) \rangle + \frac{1}{2} \cdot \begin{pmatrix}
 x-1 & y-1
-\end{pmatrix} \cdot \begin{pmatrix}
+\end{pmatrix} \cdot \overbrace{\begin{pmatrix}
 2 & 4 \\ 4 & -4
-\end{pmatrix} \cdot \begin{pmatrix}
+\end{pmatrix}}^{H_f(x_0)} \cdot \begin{pmatrix}
 x-1 \\ y-1
 \end{pmatrix} $$
 $$= 6(x-1) + \frac{1}{2} \cdot \begin{pmatrix}
@@ -1705,36 +1704,33 @@ $$= 6(x-1) + \frac{1}{2} \left( 2 (x-1)^2 + 4 (x-1)(y-1) + 4 (x-1)(y-1) - 4 (y-1
 $$= x^2 - 2y^2 + 4xy - 3$$
 
 \begin{defi}
-Sea $f: A \subset \mathbb{R}^n \to  \mathbb{R}, x_0 \in A$
+Sea $f: A \subset \mathbb{R}^n \to  \mathbb{R}$ y $x_0 \in A$, entonces:
 \begin{itemize}
 \item Decimos que $x_0$ es un mínimo relativo si $f(x) \geq f(x_0) : \forall x \in B(x_0, \varepsilon) \subset A$
 \item Decimos que $x_0$ es un mínimo relativo si $f(x) \leq f(x_0) : \forall x \in B(x_0, \varepsilon) \subset A$
 \item Decimos que un extremo es absoluto si la desigualdad correspondiente es cierta $\forall x \in A$
 \item Decimos que $x_0$ es un punto crítico si $\nabla f(x_0) = 0$
+\item Decimos que $x_0$ es un \textbf{punto silla} si es un punto crítico que no es un extremo relativo.
 \end{itemize}
 \end{defi}
 
 \begin{theo}
-Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}, A$ abierto, y supongamos que existe $\nabla f(x_0), x_0 \in A$ siendo $x_0$ un extremo relativo. Entonces, $\nabla f (x_0) = 0$.
+Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}$ donde $A$ es abierto y supuesto que existe $\nabla f(x_0)$. Si $x_0 \in A$ es un extremo relativo, entonces $\nabla f (x_0) = 0$.
 \end{theo}
 
 \begin{demo}
 Sea $j \in \{1, \ldots, n\}$. Supongamos que $x_0$ es un máximo relativo (razonamos de forma análoga para el caso del mínimo relativo). Entonces
-$$\frac{f(x_0 + t \cdot e_j) - f(x_0)}{t} = \begin{cases} \leq 0 & t> 0 \\ \geq 0 & t < 0 \end{cases}$$
-Entonces, $\frac{\partial f}{\partial x_j} (x_0) = 0$
+$$\frac{f(x_0 + t \cdot e_j) - f(x_0)}{t} = \begin{cases} \leq 0 & t> 0 \\ \geq 0 & t < 0 \end{cases}\Rightarrow \frac{\partial f}{\partial x_j} (x_0) = 0$$
 \end{demo}
 
 \underline{Observación}
 
 Si $f \in \mathcal{C}^{2)}(A), x_0$, definimos el Hessiano como $ H_f (x_0) = \begin{pmatrix}
 \frac{\partial^2 f}{\partial x_j \partial x_k}
-\end{pmatrix}_{1 \leq j,k \leq n}$. Es decir, es una , matriz cuadrada simétrica.
-
-Si recordamos del curso de Álgebra Lineal, definíamos las formas cuadráticas como las aplicaciones $Q \in M_{n \times n}$ tales que
+\end{pmatrix}_{1 \leq j,k \leq n}$, es decir, es una matriz cuadrada simétrica. Si recordamos del curso de Álgebra Lineal, definíamos las formas cuadráticas como las aplicaciones $Q \in M_{n \times n}$ tales que
 \begin{align*}
-Q: \mathbb{R}^n &\to \mathbb{R} \\ x &\mapsto Q(x) = x Q(x)x^t
+Q: \mathbb{R}^n &\to \mathbb{R} \\ x &\mapsto Q(x) = x Q x^t
 \end{align*}
-
 Es decir, los Hessianos son formas cuadráticas.
 
 \begin{defi}
@@ -1747,12 +1743,8 @@ Una forma cuadrática $Q \in M_{n \times n}$ se denomina:
 \end{itemize}
 \end{defi}
 
-\begin{defi}[Punto Silla]
-Un \textbf{punto silla} es un punto crítico que no es un extremo.
-\end{defi}
-
 \begin{theo}
-Sea $f \in \mathcal{C}^{2)} (A), A \subset \mathbb{R}^n \mbox{ abierto,} x_0 \in A \mbox{ y } \nabla f(x_0) = 0$
+Sea $f \in \mathcal{C}^{2)} (A)$ con $A \subset \mathbb{R}^n$, $x_0 \in A$ y $\nabla f(x_0) = 0$, se tiene que:
 \begin{itemize}
 \item Si $H_f (x_0)$ es definida negativa, entonces $x_0$ es un máximo relativo.
 \item  Si $H_f (x_0)$ es definida positiva, entonces $x_0$ es un mínimo relativo.
@@ -1763,15 +1755,17 @@ Sea $f \in \mathcal{C}^{2)} (A), A \subset \mathbb{R}^n \mbox{ abierto,} x_0 \in
 \end{theo}
 
 \begin{demo}
-$(i)$. Sea $S = \{x \in \mathbb{R}^n : || x || = 1\}$ compacto de $\mathbb{R}^n$. La aplicación $H_f (x_0) = Q : \mathbb{R}^n \to \mathbb{R}$ es continua, y por lo tanto, alcanza un máximo en $S$ (compacto en $\mathbb{R}^n$ por Heine-Borel es cerrado y acotado, y por Weierstrass existe el máximo). Además, como $Q$ es definida negativa por hipótesis $$\exists \tilde{x} \in S : 0 > Q(\tilde{x}) \geq Q(x) : \forall x \in S$$
-Sea $-\varepsilon_0 = Q(\tilde{x})$. Debido a la continuidad de las derivadas parciales de segundo orden de $f$, 
-$$\mbox{ Dado } \varepsilon_0 > 0, \exists \delta > 0 : || x - x_0 || < \delta \Rightarrow \left| D_{ij} f(x) - D_{ij} f(x_0) \right| < \frac{\varepsilon}{2n^2} : \forall i,j = 1, \ldots, n$$
-Por otra parte, si $h \in \mathbb{R}^n, h \neq 0$, se verifica que $$Q(h)= || h||^2 \cdot Q(\frac{h}{||h||}) \leq ||h||^2 Q(\tilde{x}) = -\varepsilon_0 \cdot ||h||^2$$
-Por el Teorema de Taylor, $\exists c \in L[x_0, x_0 + h]$ tal que $$f(x_0 + h) - f(x_0) = \frac{1}{2} h \cdot H_f(c) \cdot h^t = \frac{1}{2} \sum_{i,j = 1}^{n} D_{ij} f(c) \cdot h_i \cdot h_j $$
-$$= \frac{1}{2} \left[ \left(\sum_{i,j = 1}^{n} D_{ij} f(c) - D_{ij} f(x_0)  \right) \cdot h_i \cdot h_j + \underbrace{\sum_{i,j = 1}^{n} D_{ij} f(x_0) \cdot h_i \cdot h_j}_{Q(h)} \right]$$
-$$\leq \frac{1}{2} \left[ n^2 \frac{\varepsilon}{2n^2} \cdot ||h||^2 - ||h||^2 \varepsilon_0 \right] < 0$$
-Teniendo en cuenta que $||h|| < \delta$
+Se muestra la demostración del primer apartado solo, puesto que las demás son completamente análogas a la que siguen.
 
+Sea $S = \{x \in \mathbb{R}^n : || x || = 1\}$ compacto de $\mathbb{R}^n$, como la aplicación $H_f (x_0) = Q_{x_0} : \mathbb{R}^n \to \mathbb{R}$ es continua, alcanza un máximo y mínimo en $S$. Además, como $Q$ es definida negativa, por hipótesis se tiene que:
+$$\exists \tilde{x}=\max\{H_f(x_0)(x)\} \in S : 0 > Q(\tilde{x}) \geq Q(x) : \forall x \in S$$
+Sea $-\varepsilon_0 = Q(\tilde{x})$ y teniendo en cuenta a la continuidad de las derivadas parciales de segundo orden de $f$, se tiene que: 
+$$\mbox{ Dado } \varepsilon_0 > 0, \exists \delta > 0 : || x - x_0 || < \delta \Rightarrow \left| D_{ij} f(x) - D_{ij} f(x_0) \right| < \frac{\varepsilon_0}{2n^2} : \forall i,j = 1, \ldots, n$$
+Por otra parte, si $h \in \mathbb{R}^n$ no nulo, se verifica que:
+$$Q(h)= || h||^2 \cdot Q\left(\frac{h}{||h||}\right) \leq ||h||^2 \cdot  Q(\tilde{x}) = -\varepsilon_0 \cdot ||h||^2$$
+Por el Teorema de Taylor, $\exists c \in L[x_0, x_0 + h]$ de forma que para $||h|| < \delta$ ocurre:
+$$f(x_0 + h) - f(x_0) = \frac{1}{2} \cdot h \cdot H_f(c) \cdot h^t = \frac{1}{2} \sum_{\substack{i = 1 \\ j = 1}}^{n} D_{ij} f(c) \cdot h_i \cdot h_j $$
+$$= \frac{1}{2} \left[ \left(\sum_{\substack{i = 1 \\ j = 1}}^{n} D_{ij} f(c) - D_{ij} f(x_0)  \right) \cdot h_i \cdot h_j + \underbrace{\sum_{\substack{i = 1 \\ j = 1}}^{n} D_{ij} f(x_0) \cdot h_i \cdot h_j}_{Q(h)} \right] \leq \frac{1}{2} \left[ n^2 \frac{\varepsilon}{2n^2} \cdot ||h||^2 - ||h||^2 \varepsilon_0 \right] < 0$$
 El resto de apartados se demuestran de forma análoga.
 \end{demo}
 
@@ -1779,79 +1773,52 @@ El resto de apartados se demuestran de forma análoga.
 
 ---- METER CLASE DÍA 17 DE NOVIEMBRE ---
 
-\underline{Extremos relativos, $n=2$}
+\underline{Observación}:
 
-Sea $f : A \subset \mathbb{R}^2 \to \mathbb{R}, (x_0, y_0) \in A, A$ abierto, $f \in \mathcal{C}^{2)} (A)$.
-
-$$H_f (x_0, y_0) = \begin{pmatrix} \frac{\partial^2 f}{\partial x^2} (x_0, y_0) & \frac{\partial^2 f}{\partial x \partial y} (x_0, y_0) \\ \frac{\partial^2 f}{\partial x \partial y} (x_0, y_0) & \frac{\partial^2 f}{\partial y^2} (x_0, y_0) \\
-
-\end{pmatrix} = \begin{pmatrix}
-a & b \\ b & c
-\end{pmatrix}$$
-
-Denotamos al determinante Hessiano con $\Delta = det(H_f (x_0, y_0)) = ac - b^2$
-
-Observamos que si $h = (h_1, h_2) \in \mathbb{R}^2$
+Sea $f : A \subset \mathbb{R}^2 \to \mathbb{R}\in \mathcal{C}^{2)}(A)$ con $A$ abierto y $(x_0, y_0) \in A$, entonces el Hessiano es de la forma:
+$$H_f (x_0, y_0) = \begin{pmatrix} \frac{\partial^2 f}{\partial x^2} (x_0, y_0) & \frac{\partial^2 f}{\partial x \partial y} (x_0, y_0) \\ \frac{\partial^2 f}{\partial x \partial y} (x_0, y_0) & \frac{\partial^2 f}{\partial y^2} (x_0, y_0) \\ \end{pmatrix} = \begin{pmatrix} a & b \\ b & c \end{pmatrix}$$
+Es decir, si denotamos al determinante Hessiano con $\Delta = det(H_f (x_0, y_0)) = ac - b^2$, entonces para si $h = (h_1, h_2) \in \mathbb{R}^2$, tenemos
 $$h H_f (x_0, y_0) h^t = a \cdot h_1^2 + 2 b \cdot h_1 \cdot h_2 + c \cdot h_2^2$$
+Lo que da lugar al siguiente teorema.
 
 \begin{theo}
-Sea $\nabla f (x_0, y_0) = 0$.
+Sea $\nabla f (x_0, y_0) = 0$, entonces considerando el determinante del Hessiano:
 \begin{itemize}
 \item $\Delta > 0 = \begin{cases} a > 0 & (x_0, y_0) \mbox{ mínimo relativo} \\ a < 0 & (x_0, y_0) \mbox{ máximo relativo}\end{cases}$
 \item $\Delta < 0 \Rightarrow (x_0, y_0)$ es punto silla
 \item $\Delta = 0$
 \end{itemize}
+En el fondo esto es extensible a dimensiones mayores que 2 utilizando los criterios del Álgebra Lineal para decidir cuando una forma cuadrática (el Hessiano) es definida positiva, definida negativa, etc.
 \end{theo}
 
 \begin{demo}
-(i)
+Demostraremos sólo el primer apartado puesto que los demás se basan en una demostración por casos como la que sigue.
 
-Lo que queremos ver es que si $h \neq 0$, entonces $ah_1^2 + 2bh_1h_2 + ch_2^2 > 0$. Sabemos que, por hipótesis, $ac - b^2 > 0$, y que $a > 0$
-
-Entonces, si escribimos $ah_1^2 + 2bh_1h_2 + ch_2^2 = a \left( h_1 + \frac{b}{a} h_2 \right)^2 + \frac{\Delta}{a} h_2^2$, vamos a ver que es positivo. Desarrollando la igualdad de la derecha:
+Lo que queremos ver es que si $h \neq 0$, entonces $ah_1^2 + 2bh_1h_2 + ch_2^2 > 0$. Sabemos que, por hipótesis, $ac - b^2 > 0$ y que $a > 0$. La clave está en escribir $ah_1^2 + 2bh_1h_2 + ch_2^2 = a \left( h_1 + \frac{b}{a} h_2 \right)^2 + \frac{\Delta}{a} h_2^2$ donde dicha igualdad viene de:
 $$ a \left( h_1 + \frac{b}{a} h_2 \right)^2 + \frac{\Delta}{a} h_2^2 = a \left( h_1^2 + \frac{b^2}{a^2} h_2^2 + 2 \cdot \frac{b}{a} h_1 h_2\right) + \left( c - \frac{b^2}{a} h_2^2 \right)$$
-
-
-
-Tenemos que $ a \left( h_1 + \frac{b}{a} h_2 \right)^2 + \frac{\Delta}{a} h_2^2 >0 $, ya que aunque podría darse que $ h_1 + \frac{b}{a} h_2 $ pueda anularse, el segundo término no. Entonces, $\forall h = (h_1, h_2) \neq 0$ 
+Gracias a las hipótesis de partida, tenemos que $ a \left( h_1 + \frac{b}{a} h_2 \right)^2 + \frac{\Delta}{a} h_2^2 >0 $ ya que, aunque podría darse que $ h_1 + \frac{b}{a} h_2 $ pueda anularse, el segundo término no.
 \end{demo}
 
--- Dibujo paraboloide hiperbólico como ejemplo de punto silla --
-
+$$Dibujo paraboloide hiperbolico como ejemplo de punto silla$$
 \underline{Ejemplo}
 
-Ejercicio $52d)$ Estudia los puntos críticos de las siguiente función y determina si son máximos o mínimos locales : $f(x,y) = x^3 + y^3 - 3 \cdot a xy$
-
-Calculamos el gradiente en un punto cualquiera: $\nabla f(x,y) = (3x^2 - 3ay, 3y^2 - 3ax)$.
-
+Estudia los puntos críticos de las siguiente función y determina si son máximos o mínimos locales:
+$$f(x,y) = x^3 + y^3 - 3 \cdot a xy \Rightarrow \nabla f(x,y) = (3x^2 - 3ay, 3y^2 - 3ax)$$
 \begin{itemize}
-\item Supongamos $a \neq 0$. Igualando a 0 ambas componentes:
-$y = \frac{x^2}{a}$, $\frac{x^4}{a^2} - ax = 0 \Rightarrow x (x^3 - a^3) = 0 = \begin{cases} x = 0 & y = 0 \\ x = a & y =a \end{cases}$
+\item Supongamos $a \neq 0$, entonces igualando a 0 ambas componentes:
+$$\begin{cases} 3x^2 - 3ay = 0 \\ 3y^2 - 3ax = 0 \end{cases} \Rightarrow\begin{cases} y = \frac{x^2}{a} \\ \frac{x^4}{a^2} - ax = 0 \Rightarrow x (x^3 - a^3) = 0  \end{cases} \Rightarrow \begin{cases} x = 0 & y = 0 \\ x = a & y =a \end{cases}$$
+\item Si $a = 0$ trivialmente se tiene que sólo es punto crítico el $(0,0)$.
+\item Si calculamos el determinante del Hessiano, tenemos que:
+$$H_f (x,y) = \begin{pmatrix} 6x & -3a \\ -3a & 6y  \\ \end{pmatrix} \Rightarrow \Delta = 36 xy - 9 a^2$$
 
-\item Si $a = 0 : (0,0)$
-\end{itemize}
-
-$$H_f (x,y) = \begin{pmatrix} 6x & -3a \\ -3a & 6y  \\
-
-\end{pmatrix}$$
-
-$\Delta = 36 xy - 9 a^2$
-
-\begin{itemize}
-\item Si $a \neq 0$
+\item Si $a \neq 0$, tenemos que:
 \begin{itemize}
 \item $(0,0) \Rightarrow \Delta = -9a^2 < 0 \Rightarrow $ punto silla
 \item $(a,a) \Rightarrow \Delta = 27a^2 > 0 \Rightarrow \begin{cases} a > 0 & \mbox{ mínimo relativo} \\ a < 0 & \mbox{ máximo relativo} \end{cases}$
 \end{itemize}
 
-\item Si $a = 0, \Delta = 0$
-$f(0,0) = 0$
+\item Si $a = 0$, entonces $\Delta = 0$, así que no podemos deducir nada de ello. Es necesario \textbf{calcularlo a mano} y finalmente sale $f(0,0) = 0$.
 completar
 \end{itemize}
 
-$\mathfrak{i} \mathit{i}  \mathbf{i} \mathtt{i} \mathrm{i} \mathsf{i}$
-
-\begin{defi}[]
-
-\end{defi}
 \end{document}
