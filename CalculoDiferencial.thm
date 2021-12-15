@@ -1,60 +1,59 @@
 \contentsline {defi}{{Definición}{1}{métrica}}{3}%
-\contentsline {defi}{{Definición}{2}{Espacios normados}}{4}%
-\contentsline {defi}{{Definición}{3}{Norma \textit {p}}}{4}%
+\contentsline {defi}{{Definición}{2}{Norma}}{4}%
 \contentsline {prop}{{Proposición}{1}{Métrica asociada a una norma}}{4}%
-\contentsline {defi}{{Definición}{4}{Métrica Euclídea}}{4}%
-\contentsline {defi}{{Definición}{5}{Producto escalar}}{5}%
+\contentsline {defi}{{Definición}{3}{Métrica Euclídea}}{4}%
+\contentsline {defi}{{Definición}{4}{Producto escalar}}{5}%
 \contentsline {theo}{{Teorema}{1}{Desigualdad de Cauchy-Schwarz}}{6}%
 \contentsline {demo}{{\underline {Demostración}:}{1}{}}{6}%
 \contentsline {prop}{{Proposición}{2}{}}{6}%
 \contentsline {demo}{{\underline {Demostración}:}{2}{}}{6}%
-\contentsline {defi}{{Definición}{6}{Equivalencia de normas}}{7}%
+\contentsline {defi}{{Definición}{5}{Equivalencia de normas}}{7}%
 \contentsline {theo}{{Teorema}{2}{Ley del Paralelogramo}}{7}%
-\contentsline {defi}{{Definición}{7}{Bola}}{8}%
-\contentsline {defi}{{Definición}{8}{Conjunto abierto}}{8}%
+\contentsline {defi}{{Definición}{6}{Bola}}{8}%
+\contentsline {defi}{{Definición}{7}{Conjunto abierto}}{8}%
 \contentsline {prop}{{Proposición}{3}{}}{8}%
 \contentsline {demo}{{\underline {Demostración}:}{3}{}}{8}%
 \contentsline {prop}{{Proposición}{4}{}}{9}%
 \contentsline {demo}{{\underline {Demostración}:}{4}{}}{9}%
-\contentsline {defi}{{Definición}{9}{Topología}}{9}%
-\contentsline {defi}{{Definición}{10}{Punto interior}}{9}%
+\contentsline {defi}{{Definición}{8}{Topología}}{9}%
+\contentsline {defi}{{Definición}{9}{Punto interior}}{9}%
 \contentsline {prop}{{Proposición}{5}{Caracterización de abierto}}{10}%
-\contentsline {defi}{{Definición}{11}{}}{10}%
+\contentsline {defi}{{Definición}{10}{}}{10}%
 \contentsline {prop}{{Proposición}{6}{}}{10}%
 \contentsline {demo}{{\underline {Demostración}:}{5}{}}{10}%
 \contentsline {prop}{{Proposición}{7}{}}{10}%
 \contentsline {demo}{{\underline {Demostración}:}{6}{}}{11}%
-\contentsline {defi}{{Definición}{12}{Punto de acumulación}}{11}%
+\contentsline {defi}{{Definición}{11}{Punto de acumulación}}{11}%
 \contentsline {prop}{{Proposición}{8}{Caracterización de puntos de acumulación}}{11}%
 \contentsline {prop}{{Proposición}{9}{Caracterización de los cerrados}}{11}%
 \contentsline {demo}{{\underline {Demostración}:}{7}{}}{11}%
-\contentsline {defi}{{Definición}{13}{Adherencia}}{12}%
+\contentsline {defi}{{Definición}{12}{Adherencia}}{12}%
 \contentsline {prop}{{Proposición}{10}{Caracterización de la adherencia}}{12}%
 \contentsline {demo}{{\underline {Demostración}:}{8}{}}{12}%
 \contentsline {coro}{{Corolario}{1}{Caracterización de los puntos de adherencia}}{13}%
-\contentsline {defi}{{Definición}{14}{Densidad}}{13}%
-\contentsline {defi}{{Definición}{15}{Frontera}}{13}%
+\contentsline {defi}{{Definición}{13}{Densidad}}{13}%
+\contentsline {defi}{{Definición}{14}{Frontera}}{13}%
 \contentsline {prop}{{Proposición}{11}{Caracterización de la frontera}}{13}%
-\contentsline {defi}{{Definición}{16}{Sucesión y Subsucesión}}{14}%
-\contentsline {defi}{{Definición}{17}{Convergencia}}{14}%
-\contentsline {prop}{{Proposición}{12}{}}{14}%
+\contentsline {defi}{{Definición}{15}{Sucesión y Subsucesión}}{14}%
+\contentsline {defi}{{Definición}{16}{Convergencia}}{14}%
+\contentsline {prop}{{Proposición}{12}{Operaciones con los límites}}{14}%
 \contentsline {demo}{{\underline {Demostración}:}{9}{}}{14}%
-\contentsline {prop}{{Proposición}{13}{}}{15}%
+\contentsline {prop}{{Proposición}{13}{Intercambiabilidad de normas}}{15}%
 \contentsline {prop}{{Proposición}{14}{Convergencia en $\mathbb {R}^n$}}{15}%
 \contentsline {demo}{{\underline {Demostración}:}{10}{}}{15}%
 \contentsline {prop}{{Proposición}{15}{}}{15}%
 \contentsline {demo}{{\underline {Demostración}:}{11}{}}{15}%
-\contentsline {defi}{{Definición}{18}{Sucesión de Cauchy}}{15}%
-\contentsline {defi}{{Definición}{19}{Conjunto Acotado}}{16}%
+\contentsline {defi}{{Definición}{17}{Sucesión de Cauchy}}{15}%
+\contentsline {defi}{{Definición}{18}{Conjunto Acotado}}{16}%
 \contentsline {prop}{{Proposición}{16}{}}{16}%
 \contentsline {demo}{{\underline {Demostración}:}{12}{}}{16}%
 \contentsline {theo}{{Teorema}{3}{de Completitud de $\mathbb {R}^n$}}{16}%
-\contentsline {demo}{{\underline {Demostración}:}{13}{}}{16}%
-\contentsline {defi}{{Definición}{20}{Conjunto Secuencialmente Compacto}}{17}%
+\contentsline {demo}{{\underline {Demostración}:}{13}{}}{17}%
+\contentsline {defi}{{Definición}{19}{Conjunto Secuencialmente Compacto}}{17}%
 \contentsline {prop}{{Proposición}{17}{Caracterización de la topología vía sucesiones}}{17}%
 \contentsline {demo}{{\underline {Demostración}:}{14}{}}{17}%
-\contentsline {defi}{{Definición}{21}{Conjunto Compacto}}{17}%
-\contentsline {defi}{{Definición}{22}{Conjunto Totalmente Acotado}}{18}%
+\contentsline {defi}{{Definición}{20}{Conjunto Compacto}}{17}%
+\contentsline {defi}{{Definición}{21}{Conjunto Totalmente Acotado}}{18}%
 \contentsline {lema}{{Lema}{1}{Lema 1}}{18}%
 \contentsline {demo}{{\underline {Demostración}:}{15}{}}{18}%
 \contentsline {lema}{{Lema}{2}{Lema 2}}{18}%
@@ -73,71 +72,84 @@
 \contentsline {demo}{{\underline {Demostración}:}{22}{}}{21}%
 \contentsline {theo}{{Teorema}{7}{Principio de Conjuntos Encajados}}{21}%
 \contentsline {demo}{{\underline {Demostración}:}{23}{}}{21}%
-\contentsline {defi}{{Definición}{23}{Límite}}{23}%
+\contentsline {defi}{{Definición}{22}{Límite}}{23}%
 \contentsline {prop}{{Proposición}{19}{Caracterización del límite}}{23}%
-\contentsline {defi}{{Definición}{24}{Continuidad}}{23}%
-\contentsline {theo}{{Teorema}{8}{Caracterización de la continuidad}}{23}%
+\contentsline {defi}{{Definición}{23}{Continuidad}}{23}%
+\contentsline {theo}{{Teorema}{8}{Caracterización de la continuidad}}{24}%
 \contentsline {demo}{{\underline {Demostración}:}{24}{}}{24}%
 \contentsline {theo}{{Teorema}{9}{}}{24}%
-\contentsline {demo}{{\underline {Demostración}:}{25}{}}{24}%
+\contentsline {demo}{{\underline {Demostración}:}{25}{}}{25}%
 \contentsline {theo}{{Teorema}{10}{}}{25}%
 \contentsline {demo}{{\underline {Demostración}:}{26}{}}{25}%
 \contentsline {prop}{{Proposición}{20}{}}{25}%
 \contentsline {demo}{{\underline {Demostración}:}{27}{}}{25}%
-\contentsline {coro}{{Corolario}{3}{}}{25}%
+\contentsline {coro}{{Corolario}{3}{Operaciones con Continuidad}}{26}%
 \contentsline {prop}{{Proposición}{21}{Límite en $\mathbb {R^{n}}$}}{26}%
 \contentsline {theo}{{Teorema}{11}{Regla del Bocadillo}}{26}%
 \contentsline {theo}{{Teorema}{12}{Límites reiterados}}{26}%
 \contentsline {demo}{{\underline {Demostración}:}{28}{}}{26}%
-\contentsline {theo}{{Teorema}{13}{Convergencia por coordenadas polares}}{27}%
-\contentsline {demo}{{\underline {Demostración}:}{29}{}}{27}%
+\contentsline {theo}{{Teorema}{13}{Convergencia por coordenadas polares}}{28}%
+\contentsline {demo}{{\underline {Demostración}:}{29}{}}{28}%
 \contentsline {prop}{{Proposición}{22}{Convergencia por curvas}}{28}%
 \contentsline {demo}{{\underline {Demostración}:}{30}{}}{28}%
 \contentsline {theo}{{Teorema}{14}{}}{29}%
 \contentsline {demo}{{\underline {Demostración}:}{31}{}}{29}%
-\contentsline {defi}{{Definición}{25}{Continuidad Uniforme}}{29}%
+\contentsline {defi}{{Definición}{24}{Continuidad Uniforme}}{29}%
 \contentsline {theo}{{Teorema}{15}{}}{29}%
 \contentsline {demo}{{\underline {Demostración}:}{32}{}}{29}%
-\contentsline {defi}{{Definición}{26}{Derivada Direccional}}{30}%
-\contentsline {defi}{{Definición}{27}{Derivada Parcial}}{30}%
-\contentsline {defi}{{Definición}{28}{Gradiente}}{31}%
-\contentsline {defi}{{Definición}{29}{Forma lineal}}{31}%
-\contentsline {prop}{{Proposición}{23}{}}{31}%
-\contentsline {demo}{{\underline {Demostración}:}{33}{}}{31}%
-\contentsline {defi}{{Definición}{30}{Hiperplano tangente}}{32}%
-\contentsline {defi}{{Definición}{31}{Función Diferenciable}}{32}%
-\contentsline {defi}{{Definición}{32}{Diferencial}}{32}%
-\contentsline {theo}{{Teorema}{16}{}}{32}%
+\contentsline {defi}{{Definición}{25}{Derivada Direccional}}{30}%
+\contentsline {defi}{{Definición}{26}{Derivada Parcial}}{31}%
+\contentsline {defi}{{Definición}{27}{Gradiente}}{31}%
+\contentsline {defi}{{Definición}{28}{Forma lineal}}{32}%
+\contentsline {prop}{{Proposición}{23}{}}{32}%
+\contentsline {demo}{{\underline {Demostración}:}{33}{}}{32}%
+\contentsline {defi}{{Definición}{29}{Hiperplano tangente}}{32}%
+\contentsline {defi}{{Definición}{30}{Función Diferenciable}}{32}%
+\contentsline {defi}{{Definición}{31}{Diferencial}}{33}%
+\contentsline {theo}{{Teorema}{16}{}}{33}%
 \contentsline {demo}{{\underline {Demostración}:}{34}{}}{33}%
 \contentsline {coro}{{Corolario}{4}{}}{33}%
 \contentsline {theo}{{Teorema}{17}{}}{36}%
 \contentsline {demo}{{\underline {Demostración}:}{35}{}}{36}%
-\contentsline {prop}{{Proposición}{24}{}}{36}%
-\contentsline {theo}{{Teorema}{18}{}}{36}%
-\contentsline {demo}{{\underline {Demostración}:}{36}{}}{36}%
-\contentsline {defi}{{Definición}{33}{}}{37}%
+\contentsline {prop}{{Proposición}{24}{Operaciones con Diferencibilidad}}{37}%
+\contentsline {theo}{{Teorema}{18}{}}{37}%
+\contentsline {demo}{{\underline {Demostración}:}{36}{}}{37}%
+\contentsline {defi}{{Definición}{32}{Matriz Jacobiana}}{38}%
 \contentsline {theo}{{Teorema}{19}{Regla de la Cadena}}{38}%
-\contentsline {defi}{{Definición}{34}{Conjunto convexo}}{39}%
-\contentsline {lema}{{Lema}{4}{}}{39}%
-\contentsline {demo}{{\underline {Demostración}:}{37}{}}{39}%
-\contentsline {coro}{{Corolario}{5}{}}{39}%
+\contentsline {defi}{{Definición}{33}{Conjunto convexo}}{39}%
+\contentsline {lema}{{Lema}{4}{}}{40}%
+\contentsline {demo}{{\underline {Demostración}:}{37}{}}{40}%
+\contentsline {coro}{{Corolario}{5}{}}{40}%
 \contentsline {demo}{{\underline {Demostración}:}{38}{}}{40}%
-\contentsline {defi}{{Definición}{35}{Norma de una aplicación lineal}}{40}%
+\contentsline {defi}{{Definición}{34}{Norma de una aplicación lineal}}{40}%
 \contentsline {theo}{{Teorema}{20}{Teorema de los incrementos finitos}}{40}%
-\contentsline {demo}{{\underline {Demostración}:}{39}{}}{40}%
-\contentsline {coro}{{Corolario}{6}{}}{40}%
-\contentsline {demo}{{\underline {Demostración}:}{40}{}}{40}%
-\contentsline {defi}{{Definición}{36}{Derivada Segunda}}{41}%
-\contentsline {defi}{{Definición}{37}{Función de Clase k}}{41}%
-\contentsline {theo}{{Teorema}{21}{de Schwarz - Clairaut}}{41}%
-\contentsline {demo}{{\underline {Demostración}:}{41}{}}{41}%
-\contentsline {coro}{{Corolario}{7}{}}{42}%
-\contentsline {theo}{{Teorema}{22}{Teorema de Taylor}}{42}%
-\contentsline {defi}{{Definición}{38}{}}{43}%
-\contentsline {theo}{{Teorema}{23}{}}{43}%
-\contentsline {demo}{{\underline {Demostración}:}{42}{}}{43}%
-\contentsline {defi}{{Definición}{39}{}}{44}%
-\contentsline {theo}{{Teorema}{24}{}}{44}%
+\contentsline {demo}{{\underline {Demostración}:}{39}{}}{41}%
+\contentsline {coro}{{Corolario}{6}{}}{41}%
+\contentsline {demo}{{\underline {Demostración}:}{40}{}}{41}%
+\contentsline {defi}{{Definición}{35}{Derivada Segunda}}{41}%
+\contentsline {defi}{{Definición}{36}{Función de Clase k}}{42}%
+\contentsline {theo}{{Teorema}{21}{de Schwarz - Clairaut}}{42}%
+\contentsline {demo}{{\underline {Demostración}:}{41}{}}{42}%
+\contentsline {coro}{{Corolario}{7}{}}{43}%
+\contentsline {theo}{{Teorema}{22}{Teorema de Taylor}}{43}%
+\contentsline {defi}{{Definición}{37}{Extremos y puntos críticos}}{43}%
+\contentsline {theo}{{Teorema}{23}{}}{44}%
+\contentsline {demo}{{\underline {Demostración}:}{42}{}}{44}%
+\contentsline {defi}{{Definición}{38}{Forma cuadrática}}{44}%
+\contentsline {theo}{{Teorema}{24}{Caracterización de los puntos críticos vía Hessiano}}{44}%
 \contentsline {demo}{{\underline {Demostración}:}{43}{}}{44}%
 \contentsline {theo}{{Teorema}{25}{}}{45}%
 \contentsline {demo}{{\underline {Demostración}:}{44}{}}{45}%
+\contentsline {defi}{{Definición}{39}{}}{47}%
+\contentsline {lema}{{Lema}{5}{}}{48}%
+\contentsline {demo}{{\underline {Demostración}:}{45}{}}{48}%
+\contentsline {lema}{{Lema}{6}{Teorema del Punto Fijo}}{48}%
+\contentsline {theo}{{Teorema}{26}{Teorema de la Función Inversa}}{48}%
+\contentsline {demo}{{\underline {Demostración}:}{46}{}}{48}%
+\contentsline {lema}{{Lema}{7}{Teorema del Punto Fijo}}{50}%
+\contentsline {demo}{{\underline {Demostración}:}{47}{}}{50}%
+\contentsline {lema}{{Lema}{8}{}}{50}%
+\contentsline {theo}{{Teorema}{27}{}}{51}%
+\contentsline {demo}{{\underline {Demostración}:}{48}{}}{51}%
+\contentsline {theo}{{Teorema}{28}{Multiplicadores de Lagrange}}{53}%
+\contentsline {demo}{{\underline {Demostración}:}{49}{}}{53}%
