@@ -21,6 +21,9 @@
 
 \usepackage{centernot}
 \usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{float}
 
 \usepackage{titlesec} %Formato de capitulos y secciones
 	\titleformat{\chapter}[display]{\normalfont\huge\bfseries\color{capitulos}}{\thechapter}{20pt}{\Huge}[\titlerule{}]
@@ -39,6 +42,7 @@
 \graphicspath{{./fotos/}}
 
 \usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
 \usepackage{tkz-fct}
 
 \usepackage{ntheorem}[thmmarks]	% paquete de formateo de entornos matemáticos
@@ -1341,7 +1345,7 @@ Cabe destacar que esta definición y la definición de derivada coincide para la
 Si $f$ es diferenciable en $x_0\in A$, entonces llamamos \textbf{diferencial}\footnote{De hecho, de la unicidad del límite se desprende la unidad de la diferencial y, en consecuencia, del gradiente.} de $f$ en $x_0$:
 $$df(x_0) = L_{x_0}\in L(\mathbb{R}^n, \mathbb{R})$$
 De esta forma, tenemos que:
-$$\lim_{h\rightarrow (0,\cdots, 0)} \frac{f(x_0+h) -f(x_0) -df(x_0)(h)}{||h||}$$
+$$\lim_{h\rightarrow (0,\cdots, 0)} \frac{f(x_0+h) -f(x_0) -df(x_0)(h)}{||h||} = 0$$
 \end{defi}
 
 \begin{theo}
@@ -1558,15 +1562,41 @@ Sea $A \subset \mathbb{R}^n$, decimos que $A$ es \textbf{convexo} si
 $$\forall x,y \in A : L[x,y] = \left\lbrace tx + (1-t) y : 0 \leq t \leq 1 \right\rbrace \subset A$$
 Donde la definición que se ha dado de $L[x,y]$ representa geométricamente el segmento que une ambos puntos.
 \end{defi}
-
-\underline{Ejemplos}
-$$ DIBUJO EJEMPLOS$$
+	    
 \underline{Observación}
 
 Cuando manejábamos funciones de una variable tales como $f: I \subset \mathbb{R} \to \mathbb{R}$ derivable, podíamos afirmar que $\forall x,y \in I, \exists c \in L[x,y] : f(y) - f(x) = f'(c)(y-x)$ gracias al Teorema del Valor Medio. Sin embargo, en general es falso en el caso vectorial, por ejemplo sea $f: \mathbb{R} \to \mathbb{R}^2$ definida como $f(t)=(t^2, t^3)$ si tomamos $x = 0$ y $y=1$ podríamos suponer que:
 $$(1,1) = f(1) - f(0) = df(c)(1-0) = df(c) : c \in [0,1]$$
 Y, en realidad, vemos que el valor de la diferencial es:
 $$df(c) = (2c,3c^2) = (1,1) \Leftrightarrow \begin{cases} c = \frac{1}{2} \\ c = \frac{1}{\sqrt{3}}\end{cases} \Rightarrow \#$$
+\newpage
+
+\underline{Ejemplos}
+    \begin{figure}[h]
+    \centering
+    
+    \begin{subfigure}[h]{0.23\textwidth}
+	\begin{tikzpicture}
+    \draw[rotate=-45,fill=gray!30] (0,0) ellipse (30pt and 45pt);
+    \end{tikzpicture}
+    \caption{Conjunto Convexo}
+    \end{subfigure}
+    \hspace{2cm}
+    \begin{subfigure}[h]{0.25\textwidth}
+    \begin{tikzpicture}
+    \draw[fill=gray!30] (0,0) to [out=140,in=90] (-1,-1)
+    to [out=-90,in=240] (0.8,-0.6)
+    to [out=60,in=-60] (1.2,1.2)
+    to [out=120,in=90] (0.3,0.7)
+    to [out=-90,in=20] (0.3,0)
+    to [out=200,in=-40] (0,0);
+    \draw (-0.5,-0.5) -- (0.7,0.7);
+    \fill (-0.5,-0.5) circle[radius=1.5pt];
+    \fill (0.7,0.7) circle[radius=1.5pt];
+    \end{tikzpicture}
+    \caption{Conjunto no Convexo}
+    \end{subfigure}
+	\end{figure}
 
 \begin{lema}
 Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}^m$ diferenciable en el abierto $A$, entonces $\forall x,y \in A : L[x,y] \subset A$ y $\forall z \in \mathbb{R}^m$ se tiene que:
@@ -1625,7 +1655,7 @@ $$|| f(x) - f(x_0) || \leq \sup_{c \in L[x,x_0]} || d f(c) || \cdot || x - x_0 |
 \end{demo}
 
 \begin{defi}[Derivada Segunda]
-Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}^m$ donde $A$ es abierto y $u,v \in \mathbb{R}^n$. La \textbf{derivada segunda} de $F$ se define (siempre que existan) como: 
+Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}^m$ donde $A$ es abierto y $u,v \in \mathbb{R}^n$. La \textbf{derivada segunda} de $F$ se define\footnote{Nótese que el orden de la derivación parcial es de dentro hacia fuera, comenzando por la variable más a la derecha} (siempre que existan) como: 
 $$D_{u,v} = D_u (D_v f)$$
 Si tomamos como vectores los canónicos $u = e_i, v = e_j$, entonces:
 $$D_{e_i, e_j} f = D_{i,j} f = \frac{\partial^2 f}{\partial x_i \partial x_j} = f_{ij} = f_{x_i x_j}$$
@@ -1708,10 +1738,10 @@ $$= x^2 - 2y^2 + 4xy - 3$$
 \begin{defi}[Extremos y puntos críticos]
 Sea $f: A \subset \mathbb{R}^n \to  \mathbb{R}$ y $x_0 \in A$, entonces:
 \begin{itemize}
-\item Decimos que $x_0$ es un mínimo relativo si $f(x) \geq f(x_0) : \forall x \in B(x_0, \varepsilon) \subset A$
-\item Decimos que $x_0$ es un mínimo relativo si $f(x) \leq f(x_0) : \forall x \in B(x_0, \varepsilon) \subset A$
-\item Decimos que un extremo es absoluto si la desigualdad correspondiente es cierta $\forall x \in A$
-\item Decimos que $x_0$ es un punto crítico si $\nabla f(x_0) = 0$
+\item Decimos que $x_0$ es un \textbf{mínimo relativo} si $f(x) \geq f(x_0) : \forall x \in B(x_0, \varepsilon) \subset A$
+\item Decimos que $x_0$ es un \textbf{mínimo relativo} si $f(x) \leq f(x_0) : \forall x \in B(x_0, \varepsilon) \subset A$
+\item Decimos que un \textbf{extremo es absoluto} si la desigualdad correspondiente es cierta $\forall x \in A$
+\item Decimos que $x_0$ es un \textbf{punto crítico} si $\nabla f(x_0) = 0$
 \item Decimos que $x_0$ es un \textbf{punto silla} si es un punto crítico que no es un extremo relativo.
 \end{itemize}
 \end{defi}
@@ -1796,8 +1826,14 @@ Lo que queremos ver es que si $h \neq 0$, entonces $ah_1^2 + 2bh_1h_2 + ch_2^2 >
 $$ a \left( h_1 + \frac{b}{a} h_2 \right)^2 + \frac{\Delta}{a} h_2^2 = a \left( h_1^2 + \frac{b^2}{a^2} h_2^2 + 2 \cdot \frac{b}{a} h_1 h_2\right) + \left( c - \frac{b^2}{a} h_2^2 \right)$$
 Gracias a las hipótesis de partida, tenemos que $ a \left( h_1 + \frac{b}{a} h_2 \right)^2 + \frac{\Delta}{a} h_2^2 >0 $ ya que, aunque podría darse que $ h_1 + \frac{b}{a} h_2 $ pueda anularse, el segundo término no.
 \end{demo}
-
-$$Dibujo paraboloide hiperbolico como ejemplo de punto silla$$
+$$
+\begin{tikzpicture}
+\begin{axis}
+\addplot3 [surf,shader=flat] {x^2-y^2};
+\end{axis}
+\put(95,74){\textbullet}
+\end{tikzpicture}$$
+$$\mbox{Ejemplo de Punto de Silla}$$
 \underline{Ejemplo}
 
 Estudia los puntos críticos de las siguiente función y determina si son máximos o mínimos locales:
@@ -1821,12 +1857,13 @@ completar
 
 \chapter*{TEOREMAS NOTABLES}
 En este capítulo vamos a enunciar y demostrar tres resultados fundamentales para otros ámbitos de las matemáticas como son las ecuaciones en derivadas parciales o las ecuaciones algebraicas. Su estudio nace de la necesidad de poder operar y trabajar con funciones como si de números se tratase para poder realizar operaciones como dividir (multiplicar por el inverso) o poder expresar dicha función de una forma más conveniente.
+
 \section*{TEOREMA DE LA FUNCIÓN INVERSA}
 Nuestro objetivo ahora es dada $f : A \subset \mathbb{R}^n \to \mathbb{R}^n$, cuándo y de qué forma podemos encontrar la solución:
 $$ f(x) = y : \begin{cases} f_1 (x_1,…,x_n )=y_1 \\ \vdots \\ f_n (x_1,…,x_n )=y_n \end{cases}$$
-Cuando trabajamos en $\mathbb{R}$, si tenemos $f : I \subset \mathbb{R} \to \mathbb{R}$ de forma que $f \in \mathcal{C}^{1)}$ y $x_0 \in I$ un punto donde la derivada no se anula $f'(x_0) \neq 0$, entonces $f$ tiene que ser estrictamente monótona, y por lo tanto, invertible en un entorno de $x_0 \in I$. Además, si $g=f^{-1}$ sabemos calcular la derivada: 
+Cuando trabajamos en $\mathbb{R}$, si tenemos $f : I \subset \mathbb{R} \to \mathbb{R}$ de forma que $f \in \mathcal{C}^{1)}$ y $x_0 \in I$ un punto donde la derivada no se anula $f'(x_0) \neq 0$, entonces $f$ es estrictamente monótona en un entorno de $x_0$ y, por lo tanto, invertible en un entorno de $x_0 \in I$. Además, si $g=f^{-1}$ sabemos calcular la derivada: 
 $$g' (f(x)) = \frac{1}{f'(x)}$$
-En $\mathbb{R}^n$ esta condición se traducirá en que $\det (df(x_0)) \neq 0$.
+Luego, con este teorema pretendemos hacer extensible dicha demostración a dimensión arbitraria y como vimos que $df(x_0)$ jugaba el papel de $f'(x_0)$ será razonable pensar que la condición imprescindible será $\det (df(x_0)) \neq 0$.
 
 \begin{defi}
 Para las posteriores demostraciones y enunciados, vamos a definir dos objetos fundamentales a los que haremos referencia:
@@ -1846,273 +1883,247 @@ a_{11} & \cdots & a_{1n} \\ \vdots & \ddots & \vdots \\ a_{n1} & \cdots & a_{nn}
 \end{pmatrix} \longmapsto (a_{11}, \cdots, a_{1n} ,a_{21}, \cdots a_{2n}, \cdots, a_{n1}, \cdots, a_{nn})$$
 Y de este modo, $L_i (\mathbb{R}^n, \mathbb{R}^n)$ se puede considerar como un subconjunto de $\mathbb{R}^{n^2}$, luego tiene sentido hablar de abiertos en dicho conjunto.
 
-\underline{Ejemplos}
-\begin{itemize}
-\item Si $n = 1$, $L_i (\mathbb{R}^n, \mathbb{R}^n) = \mathbb{R} \setminus \{0\}$
-
-\item Si $n = 2$, $L_i (\mathbb{R}^n, \mathbb{R}^n) = \left\lbrace (a,b,c,d) : \det \begin{pmatrix}
-a & b \\ c & d
-\end{pmatrix}  = ad - bc \neq 0 \right\rbrace$
-\end{itemize}
-
 \begin{lema}
-El conjunto $L_i (\mathbb{R}^n, \mathbb{R}^n)$ es un conjunto abierto en $M_{n \times n} = \mathbb{R}^{n^2}$ y la aplicación $\mathcal{L}^{-1} : L_i (\mathbb{R}^n, \mathbb{R}^n) \to L_i (\mathbb{R}^n, \mathbb{R}^n)$ es de clase $C^{\infty}$.
+El conjunto $L_i (\mathbb{R}^n, \mathbb{R}^n)$ es un abierto en $M_{n \times n} = \mathbb{R}^{n^2}$ y la aplicación $\mathcal{L}^{-1}$ es de clase $C^{\infty)}$.
 \end{lema}
 
 \begin{demo}
-Ver que es que el conjunto es abierto consistirá en describirlo. Sea $M \in L_i (\mathbb{R}^n, \mathbb{R}^n)$. Por definición, $\det (M) \neq 0$, es decir, $L_i (\mathbb{R}^n, \mathbb{R}^n) = d^{-1} (\mathbb{R} \setminus \{0\})$ donde $d$ es la aplicación \begin{align*}
-d: M_{n \times n} &\to \mathbb{R} \\ M &\mapsto \det(M)
-\end{align*}
-$d$ es una función continua por ser una combinación polinómica de las entradas de la matriz, y la inversa del abierto $(\mathbb{R} \setminus \{0\})$ son todas las matrices cuyo determinante no es nulo. Además, sabemos que la imagen inversa de un abierto es un abierto.
+Sea $M \in L_i (\mathbb{R}^n, \mathbb{R}^n)$, por definición $\det (M) \neq 0$, es decir, $L_i (\mathbb{R}^n, \mathbb{R}^n) = d^{-1} (\mathbb{R} \setminus \{0\})$ donde $d$ es la aplicación $M \stackrel{d}{\longmapsto} \det(M)$. Trivialmente $\mathbb{R}\setminus{\{0\}}$ es un abierto y omo $d$ es una función continua por ser una combinación polinómica de las entradas de la matriz, la inversa del abierto $(\mathbb{R} \setminus \{0\})$ es abierto.
 
 Análogamente vemos que $\mathcal{L}^{-1} \in \mathcal{C}^{\infty )} (L_i (\mathbb{R}^n, \mathbb{R}^n))$. Por ejemplo:
 \begin{itemize}
-\item Si $n = 1$, $\mathcal{L}^{-1} (a) = \frac{1}{a}, a \neq 0$, y por tanto $\mathcal{L}^{-1} \in \mathcal{C}^{\infty )}(\mathbb{R} \setminus 0)$
+\item Si $n = 1$, entonces $\mathcal{L}^{-1} (a) = \frac{1}{a} : a \neq 0$ y, por tanto, $\mathcal{L}^{-1} \in \mathcal{C}^{\infty )}$
 
-\item Si $n = 2$, sea $M = \begin{pmatrix}
-a & b \\ c & d
-\end{pmatrix}$. Denotamos $\Delta = \det (M) = ad -  bc \neq 0$. Entonces $\mathcal{L}^{-1} (M) = \begin{pmatrix}
-\frac{d}{\Delta} & \frac{-b}{\Delta} \\ \frac{-c}{\Delta} & \frac{a}{\Delta}
-\end{pmatrix}$ es una función racional, y por tanto $\in \mathcal{C}^{\infty )} (L_i (\mathbb{R}^2, \mathbb{R}^2)).$
+\item Si $n = 2$ y definiendo $M = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$, denotamos $\Delta = \det (M) = ad -  bc \neq 0$ así que:
+$$\mathcal{L}^{-1} (M) = \begin{pmatrix} \frac{d}{\Delta} & \frac{-b} {\Delta} \\ \frac{-c}{\Delta} & \frac{a}{\Delta}\end{pmatrix}$$
+es una función racional, lo que implica $\in \mathcal{C}^{\infty )} (L_i (\mathbb{R}^2, \mathbb{R}^2))$
+
+\item Y de este modo, basta con ver como se trata el determinante en cada dimensión para poder hacerlo por inducción.
 \end{itemize}
 \end{demo}
 
 \begin{lema}[Teorema del Punto Fijo]
-Sea $(X, d)$ espacio métrico completo y sea $f : X \to X$ tal que $d(f(x), f(y)) \leq k \cdot d(x,y) : \forall x,y \in X, 0 < k <1$, es decir, $f$ es una contracción. Entonces, 
+Sea $(X, d)$ espacio métrico completo y sea $f : X \to X$ tal que:
+$$\forall x,y \in X : d(f(x), f(y)) \leq k \cdot d(x,y) \mbox{ 	con } 0 < k <1$$
+Es decir, $f$ es una contracción, entonces existe un único punto fijo:
 $$\exists ! x \in X : f(x) = x$$
 \end{lema}
+\begin{demo}
+Sea $x_1 \in X$ y $x_{n+1} = f(x_n)$, en primer lugar probaremos que es de Cauchy. Sea $n \geq 2$, tenemos que:
+$$d(x_{n+1}, x_n) = d(f(x_n), f(x_{n-1})) \leq k \cdot d(x_n, x_{n-1}) \leq k^2 \cdot d(x_{n-1}, x_{n-1}) \leq \ldots \leq k^{n-1} d(x_2, x_1)$$ 
+Ahora, si tomamos $m > n \geq 1$, ocurre que:
+$$d(x_m, x_n) \leq d(x_m, x_{m-1}) + d(x_{m-1}, x_{m-2}) + \ldots + d(x_{n+1}, x_n) \leq (k^{m-2} + \ldots + k^{n-1}) \cdot d(x_2, x_1)$$
+$$= \frac{k^{n-1} - k^{m-1}}{1 - k} \cdot d(x_2, x_1) \xrightarrow[m,n \to \infty]{} 0$$
+Por completitud\footnote{Además dicho $x_0$ sabemos que pertenece a $X$ por ser completo}, lo primero, y por continuidad, lo segundo, tenemos que:
+\begin{align*}
+\exists \lim_{n \to \infty} x_n = x_0 & & x_0 \leftarrow x_{n+1} = f(x_n) \to f(x_0) \Rightarrow x_0 = f(x_0)
+\end{align*}
+Por último, falta comprobar que es único. Supongamos que no, es decir, $f(x_0) = x_0$ y $f(y_0) = y_0$, entonces:
+$$d(x_0, y_0) = d(f(x_0), f(y_0)) \leq k d(x_0, y_0)$$
+Como $k$ está entre 0 y 1, la única forma de que se cumpla es que $d(x_0, y_0) = 0$, es decir, $x_0 = y_0$.
+\end{demo}
 
-\begin{theo}[Teorema de la Función Inversa]
-Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}^n, A$ abierto, $f \in \mathcal{C}^{p)} (A), p \geq 1$ y sea $x_0 \in A$ tal que $\det (df(x_0)) \neq 0$. Entonces, existen $\mathcal{U}, \mathcal{V}$ abiertos tales que $\mathcal{U} \subset A, \mathcal{V} \subset f(A)$ de forma que $x_0 \in f(x_0) \in \mathcal{V}$ tal que $f|_\mathcal{U} : \mathcal{U} \to \mathcal{V}$ es invertible, y $f^{-1} : \mathcal{V} \to \mathcal{U} \in \mathcal{C}^{p)}(\mathcal{V})$. Además, $df^{-1}(f(x)) = d(f(x))^{-1}$
+\begin{theo}[de la Función Inversa]
+Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}^n$ donde $A$ es abierto y tomando $x_0 \in A$ si se verifican:
+\begin{itemize}
+\item $f \in \mathcal{C}^{p)} (A)$ con $p \geq 1$
+\item $\det (df(x_0)) \neq 0$
+\end{itemize}
+Entonces se cumplen:
+\begin{itemize}
+\item $\exists \mathcal{U}, \mathcal{V}$ abiertos tal que $x_0 \in \mathcal{U} \subset A$ y $f(x_0)\in \mathcal{V} \subset f(A)$
+
+\item $f|_\mathcal{U} : \mathcal{U} \to \mathcal{V}$ es invertible
+\item $f^{-1} : \mathcal{V} \to \mathcal{U} \in \mathcal{C}^{p)}(\mathcal{V})$
+\item $df^{-1}(f(x)) = d(f(x))^{-1} = \frac{1}{df(x)}$
+\end{itemize}
 \end{theo}
 
 \begin{demo}
-Veamos que podemos suponer que $df(x_0) = I$. En efecto, si $M = df(x_0)$, entonces $\exists M^{-1}$ y 
-$$d(M^{-1} \circ f)(x_0) = dM^{-1}(f(x_0)) \circ df(x_0) = M^{-1} \circ df(x_0) = I$$
-Por lo tanto, si el resultado es cierto para $M^{-1} \circ f : A \subset \mathbb{R}^n \to \mathbb{R}^n$, entonces $\exists g = M^{-1} \circ f : \mathcal{U}' \to \mathcal{V}'$. Usamos que $M \cdot g = f : \mathcal{U} \to \mathcal{V}$, con $\mathcal{U} = \mathcal{U}'$ y  $\mathcal{V} = M(\mathcal{V}')$. Por tanto, $f^{-1}: \mathcal{V} \to \mathcal{U}$ es invertible.
+En esta demostración necesitamos simplificar el caso general al caso específico que se resuelve de forma más sencilla, luego los primeros párrafos de esta demostración irán dirigidos a demostrar que no hay pérdida de generalidad al restringirse a este caso especial.
 
-Supongamos entonces que $df(x_0) = I$. Tomando $h(x) = f(x + x_0) - f(x_0)$, podemos suponer también que $x_0 = 0$ y que $f(x_0) = 0$. Así, $f \in \mathcal{C}^{p)}(A), df(x_0) = I, f(x_0) = x_0 = 0$.
+En primer lugar, veamos que podemos suponer que $df(x_0) = I$. En efecto, llamemos $M = df(x_0)$, entonces $\exists M^{-1}$ y por la regla de la cadena\footnote{Ver que $dM^{-1}\left(f\left(x_0\right)\right) = M^{-1}$ es trivial si calculamos la diferencial a mano (no necesariamente para $f(x_0)$)}:
+$$d(M^{-1} \circ f)(x_0) = dM^{-1}\left(f\left(x_0\right)\right) \cdot df(x_0) = M^{-1} \cdot M = I$$
+Por lo tanto, si demostrásemos el teorema para $M^{-1} \circ f : A \subset \mathbb{R}^n \to \mathbb{R}^n$ y existiese $g$ inversa de esa función, entonces $g\circ M^{-1}$ sería inversa de $f$.
 
-Sea ahora $g(x) = x - f(x)$. Observamos que $g(0) = 0$, al igual que $dg(0) = 0$. Aplicando el Teorema del Valor Medio tenemos que 
-$$\exists \delta > 0 : \mbox{ si } || x || < \delta \Rightarrow || g(x) - g(0) || \leq || df(c) || \cdot || x ||$$.
-Como $dg(0) = 0$, entonces $\exists \delta > 0 : || dg(x) || < \varepsilon = \frac{1}{2}$ si $|| x || < \delta$. Además, tenemos que $|| g(x) - g(0) || = || g(x) ||$, por lo que
-$$|| g(x) - g(0) || = || g(x) || \leq || df(c) || \cdot || x || \leq \frac{1}{2} \cdot || x || \leq \frac{\delta}{2}$$
-Así, $g : \bar{B}(0, \delta) \to \bar{B}(0, \frac{\delta}{2}), g: B(0, \delta) \to B (0, \frac{\delta}{2})$. Sea $y \in \bar{B}(0, \frac{\delta}{2})$, y definimos 
+Del mismo modo, podemos suponer que $f(x_0)=x_0=0$, ya que supone hacer un cambio de base en $\mathbb{R}^n$ para hacer que el punto $(x_0, f(x_0))$ sea el origen. Una vez demostrado en esas condiciones, para el caso general bastaría con tomar $h(x) = f(x + x_0) - f(x_0)$ porque $h(0) = 0$ y $dh(0) = df(x_0)$ y entonces una vez calculada la inversa de $h(x)$ en un entorno de 0, la inversa de $f(x)$ sería $f^{-1}(y) = h^{-1}(y-f(x_0)) + x_0$.
+
+\begin{itemize}
+\item Inveritibilidad
+
+En las condiciones de $df(x_0) = I$ y $x_0=f(x_0) = 0$, definimos $g(x) = x - f(x)$ de manera que se tiene $g(0) = 0$ y $dg(0) = 0$. Aplicando el Teorema del Valor Medio tenemos que: 
+$$\exists \delta > 0 : \mbox{ si } || x || < \delta \Rightarrow || g(x) - g(0) || \leq || df(c) || \cdot || x ||$$
+Como $dg(0) = 0$, entonces $\exists \delta' > 0 : || dg(x) || < \varepsilon = \frac{1}{2}$ si $|| x || < \delta'$, luego como $c\in B(0, \delta')$ volviendo a la expresión anterior:
+$$||g(x)|| = || g(x) - g(0) || \leq || df(c) || \cdot || x || \leq \frac{1}{2} \cdot || x || \leq \frac{\delta}{2}$$
+De este modo, podemos restringir $g$ a los dominios $g : \bar{B}(0, \delta) \to \bar{B}(0, \frac{\delta}{2})$ y $ g: B(0, \delta) \to B (0, \frac{\delta}{2})$. Sea $y \in \bar{B}(0, \frac{\delta}{2})$, y definimos:
 $$g_y (x) = y + g(x) = y + x - f(x)$$
-Queremos encontrar un punto fijo para esta función, verificándose así que $y = f(x)$. Tenemos $y$ ya fijo, que es el que queremos invertir, es decir, probar que hay una antimagen única. Para ello, probaremos que $g_y(x)$ es una contracción. Sea $|| x || < \delta$
-$$||g_y (x)|| = || y + g(x) || \leq || y || + ||g(x)|| \leq \frac{\delta}{2} + \frac{\delta}{2} = \delta $$
-Entonces, $g_y : \bar{B}(0, \delta) \to \bar{B}(0, \delta)$ es completo en $\mathbb{R}^n$.
+Para poder tener $y = f(x)$ es necesario que $g_y(x) = x$, luego queremos encontrar un punto fijo para esta función. Tenemos $y$ ya fijo, que es el que queremos invertir, o dicho de otro modo, probar que hay una antiimagen única. Para ello, probaremos que $g_y(x)$ es una contracción. En primer lugar, sea $|| x || < \delta$, entonces:
+$$||g_y (x)|| = || y + g(x) || \leq || y || + ||g(x)|| \leq \frac{\delta}{2} + \frac{\delta}{2} = \delta \Rightarrow g_y: \bar{B}(0, \delta) \to \bar{B}(0, \delta)$$
+Dichos conjuntos sobre los que están definida la función son compactos en $\mathbb{R}^n$ y como éste es completo, entonces también son completos. Ahora veamos que la aplicación es contractiva, sean $x_1, x_2 \in \bar{B}(0,\delta)$, tenemos:
+$$||g_y (x_1) - g_y (x_2) || = ||g(x_1) - g(x_2)|| \underset{TVM}{\leq} || dg(c) || \cdot || x_1 - x_2 || \leq \frac{1}{2}|| x_1 - x_2 ||$$
+Es decir, que $g_y$ es una contracción con $k = \frac{1}{2}$, y por el Teorema del Punto Fijo, $\exists ! x \in \bar{B}(0, \delta) : g_y(x) = x \Rightarrow f(x) = y$, es decir, $f$ es invertible.
 
-Sean $x_1, x_2 \in \bar{B}(0,\delta)$
-$$|| g_y (x_1) - g_y (x_2) || = ||g(x_1) - g(x_2)|| \underset{TVM}{\leq} || dg(c) || \cdot || x_1 - x_2 || \leq \frac{|| x_1 - x_2 ||}{2}$$
-Es decir, que $g_y$ es una contracción con $k = \frac{1}{2}$, y por el Teorema del Punto Fijo, $\exists ! x \in \bar{B}(0, \delta) : f(x) = y$. Así, $\forall y \in \bar{B}(0, \delta), \exists ! x \in \bar{B}(0, \delta)$ (análogo para $B(0, \delta)$ y $B(0, \frac{\delta}{2})$). Es decir, $f$ es invertible.
+\item Regularidad
 
-Ahora probaremos propiedades de regularidad de $f^{-1}$. Empecemos viendo que $f^{-1}$ es continua. Sean $y_1, y_2 \in \bar{B}(0, \frac{\delta}{2})$ y sean $x_1, x_2 \in \bar{B}(0, \delta)$ tales que $f(x_1) = y_1$ y $f(x_2) = y_2$
+Veamos que $f^{-1}$ es continua, sean $y_1, y_2 \in \bar{B}(0, \frac{\delta}{2})$ y sean $x_1, x_2 \in \bar{B}(0, \delta)$ tales que $f(x_1) = y_1$ y $f(x_2) = y_2$, tenemos\footnote{El primer menor o igual es por la desigualdad  triangular y la definición de g} que:
 $$||f^{-1} (y_1) - f^{-1}(y_2)|| = ||x_1 - x_2 || \leq || f(x_1) - f(x_2) || + || g(x_1) - g(x_2) || \leq || f(x_1) - f(x_2) || + \frac{1}{2} ||x_1 - x_2||$$
-Así, $||x_1 - x_2 || \leq 2 \cdot || f(x_1) - f(x_2)||$. Entonces
+De este modo, obtenemos $||x_1 - x_2 || \leq 2 \cdot || f(x_1) - f(x_2)||$, así que:
 $$||x_1 - x_2|| = ||f^{-1} (y_1) - f^{-1}(y_2)|| \leq 2 \cdot || y_1 - y_2 ||$$
 Es decir, $f^{-1}$ es una función Lipschitz, por lo que $f^{-1} \in \mathcal{C}(\bar{B}(0, \frac{\delta}{2}))$. 
 
-Veamos que $f$ es diferenciable en $B(0, \frac{\delta}{2})$. Obsérvese que $df(0) = I \in L_i (\mathbb{R}^n, \mathbb{R}^n)$. Sea $\delta > 0 : || x || < \delta$. Entonces $df(x) \in L_i (\mathbb{R}^n, \mathbb{R}^n)$ por el lema, es decir, $\det(df(x)) \neq 0$. Sean $y_1, y_2 \in B(0, \delta')$, y denotamos por $x_1 = f^{-1} (y_1), x_2 = f^{-1}(y_2)$. Tomamos $\delta'$ tal que $f(B(0, \delta)) \subset B(0, \delta') \subset B(0, \frac{\delta}{2})$. veamos que la función es diferenciable y que su diferencial es la inversa de la diferencial
+Veamos que $f^{-1}$ es diferenciable en $B(0, \frac{\delta}{2})$. Como $df(0) = I$, $\exists \delta > 0 : || x || < \delta : \det(df(x)) \neq 0$ por ser las matrices invertibles un conjunto abierto en $\mathbb{R}^{n^2}$. Tomemos $y_1, y_2 \in B(0, \delta')$ y denotemos por $x_1 = f^{-1} (y_1)$, $x_2 = f^{-1}(y_2)$. Si escogemos un $\delta'$ tal que $f(B(0, \delta)) \subset B(0, \delta') \subset B(0, \frac{\delta}{2})$, veamos que la función es diferenciable y que su diferencial es la inversa de la diferencial:
 $$\frac{||f^{-1}(y_1) - f^{-1}(y_2) - \left( df(x_2) \right)^{-1} (y_1 - y_2) ||}{|| y_1 - y_2 ||} = \frac{|| x_1 - x_2 -  \left( df(x_2) \right)^{-1} (f(x_1) - f(x_2)) ||}{|| f(x_1) - f(x_2) ||}$$
 $$= \frac{||x_1 - x_2 || }{|| f(x_1) - f(x_2) ||} \cdot \frac{|| x_1 - x_2 -  \left( df(x_2) \right)^{-1} (f(x_1) - f(x_2)) ||}{|| x_1 - x_2 ||}$$
 $$\leq \frac{2 \cdot || df(x_2) [df(x_2) (x_1 - x_2) - f(x_1) + f(x_2)]||}{|| x_1 - x_2 ||}$$
 $$\leq 2 ||(df(x_2))^{-1}|| \cdot \frac{|| df(x_2) (x_1 - x_2) - f(x_1) + f(x_2) || }{|| x_1 - x_2 ||} \xrightarrow[x_1- x_2]{} 0$$
-Es decir, $df^{-1}(f(x_2)) = (df(x_2))^{-1}$.Para terminar, veamos que $f^{-1} \in \mathcal{C}^{1)}$
+Es decir, $df^{-1}(f(x_2)) = (df(x_2))^{-1}$.
+
+Para terminar, veamos que $f^{-1} \in \mathcal{C}^{p)}$, es decir:
 $$df^{-1} (y) = df^{-1} (f(x)) = (df(x))^{-1} = \mathcal{L}^{-1} (df(f^{-1}(y)))$$
 Tenemos que $\mathcal{L}^{-1} \in \mathcal{C}^{\infty )}, df \in \mathcal{C}^{p-1)} f^{-1} \in \mathcal{C}$. Entonces, $f^{-1} \in \mathcal{C}^{1)}$
 
 Así, si $f^{-1} \in \mathcal{C}^{1)}$ y  $p \geq 2$, entonces $df^{-1} \in \mathcal{C}^{1)}$ y $f^{-1} \in \mathcal{C}^{2)}$. De forma inductiva, si $f^{-1} \in \mathcal{C}^{p-1=}$, entonces $df^{-1} \in \mathcal{C}^{p-1)}$ y $f^{-1} \in \mathcal{C}^{p)}$
-\end{demo}
-
-\underline{Observaciones sobre el Teorema de la Función Inversa}
-
-\begin{enumerate}
-\item Reducción al caso $f(0)=0, x_0 = 0, df(0) = I$.
-\item Por el lema topológico (las matrices con determinante distinto de cero...), podemos suponer que $\forall x \in A \subset \mathcal{A}$, que es el conjunto mayor cuya diferencial va a $M_{n \times n} = \mathbb{R}^{n^2}, df(x) \in L_i (\mathbb{R}^n, \mathbb{R}^n) \subset M_{n \times n} = \mathbb{R}^{n^2}$, es decir, $\det(df(x)) \neq 0$.
-\item Continuamos con la prueba, y encontramos un $\delta > 0$ tal que $f: \bar{B}(0, \delta) \to \bar{B}(0, \frac{\delta}{2})$, entonces $f$ es invertible en $B(0, \delta)$ y $(df^{-1}) = (df)^{-1}$
-\end{enumerate}
-
-\begin{lema}[Teorema del Punto Fijo]
-Sea $(X, d)$ un espacio métrico completo, $f: X \to X$, contracción $d(f(x),f(y)) \leq k \cdot d(x,y), 0 < k < 1, \forall x,y \in X$. Entonces, $$\exists ! x_0 \in X : f(x_0) = x_0$$
-\end{lema}
-
-\begin{demo}
-Sea $X_1 \in X$, y sea $X_{n+1} = f(x_n)$. Veamos que $\{x_n\}_{n \in \mathbb{N}}$ es sucesión de Cauchy. Sea $n \geq 2$
-$$d(x_{n+1}, x_n) = d(f(x_n), f(x_{n-1})) \leq k \cdot d(x_n, x_{n-1}) \leq k^2 \cdot d(x_{n-1}, x_{n-1}) \leq \ldots \leq k^{n-1} d(x_2, x_1)$$ 
-Sean $m > n \geq 1$:
-$$d(x_m, x_n) \leq d(x_m, x_{m-1}) + d(x_{m-1}, x_{m-2}) + \ldots + d(x_{n+1}, x_n) \leq (k^{m-2} + \ldots + k^{n-1}) \cdot d(x_2, x_1)$$
-$$= \frac{k^{n-1} - k^{m-1}}{1 - k} \cdot d(x_2, x_1) \xrightarrow[m,n \to \infty]{} 0$$
-
-Por completitud, $\exists \lim_{n \to \infty} x_n = x_0$. Por continuidad, $ x_0 \leftarrow x_{n+1} = f(x_n) \to f(x_0) \Rightarrow x_0 = f(x_0)$
-
-Por último, si $f(x_0) = x_0$ y $f(y_0) = y_0$, entonces $$d(x_0, y_0) = d(f(x_0), f(y_0)) \leq k d(x_0, y_0)$$
-Como $k$ está entre 0 y 1, la única forma de que se cumpla es que $d(x_0, y_0) = 0$, es decir, $x_0 = y_0$
+\end{itemize}
 \end{demo}
 
 \underline{Observación}
 
-La hipótesis en el teorema de la función inversa de que $df(x_0) \neq 0$ es fundamental. En el caso en el que \begin{align*}
-f : \mathbb{R}^n &\to \mathbb{R}^n \\ x &\mapsto M \cdot x : M \in M_{n \times n}
-\end{align*}
-
-$f(x) = y \Leftrightarrow \det(M) \neq 0 \Leftrightarrow df(x) \neq 0 : \forall x \in \mathbb{R}^n$
-
-En general que $df(x_0) \in L_i(\mathbb{R}^n, \mathbb{R}^n)$, es decir, que $\det(df(x_0)) \neq 0$ no es necesario para que $f$ sea invertible en un entorno de $x_0$. Por ejemplo, sea \begin{align*}
-f : \mathbb{R} &\to \mathbb{R} \\ x &\mapsto x^3
-\end{align*}
-Y sea $x_0 = 0$. Existe $f^{-1} : \mathbb{R} \to \mathbb{R}$, y sin embargo $f'(0) = 0$. Observamos también que $f^{-1}$ no es derivable en $0$.
+La hipótesis $df(x_0) \neq 0$ en el teorema de la función inversa es fundamental para garantizar la invertibilidad de la diferencial, pero 
+no es imprescindible para garantizar la existencia de una inversa. Por ejemplo, sea $f:\mathbb{R}\longrightarrow \mathbb{R}$ donde $f(x) = x^3$. Tenemos que  si $x_0 = 0$, existe $f^{-1} : \mathbb{R} \to \mathbb{R}$ y, sin embargo, $f'(0) = 0$. Pero como habíamos dicho, $f^{-1}$ no es derivable en $0$ porque no se cumpla la hipótesis especificada.
 
 \begin{lema}
-Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}^n, A$ abierto, $f \in \mathcal{C}^{1)}(A)$ tal que $|df(x)| \neq 0: \forall x \in A$. Entonces, $\forall \mathcal{U} \subset A$, abierto, $f(\mathcal{U})$ es abierto, es decir, $f$ es una aplicación abierta.
+Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}^n$ donde $A$ es abierto y $f \in \mathcal{C}^{1)}(A)$, se tiene que:
+$$\forall x \in A : |df(x)| \neq 0 \Rightarrow \forall \mathcal{U} \subset A \mbox{ abierto}: f(\mathcal{U})\mbox{ abierto}$$
+En este caso, se dice que $f$ es una aplicación abierta.
 \end{lema}
 
+\section*{TEOREMA DE LA FUNCIÓN IMPLÍCITA}
 En el Teorema de la Función Implícita queremos estudiar si en la ecuación $x  + \sen y + y = 0$ podemos despejar $y$ en función de la variable $x$, al menos localmente. Claramente $x = -y - \sen x$ nos da la solución si cambiamos el papel de las varibles.
 
-\begin{theo}
-Sea $F: A \subset \mathbb{R}^n \times \mathbb{R}^m \to \mathbb{R}^m, F \in \mathcal{C}^{p)}(A), F(x_0, y_0) = 0$ satisfaciendo 
-$$\begin{pmatrix} \frac{\partial F_1}{\partial y_1} (x_0, y_0) & \ldots & \frac{\partial F_1}{\partial y_m} (x_0, y_0) \\ \vdots & • & \vdots \\ \frac{\partial F_m}{\partial y_1} (x_0, y_0) & \ldots & \frac{\partial F_m}{\partial y_m} (x_0, y_0) \\
-
-\end{pmatrix} \neq 0$$
-Entonces, $\exists ! f: \mathcal{U} \to \mathcal{V}, \mathcal{U} \subset \mathbb{R}^n, x_0 \in \mathcal{U}, y \in \mathcal{V} \subset \mathbb{R}^m$ abiertos, $f \in \mathcal{C}^{p)} (\mathcal{U})$ y $F(x, f(x)) = 0 : \forall x \in \mathcal{U}$.
+\begin{theo}[de la Función Implícita]
+Sea $F: A \subset \mathbb{R}^n \times \mathbb{R}^m \to \mathbb{R}^m$ si se verifica que:
+\begin{itemize}
+\item $F \in \mathcal{C}^{p)}(A)$
+\item $F(x_0, y_0) = 0$
+\item $\begin{vmatrix} \frac{\partial F_1}{\partial y_1} (x_0, y_0) & \ldots & \frac{\partial F_1}{\partial y_m} (x_0, y_0) \\ \vdots & • & \vdots \\ \frac{\partial F_m}{\partial y_1} (x_0, y_0) & \ldots & \frac{\partial F_m}{\partial y_m} (x_0, y_0) \\ \end{vmatrix} \neq 0$
+\end{itemize}
+Entonces, se cumple que:
+\begin{itemize}
+\item $\exists \mathcal{U}\in \mathbb{R}^n$ y $\exists \mathcal{V} \in \mathbb{R}^m$ abiertos de forma que $x_0 \in \mathcal{U}$ y $y_0\in \mathcal{V}$
+\item $\exists ! f: \mathcal{U} \to \mathcal{V}$ donde $f \in \mathcal{C}^{p)} (\mathcal{U})$ tal que $\forall x \in \mathcal{U} : F(x, f(x)) = 0$
+\end{itemize}
 \end{theo}
 
 \begin{demo}
-Sea $G(x,y) = (x, F(x,y)) : (x,y) \in A \subset \mathbb{R}^n \times \mathbb{R}^m$. $G : A \subset \mathbb{R}^{n+m} \to \mathbb{R}^{n+m}$, $G \in \mathcal{C}^{p)}(A)$.
-
-Se prueba fácilmente que $\det(dG(x_0, y_0)) \neq 0$. Así, por el Teorema de la Función Inversa, $\exists \mathcal{W} \subset \mathbb{R}^{n+m} \ni (x_0, y_0), \mathcal{W}' \subset \mathbb{R}^{n+m} \ni (x_0, 0)$ abiertos tales que $G: \mathcal{W} \to \mathcal{W}'$ biyectiva, $G^{-1} \in \mathcal{C}^{p)}(\mathcal{W}')$
-
-\underline{Observación geométrica}
-
-Existe un cubo centrado en $(x_0, y_0)$ tal que 
-$$Q(x_0, y_0) = Q_1 (x_0) \subset \mathbb{R}^n \times Q_2 (y_0) \subset \mathbb{R}^m \subset \mathcal{W} $$
-
-Denotamos $\mathcal{U}_1 = Q_1 (x_0) \subset \mathbb{R}^n $ abierto, y $\mathcal{V} = Q_2 (y_0) \subset \mathbb{R}^m $ abierto.
-
-$G: \mathcal{U}_1 \times \mathcal{V} \to G(\mathcal{U}_1 \times \mathcal{V}) = \mathcal{W}''$ abierto
-
-$G^{-1}: \mathcal{W}'' \to \mathcal{U}_1 \times \mathcal{V}$, $G^{-1}\mathcal{C}^{p)}(\mathcal{W}'')$
-
-$G^{-1}(x,z) = (a,b) \Rightarrow (x,z) = G(a,b) = (a, F(a,b)) \Rightarrow a = x$
-
-$b \underset{def}{=} H(x,z)$
-
-$G^{-1}(x,z) = (x, H(x,z))$ y $H \in \mathcal{C}^{p)}(\mathcal{W}'')$
-
-$H: \mathcal{W}'' \to \mathcal{V}$
-
-$G^{-1} (x,z) = (x, H(x,z)) \Rightarrow (x,z) = G(x, H(x,z)) = (x, F(x, H(x,z)))$
+Definimos $G(x,y) = (x, F(x,y))$ donde $(x,y) \in A \subset \mathbb{R}^n \times \mathbb{R}^m$, entonces queda definida como:
+$$G : A \subset \mathbb{R}^{n+m} \to \mathbb{R}^{n+m} \Rightarrow G \in \mathcal{C}^{p)}(A)$$
+Se prueba fácilmente que $\det(dG(x_0, y_0)) \neq 0$, luego por el Teorema de la Función Inversa:
+$$\begin{cases} \exists \mathcal{W} \subset \mathbb{R}^{n+m} : (x_0, y_0) \in \mathcal{W} \\ \exists \mathcal{W}' \subset \mathbb{R}^{n+m} : (x_0, 0)\in \mathcal{W}' \\
+G: \mathcal{W} \to \mathcal{W}' \mbox{ biyectiva } \end{cases} \Rightarrow G^{-1} \in \mathcal{C}^{p)}(\mathcal{W}')$$
+Ahora vamos a restringir aún más dicho dominio. Siempre existe\footnote{Dicha demostración no procede en este resultado y puede tomarse como un axioma geométrico hasta que se vea en asignaturas posteriores} un cubo centrado en $(x_0, y_0)$ tal que:
+$$Q(x_0, y_0) = \underbrace{Q_1 (x_0)}_{\subset \mathbb{R}^n} \times \underbrace{Q_2 (y_0)}_{\subset \mathbb{R}^m} \subset \mathcal{W}$$
+Denotamos $\mathcal{U}_1 = Q_1 (x_0) \subset \mathbb{R}^n $ abierto, y $\mathcal{V} = Q_2 (y_0) \subset \mathbb{R}^m $ abierto. De este modo, si llamamos $G(\mathcal{U}_1 \times \mathcal{V}) = \mathcal{W}''$ y restringimos $G: \mathcal{U}_1 \times \mathcal{V} \to \mathcal{W}''\subset \mathcal{W}'$ abierto, tenemos por las consecuencias del Teorema de la función Inversa anteriores que:
+$$\begin{cases} G^{-1}: \mathcal{W}'' \to \mathcal{U}_1 \times \mathcal{V} \\ G^{-1} \in \mathcal{C}^{p)}(\mathcal{W}'') \\ G^{-1}(x,z) = (a,b) \Rightarrow (x,z) = G(a,b) = (a, F(a,b)) \Rightarrow a = x \end{cases}$$
+Como $b$ debe estar en función de $x$ y de $z$, tomamos como definición la expresión $b := H(x,z)$, de este modo, la expresión anterior nos queda como:
+$$G^{-1}(x,z) = (x, H(x,z)) \text{ donde } H \in \mathcal{C}^{p)}(\mathcal{W}'') \text{ y } H: \mathcal{W}'' \to \mathcal{V}$$
+Y por ser $(x,z)$ la preimagen de ese par, podemos decir que es igual a $(x, F(x, H(x,z)))$ ya que:
+$$G^{-1} (x,z) = (x, H(x,z)) \Rightarrow (x,z) = G(x, H(x,z)) = (x, F(x, H(x,z)))$$
+Consideremos ahora la proyección sobre las componentes de $\mathbb{R}^m$, de modo que:
 \begin{align*}
 \pi_2 : \mathbb{R}^n \times \mathbb{R}^m &\to \mathbb{R}^m \\ (x,y) &\to \pi_2 (x,y) = y
 \end{align*}
-
-$F(x, H(x,z)) = (\pi_2 \circ G) (x, H(x,z)) = (\pi_2 \circ G \circ G^{-1}) (x,z) = z$
-
-$(x_0, 0) \in \mathcal{W}''$. Entonces, puedo coger un $\mathcal{U} \times \{0\} \subset \mathcal{W}''$ tal que $x_0 \in \mathcal{U} \subset \mathcal{U}_1$
-
+Es sencillo ver que podemos expresar la $F$ inicial como composición de $G$ con dicha proyección $\pi$:
+$$F(x, H(x,z)) = (\pi_2 \circ G) (x, H(x,z)) = (\pi_2 \circ G \circ G^{-1}) (x,z) = z$$
+Para que se entienda la estrategia, nos gustaría ahora poder decir que si tomamos $f(x)=H(x,0)$, entonces tenemos $F(x,f(x))=F(x,H(x,0))=0$ y como definidos los conjuntos $\mathcal{U}$ y $\mathcal{V}$ solo faltaba probar eso, habríamos terminado. Sin embargo, no tenemos la certeza de que $H(x,0)$ tome valores en $W''$, condición imprescindible para poder afirmar que $G$ es invertible. Por este detalle y de modo análogo a cuando dijimos que dado un dominio podíamos escoger un cubo dentro de él donde estuviese contenido el punto que queríamos, ahora queremos ver si el ``segmento''\footnote{Porque es como dejar fijas todas las $\mathbb{R}^m$ componentes y solo movernos por las $\mathbb{R}^{n}$} está contenido. Esto no está asegurado, es decir, no podemos afirmar que con seguridad $\mathcal{U}_{1}\times \{0\}\subset \mathcal{W}''$, pero lo que si podemos decir es que como $(x_0, 0)$ es interior, entonces hay un entorno $\mathcal{U}\subset \mathcal{U}_{1}$ al que pertenece $x_0$ y que sí que cumple que $\mathcal{U}\times \{0\} \subset \mathcal{W}''$. De este modo, definimos la función $f(x)$ como:
 \begin{align*}
 f: \mathcal{U} &\to \mathcal{V} \\ x &\mapsto H(x,0)
 \end{align*} 
+Donde $f \in \mathcal{C}^{p)} (\mathcal{U})$ y $F(x, f(x)) = 0 : \forall x \in \mathcal{U}$.
 
-$f \in \mathcal{C}^{p)} (\mathcal{U})$. ¿$F(x, f(x)) = 0 : \forall x \in \mathcal{U}$?
-
-$F(x, f(x)) = F(x, H(x,0)) = 0$
-
-Veamos la \textbf{unicidad}. Supongamos que tenemos dos funciones $F(x, f(x)) = 0$ y $F(x, f^* (x)) = 0$
-
-$$F(x, f(x)) = F(x, f^*(x))$$
-$$G(x,f(x)) = (x, F(x,f(x))) = (x, F(x, f^* (x))) = G(x,f^* (x))$$
-
+Falta solo ver la \textbf{unicidad}. Para ello, supongamos que tenemos dos funciones $F(x, f(x)) = 0$ y $F(x, f^* (x)) = 0$, por tanto:
+$$F(x, f(x)) = F(x, f^*(x)) \Rightarrow G(x,f(x)) = (x, F(x,f(x))) = (x, F(x, f^* (x))) = G(x,f^* (x))$$
 Como $G$ es inyectiva, $f(x) = f^* (x) : \forall x \in \mathcal{U}$
 \end{demo}
 
 \underline{Ejemplo}
 
-$x + \sen y + y = 0; (0,0)$
+Tenemos la función del ejemplo $h(x) = x + \sen y + y$ y queremos ver si en la ecuación $h(x,y)=0$, es decir, $x + \sen y + y = 0$ podemos despejar $y$ en función de $x$.
+
+Tomamos como función $F: \mathbb{R} \times  \mathbb{R} \to \mathbb{R}$ donde $F(x,y) = x + \sen y + y$ y como $(x_0, y_0) = (0,0)$. Como $\det(\frac{\partial F}{\partial y} (0,0)) = |1+ 1| \neq 0$ nos encontramos en las hipótesis del Teorema de la Función Implícita, luego $\exists f : B(x_0, 0)=(-\varepsilon, \varepsilon) \to \mathbb{R}$ tal que $f \in \mathcal{C}^{\infty )}$ que cumple $x + \sen f(x) + f(x) = 0$.
+
+Caracterizar este función no suele ser en general sencillo, pero lo que sí podemos caracterizar es su polinomio de Taylor:
 \begin{align*}
-F: \mathbb{R} \times  \mathbb{R} &\to \mathbb{R} \\ (x,y) &\mapsto x + \sen y + y \\ (x_0, y_0) &= (0,0)
+\frac{\partial h}{\partial x}(x,y) &= 1 + \cos \left(f(x)\right) \cdot f'(x) + f'(x) = 0 : |x| < \varepsilon \\
+\frac{\partial h}{\partial x} (0,0) &= 1 + 1 \cdot f'(0) + f'(0) = 0 \Rightarrow f'(0) = \frac{-1}{2} \\
+\frac{\partial^2 h}{\partial x^2}(x,y) &= - \sen f(x) (f'(x))^2 + \cos f(x) \cdot f''(x) + f''(x) = 0 \\
+\frac{\partial^2 h}{\partial x^2} (0,0) &= 0 + f''(0) + f''(0) = 0 \Rightarrow f''(0) = 0
 \end{align*}
+Por Taylor, para las $x$ dentro del intervalo donde está definida $f$, tenemos que $f(x) = \frac{-x}{2} + o(x^2)$
 
-$\frac{\partial F}{\partial y} (0,0) = 1+ 1 \neq 0$. Entonces, por el teorema de la función implícita $\exists f : (-\varepsilon, \varepsilon) \to \mathbb{R}, f \in \mathcal{C}^{\infty )}$ tal que $x + \sen f(x) + f(x) = 0$
+\newpage
 
-Si nos piden calcular las derivadas de $f$, 
-$$\frac{\partial f}{\partial x} = 1 + \cos f(x) \cdot f'(x) + f'(x) = 0 : |x| < \varepsilon$$
-$$\frac{\partial f}{\partial x} (0,0) = 1 + 1 \cdot f'(0) + f'(0) = 0 \Rightarrow f'(0) = \frac{-1}{2}$$
-$$\frac{\partial^2 f}{\partial x^2} = - \sen f(x) (f'(x))^2 + \cos f(x) \cdot f''(x) + f''(x) = 0$$
-$$\frac{\partial^2 f}{\partial x^2} (0,0) = 0 + f''(0) + f''(0) = 0 \Rightarrow f''(0) = 0$$
-Por Taylor, $f(x) = \frac{-x}{2} + o(x^2)$
-
-\section*{EXTREMOS CONDICIONADOS}
-Dada $f: A \subset \mathbb{R}^n \to \mathbb{R}, A$ abierto, $f \in \mathcal{C}^{1)}(A)$
-
-[Dibujos de idea de variedad]
-
-Dado $B \subset A$, queremos optimizar $f|_B : B \to \mathbb{R}$
+\section*{MULTIPLICADORES DE LAGRANGE}
+Dada $f: A \subset \mathbb{R}^n \to \mathbb{R}$ con $A$ abierto y $f \in \mathcal{C}^{1)}(A)$. Dado $B \subset A$, podríamos querer optimizar $f|_B : B \to \mathbb{R}$.
 
 \underline{Ejemplo}
 
-Sea \begin{align*}
-f : \mathbb{R}^2 &\to \mathbb{R} \\ (x,y) &\mapsto x^2 + y^2
-\end{align*}
-y sea $B = \{(x,y) \in \mathbb{R}^2 : x^2 + y^2 = 1\}$.
-
-En general, el conjunto $B \subset A  \subset \mathbb{R}^n$ vendrá determinado como intersección de conjuntos de la forma $Z_j = \{x \in A : g_j (x) = 0\}$, siendo $g_j \in \mathcal{C}^{1)} (A) : 1 \leq j \leq m < n$
+Tenemos $f : \mathbb{R}^2 \to \mathbb{R}$ donde $f(x,y) = x^2 + y^2$ y el conjunto en el que queremos optimizar $B = \{(x,y) \in \mathbb{R}^2 : x^2 + y^2 = 1\}$. En general, el conjunto $B \subset A  \subset \mathbb{R}^n$ vendrá determinado como intersección de conjuntos de la forma $Z_j = \{x \in A : g_j (x) = 0\}$, siendo $g_j \in \mathcal{C}^{1)} (A) : 1 \leq j \leq m < n$
 $$B = \bigcap_{j = 1}^m Z_j$$
 
 \begin{theo}[Multiplicadores de Lagrange]
-Sea $f, g_1, \ldots, g_m : A \subset \mathbb{R}^n \to \mathbb{R}, A$ abierto y $f, g_j \in \mathcal{C}^{1)} (A) : j = 1, \ldots, m < n$. Sea 
-$$B = \{x \in A: g_j (x) = 0 : j =1, \ldots, m\}$$ 
-Supongamos que tenemos un punto $x_0 \in B$ extremo local de $f|_B$ tal que $\{\nabla g_1(x_0), \ldots, \nabla g_m(x_0)\}$ es un sistema linealmente independiente. Entonces, existen $\lambda_1, \ldots, \lambda_n \in \mathbb{R}$ (multiplicadores de Lagrange) tal que 
-$$\nabla f(x_0) = \lambda_1 \nabla g_1 (x_0) + \ldots + \lambda_m \nabla g_m (x_0)$$
+Sea $f, g_1, \ldots, g_m : A \subset \mathbb{R}^n \to \mathbb{R}$ donde $A$ es abierto y $m < n$, si se verifican:
+\begin{itemize}
+\item $f, g_1, \cdots, g_m \in \mathcal{C}^{1)} (A)$
+\item $B = \{x \in A: g_j (x) = 0 : j =1, \ldots, m\}$
+\item $\exists x_0 \in B$ que es extremo local en $f\mid_B$
+\item $\{\nabla g_1(x_0), \ldots, \nabla g_m(x_0)\}$ es un sistema linealmente independiente.
+\end{itemize}
+Entonces se cumple que:
+$$\exists \lambda_1, \ldots, \lambda_n \in \mathbb{R} : \nabla f(x_0) = \lambda_1 \nabla g_1 (x_0) + \ldots + \lambda_m \nabla g_m (x_0)$$
 \end{theo}
 
 \begin{demo}
-Sin pérdida de generalidad, podemos suponer que las últimas $m$ columnas de $dg(x_0)$, siendo $g = (g_1, \ldots, g_m)$, nos dan un menor de rango m:
-
-$dg(x_0) = \begin{pmatrix}
-\nabla g_1 (x_0) \\ \vdots \\ \nabla g_m (x_0) 
-\end{pmatrix}_{m \times n}$
-
-$x \in \mathbb{R}^n = \mathbb{R}^{n-m} \times \mathbb{R}^m$, es decir, $x = (u \in \mathbb{R}^{n-m} ,v \in \mathbb{R}^m)$
-
-$d_u g(x) = \begin{pmatrix}
+Sin pérdida de generalidad, como el sistema formado por los gradientes es linealmente independiente, podemos suponer\footnote{Porque en caso de que no ocurra así basta con reordenar y cambiar las bases} que las últimas $m$ columnas de $dg(x_0)$, siendo $g = (g_1, \ldots, g_m)$, nos dan un menor de rango $m$. Para simplificar, vamos a distinguir explícitamente entre las $n-m$ primeras componentes y las otras $m$ en forma de dos vectores, de forma que  para un $x \in \mathbb{R}^n$ este lo vamos a expresar como $x = (u \in \mathbb{R}^{n-m}, v\in \mathbb{R}^m)$ donde $x_0 = (u_0,v_0)$. A modo de notación, también tendremos en cuenta la restricción sobre cada número de componentes como:
+\begin{align*}
+d_u g(x) = \begin{pmatrix}
 \frac{\partial g_j}{\partial u_k}
-\end{pmatrix}_{1 \leq j \leq m, 1 \leq k \leq n - m} \in M_{m \times (n-m)}$
-
-Lo mismo para $d_v g(x) \in M_{m \times m}$.
-
-Es decir, $\exists (d_v g(x_0))^{-1} \in M_{m \times m}$
-
-$x_0 = (u_0, v_0)$
-
-Sea \begin{align*}
-g : A \subset \mathbb{R}^{n-m} \times \mathbb{R}^m &\to \mathbb{R}^m, g \in \mathcal{C}^{1)}(A) \\ (u,v) &\mapsto g(u,v)
+\end{pmatrix}_{\substack{1 \leq j \leq m \\ 1 \leq k \leq n - m}} \in M_{m \times (n-m)} & & d_v g(x) = \begin{pmatrix}
+\frac{\partial g_j}{\partial v_k}
+\end{pmatrix}_{\substack{1 \leq j \leq m \\ 1 \leq k \leq m}}  \in M_{m \times m}
 \end{align*}
 
-Por el Teorema de la Función Implícita, $g(u,v) = 0$,
-\begin{itemize}
-\item $\exists u_0 \in \mathcal{U} \subset \mathbb{R}^{n-m}, v_0 \in \mathcal{V} \subset \mathbb{R}^m$
-\item $\exists ! h : \mathcal{U} \to \mathcal{V}, h(u_0) = v_0, h \in \mathcal{C}^{1)} (\mathcal{U})$
-\item $g(u, h(u)) = 0 : \forall u \in \mathcal{U}$
-\end{itemize}
+Como son linealmente indepentiendes el menor formado por las últimas $m$ columnas es no nulo y, por tanto, la restricción sobre ese subespacio es biyectiva sobre su imagen, luego $\exists (d_vg(x_0))^{-1}$. Definida previamente la función g, vemos que cumple las hipótesis del Teorema de la Función Implícita:
+$$\begin{cases}
+g : A \subset \mathbb{R}^{n-m} \times \mathbb{R}^m \to \mathbb{R}^m \\
+g \in \mathcal{C}^{1)}(A) \\
+\det\left(d_vg(x)\right) \neq 0
+\end{cases}$$
+Por tanto, se derivan las siguientes consecuencias para la igualdad $g(u,v) =0$:
+$$\begin{cases}
+\exists \mathcal{U} \subset \mathbb{R}^{n-m} \ni u_0, \exists \mathcal{V} \subset \mathbb{R}^m \ni v_0 \\
+\exists ! h : \mathcal{U} \to \mathcal{V} : h(u_0) = v_0 \text{ y } h \in \mathcal{C}^{1)} (\mathcal{U}) \\
+g(u, h(u)) = 0 : \forall u \in \mathcal{U}
+\end{cases}$$
 
-Como $g(u, h(u)) = 0 : \forall u \in \mathcal{U}$, $x = (u, h(u))$
-
-$$(*)0 = d_u g(x) \in (m \times (n - m)) + d_v g(x) \in (m \times m) \cdot dh(u) \in (m \times (n - m)) $$
-
-Como $f(u, h(u))$ tiene un extremo en $u_0 \in \mathcal{U}$,
-$$(**)0 = \nabla_u f(x_0) + \nabla_v f(x_0) \cdot d_h(u_0)$$
-
-De $(*)$, $dh(u_0) = - (d_v g(x_0))^{-1} \cdot d_u g(x_0)$
-
-Sustituyendo en $(**)$, $0 = nabla_u f(x_0) - \nabla_v f(x_0) \left( d_v g(x_0) \right)^{-1} \cdot d_u g(x_0) (***)$
-
-Sea $(\lambda_1, \ldots, \lambda_m) = \nabla_v f(x_0) \left( d_v g(x_0) \right)^{-1}$
-
-Despejando, $\nabla_v f(x_0) = \sum_{j = 1}^{m} \lambda_j \cdot \nabla_v g_j (x_0)$
-
-De $(***)$, $\nabla_u f(x_0) = \sum_{j = 1}^{m} \lambda_j \cdot \nabla_u g_j (x_0)$
+Como $\forall u \in \mathcal{U}: g(u, h(u)) = 0$, si llamamos $x = (u, h(u))$, tenemos que:
+\begin{equation}
+0 = \underbrace{d_u g(x)}_{\in m \times n - m} + \underbrace{d_v g(x)}_{\in m \times m} \cdot \underbrace{dh(u)}_{\in m \times n - m}
+\end{equation}
+Como $f(u, h(u))$ tiene un extremo en $u_0 \in \mathcal{U}$, tenemos que:
+\begin{equation}
+0 = \nabla_u f(x_0) + \nabla_v f(x_0) \cdot d_h(u_0)
+\end{equation}
+Por la primera ecuación, tenemos que $dh(u) = - (d_v g(x))^{-1} \cdot d_u g(x)$, es decir, $dh(u_0) = - (d_v g(x_0))^{-1} \cdot d_u g(x_0)$. Si sustituimos dicha expresión en la segunda ecuación, tenemos que:
+\begin{equation}
+0 = \nabla_u f(x_0) - \nabla_v f(x_0) \left( d_v g(x_0) \right)^{-1} \cdot d_u g(x_0)
+\end{equation}
+Si definimos $(\lambda_1, \ldots, \lambda_m) := \nabla_v f(x_0) \left( d_v g(x_0) \right)^{-1}$, entonces despejando:
+$$\nabla_v f(x_0) = \sum_{j = 1}^{m} \lambda_j \cdot \nabla_v g_j (x_0)$$
+Y de la tercera ecuación, tenemos:
+$$\nabla_u f(x_0) = \sum_{j = 1}^{m} \lambda_j \cdot \nabla_u g_j (x_0)$$
+Luego ya tenemos probadas ambas cosas
 \end{demo}
+
 
 Volviendo al ejemplo, $(2x,1) = \lambda (2x, 2y)$
 $\begin{cases} x = \lambda x \\ 1 = 2\lambda y \\ x^2 + y^2 = 1\end{cases}$

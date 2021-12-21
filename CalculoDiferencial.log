@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.8)  15 DEC 2021 10:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.8)  21 DEC 2021 12:30
 entering extended mode
 **./CalculoDiferencial.tex
 (CalculoDiferencial.tex
@@ -270,31 +270,7 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 130.
 \l_MT_below_shortintertext_sep=\dimen170
 \xmathstrut@box=\box93
 \xmathstrut@dim=\dimen171
-) (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
-Package: titlesec 2019/10/16 v2.13 Sectioning titles
-\ttl@box=\box94
-\beforetitleunit=\skip58
-\aftertitleunit=\skip59
-\ttl@plus=\dimen172
-\ttl@minus=\dimen173
-\ttl@toksa=\toks23
-\titlewidth=\dimen174
-\titlewidthlast=\dimen175
-\titlewidthfirst=\dimen176
-) (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
-Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
-
-(C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package color Info: Driver file: pdftex.def on input line 147.
-
-(C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
-File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
-) (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/graphics\dvipsnam.def
-File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
-))
-(C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+) (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
 
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
@@ -308,11 +284,66 @@ fg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
+
+(C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen172
+\Gin@req@width=\dimen173
 )
-\Gin@req@height=\dimen177
-\Gin@req@width=\dimen178
+(C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.sty
+Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
+
+(C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2020/10/26 v3.5g Customizing captions (AR)
+
+(C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
+\captionmargin=\dimen174
+\captionmargin@=\dimen175
+\captionwidth=\dimen176
+\caption@tempdima=\dimen177
+\caption@indent=\dimen178
+\caption@parindent=\dimen179
+\caption@hangindent=\dimen180
+Package caption Info: Standard document class detected.
 )
-(C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/pgfplots\pgfplots.sty
+\c@caption@flags=\count274
+\c@continuedfloat=\count275
+)
+\c@subfigure=\count276
+\c@subtable=\count277
+) (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count278
+\float@exts=\toks23
+\float@box=\box94
+\@float@everytoks=\toks24
+\@floatcapt=\box95
+)
+(C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
+Package: titlesec 2019/10/16 v2.13 Sectioning titles
+\ttl@box=\box96
+\beforetitleunit=\skip58
+\aftertitleunit=\skip59
+\ttl@plus=\dimen181
+\ttl@minus=\dimen182
+\ttl@toksa=\toks25
+\titlewidth=\dimen183
+\titlewidthlast=\dimen184
+\titlewidthfirst=\dimen185
+)
+(C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
+Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
+
+(C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+(C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/graphics\dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+)) (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/pgfplots\pgfplots.st
+y
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.rev
 ision.tex)
 Package: pgfplots 2020/02/29 v1.17 Data Visualization (1.17)
@@ -324,15 +355,15 @@ sty
 y
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
 -common.tex
-\pgfutil@everybye=\toks24
-\pgfutil@tempdima=\dimen179
-\pgfutil@tempdimb=\dimen180
+\pgfutil@everybye=\toks26
+\pgfutil@tempdima=\dimen186
+\pgfutil@tempdimb=\dimen187
 
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
 -common-lists.tex))
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
 -latex.def
-\pgfutil@abb=\box95
+\pgfutil@abb=\box97
 
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/ms\everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
@@ -354,33 +385,33 @@ Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
 
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
 .code.tex
-\pgfkeys@pathtoks=\toks25
-\pgfkeys@temptoks=\toks26
+\pgfkeys@pathtoks=\toks27
+\pgfkeys@temptoks=\toks28
 
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
 filtered.code.tex
-\pgfkeys@tmptoks=\toks27
+\pgfkeys@tmptoks=\toks29
 ))
-\pgf@x=\dimen181
-\pgf@y=\dimen182
-\pgf@xa=\dimen183
-\pgf@ya=\dimen184
-\pgf@xb=\dimen185
-\pgf@yb=\dimen186
-\pgf@xc=\dimen187
-\pgf@yc=\dimen188
-\pgf@xd=\dimen189
-\pgf@yd=\dimen190
+\pgf@x=\dimen188
+\pgf@y=\dimen189
+\pgf@xa=\dimen190
+\pgf@ya=\dimen191
+\pgf@xb=\dimen192
+\pgf@yb=\dimen193
+\pgf@xc=\dimen194
+\pgf@yc=\dimen195
+\pgf@xd=\dimen196
+\pgf@yd=\dimen197
 \w@pgf@writea=\write3
 \r@pgf@reada=\read3
-\c@pgf@counta=\count274
-\c@pgf@countb=\count275
-\c@pgf@countc=\count276
-\c@pgf@countd=\count277
-\t@pgf@toka=\toks28
-\t@pgf@tokb=\toks29
-\t@pgf@tokc=\toks30
-\pgf@sys@id@count=\count278
+\c@pgf@counta=\count279
+\c@pgf@countb=\count280
+\c@pgf@countc=\count281
+\c@pgf@countd=\count282
+\t@pgf@toka=\toks30
+\t@pgf@tokb=\toks31
+\t@pgf@tokc=\toks32
+\pgf@sys@id@count=\count283
 
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.c
 fg
@@ -399,8 +430,8 @@ File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
 ssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfsyssoftpath@smallbuffer@items=\count279
-\pgfsyssoftpath@bigbuffer@items=\count280
+\pgfsyssoftpath@smallbuffer@items=\count284
+\pgfsyssoftpath@bigbuffer@items=\count285
 )
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
 sprotocol.code.tex
@@ -436,12 +467,12 @@ code.tex
 code.tex)
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparse
 r.code.tex
-\pgfmath@dimen=\dimen191
-\pgfmath@count=\count281
-\pgfmath@box=\box96
-\pgfmath@toks=\toks31
-\pgfmath@stack@operand=\toks32
-\pgfmath@stack@operation=\toks33
+\pgfmath@dimen=\dimen198
+\pgfmath@count=\count286
+\pgfmath@box=\box98
+\pgfmath@toks=\toks33
+\pgfmath@stack@operand=\toks34
+\pgfmath@stack@operation=\toks35
 )
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
 ions.code.tex
@@ -463,59 +494,59 @@ ions.misc.code.tex)
 ions.integerarithmetics.code.tex)))
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat
 .code.tex
-\c@pgfmathroundto@lastzeros=\count282
+\c@pgfmathroundto@lastzeros=\count287
 ))
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.
 tex)
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 epoints.code.tex
 File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@picminx=\dimen192
-\pgf@picmaxx=\dimen193
-\pgf@picminy=\dimen194
-\pgf@picmaxy=\dimen195
-\pgf@pathminx=\dimen196
-\pgf@pathmaxx=\dimen197
-\pgf@pathminy=\dimen198
-\pgf@pathmaxy=\dimen199
-\pgf@xx=\dimen256
-\pgf@xy=\dimen257
-\pgf@yx=\dimen258
-\pgf@yy=\dimen259
-\pgf@zx=\dimen260
-\pgf@zy=\dimen261
+\pgf@picminx=\dimen199
+\pgf@picmaxx=\dimen256
+\pgf@picminy=\dimen257
+\pgf@picmaxy=\dimen258
+\pgf@pathminx=\dimen259
+\pgf@pathmaxx=\dimen260
+\pgf@pathminy=\dimen261
+\pgf@pathmaxy=\dimen262
+\pgf@xx=\dimen263
+\pgf@xy=\dimen264
+\pgf@yx=\dimen265
+\pgf@yy=\dimen266
+\pgf@zx=\dimen267
+\pgf@zy=\dimen268
 )
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 epathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@path@lastx=\dimen262
-\pgf@path@lasty=\dimen263
+\pgf@path@lastx=\dimen269
+\pgf@path@lasty=\dimen270
 )
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 epathusage.code.tex
 File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@shorten@end@additional=\dimen264
-\pgf@shorten@start@additional=\dimen265
+\pgf@shorten@end@additional=\dimen271
+\pgf@shorten@start@additional=\dimen272
 )
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 escopes.code.tex
 File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfpic=\box97
-\pgf@hbox=\box98
-\pgf@layerbox@main=\box99
-\pgf@picture@serial@count=\count283
+\pgfpic=\box99
+\pgf@hbox=\box100
+\pgf@layerbox@main=\box101
+\pgf@picture@serial@count=\count288
 )
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 egraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgflinewidth=\dimen266
+\pgflinewidth=\dimen273
 )
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 etransformations.code.tex
 File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@pt@x=\dimen267
-\pgf@pt@y=\dimen268
-\pgf@pt@temp=\dimen269
+\pgf@pt@x=\dimen274
+\pgf@pt@y=\dimen275
+\pgf@pt@temp=\dimen276
 )
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 equick.code.tex
@@ -532,14 +563,14 @@ File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 earrows.code.tex
 File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfarrowsep=\dimen270
+\pgfarrowsep=\dimen277
 )
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 eshade.code.tex
 File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@max=\dimen271
-\pgf@sys@shading@range@num=\count284
-\pgf@shadingcount=\count285
+\pgf@max=\dimen278
+\pgf@sys@shading@range@num=\count289
+\pgf@shadingcount=\count290
 )
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 eimage.code.tex
@@ -548,7 +579,7 @@ File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 eexternal.code.tex
 File: pgfcoreexternal.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfexternal@startupbox=\box100
+\pgfexternal@startupbox=\box102
 ))
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 elayers.code.tex
@@ -569,7 +600,7 @@ File: pgfcorerdf.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
 shapes.code.tex
 File: pgfmoduleshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfnodeparttextbox=\box101
+\pgfnodeparttextbox=\box103
 )
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
 plot.code.tex
@@ -578,8 +609,8 @@ File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
 mp-version-0-65.sty
 Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@nodesepstart=\dimen272
-\pgf@nodesepend=\dimen273
+\pgf@nodesepstart=\dimen279
+\pgf@nodesepend=\dimen280
 )
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
 mp-version-1-18.sty
@@ -600,10 +631,10 @@ Package: pgffor 2020/01/08 v3.1.5b (3.1.5b)
 
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
 .tex)
-\pgffor@iter=\dimen274
-\pgffor@skip=\dimen275
-\pgffor@stack=\toks34
-\pgffor@toks=\toks35
+\pgffor@iter=\dimen281
+\pgffor@skip=\dimen282
+\pgffor@stack=\toks36
+\pgffor@toks=\toks37
 ))
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
 z\tikz.code.tex
@@ -612,34 +643,34 @@ Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
 aryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@plot@mark@count=\count286
-\pgfplotmarksize=\dimen276
+\pgf@plot@mark@count=\count291
+\pgfplotmarksize=\dimen283
 )
-\tikz@lastx=\dimen277
-\tikz@lasty=\dimen278
-\tikz@lastxsaved=\dimen279
-\tikz@lastysaved=\dimen280
-\tikz@lastmovetox=\dimen281
-\tikz@lastmovetoy=\dimen282
-\tikzleveldistance=\dimen283
-\tikzsiblingdistance=\dimen284
-\tikz@figbox=\box102
-\tikz@figbox@bg=\box103
-\tikz@tempbox=\box104
-\tikz@tempbox@bg=\box105
-\tikztreelevel=\count287
-\tikznumberofchildren=\count288
-\tikznumberofcurrentchild=\count289
-\tikz@fig@count=\count290
+\tikz@lastx=\dimen284
+\tikz@lasty=\dimen285
+\tikz@lastxsaved=\dimen286
+\tikz@lastysaved=\dimen287
+\tikz@lastmovetox=\dimen288
+\tikz@lastmovetoy=\dimen289
+\tikzleveldistance=\dimen290
+\tikzsiblingdistance=\dimen291
+\tikz@figbox=\box104
+\tikz@figbox@bg=\box105
+\tikz@tempbox=\box106
+\tikz@tempbox@bg=\box107
+\tikztreelevel=\count292
+\tikznumberofchildren=\count293
+\tikznumberofcurrentchild=\count294
+\tikz@fig@count=\count295
 
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
 matrix.code.tex
 File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfmatrixcurrentrow=\count291
-\pgfmatrixcurrentcolumn=\count292
-\pgf@matrix@numberofcolumns=\count293
+\pgfmatrixcurrentrow=\count296
+\pgfmatrixcurrentcolumn=\count297
+\pgf@matrix@numberofcolumns=\count298
 )
-\tikz@expandcount=\count294
+\tikz@expandcount=\count299
 
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
 z/libraries\tikzlibrarytopaths.code.tex
@@ -649,12 +680,12 @@ File: tikzlibrarytopaths.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 e.tex
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotscore
 .code.tex
-\t@pgfplots@toka=\toks36
-\t@pgfplots@tokb=\toks37
-\t@pgfplots@tokc=\toks38
-\pgfplots@tmpa=\dimen285
-\c@pgfplots@coordindex=\count295
-\c@pgfplots@scanlineindex=\count296
+\t@pgfplots@toka=\toks38
+\t@pgfplots@tokb=\toks39
+\t@pgfplots@tokc=\toks40
+\pgfplots@tmpa=\dimen292
+\c@pgfplots@coordindex=\count300
+\c@pgfplots@scanlineindex=\count301
 
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgfplots
 sysgeneric.code.tex))
@@ -672,14 +703,14 @@ e\pgfplotsliststructure.code.tex)
 e\pgfplotsliststructureext.code.tex)
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructur
 e\pgfplotsarray.code.tex
-\c@pgfplotsarray@tmp=\count297
+\c@pgfplotsarray@tmp=\count302
 )
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructur
 e\pgfplotsmatrix.code.tex)
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/numtable\pgf
 plotstableshared.code.tex
-\c@pgfplotstable@counta=\count298
-\t@pgfplotstable@a=\toks39
+\c@pgfplotstable@counta=\count303
+\t@pgfplotstable@a=\toks41
 )
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructur
 e\pgfplotsdeque.code.tex)
@@ -691,7 +722,7 @@ sbinary.data.code.tex))
 sutil.verb.code.tex)
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pgflibr
 arypgfplots.surfshading.code.tex
-\c@pgfplotslibrarysurf@no=\count299
+\c@pgfplotslibrarysurf@no=\count304
 
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgflibra
 rypgfplots.surfshading.pgfsys-pdftex.def)))
@@ -723,16 +754,16 @@ hs.code.tex)
 z/libraries\tikzlibrarydecorations.code.tex
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
 decorations.code.tex
-\pgfdecoratedcompleteddistance=\dimen286
-\pgfdecoratedremainingdistance=\dimen287
-\pgfdecoratedinputsegmentcompleteddistance=\dimen288
-\pgfdecoratedinputsegmentremainingdistance=\dimen289
-\pgf@decorate@distancetomove=\dimen290
-\pgf@decorate@repeatstate=\count300
-\pgfdecorationsegmentamplitude=\dimen291
-\pgfdecorationsegmentlength=\dimen292
+\pgfdecoratedcompleteddistance=\dimen293
+\pgfdecoratedremainingdistance=\dimen294
+\pgfdecoratedinputsegmentcompleteddistance=\dimen295
+\pgfdecoratedinputsegmentremainingdistance=\dimen296
+\pgf@decorate@distancetomove=\dimen297
+\pgf@decorate@repeatstate=\count305
+\pgfdecorationsegmentamplitude=\dimen298
+\pgfdecorationsegmentlength=\dimen299
 )
-\tikz@lib@dec@box=\box106
+\tikz@lib@dec@box=\box108
 )
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
 z/libraries\tikzlibrarydecorations.pathmorphing.code.tex
@@ -742,13 +773,13 @@ ions\pgflibrarydecorations.pathmorphing.code.tex))
 z/libraries\tikzlibrarydecorations.pathreplacing.code.tex
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorat
 ions\pgflibrarydecorations.pathreplacing.code.tex))
-\pgfplots@numplots=\count301
-\pgfplots@xmin@reg=\dimen293
-\pgfplots@xmax@reg=\dimen294
-\pgfplots@ymin@reg=\dimen295
-\pgfplots@ymax@reg=\dimen296
-\pgfplots@zmin@reg=\dimen297
-\pgfplots@zmax@reg=\dimen298
+\pgfplots@numplots=\count306
+\pgfplots@xmin@reg=\dimen300
+\pgfplots@xmax@reg=\dimen301
+\pgfplots@ymin@reg=\dimen302
+\pgfplots@ymax@reg=\dimen303
+\pgfplots@zmin@reg=\dimen304
+\pgfplots@zmax@reg=\dimen305
 )
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
 z/libraries\tikzlibraryplotmarks.code.tex
@@ -761,7 +792,7 @@ File: pgflibraryplotmarks.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/tkz-fct\tkz-fct.sty
 2020/05/01 1.4c function tkz-fct
 Package: tkz-fct 2020/05/01 1.4c function 
-\tkz@tkzf@fct=\count302
+\tkz@tkzf@fct=\count307
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/tkz-base\tkz-base.sty
 2020/03/18 3.06c tkz-base.sty
 Package: tkz-base 2020/03/18 3.06c tkz-base
@@ -777,15 +808,15 @@ File: tikzlibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
 aryarrows.code.tex
 File: pgflibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\arrowsize=\dimen299
+\arrowsize=\dimen306
 ))
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
 aryarrows.meta.code.tex
 File: pgflibraryarrows.meta.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfarrowinset=\dimen300
-\pgfarrowlength=\dimen301
-\pgfarrowwidth=\dimen302
-\pgfarrowlinewidth=\dimen303
+\pgfarrowinset=\dimen307
+\pgfarrowlength=\dimen308
+\pgfarrowwidth=\dimen309
+\pgfarrowlinewidth=\dimen310
 )
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
 z/libraries\tikzlibrarybabel.code.tex
@@ -807,15 +838,15 @@ ions\pgflibrarydecorations.shapes.code.tex))
 z/libraries\tikzlibrarydecorations.text.code.tex
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorat
 ions\pgflibrarydecorations.text.code.tex
-\pgf@lib@dec@text@box=\box107
+\pgf@lib@dec@text@box=\box109
 )
-\tikz@lib@dec@te@box=\box108
+\tikz@lib@dec@te@box=\box110
 )
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
 z/libraries\tikzlibraryintersections.code.tex
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
 aryintersections.code.tex
-\pgf@intersect@solutions=\count303
+\pgf@intersect@solutions=\count308
 ))
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
 z/libraries\tikzlibrarypatterns.code.tex
@@ -862,31 +893,31 @@ Package: numprint 2012/08/20 v1.39 Print numbers (HH)
 
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
 Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
-\col@sep=\dimen304
-\ar@mcellbox=\box109
-\extrarowheight=\dimen305
-\NC@list=\toks40
+\col@sep=\dimen311
+\ar@mcellbox=\box111
+\extrarowheight=\dimen312
+\NC@list=\toks42
 \extratabsurround=\skip60
 \backup@length=\skip61
-\ar@cellbox=\box110
+\ar@cellbox=\box112
 )
-\c@nprt@mantissa@digitsbefore=\count304
-\c@nprt@mantissa@digitsafter=\count305
-\c@nprt@exponent@digitsbefore=\count306
-\c@nprt@exponent@digitsafter=\count307
+\c@nprt@mantissa@digitsbefore=\count309
+\c@nprt@mantissa@digitsafter=\count310
+\c@nprt@exponent@digitsbefore=\count311
+\c@nprt@exponent@digitsafter=\count312
 \nprt@digitwidth=\skip62
 \nprt@sepwidth=\skip63
 \nprt@decimalwidth=\skip64
 \nprt@blockwidth=\skip65
-\nprt@digittoks=\toks41
-\nprt@pretoks=\toks42
-\nprt@posttoks=\toks43
-\nprt@thisdigit=\count308
-\nprt@curpos=\count309
-\nprt@rndpos=\count310
-\c@nprt@digitsfirstblock=\count311
-\c@nprt@blockcnt=\count312
-\c@nprt@cntprint=\count313
+\nprt@digittoks=\toks43
+\nprt@pretoks=\toks44
+\nprt@posttoks=\toks45
+\nprt@thisdigit=\count313
+\nprt@curpos=\count314
+\nprt@rndpos=\count315
+\c@nprt@digitsfirstblock=\count316
+\c@nprt@blockcnt=\count317
+\c@nprt@cntprint=\count318
 
 No configuration file `numprint.cfg' found.)
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xfp\xfp.sty
@@ -896,8 +927,8 @@ Package: expl3 2020-06-18 L3 programming layer (loader)
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 mode.def
 File: l3backend-pdfmode.def 2020-06-29 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count314
-\l__pdf_internal_box=\box111
+\l__kernel_color_stack_int=\count319
+\l__pdf_internal_box=\box113
 ))
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpars
 e.sty
@@ -905,10 +936,10 @@ Package: xparse 2020-05-15 L3 Experimental document command parser
 
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpars
 e-generic.tex
-\l__xparse_current_arg_int=\count315
-\g__xparse_grabber_int=\count316
-\l__xparse_m_args_int=\count317
-\l__xparse_v_nesting_int=\count318
+\l__xparse_current_arg_int=\count320
+\g__xparse_grabber_int=\count321
+\l__xparse_m_args_int=\count322
+\l__xparse_v_nesting_int=\count323
 ))
 Package: xfp 2020-05-15 L3 Floating point unit
 )
@@ -918,19 +949,19 @@ Package: fp 1995/04/02
 `Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/fp\defpattern.sty
 Package: defpattern 1994/10/12
-\actioncount=\count319
+\actioncount=\count324
 )
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/fp\fp-basic.sty
 Package: fp-basic 1996/05/13
-\FP@xs=\count320
-\FP@xia=\count321
-\FP@xib=\count322
-\FP@xfa=\count323
-\FP@xfb=\count324
-\FP@rega=\count325
-\FP@regb=\count326
-\FP@regs=\count327
-\FP@times=\count328
+\FP@xs=\count325
+\FP@xia=\count326
+\FP@xib=\count327
+\FP@xfa=\count328
+\FP@xfb=\count329
+\FP@rega=\count330
+\FP@regb=\count331
+\FP@regs=\count332
+\FP@times=\count333
 )
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/fp\fp-addons.sty
 Package: fp-addons 1995/03/15
@@ -949,7 +980,7 @@ Package: fp-pas 1994/08/29
 )
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/fp\fp-random.sty
 Package: fp-random 1995/02/23
-\FPseed=\count329
+\FPseed=\count334
 )
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/fp\fp-eqn.sty
 Package: fp-eqn 1995/04/03
@@ -960,26 +991,26 @@ Package: fp-upn 1996/10/21
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/fp\fp-eval.sty
 Package: fp-eval 1995/04/03
 ))
-\tkzRadius=\dimen306
-\tkzLength=\dimen307
-\tkz@radi=\dimen308
-\tkz@ax=\dimen309
-\tkz@ay=\dimen310
-\tkz@bx=\dimen311
-\tkz@by=\dimen312
-\tkz@cx=\dimen313
-\tkz@cy=\dimen314
-\tkz@dx=\dimen315
-\tkz@dy=\dimen316
-\tkz@tax=\dimen317
-\tkz@tay=\dimen318
-\tkz@tbx=\dimen319
-\tkz@tby=\dimen320
-\tkz@tcx=\dimen321
-\tkz@tcy=\dimen322
-\tkz@tdx=\dimen323
-\tkz@tdy=\dimen324
-\tkz@cntmk=\count330
+\tkzRadius=\dimen313
+\tkzLength=\dimen314
+\tkz@radi=\dimen315
+\tkz@ax=\dimen316
+\tkz@ay=\dimen317
+\tkz@bx=\dimen318
+\tkz@by=\dimen319
+\tkz@cx=\dimen320
+\tkz@cy=\dimen321
+\tkz@dx=\dimen322
+\tkz@dy=\dimen323
+\tkz@tax=\dimen324
+\tkz@tay=\dimen325
+\tkz@tbx=\dimen326
+\tkz@tby=\dimen327
+\tkz@tcx=\dimen328
+\tkz@tcy=\dimen329
+\tkz@tdx=\dimen330
+\tkz@tdy=\dimen331
+\tkz@cntmk=\count335
 
 Local configuration file tkz-base.cfg found and used
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/tkz-base\tkz-base.cfg
@@ -1054,43 +1085,43 @@ Package: ntheorem 2011/08/15 1.33
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\theorem@style=\toks44
-\theorem@@style=\toks45
-\theorembodyfont=\toks46
-\theoremnumbering=\toks47
+\theorem@style=\toks46
+\theorem@@style=\toks47
+\theorembodyfont=\toks48
+\theoremnumbering=\toks49
 \theorempreskipamount=\skip66
 \theorempostskipamount=\skip67
 \theoremframepreskipamount=\skip68
 \theoremframepostskipamount=\skip69
 \theoreminframepreskipamount=\skip70
 \theoreminframepostskipamount=\skip71
-\theorem@preskip=\toks48
-\theorem@postskip=\toks49
-\theorem@framepreskip=\toks50
-\theorem@framepostskip=\toks51
-\theorem@inframepreskip=\toks52
-\theorem@inframepostskip=\toks53
-\theoremindent=\dimen325
-\theorem@indent=\dimen326
-\theoremrightindent=\dimen327
-\theorem@rightindent=\dimen328
-\theoremheaderfont=\toks54
-\theoremseparator=\toks55
-\theoremprework=\toks56
-\theorempostwork=\toks57
-\theoremsymbol=\toks58
-\qedsymbol=\toks59
-\theoremkeyword=\toks60
+\theorem@preskip=\toks50
+\theorem@postskip=\toks51
+\theorem@framepreskip=\toks52
+\theorem@framepostskip=\toks53
+\theorem@inframepreskip=\toks54
+\theorem@inframepostskip=\toks55
+\theoremindent=\dimen332
+\theorem@indent=\dimen333
+\theoremrightindent=\dimen334
+\theorem@rightindent=\dimen335
+\theoremheaderfont=\toks56
+\theoremseparator=\toks57
+\theoremprework=\toks58
+\theorempostwork=\toks59
+\theoremsymbol=\toks60
 \qedsymbol=\toks61
+\theoremkeyword=\toks62
+\qedsymbol=\toks63
 \thm@topsep=\skip72
 \thm@topsepadd=\skip73
 )
-\c@defi=\count331
-\c@theo=\count332
-\c@coro=\count333
-\c@lema=\count334
-\c@prop=\count335
-\c@demo=\count336
+\c@defi=\count336
+\c@theo=\count337
+\c@coro=\count338
+\c@lema=\count339
+\c@prop=\count340
+\c@demo=\count341
 
 (CalculoDiferencial.aux
 LaTeX Info: Redefining \. on input line 8.
@@ -1100,22 +1131,22 @@ LaTeX Info: Redefining \% on input line 9.
 )
 \openout1 = `CalculoDiferencial.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Info: Redefining \. on input line 76.
-LaTeX Info: Redefining \% on input line 76.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Info: Redefining \. on input line 80.
+LaTeX Info: Redefining \% on input line 80.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1155,48 +1186,49 @@ LaTeX Info: Redefining \% on input line 76.
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count337
-\scratchdimen=\dimen329
-\scratchbox=\box112
-\nofMPsegments=\count338
-\nofMParguments=\count339
-\everyMPshowfont=\toks62
-\MPscratchCnt=\count340
-\MPscratchDim=\dimen330
-\MPnumerator=\count341
-\makeMPintoPDFobject=\count342
-\everyMPtoPDFconversion=\toks63
+\scratchcounter=\count342
+\scratchdimen=\dimen336
+\scratchbox=\box114
+\nofMPsegments=\count343
+\nofMParguments=\count344
+\everyMPshowfont=\toks64
+\MPscratchCnt=\count345
+\MPscratchDim=\dimen337
+\MPnumerator=\count346
+\makeMPintoPDFobject=\count347
+\everyMPtoPDFconversion=\toks65
 )
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
 ase.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
-) ABD: EveryShipout initializing macros
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: End \AtBeginDocument code.
+ ABD: EveryShipout initializing macros
+Package pgfplots notification 'compat/show suggested version=true': document ha
+s been generated with the most recent feature set (\pgfplotsset{compat=1.17}).
 
-Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
-ick labels; missing features). Consider writing \pgfplotsset{compat=1.17} into 
-your preamble.
- on input line 76.
-
-LaTeX Info: Redefining \. on input line 76.
-LaTeX Info: Redefining \% on input line 76.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 77.
+LaTeX Info: Redefining \. on input line 80.
+LaTeX Info: Redefining \% on input line 80.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 81.
 
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 77.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 81.
 
 
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 7
-7.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 8
+1.
 
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/stmaryrd\ustmry.fd)
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 77
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 81
 .
 
 (C:\Users\jdbar\AppData\Local\Programs\MiKTeX\tex/latex/base\ulasy.fd
@@ -1208,26 +1240,26 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 79.
+Package xcolor Warning: Incompatible color definition on input line 83.
 
 
-Package xcolor Warning: Incompatible color definition on input line 82.
+Package xcolor Warning: Incompatible color definition on input line 86.
 
 
-Package xcolor Warning: Incompatible color definition on input line 85.
+Package xcolor Warning: Incompatible color definition on input line 89.
 
 
-Package xcolor Warning: Incompatible color definition on input line 111.
+Package xcolor Warning: Incompatible color definition on input line 115.
 
 [3]
 
-Package xcolor Warning: Incompatible color definition on input line 133.
+Package xcolor Warning: Incompatible color definition on input line 137.
 
 
-Package xcolor Warning: Incompatible color definition on input line 139.
+Package xcolor Warning: Incompatible color definition on input line 143.
 
 
-Overfull \hbox (12.16022pt too wide) detected at line 151
+Overfull \hbox (12.16022pt too wide) detected at line 155
 \OML/cmm/m/it/10 d\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 f; g\OT1/cmr/m/n/10 ) = \OM
 S/cmsy/m/n/10 j\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/
 n/10 ) \OMS/cmsy/m/n/10   \OML/cmm/m/it/10 g\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x
@@ -1248,290 +1280,290 @@ y/m/n/10   \OML/cmm/m/it/10 g\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10
 
 [4]
 
-Package xcolor Warning: Incompatible color definition on input line 169.
+Package xcolor Warning: Incompatible color definition on input line 173.
 
 [5]
 
-Package xcolor Warning: Incompatible color definition on input line 191.
+Package xcolor Warning: Incompatible color definition on input line 195.
 
 
-Package xcolor Warning: Incompatible color definition on input line 215.
+Package xcolor Warning: Incompatible color definition on input line 219.
 
 [6]
 
-Package xcolor Warning: Incompatible color definition on input line 241.
+Package xcolor Warning: Incompatible color definition on input line 245.
 
 
-Package xcolor Warning: Incompatible color definition on input line 255.
+Package xcolor Warning: Incompatible color definition on input line 259.
 
 
-Package xcolor Warning: Incompatible color definition on input line 266.
+Package xcolor Warning: Incompatible color definition on input line 270.
 
 [7]
 
-Package xcolor Warning: Incompatible color definition on input line 269.
+Package xcolor Warning: Incompatible color definition on input line 273.
 
 
-Package xcolor Warning: Incompatible color definition on input line 287.
+Package xcolor Warning: Incompatible color definition on input line 291.
 
 
-Package xcolor Warning: Incompatible color definition on input line 308.
+Package xcolor Warning: Incompatible color definition on input line 312.
 
 
-Package xcolor Warning: Incompatible color definition on input line 317.
+Package xcolor Warning: Incompatible color definition on input line 321.
 
 [8]
 
-Package xcolor Warning: Incompatible color definition on input line 340.
+Package xcolor Warning: Incompatible color definition on input line 344.
 
 
-Package xcolor Warning: Incompatible color definition on input line 355.
+Package xcolor Warning: Incompatible color definition on input line 359.
 
 
-Package xcolor Warning: Incompatible color definition on input line 361.
+Package xcolor Warning: Incompatible color definition on input line 365.
 
 [9]
 
-Package xcolor Warning: Incompatible color definition on input line 377.
+Package xcolor Warning: Incompatible color definition on input line 381.
 
 
-Package xcolor Warning: Incompatible color definition on input line 389.
+Package xcolor Warning: Incompatible color definition on input line 393.
 
 
-Package xcolor Warning: Incompatible color definition on input line 400.
+Package xcolor Warning: Incompatible color definition on input line 404.
 
 
-Package xcolor Warning: Incompatible color definition on input line 410.
+Package xcolor Warning: Incompatible color definition on input line 414.
 
 [10]
 
-Package xcolor Warning: Incompatible color definition on input line 427.
+Package xcolor Warning: Incompatible color definition on input line 431.
 
 
-Package xcolor Warning: Incompatible color definition on input line 434.
+Package xcolor Warning: Incompatible color definition on input line 438.
 
 
-Package xcolor Warning: Incompatible color definition on input line 455.
+Package xcolor Warning: Incompatible color definition on input line 459.
 
 [11]
 
-Package xcolor Warning: Incompatible color definition on input line 474.
+Package xcolor Warning: Incompatible color definition on input line 478.
 
 
-Package xcolor Warning: Incompatible color definition on input line 504.
+Package xcolor Warning: Incompatible color definition on input line 508.
 
 [12]
 
-Package xcolor Warning: Incompatible color definition on input line 509.
+Package xcolor Warning: Incompatible color definition on input line 513.
 
 
-Package xcolor Warning: Incompatible color definition on input line 521.
+Package xcolor Warning: Incompatible color definition on input line 525.
 
 
-Package xcolor Warning: Incompatible color definition on input line 537.
+Package xcolor Warning: Incompatible color definition on input line 541.
 
-
-Package xcolor Warning: Incompatible color definition on input line 553.
-
-
-Package xcolor Warning: Incompatible color definition on input line 554.
-
-[13]
 
 Package xcolor Warning: Incompatible color definition on input line 557.
 
 
-Package xcolor Warning: Incompatible color definition on input line 566.
+Package xcolor Warning: Incompatible color definition on input line 558.
+
+[13]
+
+Package xcolor Warning: Incompatible color definition on input line 561.
 
 
-Package xcolor Warning: Incompatible color definition on input line 576.
+Package xcolor Warning: Incompatible color definition on input line 570.
 
 
-Package xcolor Warning: Incompatible color definition on input line 591.
+Package xcolor Warning: Incompatible color definition on input line 580.
 
 
-Package xcolor Warning: Incompatible color definition on input line 596.
+Package xcolor Warning: Incompatible color definition on input line 595.
+
+
+Package xcolor Warning: Incompatible color definition on input line 600.
 
 
 LaTeX Font Warning: Font shape `U/stmry/b/n' undefined
-(Font)              using `U/stmry/m/n' instead on input line 596.
+(Font)              using `U/stmry/m/n' instead on input line 600.
 
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 596.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 600.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 596.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 600.
 [14]
 
-Package xcolor Warning: Incompatible color definition on input line 612.
+Package xcolor Warning: Incompatible color definition on input line 616.
 
 
-Package xcolor Warning: Incompatible color definition on input line 632.
+Package xcolor Warning: Incompatible color definition on input line 636.
 
 [15]
 
-Package xcolor Warning: Incompatible color definition on input line 649.
+Package xcolor Warning: Incompatible color definition on input line 653.
 
 
-Package xcolor Warning: Incompatible color definition on input line 652.
+Package xcolor Warning: Incompatible color definition on input line 656.
 
 
-Package xcolor Warning: Incompatible color definition on input line 660.
+Package xcolor Warning: Incompatible color definition on input line 664.
 
 
-Package xcolor Warning: Incompatible color definition on input line 680.
+Package xcolor Warning: Incompatible color definition on input line 684.
 
 [16]
 
-Package xcolor Warning: Incompatible color definition on input line 690.
+Package xcolor Warning: Incompatible color definition on input line 694.
 
 
-Package xcolor Warning: Incompatible color definition on input line 709.
+Package xcolor Warning: Incompatible color definition on input line 713.
 
 
-Package xcolor Warning: Incompatible color definition on input line 726.
+Package xcolor Warning: Incompatible color definition on input line 730.
 
 [17]
 
-Package xcolor Warning: Incompatible color definition on input line 751.
+Package xcolor Warning: Incompatible color definition on input line 755.
 
 
-Package xcolor Warning: Incompatible color definition on input line 768.
+Package xcolor Warning: Incompatible color definition on input line 772.
 
 
-Package xcolor Warning: Incompatible color definition on input line 782.
+Package xcolor Warning: Incompatible color definition on input line 786.
 
 
-Package xcolor Warning: Incompatible color definition on input line 795.
+Package xcolor Warning: Incompatible color definition on input line 799.
 
 [18]
 
-Package xcolor Warning: Incompatible color definition on input line 809.
+Package xcolor Warning: Incompatible color definition on input line 813.
 
 
-Package xcolor Warning: Incompatible color definition on input line 841.
+Package xcolor Warning: Incompatible color definition on input line 845.
 
 [19]
 
-Package xcolor Warning: Incompatible color definition on input line 871.
+Package xcolor Warning: Incompatible color definition on input line 875.
 
 [20]
 
-Package xcolor Warning: Incompatible color definition on input line 896.
+Package xcolor Warning: Incompatible color definition on input line 900.
 
 
-Package xcolor Warning: Incompatible color definition on input line 911.
+Package xcolor Warning: Incompatible color definition on input line 915.
 
 
-Package xcolor Warning: Incompatible color definition on input line 930.
+Package xcolor Warning: Incompatible color definition on input line 934.
 
 [21] [22]
 
-Package xcolor Warning: Incompatible color definition on input line 943.
+Package xcolor Warning: Incompatible color definition on input line 947.
 
 
-Package xcolor Warning: Incompatible color definition on input line 946.
+Package xcolor Warning: Incompatible color definition on input line 950.
 
 
-Package xcolor Warning: Incompatible color definition on input line 949.
+Package xcolor Warning: Incompatible color definition on input line 953.
 
 
-Package xcolor Warning: Incompatible color definition on input line 956.
+Package xcolor Warning: Incompatible color definition on input line 960.
 
 
-Package xcolor Warning: Incompatible color definition on input line 961.
+Package xcolor Warning: Incompatible color definition on input line 965.
 
 
-Package xcolor Warning: Incompatible color definition on input line 967.
+Package xcolor Warning: Incompatible color definition on input line 971.
 
 [23
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 1004.
+Package xcolor Warning: Incompatible color definition on input line 1008.
 
 [24]
 
-Package xcolor Warning: Incompatible color definition on input line 1027.
+Package xcolor Warning: Incompatible color definition on input line 1031.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1036.
+Package xcolor Warning: Incompatible color definition on input line 1040.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1062.
+Package xcolor Warning: Incompatible color definition on input line 1066.
 
 [25]
 
-Package xcolor Warning: Incompatible color definition on input line 1071.
+Package xcolor Warning: Incompatible color definition on input line 1075.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1074.
+Package xcolor Warning: Incompatible color definition on input line 1078.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1080.
+Package xcolor Warning: Incompatible color definition on input line 1084.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1090.
+Package xcolor Warning: Incompatible color definition on input line 1094.
 
 [26]
 
-Package xcolor Warning: Incompatible color definition on input line 1141.
+Package xcolor Warning: Incompatible color definition on input line 1145.
 
 [27]
 
-Package xcolor Warning: Incompatible color definition on input line 1168.
+Package xcolor Warning: Incompatible color definition on input line 1172.
 
 [28]
 
-Package xcolor Warning: Incompatible color definition on input line 1193.
+Package xcolor Warning: Incompatible color definition on input line 1197.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1202.
+Package xcolor Warning: Incompatible color definition on input line 1206.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1213.
+Package xcolor Warning: Incompatible color definition on input line 1217.
 
-
-Package xcolor Warning: Incompatible color definition on input line 1227.
-
-[29]
 
 Package xcolor Warning: Incompatible color definition on input line 1231.
 
+[29]
 
-Package xcolor Warning: Incompatible color definition on input line 1241.
+Package xcolor Warning: Incompatible color definition on input line 1235.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1262.
+Package xcolor Warning: Incompatible color definition on input line 1245.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1266.
 
 [30]
 
-Package xcolor Warning: Incompatible color definition on input line 1280.
+Package xcolor Warning: Incompatible color definition on input line 1284.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1297.
+Package xcolor Warning: Incompatible color definition on input line 1301.
 
 [31]
 
-Package xcolor Warning: Incompatible color definition on input line 1310.
+Package xcolor Warning: Incompatible color definition on input line 1314.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1319.
+Package xcolor Warning: Incompatible color definition on input line 1323.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1332.
+Package xcolor Warning: Incompatible color definition on input line 1336.
 
 [32]
 
-Package xcolor Warning: Incompatible color definition on input line 1340.
+Package xcolor Warning: Incompatible color definition on input line 1344.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1348.
+Package xcolor Warning: Incompatible color definition on input line 1352.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1359.
+Package xcolor Warning: Incompatible color definition on input line 1363.
 
 
-Overfull \hbox (35.81529pt too wide) detected at line 1369
+Overfull \hbox (35.81529pt too wide) detected at line 1373
 \OML/cmm/m/it/10 df\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 )(\OML/
 cmm/m/it/10 v\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 df\OT1/cmr/m/n/10 (\OML/cmm/m
 /it/10 x[]\OT1/cmr/m/n/10 ) [] = \OMS/cmsy/m/n/10 jj\OML/cmm/m/it/10 v\OMS/cmsy
@@ -1544,16 +1576,16 @@ r/m/n/10 ) = \OML/cmm/m/it/10 D[]f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 1374.
+Package xcolor Warning: Incompatible color definition on input line 1378.
 
 [33]
 <./fotos/diferencial1.png, id=161, 1450.41875pt x 865.2325pt>
 File: ./fotos/diferencial1.png Graphic file (type png)
 <use ./fotos/diferencial1.png>
-Package pdftex.def Info: ./fotos/diferencial1.png  used on input line 1393.
+Package pdftex.def Info: ./fotos/diferencial1.png  used on input line 1397.
 (pdftex.def)             Requested size: 435.12898pt x 259.57175pt.
 
-Overfull \hbox (8.33763pt too wide) in paragraph at lines 1393--1394
+Overfull \hbox (8.33763pt too wide) in paragraph at lines 1397--1398
  [] 
  []
 
@@ -1561,65 +1593,66 @@ Overfull \hbox (8.33763pt too wide) in paragraph at lines 1393--1394
 <./fotos/diferencial2.png, id=170, 1836.8625pt x 865.2325pt>
 File: ./fotos/diferencial2.png Graphic file (type png)
 <use ./fotos/diferencial2.png>
-Package pdftex.def Info: ./fotos/diferencial2.png  used on input line 1425.
+Package pdftex.def Info: ./fotos/diferencial2.png  used on input line 1429.
 (pdftex.def)             Requested size: 385.75252pt x 181.70418pt.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1430.
+Package xcolor Warning: Incompatible color definition on input line 1434.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1454.
+Package xcolor Warning: Incompatible color definition on input line 1458.
 
 [36 <./fotos/diferencial2.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 1464.
+Package xcolor Warning: Incompatible color definition on input line 1468.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1488.
+Package xcolor Warning: Incompatible color definition on input line 1492.
 
 [37]
 
-LaTeX Warning: Command \textbullet invalid in math mode on input line 1492.
+LaTeX Warning: Command \textbullet invalid in math mode on input line 1496.
 
 Missing character: There is no ˆ in font cmr10!
 
-Package xcolor Warning: Incompatible color definition on input line 1505.
+Package xcolor Warning: Incompatible color definition on input line 1509.
 
 [38]
 
-Package xcolor Warning: Incompatible color definition on input line 1553.
+Package xcolor Warning: Incompatible color definition on input line 1557.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1556.
+Package xcolor Warning: Incompatible color definition on input line 1560.
 
 [39]
 
-Package xcolor Warning: Incompatible color definition on input line 1572.
+Package xcolor Warning: Incompatible color definition on input line 1602.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1586.
+Package xcolor Warning: Incompatible color definition on input line 1616.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1593.
+Package xcolor Warning: Incompatible color definition on input line 1623.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1603.
+Package xcolor Warning: Incompatible color definition on input line 1633.
 
 [40]
 
-Package xcolor Warning: Incompatible color definition on input line 1620.
+Package xcolor Warning: Incompatible color definition on input line 1650.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1627.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1645.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1649.
+Package xcolor Warning: Incompatible color definition on input line 1657.
 
 [41]
-Overfull \hbox (8.81859pt too wide) detected at line 1666
+
+Package xcolor Warning: Incompatible color definition on input line 1675.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1679.
+
+
+Overfull \hbox (8.81859pt too wide) detected at line 1696
 \OML/cmm/m/it/10 j[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 y \OT1/cmr/m/n/10 + \OML/
 cmm/m/it/10 k\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10   \OML/cmm/m/it/10 j[]\OT1/cmr/
 m/n/10 (\OML/cmm/m/it/10 y\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 j[]\OT1/cmr/m/n/
@@ -1629,89 +1662,118 @@ OML/cmm/m/it/10 k \OMS/cmsy/m/n/10   \OT1/cmr/m/n/10 0) = [] \OMS/cmsy/m/n/10 
  h \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 k
  []
 
-
-Package xcolor Warning: Incompatible color definition on input line 1677.
-
 [42]
 
-Package xcolor Warning: Incompatible color definition on input line 1682.
+Package xcolor Warning: Incompatible color definition on input line 1707.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1708.
+Package xcolor Warning: Incompatible color definition on input line 1712.
 
-
-Package xcolor Warning: Incompatible color definition on input line 1720.
-
-[43]
 
 Package xcolor Warning: Incompatible color definition on input line 1738.
 
+[43]
 
-Package xcolor Warning: Incompatible color definition on input line 1748.
+Package xcolor Warning: Incompatible color definition on input line 1750.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1768.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1778.
 
 [44]
-Overfull \hbox (9.16354pt too wide) detected at line 1770
+Overfull \hbox (9.16354pt too wide) detected at line 1800
 \OT1/cmr/m/n/10 = [] [] \OMS/cmsy/m/n/10  [] [] \OML/cmm/m/it/10 < \OT1/cmr/m/
 n/10 0
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 1783.
+Package xcolor Warning: Incompatible color definition on input line 1813.
 
 [45] [46]
 
-Package xcolor Warning: Incompatible color definition on input line 1822.
+Package xcolor Warning: Incompatible color definition on input line 1858.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1824.
+Package xcolor Warning: Incompatible color definition on input line 1861.
 
 
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 1826.
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 1863.
 
 
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 1826.
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 1863.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1832.
+Package xcolor Warning: Incompatible color definition on input line 1869.
 
 [47
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 1859.
+Package xcolor Warning: Incompatible color definition on input line 1887.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1880.
+Package xcolor Warning: Incompatible color definition on input line 1905.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1885.
+Package xcolor Warning: Incompatible color definition on input line 1926.
 
 [48] [49]
+Overfull \hbox (25.07472pt too wide) detected at line 1969
+\OMS/cmsy/m/n/10 jj\OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 y[]\OT
+1/cmr/m/n/10 ) \OMS/cmsy/m/n/10   \OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm
+/m/it/10 y[]\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 jj \OT1/cmr/m/n/10 = \OMS/cmsy/m/
+n/10 jj\OML/cmm/m/it/10 x[] \OMS/cmsy/m/n/10   \OML/cmm/m/it/10 x[]\OMS/cmsy/m/
+n/10 jj  jj\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/n
+/10 ) \OMS/cmsy/m/n/10   \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[
+]\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 jj \OT1/cmr/m/n/10 + \OMS/cmsy/m/n/10 jj\OML
+/cmm/m/it/10 g\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 ) \OMS/cmsy/
+m/n/10   \OML/cmm/m/it/10 g\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10
+ )\OMS/cmsy/m/n/10 jj  jj\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x
+[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10   \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/
+cmm/m/it/10 x[]\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 jj \OT1/cmr/m/n/10 + []\OMS/cm
+sy/m/n/10 jj\OML/cmm/m/it/10 x[] \OMS/cmsy/m/n/10   \OML/cmm/m/it/10 x[]\OMS/cm
+sy/m/n/10 jj
+ []
 
-Package xcolor Warning: Incompatible color definition on input line 1936.
+
+Package xcolor Warning: Incompatible color definition on input line 1995.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1967.
+Package xcolor Warning: Incompatible color definition on input line 2000.
+
+[50]
+
+Package xcolor Warning: Incompatible color definition on input line 2003.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1973.
-
-
-LaTeX Warning: Command \textbullet invalid in math mode on input line 1974.
+LaTeX Warning: Command \textbullet invalid in math mode on input line 2008.
 
 Missing character: There is no ˆ in font cmr10!
-[50] [51]
+[51] [52]
 
-Package xcolor Warning: Incompatible color definition on input line 2045.
+Package xcolor Warning: Incompatible color definition on input line 2065.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2062.
+Package xcolor Warning: Incompatible color definition on input line 2072.
 
-[52] [53]
+[53]
+Overfull \hbox (5.2762pt too wide) in paragraph at lines 2114--2116
+\OT1/cmr/m/n/10 Por la pri-me-ra ecua-cion, te-ne-mos que $\OML/cmm/m/it/10 dh
+\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 u\OT1/cmr/m/n/10 ) = \OMS/cmsy/m/n/10  \OT1/c
+mr/m/n/10 (\OML/cmm/m/it/10 d[]g\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n
+/10 ))[] \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 d[]g\OT1/cmr/m/n/10 (\OML/cmm/m/it
+/10 x\OT1/cmr/m/n/10 )$, es de-cir, $\OML/cmm/m/it/10 dh\OT1/cmr/m/n/10 (\OML/c
+mm/m/it/10 u[]\OT1/cmr/m/n/10 ) = \OMS/cmsy/m/n/10  \OT1/cmr/m/n/10 (\OML/cmm/m
+/it/10 d[]g\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 ))[] \OMS/cmsy/
+m/n/10 
+ []
+
 \tf@thm=\write4
 \openout4 = `CalculoDiferencial.thm'.
 
- [54] (CalculoDiferencial.aux
+[54] (CalculoDiferencial.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 LaTeX Info: Redefining \. on input line 9.
@@ -1722,13 +1784,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 30514 strings out of 480790
- 750523 string characters out of 2897301
- 1111018 words of memory out of 3000000
- 45881 multiletter control sequences out of 15000+200000
- 547620 words of font info for 85 fonts, out of 3000000 for 9000
+ 32377 strings out of 480790
+ 790669 string characters out of 2897301
+ 1468808 words of memory out of 3000000
+ 47730 multiletter control sequences out of 15000+200000
+ 547919 words of font info for 86 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,14n,98p,949b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 74i,14n,127p,1163b,2200s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\jdbar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1000.pk> <C:\Users\jdbar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
 0\tcrm0800.pk> <C:\Users\jdbar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
@@ -1752,20 +1814,21 @@ r/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Use
 rs/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb>
 <C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
 r8.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
-s/cm/cmsy10.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmsy5.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/typ
-e1/public/amsfonts/cm/cmsy6.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/f
-onts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/jdbar/AppData/Local/Programs/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/jdbar/AppData/Local/P
-rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/jdbar/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/line10.pfb><C:/Use
-rs/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm
-10.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
-s/symbols/msbm7.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/hoekwater/stmary10.pfb>
-Output written on CalculoDiferencial.pdf (54 pages, 715865 bytes).
+s/cm/cmr9.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmsy10.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmsy5.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/jdbar/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/jdbar/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/jdbar/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/jdbar
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/line10.pfb>
+<C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbo
+ls/msbm10.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/symbols/msbm7.pfb><C:/Users/jdbar/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/hoekwater/stmary10.pfb>
+Output written on CalculoDiferencial.pdf (54 pages, 752825 bytes).
 PDF statistics:
- 332 PDF objects out of 1000 (max. 8388607)
+ 336 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  119 words of extra memory for PDF output out of 10000 (max. 10000000)
 

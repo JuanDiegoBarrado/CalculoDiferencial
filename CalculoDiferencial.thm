@@ -122,7 +122,7 @@
 \contentsline {coro}{{Corolario}{5}{}}{40}%
 \contentsline {demo}{{\underline {Demostración}:}{38}{}}{40}%
 \contentsline {defi}{{Definición}{34}{Norma de una aplicación lineal}}{40}%
-\contentsline {theo}{{Teorema}{20}{Teorema de los incrementos finitos}}{40}%
+\contentsline {theo}{{Teorema}{20}{Teorema de los incrementos finitos}}{41}%
 \contentsline {demo}{{\underline {Demostración}:}{39}{}}{41}%
 \contentsline {coro}{{Corolario}{6}{}}{41}%
 \contentsline {demo}{{\underline {Demostración}:}{40}{}}{41}%
@@ -139,17 +139,16 @@
 \contentsline {theo}{{Teorema}{24}{Caracterización de los puntos críticos vía Hessiano}}{44}%
 \contentsline {demo}{{\underline {Demostración}:}{43}{}}{44}%
 \contentsline {theo}{{Teorema}{25}{}}{45}%
-\contentsline {demo}{{\underline {Demostración}:}{44}{}}{45}%
+\contentsline {demo}{{\underline {Demostración}:}{44}{}}{46}%
 \contentsline {defi}{{Definición}{39}{}}{47}%
 \contentsline {lema}{{Lema}{5}{}}{48}%
 \contentsline {demo}{{\underline {Demostración}:}{45}{}}{48}%
 \contentsline {lema}{{Lema}{6}{Teorema del Punto Fijo}}{48}%
-\contentsline {theo}{{Teorema}{26}{Teorema de la Función Inversa}}{48}%
 \contentsline {demo}{{\underline {Demostración}:}{46}{}}{48}%
-\contentsline {lema}{{Lema}{7}{Teorema del Punto Fijo}}{50}%
-\contentsline {demo}{{\underline {Demostración}:}{47}{}}{50}%
-\contentsline {lema}{{Lema}{8}{}}{50}%
-\contentsline {theo}{{Teorema}{27}{}}{51}%
+\contentsline {theo}{{Teorema}{26}{de la Función Inversa}}{49}%
+\contentsline {demo}{{\underline {Demostración}:}{47}{}}{49}%
+\contentsline {lema}{{Lema}{7}{}}{50}%
+\contentsline {theo}{{Teorema}{27}{de la Función Implícita}}{51}%
 \contentsline {demo}{{\underline {Demostración}:}{48}{}}{51}%
 \contentsline {theo}{{Teorema}{28}{Multiplicadores de Lagrange}}{53}%
 \contentsline {demo}{{\underline {Demostración}:}{49}{}}{53}%
