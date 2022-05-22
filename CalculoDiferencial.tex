@@ -1,96 +1,127 @@
 \documentclass[10pt,a4paper,openright]{book}
 
-\title{CÁLCULO DIFERENCIAL}
+%% Formateo del título del documento
+\title{\Huge CÁLCULO DIFERENCIAL}
 \author{Juan Diego Barrado Daganzo e Iker Muñoz Martínez\\2º de Carrera} %\\ es salto de linea
-\date{\today\footnote{Este documento se actualiza, para consultar las últimas versiones entrar en el enlace https://github.com/JuanDiegoBarrado/CalculoDiferencial}}
+\date{\today\footnote{Este documento se actualiza, para consultar las últimas versiones entrar en el enlace \url{https://github.com/JuanDiegoBarrado/CalculoDiferencial}}}
+
+%% Formateo del estilo de escritura y de la pagina
 \pagestyle{plain}
 \setlength{\parskip}{0.35cm} %edicion de espaciado
 \setlength{\parindent}{0cm} %edicion de sangría
 \clubpenalty=10000 %líneas viudas NO
 \widowpenalty=10000 %líneas viudas NO
-
+\usepackage[top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} % para establecer las medidas de los margenes
 \usepackage[spanish]{babel} %Para que el idioma por defecto sea español
+\usepackage{ulem} % para poder subrayar entornos especiales como las secciones
+
+%% Texto matematico y simbolos especiales
 \usepackage{amsmath} %Paquetes para mates
 \usepackage{amsfonts} %Paquetes para mates
 \usepackage{amssymb} %Paquetes para mates
 \usepackage{stmaryrd} % paquete para mates
 \usepackage{latexsym} %Paquetes para mates
-\usepackage{multicol} %Paquetes columnas
 \usepackage{cancel} %Paquete tachar cosas
-\usepackage[top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry}
 
-\usepackage{centernot}
-\usepackage{mathtools}
+%% Ruta de las fotos e inclusion de las mismas
 \usepackage{graphicx}
-\usepackage{subcaption}
-\usepackage{float}
-
-\usepackage{titlesec} %Formato de capitulos y secciones
-	\titleformat{\chapter}[display]{\normalfont\huge\bfseries\color{capitulos}}{\thechapter}{20pt}{\Huge}[\titlerule{}]
-	\titleformat{\section}{\normalfont\Large\bfseries\color{secciones}}{\thesection}{1em}{}
-	\titleformat{\subsection}{\normalfont\large\bfseries\color{subsecciones}}{\thesubsection}{1em}{}
-	\titleformat{\subsubsection}{\normalfont\normalsize\bfseries\color{subsubsecciones}}{\thesubsubsection}{1em}{}
-
-\usepackage[dvipsnames,usenames]{color} %activar e incluir colores
-	\definecolor{capitulos}{RGB}{60,0,0}%gama de colores de los capitulos
-	\definecolor{secciones}{RGB}{95,8,5}%gama de colores de las secciones
-	\definecolor{subsecciones}{RGB}{140,36,31}%gama de colores de las subsections
-	\definecolor{subsubsecciones}{RGB}{188,109,79}%gama de colores de las subsubsections
-	\definecolor{teoremas}{RGB}{164,56,32}
-	
-\usepackage{graphicx} %Para incluir fotos
 \graphicspath{{./fotos/}}
 
+%% Paquete para subfigures dentro del entorno figure
+\usepackage{subcaption}
+
+%% Inclusion de referencias cruzadas por defecto y específicas
+\usepackage{hyperref}
+
+%% Paquete para definir y utilizar colores por el documento
+\usepackage[dvipsnames,usenames]{xcolor} %activar e incluir colores
+	%% definicion de los colores que se van a utilizar en cada cabecera
+    \definecolor{capitulos}{RGB}{60,0,0}% gama de colores de los capitulos
+    \definecolor{secciones}{RGB}{95,8,5}% gama de colores de las secciones
+    \definecolor{subsecciones}{RGB}{140,36,31}% gama de colores de las subsections
+    \definecolor{subsubsecciones}{RGB}{188,109,79}% gama de colores de las subsubsections
+    \definecolor{teoremas}{RGB}{164,56,32}% gama de colores para los teoremas
+    \definecolor{demos}{RGB}{105,105,105} % gama de colores para el cuerpo de las demostraciones
+    
+%% Paquete para la edición y el formateo de capítulos, secciones...
+\usepackage[explicit]{titlesec}
+	%% Definición del estilo de los capítulos, secciones, etc...
+    \titleformat{\chapter}[display]{\normalfont\huge\bfseries\color{capitulos}}{}{0pt}{\Huge #1}[\titlerule]
+    \titleformat{\section}{\normalfont\Large\bfseries\color{secciones}}{}{0pt}{#1}
+    \titleformat{\subsection}{\normalfont\large\bfseries\color{subsecciones}}{}{0pt}{\uline{#1}}
+    \titleformat{\subsubsection}{\normalfont\normalsize\bfseries\color{subsubsecciones}}{}{0pt}{#1}
+    
+%% Paquete para el formateo de entornos del proyecto
+\usepackage{ntheorem}[thmmarks]
+	%% Definicion del aspecto de los entornos matematicos del proyecto
+	\theoremstyle{break}
+	\theoremheaderfont{\normalfont\bfseries\color{teoremas}}
+	\theorembodyfont{\itshape}
+	\theoremseparator{\vspace{0.2cm}}
+	\theorempreskip{\topsep}
+	\theorempostskip{\topsep}
+	\theoremindent0cm
+	\theoremnumbering{arabic}
+	\theoremsymbol{}
+	\theoremprework{\vspace{0.2cm} \hrule}
+	\theorempostwork{\vspace{0.2cm}\hrule}
+	    \newtheorem*{defi}{Definición}
+
+	\theoremprework{\vspace{0.25cm}}
+		\newtheorem*{theo}{Teorema}
+
+	\theoremprework{\vspace{0.25cm}}
+    	\newtheorem*{coro}{Corolario}
+
+	\theoremprework{\vspace{0.25cm}}
+    	\newtheorem*{lema}{Lema}
+
+	\theoremprework{\vspace{0.25cm}}
+    	\newtheorem*{prop}{Proposición}
+
+	\theoremheaderfont{\normalfont}
+	\theorembodyfont{\normalfont\color{demos}}
+	\theoremsymbol{\hfill\square}
+    	\newtheorem*{demo}{\underline{Demostración}:}
+
+	\theoremheaderfont{\normalfont}
+	\theorembodyfont{\normalfont}
+    	\newtheorem*{obs}{\underline{Observación}:}
+    	\newtheorem*{ej}{\underline{Ejemplo}:}
+    	
+%% Definicion de operadores especiales para simplificar la escritura matematica
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\img}{img}
+\DeclareMathOperator{\rot}{rot}
+\DeclareMathOperator{\divg}{div}
+\newcommand{\dif}[1]{\ d#1}
+
+%% Paquete e instrucciones para la generacion de los dibujos
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.17}
 \usepackage{tkz-fct}
 
-\usepackage{ntheorem}[thmmarks]	% paquete de formateo de entornos matemáticos
-
-\theoremstyle{break}
-\theoremheaderfont{\normalfont\bfseries\color{teoremas}}
-\theorembodyfont{\itshape}
-\theoremseparator{\vspace{0.2cm}}
-\theorempreskip{\topsep}
-\theorempostskip{\topsep}
-\theoremindent0cm
-\theoremnumbering{arabic}
-\theoremsymbol{}
-\theoremprework{\vspace{0.2cm} \hrule}
-\theorempostwork{\vspace{0.2cm}\hrule}
-	\newtheorem*{defi}{Definición}
-
-\theoremprework{\vspace{0.25cm}}
-	\newtheorem*{theo}{Teorema}
-
-\theoremprework{\vspace{0.25cm}}
-	\newtheorem*{coro}{Corolario}
-
-\theoremprework{\vspace{0.25cm}}
-	\newtheorem*{lema}{Lema}
-
-\theoremprework{\vspace{0.25cm}}
-	\newtheorem*{prop}{Proposición}
-
-\theoremheaderfont{\normalfont}
-\theorembodyfont{\normalfont}
-\theoremsymbol{\hfill\square}
-	\newtheorem*{demo}{\underline{Demostración}:}
-
 \begin{document}
 \maketitle
+\setcounter{tocdepth}{3}% para que salgan las subsubsecciones en el indice
+\tableofcontents
 
+\frontmatter
+\section*{AGRADECIMIENTOS}
+Queremos dar gracias al Profesor Javier Soria. Por ser el profesor que impartió la asignatura \textit{Cálculo Diferencial} durante la elaboración de estos apuntes y por darnos \textit{feedback} sobre la calidad y las posibles mejoras de los mismos.
+
+También queremos agradecer a los Profesores Víctor Manuel Sánchez, Jose María Martínez Ansemil y Socorro Ponte Miramontes, por elaborar otros manuales más formales sobre la asignatura y que nos han permitido contrastar adecuadamente los nuestros.
+\vfill
 Cálculo Diferencial © 2021 by Juan Diego Barrado \& Iker Muñoz is licensed under Attribution-NonCommercial 4.0 International. To view a copy of this license, visit
 \begin{center}
-http://creativecommons.org/licenses/by-nc/4.0/
+\url{http://creativecommons.org/licenses/by-nc/4.0/}
 \end{center}
+
 \mainmatter
-
-
-\chapter*{TEORÍA DE LA MEDIDA}
+\chapter{TEORÍA DE LA MEDIDA}
 Vamos a introducir un elemento fundamental en esta asignatura, y muy útil para las posteriores, que no es otra cosa que la capacidad de definir qué es una medida y cómo podemos medir las cosas según un criterio general.
 
-\section*{CONCEPTO DE MÉTRICA Y ESPACIOS NORMADOS}
+\section{CONCEPTO DE MÉTRICA Y ESPACIOS NORMADOS}
 En esta sección, se definen los elementos básicos para el estudio de medidas, distancias y se estudian las características de las estructuras que se generan a partir de dichas definiciones, con sus consecuentes resultados para otras áreas como la geometría.
 
 \begin{defi}[métrica]
@@ -171,11 +202,11 @@ Sin embargo, no es una métrica porque no está bien definida; por ejemplo:
 $$d\left(\frac{1}{x}, 0\right) = \infty$$
 \end{itemize}
 
-\underline{Observación}:
-
+\begin{obs}
 Sin embargo, no toda métrica tiene asociada una norma en un espacio vectorial. Para verlo, tomamos $\mathbb R^n$ con la métrica discreta definida: observamos que no existe una norma que haga que el par $(\mathbb R^n, d)$ sea un espacio normado puesto que en caso de existir, por ejemplo, no se verifica la 3 propiedad:
 $$\mbox{Sea }x\in \mathbb R: x\neq 0, \ \exists ||\cdot||\Rightarrow\underbrace{d(\lambda x , 0)}_{=1} = ||\lambda x|| = |\lambda|\cdot ||x|| = |\lambda| \cdot d(x,0) = |\lambda|$$
 Y como debe ocurrir para todo lambda, es absurdo.
+\end{obs}
 
 \begin{defi}[Producto escalar]
 Sea $E$ un espacio vectorial, se dice que $\langle \cdot, \cdot\rangle: E\times E \rightarrow \mathbb R$ es un \textbf{producto escalar} si es una forma bilineal definida positiva, es decir, cumple las propiedades:
@@ -215,12 +246,12 @@ $$\Delta = 4 \langle x,y\rangle^2 - 4\langle x,x\rangle\cdot \langle y,y\rangle 
 \end{itemize}
 \end{demo}
 
-\underline{Observación}:
-
+\begin{obs}
 Cabe destacar que hay igualdad si y solo si los vectores son proporcionales, es decir:
 $$|\langle x,y\rangle| =\sqrt{\langle x,x\rangle \cdot \langle y,y\rangle} \Leftrightarrow x = \alpha y : \alpha \in \mathbb{R}$$
 Si son proporcionales es trivial demostrar la igualdad. En cambio, si tenemos la igualdad, entonces ello implica que la parábola de la que hablábamos antes corta en un único punto al eje de abscisas, luego:
 $$\langle\lambda \cdot x + y, \lambda \cdot x + y\rangle =  0\Leftrightarrow  \lambda^2 \langle x,x\rangle + 2\lambda \langle x,y\rangle + \langle y,y\rangle = 0 \Leftrightarrow \lambda = \frac{-2 \cdot \langle x,y\rangle}{2 \cdot \langle x,x\rangle} \Leftrightarrow x = -\lambda y$$
+\end{obs}
 
 \begin{prop}
 Dado un espacio pre-Hilbert $(E, \langle \cdot, \cdot \rangle)$ y definimos $||x|| = \sqrt{\langle x,x \rangle}$, entonces $(E, || \cdot ||)$ es normado.
@@ -254,14 +285,14 @@ Se dice que dos normas son equivalentes en un espacio vectorial $E$, $|| \cdot |
 $$\exists c_1,c_2 > 0 : c_1 \leq ||x||_2 \leq ||x||_1 \leq c_2 ||x||_2 : \forall x \in E$$
 \end{defi}
 
-\underline{Observación}
-
+\begin{obs}
 Dado un espacio métrico $(E,d)$, una pregunta razonable es cuándo existe una norma que genera $d$, tal que $d(x,y) = ||x-y||$. Esto ocurre cuando la métrica cumple dos condiciones:
 \begin{itemize}
 \item $d(x+z,y+z) = d(x,y)$ (Invariante por traslaciones)
 
 \item $d(\lambda x, \lambda y) = |\lambda | d(x,y)$ (Invariante por dilataciones)
 \end{itemize}
+\end{obs}
 
 \begin{theo}[Ley del Paralelogramo]
 Sea $(E, \langle \cdot , \cdot \rangle)$ un espacio vectorial normado, cuya norma es $||x||^2 = \langle x,x\rangle$, se cumple que:
@@ -274,7 +305,7 @@ Es interesante observar que el recíproco también es cierto, es decir, dado un 
 $$\langle x,y\rangle = \frac{1}{4} \left(||x+y||^2 - ||x-y||^{2}\right)$$
 \end{theo}
 
-\section*{TOPOLOGÍA EN ESPACIOS MÉTRICOS}
+\section{TOPOLOGÍA EN ESPACIOS MÉTRICOS}
 Igual que $\mathbb{R}$ necesitábamos definir las nociones de entorno, intervalo, supremo... es necesario hacer extensible dichos conceptos a espacios métricos para ser capaces de referirnos a conceptos como las proximidades de un punto o decir que un conjunto es cerrado.
 
 \begin{defi}[Bola]
@@ -300,7 +331,7 @@ Sea $(X,d)$ un espacio métrico, se dice que un conjunto $A \subset X$ es \textb
 $$\forall x \in A : \exists \varepsilon > 0 : B(x,\varepsilon) \subset A$$
 \end{defi}
 
-\underline{Observaciones}:
+\begin{obs}
 \begin{itemize}
 \item Si $\varepsilon_1 < \varepsilon_2 \Rightarrow B(x,\varepsilon_1) \subset B(x,\varepsilon_2)$
 
@@ -311,8 +342,8 @@ $$\forall x \in A : \exists \varepsilon > 0 : B(x,\varepsilon) \subset A$$
 \item Consideramos el espacio métrico $\left( (0,1], d_2 \right)$. El conjunto $(0,1]$ es abierto es este espacio métrico determinado. Es decir, que el hecho de ser abierto o no depende del espacio métrico en el que nos encontramos.
 
 \item $\{x\}$ no es abierto en $\mathbb{R}$. Sin embargo, $\{x\}$ sí es abierto en $(\mathbb{R}, d_{\mbox{\tiny discreta}})$
-
 \end{itemize}
+\end{obs}
 
 
 \begin{prop}
@@ -375,7 +406,7 @@ $$A = \mathring{A}$$
 O lo que es lo mismo, todos los puntos son interiores.
 \end{prop}
 
-\underline{Observaciones}:
+\begin{obs}
 \begin{itemize}
 \item $\mathring{A} \subset A$
 \item $x \in \mathring{A} \Leftrightarrow \exists U$ abierto $: x \in U \subset A$
@@ -383,6 +414,7 @@ O lo que es lo mismo, todos los puntos son interiores.
 \item $A = [0,1]\Rightarrow\mathring{A} = (0,1)$
 \item $\mathring{A} = \bigcup_{\mathcal{U} \subset A} \mathcal{U}$ donde $U$ es abierto.
 \end{itemize}
+\end{obs}
 
 \begin{defi}
 En un espacio métrico $(E,d)$, decimos que un conjunto $A\subset E$ es cerrado si $E\setminus{A}$ es abierto.
@@ -424,7 +456,7 @@ $$\forall \varepsilon > 0: \left(B(x,\varepsilon)\setminus\{x\}\right)\cap A \ne
  Al \textbf{conjunto de puntos de acumulación} se le conoce como $A'$.
 \end{defi}
 
-\underline{Observaciones}:
+\begin{obs}
 \begin{itemize}
 \item Sea $A=(0,1)$ en $\mathbb{R}$, entonces $A'=[0,1]$, de lo que se desprende que no tiene por qué darse $A'\subset A$
 \item $A = \{1\}$ en $\mathbb{R}$, entonces $A' = \emptyset$, de lo que se desprende que no tiene por qué darse $A\subset A'$
@@ -434,6 +466,7 @@ $$x\in A' \Leftrightarrow \forall \varepsilon > 0: \left( B(x,\varepsilon) \setm
 Con lo cual, si tomamos $0 < \varepsilon \leq 1$, entonces
 $$B(x,\varepsilon)\setminus\{x\} =\emptyset \Rightarrow A' = \emptyset$$
 \end{itemize}
+\end{obs}
 
 \begin{prop}[Caracterización de puntos de acumulación]
 Podemos caracterizar los puntos de acumulación como:
@@ -469,12 +502,13 @@ $$\bar{A} = \bigcap_{A\subset F } F \mbox{ donde F es cerrado}$$
 Es decir, es el menor cerrado en el cual $A$ está contenido.
 \end{defi}
 
-\underline{\textbf{Observaciones}}:
+\begin{obs}
 \begin{itemize}
 \item Esto siempre está bien definido porque $F=E\supset A$ y $E$ es cerrado.
 \item $\bar{A}\supset A$
 \item $A\subset B\Rightarrow \bar{A}\subset \bar{B}$
 \end{itemize}
+\end{obs}
 
 \underline{Ejemplos}:
 \begin{itemize}
@@ -534,8 +568,7 @@ Sea $(E,d)$ un espacio métrico y $A\subset E$, se define la frontera de $A$ com
 $$\partial(A) = \bar{A}\cap \overline{E\setminus{A}} = \bar{A}\setminus{\mathring{A}}$$
 \end{defi}
 
-\underline{Observaciones}:
-
+\begin{obs}
 \begin{itemize}
 \item $\partial(A)$ es cerrado.
 \item $A=[0,1)$ en $\mathbb{R}$, implica que $\bar{A} = [0,1]$, luego $\partial(A) = \{0,1\}$
@@ -544,6 +577,7 @@ $$\partial(A) = \bar{A}\cap \overline{E\setminus{A}} = \bar{A}\setminus{\mathrin
 \item Ejercicio: probar que $A'$ es cerrado.
 \item Ejercicio: estudiar cómo son los abiertos y los cerrados en un espacio con la métrica discreta.
 \end{itemize}
+\end{obs}
 
 \begin{prop}[Caracterización de la frontera]
 Si un punto pertenece a la frontera, entonces cualquier bola centrada en él interseca con el conjunto y con el complementario del conjunto:
@@ -561,8 +595,8 @@ $$p\in \partial(A) \Leftrightarrow \forall \varepsilon: B(p,\varepsilon)\cap A \
 \item Una buena propiedad es $\mathring{(A\cap B)} = \mathring{A} \cap \mathring{B}$. Elemental la demostración.
 \end{itemize}
 
-\section*{SUCESIONES, COMPLETITUD Y COMPACIDAD}
-\subsection*{\underline{Convergencia y sucesiones sobre espacios métricos}}
+\section{SUCESIONES, COMPLETITUD Y COMPACIDAD}
+\subsection{Convergencia y sucesiones sobre espacios métricos}
 En Análisis de Variable Real definimos los conceptos de sucesiones y convergencia para el espacio métrico $(\mathbb{R}, |\cdot|)$, por tanto, es necesario redefinir dichos conceptos y prescindir de las particularidades de $\mathbb{R}$ para poder hacerlos extensible a cualquier espacio métrico en el que trabajemos.
 
 \begin{defi}[Sucesión y Subsucesión]
@@ -648,7 +682,7 @@ Se dice que $(E,d)$ es \textbf{completo} si toda sucesión de Cauchy es converge
 
 \newpage
 
-\underline{Observaciones}
+\begin{obs}
 \begin{itemize}
 \item $(\mathbb{R}, |\cdot|)$ es completo.
 
@@ -656,8 +690,9 @@ Se dice que $(E,d)$ es \textbf{completo} si toda sucesión de Cauchy es converge
 
 \item Sea $E = \mathbb{R} \setminus \{0\}$ no es completo. Por ejemplo, la sucesión $x_n = \frac{1}{n} \in E$ es sucesión de Cauchy y no converge en $E$.
 \end{itemize}
+\end{obs}
 
-\subsection*{\underline{Concepto de compacidad y propiedades}}
+\subsection{Concepto de compacidad y propiedades}
 En este apartado, vamos a definir un concepto muy provechoso que hasta ahora había quedad subyacente solo para los intervalos cerrados y acotados en $\mathbb{R}$ que es la noción de compacidad. Todas las buenas propiedades que tenían los cerrados y acotados en $\mathbb{R}$ como el Teorema de Bolzano-Wierstrass se generalizan a conjuntos compactos para espacios de mayor dimensión.
 
 \begin{defi}[Conjunto Acotado]
@@ -703,8 +738,7 @@ Sea $(E,d)$ un espacio métrico. Se dice que $A \subset E$ es \textbf{secuencial
 $$\forall \{x_n\}_{n \in \mathbb{N}} \subset A : \exists \{ x_{n_k}\}_{n_k} \subset \{ x_n\}_n : x_{n_{k}}\xrightarrow{k\rightarrow\infty} x \in A$$
 \end{defi}
 
-\underline{Observaciones}
-
+\begin{obs}
 \begin{itemize}
 \item Si $A$ es secuencialmente compacto, entonces $A' \subset A$ y, por lo tanto,  $A$ es cerrado.
 
@@ -716,6 +750,7 @@ Claramente $\nexists \{ y_{n_k}\}_{n_k} \subset \{ y_n\}_{n \in \mathbb{N}}\subs
 $$d(y_{n_k}, y) < \varepsilon : \forall n_k \geq m \Rightarrow d(y_m, y_n) \geq d(y_m,x) - d(x, y_n) \geq m - d(x, y_n) \xrightarrow[m\rightarrow\infty]{} \infty \Rightarrow \#$$
 Por tanto, llegamos a una contradicción.
 \end{itemize}
+\end{obs}
 
 \begin{prop}[Caracterización de la topología vía sucesiones]
 Sea $(E,d)$ un espacio métrico. Se cumple que:
@@ -747,25 +782,24 @@ $$\mathcal{U} = \{ \mathcal{U}_1, \ldots, \mathcal{U}_m\} \subset \mathcal{U}: A
 \end{defi}
 
 \newpage
-\underline{Observaciones}
-
+\begin{obs}
 \begin{itemize}
 \item Si $A$ es compacto, entonces $A$ es acotado.
 
-Sea $x \in A \subset \bigcup_{n \in \mathbb{N}} B(x,n) \xRightarrow{\exists m \in \mathbb{N}} A \subset B(x,m)$
+Sea $x \in A \subset \bigcup_{n \in \mathbb{N}} B(x,n) \stackrel{\exists m \in \mathbb{N}}{\Rightarrow} A \subset B(x,m)$
 
 \item $(0,1)$ no es compacto en $\mathbb{R}$.
 
 En efecto, sea $\mathcal{U}_n = (\frac{1}{n}, 1)$. Es claro que $(0,1) \subset \bigcup_{n \in \mathbb{N}} \mathcal{U}_i$, pero $\nexists m : (0,1) \subset \mathcal{U}_m$
 \end{itemize}
+\end{obs}
 
 \begin{defi}[Conjunto Totalmente Acotado]
 Sea $(E,d)$ un espacio métrico, se dice que $A \subset E$ es \textbf{totalmente acotado} si ocurre que:
 $$\forall \varepsilon >0: \exists \{x_1, \ldots, x_m\} \subset A : A \subset B(x_1, \varepsilon) \cup \cdots \cup B(x_m, \varepsilon)$$
 \end{defi}
 
-\underline{Observaciones}
-
+\begin{obs}
 \begin{itemize}
 \item Si $A$ es totalmente acotado, entonces $A$ es acotado.
 
@@ -775,6 +809,7 @@ Sea $r = \max\{d(x_1, x_j) : j = 2, \ldots, n\}$ y sea $R= r + 3 \varepsilon$. E
 
 Sea $\varepsilon = \frac{1}{2}$. La bola $B(x, \frac{1}{2}) = \{x\}$, es decir, $\mathbb{R} \not\subset B(x_1, \frac{1}{2}) \cup \ldots \cup B(x_m, \frac{1}{2})$
 \end{itemize}
+\end{obs}
 
 \begin{lema}[Lema 1]
 Sea $(E,d)$ un espacio métrico, si $A$ es compacto, entonces $A$ es cerrado.
@@ -867,7 +902,7 @@ $$d(z, y_n) < \frac{1}{n} : d(z,y) \leq d(z,y_n)+ d(y_n,y) < \frac{1}{n} + \frac
 Así, $B(x_m, \frac{1}{n})=B(y_n,\frac{1}{n})\subset B(y,\delta) \subset \mathcal{U}_{i_0}$, lo cual contradice que $B(x_n, \frac{1}{n}) \not\subset \mathcal{U}_i$
 \end{demo}
 
-\underline{Observaciones}
+\begin{obs}
 \begin{itemize}
 \item $[0,1]$ es compacto en $\mathbb{R}$. En efecto, sea $\{x_n\}_{n \in \mathbb{N}} \subset [0,1]$. Entonces, es una sucesión acotada y tiene por lo tanto una parcial convergente: $$\{x_{n_k}\}_{n_k} \subset \{x_n\}_n, x_{n_k} \to x \in \mathbb{R}$$
 Como $[0,1]$ cerrado $\Rightarrow x \in [0,1] \subset [0,1]$.
@@ -875,8 +910,8 @@ Como $[0,1]$ cerrado $\Rightarrow x \in [0,1] \subset [0,1]$.
 Análogamente, para $\{x \in \mathbb{R}^n : ||x|| < 1\}$ es compacto.
 
 \item Sea $(E,d)$ un espacio métrico. Decir que $A \subset E$ es compacto $\Leftrightarrow (A,d)$ es compacto.
-
 \end{itemize}
+\end{obs}
 
 \begin{theo}
 $$(E,d) \mbox{ es compacto }\Leftrightarrow E \mbox{ es completo y totalmente acotado}$$
@@ -951,10 +986,10 @@ $$\left\lbrace x_{n_k} \right\rbrace_{k \geq k_m} \mbox{ converge a } x$$
 Además, $\{x_{n_k}\} \subset A_m : k \geq k_m$, y como $A_m$  es compacto, $x \in A_m : \forall m \in \mathbb{N}$. Entonces, $$x \in \bigcap_{m \in \mathbb{N}} A_m \neq \emptyset$$
 \end{demo}
 
-\chapter*{CONTINUIDAD Y \\ DIFERENCIABILIDAD}
+\chapter{CONTINUIDAD Y \\ DIFERENCIABILIDAD}
 Es fundamental hacer extensibles los conceptos de continuidad y derivabilidad a dimensiones mayores que $\mathbb{R}$ y más generalmente para espacios métricos, puesto que cuestiones como la optimización de funciones, la búsqueda de extremos relativos o propiedades de conservación topológicas dependen esencialmente de estos conceptos.
 
-\section*{DEFINICIÓN DE CONTINUIDAD}
+\section{DEFINICIÓN DE CONTINUIDAD}
 En este apartado, redefinimos el concepto de continuidad de $\mathbb{R}$ haciéndolo extensible ahora a cualquier espacio métrico. Estudiaremos más concretamente $\mathbb{R}^n$ y veremos los resultados más notables en cuanto a topología que otorga la continuidad.
 
 \begin{defi}[Límite]
@@ -1079,7 +1114,7 @@ Sean $(E,d)$ espacio métrico y $(F, || \cdot ||)$ espacio normado, $A \subset F
 \end{itemize}
 \end{coro}
 
-\subsection*{\underline{Cálculo de límites en $\mathbb{R}^n$}}
+\subsection{Cálculo de límites en $\mathbb{R}^n$}
 En $\mathbb{R}$ teníamos la posibilidad de acercarnos al límite por la derecha y por la izquierda. Sin embargo, en $\mathbb{R}^n$ podemos acercarnos desde cualquier dirección posible, luego se complica en gran medida el cálculo de límites en dicha dimensión. Por ello, es necesario definir una nueva serie criterios que faciliten esta tarea.
 
 \begin{prop}[Límite en $\mathbb{R^{n}}$]
@@ -1215,10 +1250,11 @@ Sean $(E,d), (F, d')$ espacios métricos. Se dice que $f: A \to F, A \subset E$ 
 $$\forall \varepsilon > 0, \ \exists \delta > 0 : d'(f(x), f(y)) < \varepsilon \mbox{ si } d(x,y) < \delta, \forall x,y \in A$$
 \end{defi}
 
-\underline{Observación}
+\begin{obs}
 \begin{itemize}
 \item Si $f$ es uniformemente continua en $A$, entonces $f$ es continua en $A$
 \end{itemize}
+\end{obs}
 
 \begin{theo}
 Sea $f: A \to F$ y supongamos que $f$ es continua y $A$ es compacto, entonces $f$ es uniformemente continua.
@@ -1235,11 +1271,11 @@ Como $x\in A$, $\exists j : 1 \leq j \leq m : B(x_j,  \frac{d_{x_j}}{2}))$. Ento
 $$d'(f(x), f(y)) \leq d'(f(x), f(x_j)) + d'(f(x_j), f(y)) < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon$$
 \end{demo}
 
-\section*{DEFINICIÓN DE DIFERENCIABILIDAD}
+\section{DEFINICIÓN DE DIFERENCIABILIDAD}
 
 La diferenciabilidad supone una parte esencial del cálculo porque permite desde calcular planos tangentes en geometría hasta poder hacer un estudio exhaustivo de la monotonía y de los máximos y mínimos de una función. Por todo ello, es necesario generar una definición válida que haga extensible las propiedades de $\mathbb{R}$ a dimensión arbitraria.
 
-\subsection*{\underline{Diferencial y propiedades}}
+\subsection{Diferencial y propiedades}
 Cuando trabajábamos en una dimensión, $f: I \to \mathbb{R}$ con $I \subset \mathbb{R}$ intervalo abierto y $x_0 \in I$, definíamos la derivada como: 
 $$f'(x_0)= \lim_{t \to 0} \frac{f(x_0 + t) - f(x_0) }{t} = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0}$$
 $$DIBUJO$$
@@ -1255,12 +1291,13 @@ $$D_v f(x_0) = \lim_{t \to 0} \frac{f(x_0 + tv) - f(x_0)}{t}$$
 También se conoce como \textbf{derivada direccional}.
 \end{defi}
 
-\underline{Observaciones}
-
+\begin{obs}
 El módulo del vector que se emplee para calcular dicha derivada no hace más que dilatar el resultado de la misma, es decir, para calcular la derivada del vector unitario basta con dividir por el módulo del vector:
 $$D_{\lambda v} f(x_0) = \lambda D_v f(x_0)$$
 Asímismo, fijados el punto $x_0$ y la dirección $v$ sobre la que se va a calcular la derivada, podemos definir la función $\phi(t) = f(x_0 + tv)$ de modo que la derivada direccional se reduce a una derivada usual sobre 1 variable, en este caso t:
 $$D_v f(x_0) = \phi'(0)$$
+\end{obs}
+
 \underline{Ejemplos}
 \begin{itemize}
 \item Sea $f(x,y) = |x^2 - y^2|^{\frac{1}{2}}$ podemos estudiar cuando existe $D_v f(0,0)$. Sin pérdida de generalidad, suponemos $v$ vector unitario de la forma $v = (\cos \theta, \sen \theta) : \theta \in [0,2\pi)$ que es trivialmente de dirección arbitraria:
@@ -1276,11 +1313,11 @@ $$D_j f(x_0) = \frac{\partial f}{\partial x_j} (x_0) = D_{e_j} f(x_0)$$
 Donde $e_j = (0, \cdots, \underbrace{1}_{j}, \cdots, 0)$ denota a los vectores de la base canónica.
 \end{defi}
 
-\underline{Observación}
-
+\begin{obs}
 Recuperando la observación hecha anteriormente, si consideramos $\phi(t) = f(x_0+e_it)$ podemos definir la derivada parcial como:
 $$\frac{\partial f}{\partial x_j} (x_0) =\phi'(0)$$
 Es decir, que el cálculo de derivadas parciales se reduce a la derivación de la función $\phi(t)$ en $t=0$ dejando fijas todas las variables que no sean $x_j$.
+\end{obs}
 
 \underline{Ejemplo}
 
@@ -1299,11 +1336,11 @@ Cabe mencionar que dicha definición genera un \textbf{vector} del espacio de pa
 Tomando la función de antes $f(x,y) = y \sen(xy^2)$ y habiendo calculado sus derivadas direccionales, tenemos que:
 $$\nabla(x,y) = (y^{3}\cos(xy^{2}), \sen(xy^{2}) +  2xy^{2}\cos(xy^{2})) \Rightarrow \nabla f(0,1) = (1,0)$$
 
-\underline{Observación}
-
+\begin{obs}
 En ocasiones trabajaremos con funciones del tipo $f: A \subset \mathbb{R}^n \to \mathbb{R}^m$. En este caso, basta con considerar la función como $f(z) = (f_1(z), \cdots, f_m(z))$ y hacer los cálculos relativos sobre cada componente, es decir, sobre la función $f_i: \mathbb{R}^n \rightarrow \mathbb{R}$ siendo la derivada direccional resultante:
 $$D_v f(x_0) = \left( D_v f_1(x_0), \cdots, D_v f_m(x_0)\right) \in \mathbb{R}^m$$
 En cuyo caso, el gradiente se convierte en una matriz: la fila $i-\acute{e}sima$ es el gradiente sobre la función $f_i$.
+\end{obs}
 
 \begin{defi}[Forma lineal]
 Sea $L: \mathbb{R}^n \to \mathbb{R}$ una aplicación lineal, por estar definida de $\mathbb{R}^n$ a $\mathbb{R}$, entonces decimos que se llama \textbf{forma lineal sobre $\mathbb{R}^n$} de modo que:
@@ -1333,12 +1370,12 @@ $$H = \{x \in \mathbb{R}^m : L(x) = d \} : L \in \mathcal{L}(\mathbb{R}^m, \math
 Luego podemos expresar dicho espacio afín como el conjunto de soluciones de la ecuación definida por la forma lineal y $d$. Dicho hiperplano se denomina \textbf{tangente en un punto} cuando su vector normal es paralelo al gradiente de la gráfica en un punto y solo interseca en el punto con la misma.
 \end{defi}
 
-\underline{Observación}:
-
+\begin{obs}
 Cuando trabajábamos en $\mathbb{R}$ con funciones de una variable del tipo $f: I \subset \mathbb{R} \to \mathbb{R}$ que eran derivables en un punto $x_0 \in I$, podíamos definir el concepto de recta tangente en el punto $x_0$ como la recta de pendiente $f'(x_0)$ y que pasa por el punto $(x_0, f(x_0))$. De este modo, podemos reescribir el concepto de derivada como:
 $$  \lim_{t\rightarrow 0} \frac{f(x_0 + t) - f(x_0)}{t} = f'(x_0) \Leftrightarrow \lim_{t\rightarrow 0} \frac{f(x_0 + t) - \overbrace{(f(x_0) + tf'(x_0))}^{\mbox{recta tangente}}}{t} = 0 \Leftrightarrow$$
 $$ \Leftrightarrow \lim_{t\rightarrow 0} \frac{f(x_0 + t) - (f(x_0) + tf'(x_0))}{|t|} = 0$$
 De modo análogo, podemos definir el siguiente concepto fundamental a la hora de entender el cálculo diferencial.
+\end{obs}
 
 \begin{defi}[Función Diferenciable]
 Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}$ donde $A$ es abierto y $x_0 \in A$, se dice que $f$ es \textbf{diferenciable en $x_0$} si:
@@ -1382,7 +1419,7 @@ $$df(x_0)(v) = df(x_0)\left(||v|| \cdot \frac{v}{||v||}\right) = ||v|| \cdot df(
 \end{coro}
 Es decir, cuando trabajábamos en $\mathbb{R}$ el papel de la diferencial (o como hemos visto el gradiente porque son lo mismo) lo hacía $f'(x_0)$ que en el fondo es un vector en $\mathbb{R}$. Consecuentemente, tiene sentido definir $df(x_0)$ como un vector en $\mathbb{R}^n$ porque al restringirse a $\mathbb{R}$ sigue siendo aplicable dicha definición.
 
-\subsubsection*{Interpretación geométrica de la diferencial}
+\subsubsection{Interpretación geométrica de la diferencial}
 Cuando trabajamos en funciones de una variable, para hallar la ecuación de la recta tangente (que hace las veces de hiperplano tangente en 2 dimensiones) en un punto a la función teníamos en cuenta la siguiente ecuación:
 $$\left\langle (x-x_0, y-f(x_0)), (f'(x_0), -1)\right\rangle = 0 \Leftrightarrow y = f(x_0)+f'(x_0)(x-x_0)$$
 Si tratamos de expresar dicha recta como una forma lineal en $\mathbb{R}^2$, entonces tenemos que:
@@ -1488,13 +1525,14 @@ $$\forall \varepsilon > 0, \ \exists \delta > 0 : ||(x-a, y-b)|| < \delta \Right
 Luego los valores absolutos de las parciales los tenemos acotados y como los términos $|x-a|$ e $|y-a|$ al dividirse por la norma $||(x-a, y-b)||$ son menores o iguales que 1, tenemos que:
 $$\frac{|f(x,y) - f(a,b) - \nabla f(a,b) \cdot (x-a, y - b)|}{||(x-a, y-b) ||} \leq \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon$$
 \end{demo}
-\underline{Observación}
 
+\begin{obs}
 Del ejemplo anterior, deducimos que
 $$C^{1)}\Rightarrow \mbox{Diferenciable} \Rightarrow \forall x_0 \in A: \exists \nabla f(x_0)$$
 Pero de ahí no podemos deducir que la función diferencial (que es la función gradiente) sea una función continua:
 $$f(x,y) = \begin{cases} x^2 \cdot \sen\left(\frac{1}{x}\right)  & x \neq 0 \\ 0 & x = 0 \end{cases} \Rightarrow \forall x_0\in \mathbb R^2: \exists\nabla f(x_0) \mbox{ y diferenciable en }(0,0)$$
 Sin embargo, la función $\nabla f(x,y) = (\frac{\partial f}{\partial x}f(x,y), \frac{\partial f}{\partial y} f(x,y))$ no es una función continua en $\mathbb{R}^2 \to \mathbb{R}^2$.
+\end{obs}
 
 \begin{defi}[Matriz Jacobiana]
 Sea $f : A \subset \mathbb{R}^n \to \mathbb{R}^m$, definimos el \textbf{Jacobiano de $F$ en $x_0 \in A$} a:
@@ -1561,7 +1599,7 @@ Gracias a un resultado como este podríamos demostrar la fórmula de la diferenc
 $$d(f \cdot g) (x) = \frac{1}{4}\left[ 2 (f(x) + g(x)) \cdot (df(x) + dg(x)) - 2 (f(x) - g(x)) \cdot (d(f(x) - dg(x)) \right]$$
 Que termina siendo la fórmula mencionada en secciones anteriores.
 
-\subsection*{\underline{Taylor, extremos y puntos críticos}}
+\subsection{Taylor, extremos y puntos críticos}
 En este apartado, definimos los conceptos de extremos relativos, el nuevo punto silla y los puntos críticos. Asimismo, dejamos el terreno preparado para formular un Teorema Del Valor Medio en dimensión arbitraria y el esencial Teorema de Taylor. Por tanto, esta sección sienta las bases de la optimización y el cálculo analítico de la monotonía de las funciones estudiadas.
 
 \begin{defi}[Conjunto convexo]
@@ -1570,12 +1608,12 @@ $$\forall x,y \in A : L[x,y] = \left\lbrace tx + (1-t) y : 0 \leq t \leq 1 \righ
 Donde la definición que se ha dado de $L[x,y]$ representa geométricamente el segmento que une ambos puntos.
 \end{defi}
 	    
-\underline{Observación}
-
+\begin{obs}
 Cuando manejábamos funciones de una variable tales como $f: I \subset \mathbb{R} \to \mathbb{R}$ derivable, podíamos afirmar que $\forall x,y \in I, \exists c \in L[x,y] : f(y) - f(x) = f'(c)(y-x)$ gracias al Teorema del Valor Medio. Sin embargo, en general es falso en el caso vectorial, por ejemplo sea $f: \mathbb{R} \to \mathbb{R}^2$ definida como $f(t)=(t^2, t^3)$ si tomamos $x = 0$ y $y=1$ podríamos suponer que:
 $$(1,1) = f(1) - f(0) = df(c)(1-0) = df(c) : c \in [0,1]$$
 Y, en realidad, vemos que el valor de la diferencial es:
 $$df(c) = (2c,3c^2) = (1,1) \Leftrightarrow \begin{cases} c = \frac{1}{2} \\ c = \frac{1}{\sqrt{3}}\end{cases} \Rightarrow \#$$
+\end{obs}
 \newpage
 
 \underline{Ejemplos}
@@ -1633,9 +1671,9 @@ $$||h|| = \sup_{x \in \mathbb{R}^n \setminus \{0\}} = \frac{||h(x)||}{||x||} = \
 La última igualdad se da porque como el denominador es un escalar, puede entrar dentro de la norma del numerador y por ser $h(x)$ lineal, finalmente se tiene que $\left|\left|h\left(\frac{x}{||x||}\right)\right|\right|$, es decir, que se reduce al supremo de las imágenes de vectores unitarios.
 \end{defi}
 
-\underline{Observación}
-
+\begin{obs}
 Es un buen ejercicio probar que el espacio de matrices $(M_{m \times n}, || \cdot || ) $ con la norma definida anteriormente es un espacio normado.
+\end{obs}
 
 \begin{theo}[Teorema de los incrementos finitos]
 Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}^m$ diferenciable en el abierto $A$, si $L[x,y] \subset A$, se satisface que:
@@ -1706,9 +1744,9 @@ $$\frac{\partial^{2}f}{\partial x \partial y}\left(c'_{h,k}, d'_{h,k}\right) \cd
 Y, en particular, cuando pasamos al límite en el último paso, podemos afirmar la igualdad porque $f\in C^{2)}(A)$ ya que como $c_{h,k}$ y $d_{h,k}$ se aproximan a los valores de $x$ e $y$, la función toma el mismo valor en el límite que en la imagen a consecuencia de la continuidad que le confiere $f\in C^{2)}(A)$.
 \end{demo}
 
-\underline{Observación}
-
+\begin{obs}
 En general, la igualdad no es cierta si $f \notin \mathcal{C}^{2)} (A)$. Por ejemplo, $f(x,y) = \begin{cases} \frac{xy^3}{x^2 + y^2} & (x,y) \neq (0,0) \\ 0 & (x,y) = (0,0) \end{cases}$. $f$ tiene derivadas de orden 2 en $\mathbb{R}^n$ y $\frac{\partial^2 f }{\partial x \partial y} (0,0) \neq \frac{\partial^2 f }{ \partial y\partial x} (0,0)$.
+\end{obs}
 
 \begin{coro}
 Si $f \in \mathcal{C}^{k)} (A)$ es de clase $k$ y $\sigma \in \mathcal{S}_k$ es el conjunto de permutaciones de $\{1, \ldots, k\}$, entonces 
@@ -1762,8 +1800,7 @@ Sea $j \in \{1, \ldots, n\}$. Supongamos que $x_0$ es un máximo relativo (razon
 $$\frac{f(x_0 + t \cdot e_j) - f(x_0)}{t} = \begin{cases} \leq 0 & t> 0 \\ \geq 0 & t < 0 \end{cases}\Rightarrow \frac{\partial f}{\partial x_j} (x_0) = 0$$
 \end{demo}
 
-\underline{Observación}
-
+\begin{obs}
 Si $f \in \mathcal{C}^{2)}(A), x_0$, definimos el Hessiano como $ H_f (x_0) = \begin{pmatrix}
 \frac{\partial^2 f}{\partial x_j \partial x_k}
 \end{pmatrix}_{1 \leq j,k \leq n}$, es decir, es una matriz cuadrada simétrica. Si recordamos del curso de Álgebra Lineal, definíamos las formas cuadráticas como las aplicaciones $Q \in M_{n \times n}$ tales que
@@ -1771,6 +1808,7 @@ Si $f \in \mathcal{C}^{2)}(A), x_0$, definimos el Hessiano como $ H_f (x_0) = \b
 Q: \mathbb{R}^n &\to \mathbb{R} \\ x &\mapsto Q(x) = x Q x^t
 \end{align*}
 Es decir, los Hessianos son formas cuadráticas.
+\end{obs}
 
 \begin{defi}[Forma cuadrática]
 Una forma cuadrática $Q \in M_{n \times n}$ se denomina:
@@ -1808,13 +1846,13 @@ $$= \frac{1}{2} \left[ \left(\sum_{\substack{i = 1 \\ j = 1}}^{n} D_{ij} f(c) - 
 El resto de apartados se demuestran de forma análoga.
 \end{demo}
 
-\underline{Observación}:
-
+\begin{obs}
 Sea $f : A \subset \mathbb{R}^2 \to \mathbb{R}\in \mathcal{C}^{2)}(A)$ con $A$ abierto y $(x_0, y_0) \in A$, entonces el Hessiano es de la forma:
 $$H_f (x_0, y_0) = \begin{pmatrix} \frac{\partial^2 f}{\partial x^2} (x_0, y_0) & \frac{\partial^2 f}{\partial x \partial y} (x_0, y_0) \\ \frac{\partial^2 f}{\partial x \partial y} (x_0, y_0) & \frac{\partial^2 f}{\partial y^2} (x_0, y_0) \\ \end{pmatrix} = \begin{pmatrix} a & b \\ b & c \end{pmatrix}$$
 Es decir, si denotamos al determinante Hessiano con $\Delta = det(H_f (x_0, y_0)) = ac - b^2$, entonces para si $h = (h_1, h_2) \in \mathbb{R}^2$, tenemos
 $$h H_f (x_0, y_0) h^t = a \cdot h_1^2 + 2 b \cdot h_1 \cdot h_2 + c \cdot h_2^2$$
 Lo que da lugar al siguiente teorema.
+\end{obs}
 
 \begin{theo}
 Sea $\nabla f (x_0, y_0) = 0$, entonces considerando el determinante del Hessiano:
@@ -1862,10 +1900,10 @@ $$H_f (x,y) = \begin{pmatrix} 6x & -3a \\ -3a & 6y  \\ \end{pmatrix} \Rightarrow
 completar
 \end{itemize}
 
-\chapter*{TEOREMAS NOTABLES}
+\chapter{TEOREMAS NOTABLES}
 En este capítulo vamos a enunciar y demostrar tres resultados fundamentales para otros ámbitos de las matemáticas como son las ecuaciones en derivadas parciales o las ecuaciones algebraicas. Su estudio nace de la necesidad de poder operar y trabajar con funciones como si de números se tratase para poder realizar operaciones como dividir (multiplicar por el inverso) o poder expresar dicha función de una forma más conveniente.
 
-\section*{TEOREMA DE LA FUNCIÓN INVERSA}
+\section{TEOREMA DE LA FUNCIÓN INVERSA}
 Nuestro objetivo ahora es dada $f : A \subset \mathbb{R}^n \to \mathbb{R}^n$, cuándo y de qué forma podemos encontrar la solución:
 $$ f(x) = y : \begin{cases} f_1 (x_1,…,x_n )=y_1 \\ \vdots \\ f_n (x_1,…,x_n )=y_n \end{cases}$$
 Cuando trabajamos en $\mathbb{R}$, si tenemos $f : I \subset \mathbb{R} \to \mathbb{R}$ de forma que $f \in \mathcal{C}^{1)}$ y $x_0 \in I$ un punto donde la derivada no se anula $f'(x_0) \neq 0$, entonces $f$ es estrictamente monótona en un entorno de $x_0$ y, por lo tanto, invertible en un entorno de $x_0 \in I$. Además, si $g=f^{-1}$ sabemos calcular la derivada: 
@@ -1882,13 +1920,13 @@ Es decir, las matrices cuadradas invertibles de orden $n$.
 Es decir, la aplicación invertir matriz cuando sabemos que esta tiene inversa.
 \end{defi}
 
-\underline{Observación}
-
+\begin{obs}
 Es importante ver que podemos identificar $M_{n \times n}$ con el espacio euclídeo $\mathbb{R}^{n^2}$, puesto que podemos realizar la siguiente asignación:
 $$M = \begin{pmatrix}
 a_{11} & \cdots & a_{1n} \\ \vdots & \ddots & \vdots \\ a_{n1} & \cdots & a_{nn}
 \end{pmatrix} \longmapsto (a_{11}, \cdots, a_{1n} ,a_{21}, \cdots a_{2n}, \cdots, a_{n1}, \cdots, a_{nn})$$
 Y de este modo, $L_i (\mathbb{R}^n, \mathbb{R}^n)$ se puede considerar como un subconjunto de $\mathbb{R}^{n^2}$, luego tiene sentido hablar de abiertos en dicho conjunto.
+\end{obs}
 
 \begin{lema}
 El conjunto $L_i (\mathbb{R}^n, \mathbb{R}^n)$ es un abierto en $M_{n \times n} = \mathbb{R}^{n^2}$ y la aplicación $\mathcal{L}^{-1}$ es de clase $C^{\infty)}$.
@@ -1993,10 +2031,10 @@ Así, si $f^{-1} \in \mathcal{C}^{1)}$ y  $p \geq 2$, entonces $df^{-1} \in \mat
 \end{itemize}
 \end{demo}
 
-\underline{Observación}
-
+\begin{obs}
 La hipótesis $df(x_0) \neq 0$ en el teorema de la función inversa es fundamental para garantizar la invertibilidad de la diferencial, pero 
 no es imprescindible para garantizar la existencia de una inversa. Por ejemplo, sea $f:\mathbb{R}\longrightarrow \mathbb{R}$ donde $f(x) = x^3$. Tenemos que  si $x_0 = 0$, existe $f^{-1} : \mathbb{R} \to \mathbb{R}$ y, sin embargo, $f'(0) = 0$. Pero como habíamos dicho, $f^{-1}$ no es derivable en $0$ porque no se cumpla la hipótesis especificada.
+\end{obs}
 
 \begin{lema}
 Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}^n$ donde $A$ es abierto y $f \in \mathcal{C}^{1)}(A)$, se tiene que:
@@ -2004,7 +2042,7 @@ $$\forall x \in A : |df(x)| \neq 0 \Rightarrow \forall \mathcal{U} \subset A \mb
 En este caso, se dice que $f$ es una aplicación abierta.
 \end{lema}
 
-\section*{TEOREMA DE LA FUNCIÓN IMPLÍCITA}
+\section{TEOREMA DE LA FUNCIÓN IMPLÍCITA}
 En el Teorema de la Función Implícita queremos estudiar si en la ecuación $x  + \sen y + y = 0$ podemos despejar $y$ en función de la variable $x$, al menos localmente. Claramente $x = -y - \sen x$ nos da la solución si cambiamos el papel de las varibles.
 
 \begin{theo}[de la Función Implícita]
@@ -2069,7 +2107,7 @@ Por Taylor, para las $x$ dentro del intervalo donde está definida $f$, tenemos 
 
 \newpage
 
-\section*{MULTIPLICADORES DE LAGRANGE}
+\section{MULTIPLICADORES DE LAGRANGE}
 Dada $f: A \subset \mathbb{R}^n \to \mathbb{R}$ con $A$ abierto y $f \in \mathcal{C}^{1)}(A)$. Dado $B \subset A$, podríamos querer optimizar $f|_B : B \to \mathbb{R}$.
 
 \underline{Ejemplo}
