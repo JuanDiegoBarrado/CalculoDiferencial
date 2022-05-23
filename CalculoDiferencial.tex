@@ -137,7 +137,7 @@ Al par $(E,d)$ lo denotamos como \textbf{espacio métrico}.
 
 \end{defi}
 
-\underline{\textbf{Ejemplos}}:
+\begin{ej}
 \begin{itemize}
 \item Un ejemplo sencillo de comprobar es considerar $\mathbb R$ con la métrica $d(x,y) = |x-y|$ tradicional.
 
@@ -149,6 +149,7 @@ Y el par formado por ambos elementos constituyen una peculiar definición de esp
 $$\mathbb R ^n = \mathbb R\times \cdots \times \mathbb R = \{(x_1, \cdots, x_n): x_i\in \mathbb R\}$$
 Este, junto con la suma y el producto por escalares usual, tienen estructura de espacio vectorial y también de espacio métrico.
 \end{itemize}
+\end{ej}
 
 \begin{defi}[Norma]
 Sea $E$ un espacio vectorial real, se dice que $||\cdot||: E \rightarrow \mathbb R$ es una \textbf{norma} si se cumplen las siguientes propiedades:
@@ -161,7 +162,7 @@ Sea $E$ un espacio vectorial real, se dice que $||\cdot||: E \rightarrow \mathbb
 Al par $(E,||\cdot||)$ se le denota como \textbf{espacio normado}.
 \end{defi}
 
-\underline{\textbf{Ejemplos}}:
+\begin{ej}
 \begin{itemize}
 \item Considerando $\mathbb R^n$ denominamos como la \textbf{clásica norma euclídea} a:
 $$||x|| = ||x||_2 = \sqrt{x_1^2+\cdots + x_n^2} : \forall x \in \mathbb R^n $$
@@ -171,6 +172,7 @@ $$||x||_p = \left(|x_1|^p + \cdots + |x_n|^p\right)^{1/p}$$
 \item Denominamos como la \textbf{norma infinito} al extremo de la norma p:
 $$||x||_\infty = \lim_{p\rightarrow\infty} ||x||_p = \max \{|x_j| : j = 1,\ldots, n\}$$
 \end{itemize}
+\end{ej}
 
 \begin{prop}[Métrica asociada a una norma]
 Si consideramos $\left(E,||\cdot||\right)$ un espacio normado, podemos definir \textbf{la métrica asociada a dicha norma} como:
@@ -183,7 +185,7 @@ De este modo, se define la \textbf{métrica o distancia euclídea} en $\mathbb R
 $$d(x,y)=d_2(x,y)=\sqrt{(x_1-y_1)^2+\cdots + (x_n-y_n)^2}$$
 \end{defi}
 
-\underline{\textbf{Ejemplos}}:
+\begin{ej}
 \begin{itemize}
 \item Definimos el conjunto de las funciones continuas $E=\{f: [0,1]\rightarrow \mathbb R: f\mbox{ continua}\} = \mathbb C[0,1]$ y la función:
 $$d(f,g) = \sup\{|f(x)-g(x)|: \forall x \in [0,1]\}$$
@@ -201,6 +203,7 @@ $$d(f,g) = \sup\{|f(x) - g(x)| : \forall x \in (0,1]\}$$
 Sin embargo, no es una métrica porque no está bien definida; por ejemplo:
 $$d\left(\frac{1}{x}, 0\right) = \infty$$
 \end{itemize}
+\end{ej}
 
 \begin{obs}
 Sin embargo, no toda métrica tiene asociada una norma en un espacio vectorial. Para verlo, tomamos $\mathbb R^n$ con la métrica discreta definida: observamos que no existe una norma que haga que el par $(\mathbb R^n, d)$ sea un espacio normado puesto que en caso de existir, por ejemplo, no se verifica la 3 propiedad:
@@ -222,13 +225,14 @@ Al par $(E, \langle \cdot, \cdot\rangle)$ se le denomina espacio vectorial con p
 
 \newpage
 
-\underline{Ejemplos}
+\begin{ej}
 \begin{itemize}
 \item En $\mathbb{R}^n$, definimos $$\langle x,y\rangle = \sum_{j=1}^{n} x_j \cdot y_j : \forall x,y \in \mathbb{R}^n$$
 
 \item En $\mathcal{C}[0,1]$, definimos $$\langle f,g \rangle = \int_{0}^{1} f(x) \cdot g(x) dx$$
 Y es muy sencillo demostrar que ambas definiciones suponen un producto escalar en el espacio en el que están definidas.
 \end{itemize}
+\end{ej}
 
 \begin{theo}[Desigualdad de Cauchy-Schwarz]
 Sea $(E, \langle\cdot, \cdot\rangle)$ un espacio pre-Hilbert y sean $x,y \in E$ dos vectores cualesquiera. Entonces ocurre que:
@@ -264,7 +268,7 @@ Aplicando la desigualdad de Cauchy-Schwarz
 $$\leq ||x||^2 + 2 ||x|| \cdot ||y|| + ||y||^2 = (||x|| + ||y||)^2$$
 \end{demo}
 
-\underline{Ejemplos}
+\begin{ej}
 \begin{itemize}
 \item En $\mathbb{R}^n$, si $x,y \in \mathbb{R}^n$, entonces:
 $$\sum_{j=1}^{n} |x_j \cdot y_j | \leq \sqrt{\sum_{j=1}^{n} x_j^2} \cdot\sqrt{\sum_{j=1}^{n} y_j^2} $$
@@ -279,6 +283,7 @@ $$\Rightarrow\sum_{j=1}^{\infty} |x_j|| y_j | \leq ||x||_{\ell^2} \cdot ||y||_{\
 \item Sea $\mathcal{C}[0,1]$
 $$\int_{0}^{1} |f(x) \cdot g(x)| \leq \left( \int_{0}^{1} |f(x)|^2 dx \right)^\frac{1}{2} \cdot \left( \int_{0}^{1} |g(x)|^2 dx \right)^\frac{1}{2} $$
 \end{itemize}
+\end{ej}
 
 \begin{defi}[Equivalencia de normas]
 Se dice que dos normas son equivalentes en un espacio vectorial $E$, $|| \cdot ||_1 \approx || \cdot ||_1$, si 
@@ -315,7 +320,7 @@ Asimismo, definimos como \textbf{bola cerrada} al conjunto:
 $$\bar{B}(x,r) = \{y \in E : d(x,y) \leq r\}$$
 \end{defi}
 
-\underline{Ejemplos}:
+\begin{ej}
 \begin{itemize}
 \item En $\mathbb{R}$, tomando $x = \frac{a+b}{2}$ donde $a < b$ y $a,b \in \mathbb{R}$, elegimos $r = \frac{b-a}{2} > 0$. Luego ocurre que:
 $$B(x,r) = \left\lbrace y \in \mathbb{R} : \left| y - \frac{a+b}{2}\right| < \frac{b-a}{2}\right\rbrace = (a,b)$$
@@ -325,6 +330,7 @@ $$B(x,r) = \left\lbrace y \in \mathbb{R} : \left| y - \frac{a+b}{2}\right| < \fr
 B(x,2) = X && B(x,1) = \{x\} && \bar{B}(x,1) = X
 \end{align*}
 \end{itemize}
+\end{ej}
 
 \begin{defi}[Conjunto abierto]
 Sea $(X,d)$ un espacio métrico, se dice que un conjunto $A \subset X$ es \textbf{abierto} si:
@@ -420,13 +426,14 @@ O lo que es lo mismo, todos los puntos son interiores.
 En un espacio métrico $(E,d)$, decimos que un conjunto $A\subset E$ es cerrado si $E\setminus{A}$ es abierto.
 \end{defi}
 
-\underline{Ejemplos}:
+\begin{ej}
 \begin{itemize}
 \item $\emptyset, E$ son cerrados.
 \item En $\mathbb{R}$, $(0,1]$ no es abierto ni cerrado.
 \item En $(0,2]$ el conjunto $(0,1]$, es cerrado puesto que su complementario es $(0,2]\setminus(0,1] = (1,2]$ es abierto en este espacio ambiente.
 \item En $\mathbb{R}^{2}$ los puntos son cerrados puesto que si tomamos $A=\{x\}$, entonces $\mathbb{R}\setminus A$ es abierto. Tomamos $y\in \mathbb{R}$ y $\varepsilon = \frac{||x-y||_2}{2}$ entonces $x\notin B(y,\varepsilon)$, luego es abierto.
 \end{itemize}
+\end{ej}
 
 \begin{prop}
 En cualquier espacio métrico $(E,d)$, las bolas cerradas $\bar{B}(x,\varepsilon)$ son conjuntos cerrados.
@@ -510,11 +517,12 @@ Es decir, es el menor cerrado en el cual $A$ está contenido.
 \end{itemize}
 \end{obs}
 
-\underline{Ejemplos}:
+\begin{ej}
 \begin{itemize}
 \item $A = (0,1)$ en $\mathbb{R}$, entonces $\bar{A} = [0,1]$
 \item $A = \mathbb{Q}$ en $\mathbb{R}$, entonces $\bar{A} = \mathbb{R}$
 \end{itemize}
+\end{ej}
 
 \begin{prop}[Caracterización de la adherencia]
 Sea $(E,d)$ un espacio métrico y $A\subset E$, entonces:
@@ -557,11 +565,12 @@ $$A \mbox{ es denso en }B \Leftrightarrow B\subset \bar{A}$$
 En particular, $A$ es denso en $E$ si $\bar{A} = E$.
 \end{defi}
 
-\underline{Ejemplo}:
+\begin{ej}
 \begin{itemize}
 \item El conjunto $\mathbb{Q}$ es denso dentro de $\mathbb{R}$.
 \item El conjunto $\mathbb{I}$ es denso dentro de $\mathbb{R}$.
 \end{itemize}
+\end{ej}
 
 \begin{defi}[Frontera]
 Sea $(E,d)$ un espacio métrico y $A\subset E$, se define la frontera de $A$ como:
@@ -1154,7 +1163,7 @@ $$|L_1 (y) - L | \leq |L_1 (y) - f(x,y)| + |f(x,y) - L| < \frac{\varepsilon}{2} 
 El primer sumando es menor que $\frac{\varepsilon}{2}$ por hipótesis y, para el segundo sumando, si tomamos la métrica $||\cdot||_\infty$, observamos que $||(x,y) - (a,b)||_\infty < \delta$. Como la métrica infinito es equivalente a la métrica euclídea, solo diferirá en una constante, luego ya lo tenemos.
 \end{demo}
 
-\underline{Ejemplos}
+\begin{ej}
 \begin{itemize}
 \item Sea $f(x,y) = \begin{cases} \frac{x^2 - y^2}{x^2 + y^2} & (x,y) \neq (0,0) \\ 0 & (x,y) = (0,0)\end{cases}$
 
@@ -1183,6 +1192,7 @@ Además, observamos que si fijamos la $y \in \mathbb{R}$, entonces:
 $$\nexists \lim_{x \to 0}  y \sen \frac{1}{x} $$
 Pero, por la regla del Bocadillo, el  límite $\exists \lim_{(x,y) \to (0,0)} f(x,y) = 0$, luego se pone de manifiesto la necesidad de que se den las 3 condiciones simultáneamente.
 \end{itemize}
+\end{ej}
 
 \begin{theo}[Convergencia por coordenadas polares]
 Sea $f: \mathbb{R}^2 \to \mathbb{R}$ y tomando $x=r\cos\theta$ y $y=r \sen\theta$, tenemos que:
@@ -1201,7 +1211,7 @@ Y queremos ver que $\forall \varepsilon > 0, \exists \delta > 0 : ||(x,y)|| < \d
 \end{itemize}
 \end{demo}
 
-\underline{Ejemplos}
+\begin{ej}
 \begin{itemize}
 \item Sea $f(x,y)= \begin{cases} \frac{xy^3}{x^2  + y^2} & (x,y) = (0,0) \\ 0 & (x,y) = (0,0) \end{cases}$
 $$\lim_{(x,y) \to (0,0)} f(x,y) = \lim_{r \to 0^+} \frac{r^4 \cos\theta \sen^3 \theta}{r^2} = \lim_{r \to 0^+} r^2 \cos\theta \sen^3 \theta = 0$$
@@ -1210,6 +1220,7 @@ Es decir, el límite es uniforme en $\theta$, porque la convergencia a 0, en est
 $$\lim_{(x,y) \to (0,0)} f(x,y) = \lim_{r \to 0^+} \frac{r \cos\theta}{r \sen\theta} \sen r^2 \nrightarrow 0 \mbox{ uniformemente en } \theta \in [0,2\pi)$$
 Porque como $\sup \{\cot \theta\} = \infty$, entonces podemos tomar valores en $\theta$ que no conviertan a 0 el denominador.
 \end{itemize}
+\end{ej}
 
 \begin{prop}[Convergencia por curvas]
 Sea $f: \mathbb{R}^2 \subset \to \mathbb{R}$ y un abierto $\mathcal{U}$ de forma que $(a,b) \in \mathcal{U}$, entonces podemos definir\footnote{Donde $c$ puede ser el valor que más nos interese (se suele coger 1 o un valor cercano al punto)}
@@ -1221,7 +1232,7 @@ Por tanto, al generalizar el límite para $\mathbb{R}^n$, la existencia del lím
 Trivial a partir de la definición.
 \end{demo}
 
-\underline{Ejemplos}
+\begin{ej}
 \begin{itemize}
 \item Sea $f(x,y) = \begin{cases} \frac{xy^2}{x^2 + y^2} & (x,y) = (0,0) \\ 0 & (x,y) = (0,0) \end{cases}$
 
@@ -1234,6 +1245,7 @@ $$f(r \cos \theta, r \sen \theta) = \frac{r^3 \cos\theta \sen^2 \theta}{r^2} = r
 
 \item 31 d) COMPLETAR
 \end{itemize}
+\end{ej}
 
 \begin{theo}
 Sea $(E,d)$ espacio métrico, sea $f: A \to \mathbb{R}$ continua y un compacto $B \subset A$, entonces:
@@ -1298,14 +1310,14 @@ Asímismo, fijados el punto $x_0$ y la dirección $v$ sobre la que se va a calcu
 $$D_v f(x_0) = \phi'(0)$$
 \end{obs}
 
-\underline{Ejemplos}
+\begin{ej}
 \begin{itemize}
 \item Sea $f(x,y) = |x^2 - y^2|^{\frac{1}{2}}$ podemos estudiar cuando existe $D_v f(0,0)$. Sin pérdida de generalidad, suponemos $v$ vector unitario de la forma $v = (\cos \theta, \sen \theta) : \theta \in [0,2\pi)$ que es trivialmente de dirección arbitraria:
 $$D_vf(0,0) = \lim_{t\rightarrow 0} \frac{f(t\cos\theta , t \sen \theta) - 0}{t} = \frac{|t|}{t} |\cos^2\theta - \sen^2\theta|^\frac{1}{2}$$
 Como el término $\frac{|t|}{t}$ no converge por ambos lados cuando $t\rightarrow 0$, tiene que ocurrir que $\cos^2\theta = \sen^2\theta$ para que se anule todo. Es decir, $f$ es derivable en $(0,0)$ en las direcciones:
 $$\left( \frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2} \right), \left( -\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2} \right),\left( -\frac{\sqrt{2}}{2},-\frac{\sqrt{2}}{2} \right),\left( \frac{\sqrt{2}}{2},-\frac{\sqrt{2}}{2} \right)  $$
-
 \end{itemize}
+\end{ej}
 
 \begin{defi}[Derivada Parcial]
 Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}$ donde $A$ es abierto y $x_0 \in A$, definimos \textbf{derivada parcial j-ésima} de $f$ en $x_0$ como:
@@ -1319,11 +1331,11 @@ $$\frac{\partial f}{\partial x_j} (x_0) =\phi'(0)$$
 Es decir, que el cálculo de derivadas parciales se reduce a la derivación de la función $\phi(t)$ en $t=0$ dejando fijas todas las variables que no sean $x_j$.
 \end{obs}
 
-\underline{Ejemplo}
-
+\begin{ej}
 Sea $f(x,y) = y\sen(xy^{2})$, entonces vemos que:
 $$D_1 f = \frac{\partial f}{\partial x} (x,y)= y \cdot \cos(xy^{2})\cdot y^{2} = y^{3}\cos(xy^{2})$$
 $$D_2 f = \frac{\partial f}{\partial y} (x,y)= \sen(xy^{2}) +  2xy^{2}\cos(xy^{2})$$
+\end{ej}
 
 \begin{defi}[Gradiente]
 Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}$ donde $A$ es abierto y $x_0 \in A$, si existen todas las derivadas parciales, se define \textbf{el gradiente de f en $x_0$} como:
@@ -1331,10 +1343,10 @@ $$\nabla f(x_0) = \left( \frac{\partial f}{\partial x_1} (x_0), \ldots, \frac{\p
 Cabe mencionar que dicha definición genera un \textbf{vector} del espacio de partida.
 \end{defi}
 
-\underline{Ejemplo}
-
+\begin{ej}
 Tomando la función de antes $f(x,y) = y \sen(xy^2)$ y habiendo calculado sus derivadas direccionales, tenemos que:
 $$\nabla(x,y) = (y^{3}\cos(xy^{2}), \sen(xy^{2}) +  2xy^{2}\cos(xy^{2})) \Rightarrow \nabla f(0,1) = (1,0)$$
+\end{ej}
 
 \begin{obs}
 En ocasiones trabajaremos con funciones del tipo $f: A \subset \mathbb{R}^n \to \mathbb{R}^m$. En este caso, basta con considerar la función como $f(z) = (f_1(z), \cdots, f_m(z))$ y hacer los cálculos relativos sobre cada componente, es decir, sobre la función $f_i: \mathbb{R}^n \rightarrow \mathbb{R}$ siendo la derivada direccional resultante:
@@ -1483,8 +1495,7 @@ $$|f(x) - f(x_0)| \leq |f(x) - f(x_0) - df(x_0)\cdot (x - x_0)| + |df(x_0) \cdot
 Luego, para cualquier $\varepsilon > 0$ arbitrario, tomando como $\delta = \min\left\lbrace \frac{\delta'}{||\nabla f || + 1}, \frac{\varepsilon}{1 + || \nabla f||}\right\rbrace$, obtenemos que $|f(x) - f(x_0)| < \varepsilon$ para $||x - x_0|| < \delta$.
 \end{demo}
 
-\underline{Ejemplo}
-
+\begin{ej}
 Sea $f(x,y) = \begin{cases} \frac{xy^2}{x^2 + y^4} & (x,y) \neq (0,0) \\ 0 & (x,y) = (0,0) \end{cases}$ para ver que no es continua veamos que no es diferenciable en el $(0,0)$.
 
 Tomamos un vector unitario de dirección arbitraria $v = (\cos\theta , \sen\theta)$, entonces resulta :
@@ -1498,6 +1509,7 @@ Basta ahora con distinguir casos para evaluar la continuidad:
 \end{itemize}
 
 Entonces, $f$ no es continua en $(0,0)$. También podíamos verlo por la aproximación por la curva $(y^2,y)\Rightarrow f(y^2, y) = \frac{y^4}{y^4 + y^4} = \frac{1}{2} \Rightarrow \nexists \lim_{(x,y) \to (0,0)} f(x,y)$.
+\end{ej}
 
 \begin{prop}[Operaciones con Diferencibilidad]
 Sean $f,g: A \subset \mathbb{R}^n \to \mathbb{R}$ y $x_0 \in A$. Si $f,g$ son diferenciables en $x_0$, entonces se cumple:
@@ -1542,13 +1554,14 @@ $$H_f (x_0) = \begin{pmatrix} D_{11} f(x_0) & \ldots & D_{1n}f(x_0) \\ \vdots & 
 \end{pmatrix} = \left( \frac{\partial^2 f}{\partial x_i \partial x_j } (x_0)\right)_{1 \leq i,j \leq n}$$
 \end{defi}
 
-\underline{Ejemplos}
+\begin{ej}
 \begin{enumerate}
 \item Sea $f(x,y) = (x^2 y , y^3 x, x+y)$, entonces el jacobiano queda como:
 $$J_f (x,y) = \begin{pmatrix} 2xy & x^2 \\ y^3 & 3y^2 x  \\ 1 & 1  \\\end{pmatrix} \in M_{3 \times 2}$$
 \item Sea $g(x,y) = x^2y$, entonces el hessiano queda como:
 $$H_g (x,y) = \begin{pmatrix} 2y & 2x  \\ 2x & 0 \end{pmatrix}$$
 \end{enumerate}
+\end{ej}
 
 
 \begin{theo}[Regla de la Cadena]
@@ -1563,8 +1576,7 @@ De hecho, como hemos definido la relación entre la diferencial de la composici�
 $$\frac{\partial (g \circ f)_j}{\partial x_k} (x_0) = \sum_{l = \ell}^{m} \frac{\partial g_j}{\partial x_\ell} (f(x_0)) \cdot \frac{\partial f_\ell}{\partial x_k}(x_0)$$
 Por ser la diferencial de la composición el producto de las matrices $dg(f(x_0))$ y $df(x_0)$.
 
-\underline{Ejemplo}
-
+\begin{ej}
 Sean $f: \mathbb{R}^2 \to \mathbb{R}^2$ y $g: \mathbb{R}^2 \to \mathbb{R}^3$ definidas como:
 $$\begin{cases} f(x,y) = (x^2 y^3, xy) \\ g(a,b) = (ab, a^2, b^2)\end{cases}$$
 Por tanto, la composición $g \circ f: \mathbb{R}^2 \to \mathbb{R}^3$
@@ -1589,15 +1601,16 @@ xy & x^2 y^3 \\ 2x^2y^3 & 0 \\ 0 & 2xy
 \end{pmatrix} = \begin{pmatrix}
 3x^2y^4 & 4x^3y^3 \\ 4x^3y^6 & 6x^4y^5 \\ 2xy^2 & 2x^2y
 \end{pmatrix}$$
+\end{ej}
 
-\underline{Ejemplo}
-
+\begin{ej}
 Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}$ diferenciable podemos demostrar el cálculo de $d(f^2)(x)$ gracias a la regla de la Cadena.
 Si consideramos $h: \mathbb{R} \to \mathbb{R}$ definida como $h(x)=x^2$, sabemos que $dh(x) = 2x$, luego:
 $$d(f^2)(x) = d(h \circ f)(x) = d h(f(x)) \cdot df(x) = 2 f(x) \cdot df(x)$$
 Gracias a un resultado como este podríamos demostrar la fórmula de la diferencial de un producto porque $f(x)\cdot g(x) = \frac{1}{4} [(f(x) + g(x))^2 - (f(x) - g(x))^2]$, luego basta con calcular:
 $$d(f \cdot g) (x) = \frac{1}{4}\left[ 2 (f(x) + g(x)) \cdot (df(x) + dg(x)) - 2 (f(x) - g(x)) \cdot (d(f(x) - dg(x)) \right]$$
 Que termina siendo la fórmula mencionada en secciones anteriores.
+\end{ej}
 
 \subsection{Taylor, extremos y puntos críticos}
 En este apartado, definimos los conceptos de extremos relativos, el nuevo punto silla y los puntos críticos. Asimismo, dejamos el terreno preparado para formular un Teorema Del Valor Medio en dimensión arbitraria y el esencial Teorema de Taylor. Por tanto, esta sección sienta las bases de la optimización y el cálculo analítico de la monotonía de las funciones estudiadas.
@@ -1616,7 +1629,7 @@ $$df(c) = (2c,3c^2) = (1,1) \Leftrightarrow \begin{cases} c = \frac{1}{2} \\ c =
 \end{obs}
 \newpage
 
-\underline{Ejemplos}
+\begin{ej}
     \begin{figure}[h]
     \centering
     
@@ -1642,6 +1655,7 @@ $$df(c) = (2c,3c^2) = (1,1) \Leftrightarrow \begin{cases} c = \frac{1}{2} \\ c =
     \caption{Conjunto no Convexo}
     \end{subfigure}
 	\end{figure}
+\end{ej}
 
 \begin{lema}
 Sea $f: A \subset \mathbb{R}^n \to \mathbb{R}^m$ diferenciable en el abierto $A$, entonces $\forall x,y \in A : L[x,y] \subset A$ y $\forall z \in \mathbb{R}^m$ se tiene que:
@@ -1710,12 +1724,12 @@ De manera análoga, se definen las derivadas de cualquier orden.
 $$D_{i_k, \ldots, i_1} f = \frac{\partial^k f}{\partial x_{i_k} \ldots \partial x_{i_1}} : i_1, \ldots, i_k \in \{1, \ldots, n\}$$
 \end{defi}
 
-\underline{Ejemplo}
-
+\begin{ej}
 Sea $f(x,y)= yx^2 + xy^3$
 \begin{align*}
 \frac{\partial f}{\partial x} & = 2xy + y^3 & \frac{\partial f}{\partial y} & = x^2 + 3xy^2 & \frac{\partial^2 f}{\partial x^2} & = 2y \\ \frac{\partial^2 f}{\partial y^2} & = 6xy & \frac{\partial^2 f}{\partial y \partial x} & = 2x + 3y^2 & \frac{\partial^2 f}{ \partial x\partial y} & = 2x + 3y^2
 \end{align*}
+\end{ej}
 
 \begin{defi}[Función de Clase k]
 Se dice que $f$ es \textbf{función de clase k} y se denota por $f \in \mathcal{C}^{k)} (A)$ con $A \subset \mathbb{R}^n$ abierto, si $\forall \{i_1, \ldots, i_k\} \subset \{1, \ldots, n\}: \exists D_{i_k, \ldots, i_1} f$ y todas son funciones continuas.
@@ -1760,8 +1774,7 @@ $$f(x_0 + h) = f(x_0) + \sum_{i_1=1}^{n} D_{i_1} f(x_0) \cdot h_{i_1} + \frac{1}
 $$\cdots + \frac{1}{k!} \sum_{\substack{i_1 = 1 \\ \cdots \\ i_k = 1}}^{n} D_{i_1, \ldots, i_k} f(x_0) \cdot h_{i_1} \cdot \ldots \cdot h_{i_k} + \frac{1}{(k+1)!} \sum_{\substack{i_1 = 1 \\ \cdots \\ i_{k+1} = 1}}^{n} D_{i_1, \ldots, i_{k+1}} f(c) \cdot h_{i_1} \cdot \ldots \cdot h_{i_{k+1}}$$
 \end{theo}
 
-\underline{Ejemplo}
-
+\begin{ej}
 Sea $f(x,y) = x^2 - 2y^2 + 4xy - 3$, calculemos el Polinomio de Taylor de orden 2 en el punto $(1,1) \in \mathbb{R}^2$. Observamos que por la definición que se ha dado, el polinomio de Taylor de orden dos se puede expresar como:
 $$\begin{cases} \nabla f(x,y) = (2x + 4y, -4y + 4x) \\ H_f (x,y) =\begin{pmatrix} 2 & 4 \\ 4 & -4 \end{pmatrix} \\ h = (x,y) - (1,1) = (x-1, y-1) \end{cases} \Rightarrow P_2\left((x,y), x_0\right) = f(x_0) + \nabla f(x_0) \cdot h + h \cdot H_f(x_0) \cdot h^t$$
 Luego, sustituyendo tenemos:
@@ -1779,6 +1792,7 @@ x-1 \\ y-1
 \end{pmatrix} $$
 $$= 6(x-1) + \frac{1}{2} \left( 2 (x-1)^2 + 4 (x-1)(y-1) + 4 (x-1)(y-1) - 4 (y-1)^2 \right)$$
 $$= x^2 - 2y^2 + 4xy - 3$$
+\end{ej}
 
 \begin{defi}[Extremos y puntos críticos]
 Sea $f: A \subset \mathbb{R}^n \to  \mathbb{R}$ y $x_0 \in A$, entonces:
@@ -1879,8 +1893,8 @@ $$
 \put(95,74){\textbullet}
 \end{tikzpicture}$$
 $$\mbox{Ejemplo de Punto de Silla}$$
-\underline{Ejemplo}
 
+\begin{ej}
 Estudia los puntos críticos de las siguiente función y determina si son máximos o mínimos locales:
 $$f(x,y) = x^3 + y^3 - 3 \cdot a xy \Rightarrow \nabla f(x,y) = (3x^2 - 3ay, 3y^2 - 3ax)$$
 \begin{itemize}
@@ -1889,16 +1903,15 @@ $$\begin{cases} 3x^2 - 3ay = 0 \\ 3y^2 - 3ax = 0 \end{cases} \Rightarrow\begin{c
 \item Si $a = 0$ trivialmente se tiene que sólo es punto crítico el $(0,0)$.
 \item Si calculamos el determinante del Hessiano, tenemos que:
 $$H_f (x,y) = \begin{pmatrix} 6x & -3a \\ -3a & 6y  \\ \end{pmatrix} \Rightarrow \Delta = 36 xy - 9 a^2$$
-
 \item Si $a \neq 0$, tenemos que:
 \begin{itemize}
 \item $(0,0) \Rightarrow \Delta = -9a^2 < 0 \Rightarrow $ punto silla
 \item $(a,a) \Rightarrow \Delta = 27a^2 > 0 \Rightarrow \begin{cases} a > 0 & \mbox{ mínimo relativo} \\ a < 0 & \mbox{ máximo relativo} \end{cases}$
 \end{itemize}
-
 \item Si $a = 0$, entonces $\Delta = 0$, así que no podemos deducir nada de ello. Es necesario \textbf{calcularlo a mano} y finalmente sale $f(0,0) = 0$.
 completar
 \end{itemize}
+\end{ej}
 
 \chapter{TEOREMAS NOTABLES}
 En este capítulo vamos a enunciar y demostrar tres resultados fundamentales para otros ámbitos de las matemáticas como son las ecuaciones en derivadas parciales o las ecuaciones algebraicas. Su estudio nace de la necesidad de poder operar y trabajar con funciones como si de números se tratase para poder realizar operaciones como dividir (multiplicar por el inverso) o poder expresar dicha función de una forma más conveniente.
@@ -2090,8 +2103,7 @@ $$F(x, f(x)) = F(x, f^*(x)) \Rightarrow G(x,f(x)) = (x, F(x,f(x))) = (x, F(x, f^
 Como $G$ es inyectiva, $f(x) = f^* (x) : \forall x \in \mathcal{U}$
 \end{demo}
 
-\underline{Ejemplo}
-
+\begin{ej}
 Tenemos la función del ejemplo $h(x) = x + \sen y + y$ y queremos ver si en la ecuación $h(x,y)=0$, es decir, $x + \sen y + y = 0$ podemos despejar $y$ en función de $x$.
 
 Tomamos como función $F: \mathbb{R} \times  \mathbb{R} \to \mathbb{R}$ donde $F(x,y) = x + \sen y + y$ y como $(x_0, y_0) = (0,0)$. Como $\det(\frac{\partial F}{\partial y} (0,0)) = |1+ 1| \neq 0$ nos encontramos en las hipótesis del Teorema de la Función Implícita, luego $\exists f : B(x_0, 0)=(-\varepsilon, \varepsilon) \to \mathbb{R}$ tal que $f \in \mathcal{C}^{\infty )}$ que cumple $x + \sen f(x) + f(x) = 0$.
@@ -2104,16 +2116,17 @@ Caracterizar este función no suele ser en general sencillo, pero lo que sí pod
 \frac{\partial^2 h}{\partial x^2} (0,0) &= 0 + f''(0) + f''(0) = 0 \Rightarrow f''(0) = 0
 \end{align*}
 Por Taylor, para las $x$ dentro del intervalo donde está definida $f$, tenemos que $f(x) = \frac{-x}{2} + o(x^2)$
+\end{ej}
 
 \newpage
 
 \section{MULTIPLICADORES DE LAGRANGE}
 Dada $f: A \subset \mathbb{R}^n \to \mathbb{R}$ con $A$ abierto y $f \in \mathcal{C}^{1)}(A)$. Dado $B \subset A$, podríamos querer optimizar $f|_B : B \to \mathbb{R}$.
 
-\underline{Ejemplo}
-
+\begin{ej}
 Tenemos $f : \mathbb{R}^2 \to \mathbb{R}$ donde $f(x,y) = x^2 + y^2$ y el conjunto en el que queremos optimizar $B = \{(x,y) \in \mathbb{R}^2 : x^2 + y^2 = 1\}$. En general, el conjunto $B \subset A  \subset \mathbb{R}^n$ vendrá determinado como intersección de conjuntos de la forma $Z_j = \{x \in A : g_j (x) = 0\}$, siendo $g_j \in \mathcal{C}^{1)} (A) : 1 \leq j \leq m < n$
 $$B = \bigcap_{j = 1}^m Z_j$$
+\end{ej}
 
 \begin{theo}[Multiplicadores de Lagrange]
 Sea $f, g_1, \ldots, g_m : A \subset \mathbb{R}^n \to \mathbb{R}$ donde $A$ es abierto y $m < n$, si se verifican:
@@ -2170,10 +2183,10 @@ Luego ya tenemos probadas ambas cosas
 \end{demo}
 
 
-Volviendo al ejemplo, $(2x,1) = \lambda (2x, 2y)$
-$\begin{cases} x = \lambda x \\ 1 = 2\lambda y \\ x^2 + y^2 = 1\end{cases}$
-
+Volviendo al ejemplo anterior, el conjunto de ecuaciones a resolver sería:
+$$\begin{cases} \nabla f = \lambda \nabla g \\ g = 0
+\end{cases} \Rightarrow \begin{cases} (2x,1) = \lambda (2x, 2y) \\ x^2+y^2+1=0
+\end{cases}\Rightarrow \begin{cases} x = \lambda x \\ 1 = 2\lambda y \\ x^2 + y^2 = 1\end{cases}$$
 De la primera ecuación concluimos que o bien $x = 0$ o $\lambda = 1$. Si $x = 0$, la solución es $(0, \pm 1)$. Si $\lambda = 1$, $(\frac{\pm \sqrt{3}}{2}, \frac{1}{2})$. 
-
 
 \end{document}
