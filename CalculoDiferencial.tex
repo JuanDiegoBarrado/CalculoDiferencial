@@ -31,7 +31,11 @@
 \usepackage{subcaption}
 
 %% Inclusion de referencias cruzadas por defecto y específicas
-\usepackage{hyperref}
+\usepackage[colorlinks=true]{hyperref}
+\hypersetup{
+	urlcolor=red,
+	linkcolor=blue,
+}
 
 %% Paquete para definir y utilizar colores por el documento
 \usepackage[dvipsnames,usenames]{xcolor} %activar e incluir colores
@@ -42,15 +46,15 @@
     \definecolor{subsubsecciones}{RGB}{188,109,79}% gama de colores de las subsubsections
     \definecolor{teoremas}{RGB}{164,56,32}% gama de colores para los teoremas
     \definecolor{demos}{RGB}{105,105,105} % gama de colores para el cuerpo de las demostraciones
-    
+
 %% Paquete para la edición y el formateo de capítulos, secciones...
 \usepackage[explicit]{titlesec}
 	%% Definición del estilo de los capítulos, secciones, etc...
-    \titleformat{\chapter}[display]{\normalfont\huge\bfseries\color{capitulos}}{}{0pt}{\Huge #1}[\titlerule]
-    \titleformat{\section}{\normalfont\Large\bfseries\color{secciones}}{}{0pt}{#1}
+    \titleformat{\chapter}[display]{\normalfont\huge\bfseries\color{capitulos}}{}{0pt}{\Huge \uppercase{#1}}[\titlerule]
+    \titleformat{\section}{\normalfont\Large\bfseries\color{secciones}}{}{0pt}{\uppercase{#1}}
     \titleformat{\subsection}{\normalfont\large\bfseries\color{subsecciones}}{}{0pt}{\uline{#1}}
     \titleformat{\subsubsection}{\normalfont\normalsize\bfseries\color{subsubsecciones}}{}{0pt}{#1}
-    
+
 %% Paquete para el formateo de entornos del proyecto
 \usepackage{ntheorem}[thmmarks]
 	%% Definicion del aspecto de los entornos matematicos del proyecto
@@ -85,10 +89,10 @@
     	\newtheorem*{demo}{\underline{Demostración}:}
 
 	\theoremheaderfont{\normalfont}
-	\theorembodyfont{\normalfont}
+	\theorembodyfont{\sffamily}
     	\newtheorem*{obs}{\underline{Observación}:}
     	\newtheorem*{ej}{\underline{Ejemplo}:}
-    	
+
 %% Definicion de operadores especiales para simplificar la escritura matematica
 \DeclareMathOperator{\dom}{dom}
 \DeclareMathOperator{\img}{img}
@@ -100,17 +104,44 @@
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.17}
 \usepackage{tkz-fct}
+\usepackage{pstricks}
+\usepackage{pstcol} 
+\usepackage{pst-node}
+\usepackage{pst-plot}
+
+%% Paquete para la tachar cosas
+\usepackage{centernot}
+
+%% Paquete para tener un apéndice
+\usepackage{appendix}
+
+%% Paquete para comentar bloques de código de LaTeX
+\usepackage{verbatim}
 
 \begin{document}
 \maketitle
 \setcounter{tocdepth}{3}% para que salgan las subsubsecciones en el indice
-\tableofcontents
 
 \frontmatter
-\section*{AGRADECIMIENTOS}
-Queremos dar gracias al Profesor Javier Soria. Por ser el profesor que impartió la asignatura \textit{Cálculo Diferencial} durante la elaboración de estos apuntes y por darnos \textit{feedback} sobre la calidad y las posibles mejoras de los mismos.
+\section*{Quiénes somos}
+Somos un grupo de estudiantes de la Universidad Complutense de Madrid, concretamente del Doble Grado de Informática y Matemáticas que queremos compartir unos apuntes de calidad y, como mínimo, ordenados para que os sea más fácil llevar la asignatura al día (sobre todo a estudiantes de Doble Grado).
 
-También queremos agradecer a los Profesores Víctor Manuel Sánchez, Jose María Martínez Ansemil y Socorro Ponte Miramontes, por elaborar otros manuales más formales sobre la asignatura y que nos han permitido contrastar adecuadamente los nuestros.
+Estos apuntes son posibles gracias a la colaboración de más alumnos como tú que deciden aportar un granito de arena al proyecto. Puedes contribuir de la siguiente manera:
+\begin{itemize}
+\item Notificando erratas
+\item Modificando erratas
+\item Proponiendo mejoras
+\item Aportando ejemplos nuevos
+\item Aportando nuevas versiones
+\end{itemize}
+Para contribuir no tienes más que ponerte en contacto con \href{mailto:juandbar@ucm.es}{juandbar@ucm.es} o dejarnos un \textit{Pull Request} en \url{https://github.com/JuanDiegoBarrado/CalculoDiferencial}. Los detalles para que la contribución de todos sea lo más homogénea posible estarán en el fichero \textit{Contribute.md} de dicho repositorio o, en caso de no aparecer correctamente, podéis poneros en contacto con el correo anteriormente mencionado.
+
+Muchas gracias, esperamos que este documento te sea útil.
+
+\section*{Agradecimientos}
+Queremos dar gracias especialmente al Profesor Javier Soria, por ser el profesor que impartió la asignatura de \textit{Cálculo Diferencial} durante la elaboración de estos apuntes y por darnos \textit{feedback} sobre la calidad y las posibles mejoras de los mismos.
+
+También queremos dar las gracias a los Profesores Víctor Manuel Sánchez, Jose María Martínez Ansemil y Socorro Ponte Miramontes, por elaborar otros manuales más formales sobre la asignatura que nos han permitido contrastar adecuadamente los nuestros y entender adecuadamente los contenidos aquí expuestos.
 \vfill
 Cálculo Diferencial © 2021 by Juan Diego Barrado \& Iker Muñoz is licensed under Attribution-NonCommercial 4.0 International. To view a copy of this license, visit
 \begin{center}
@@ -118,10 +149,16 @@ Cálculo Diferencial © 2021 by Juan Diego Barrado \& Iker Muñoz is licensed un
 \end{center}
 
 \mainmatter
-\chapter{TEORÍA DE LA MEDIDA}
+\hypersetup{linkcolor=black} %% Conseguimos que el índice salga en negro
+\setcounter{tocdepth}{3}% para que salgan las subsubsecciones en el indice
+\setcounter{secnumdepth}{4}% para que salgan los números de las subsubsecciones en el indice
+\tableofcontents
+\hypersetup{linkcolor=blue} % retornamos el color de las referencias a azul, para que quede resaltado
+
+\chapter{Teoría de la Medida}
 Vamos a introducir un elemento fundamental en esta asignatura, y muy útil para las posteriores, que no es otra cosa que la capacidad de definir qué es una medida y cómo podemos medir las cosas según un criterio general.
 
-\section{CONCEPTO DE MÉTRICA Y ESPACIOS NORMADOS}
+\section{Concepto de Métrica y Espacios Normados}
 En esta sección, se definen los elementos básicos para el estudio de medidas, distancias y se estudian las características de las estructuras que se generan a partir de dichas definiciones, con sus consecuentes resultados para otras áreas como la geometría.
 
 \begin{defi}[métrica]
@@ -310,7 +347,7 @@ Es interesante observar que el recíproco también es cierto, es decir, dado un 
 $$\langle x,y\rangle = \frac{1}{4} \left(||x+y||^2 - ||x-y||^{2}\right)$$
 \end{theo}
 
-\section{TOPOLOGÍA EN ESPACIOS MÉTRICOS}
+\section{Topología en Espacios Métricos}
 Igual que $\mathbb{R}$ necesitábamos definir las nociones de entorno, intervalo, supremo... es necesario hacer extensible dichos conceptos a espacios métricos para ser capaces de referirnos a conceptos como las proximidades de un punto o decir que un conjunto es cerrado.
 
 \begin{defi}[Bola]
@@ -604,7 +641,7 @@ $$p\in \partial(A) \Leftrightarrow \forall \varepsilon: B(p,\varepsilon)\cap A \
 \item Una buena propiedad es $\mathring{(A\cap B)} = \mathring{A} \cap \mathring{B}$. Elemental la demostración.
 \end{itemize}
 
-\section{SUCESIONES, COMPLETITUD Y COMPACIDAD}
+\section{Sucesiones completitud y compacidad}
 \subsection{Convergencia y sucesiones sobre espacios métricos}
 En Análisis de Variable Real definimos los conceptos de sucesiones y convergencia para el espacio métrico $(\mathbb{R}, |\cdot|)$, por tanto, es necesario redefinir dichos conceptos y prescindir de las particularidades de $\mathbb{R}$ para poder hacerlos extensible a cualquier espacio métrico en el que trabajemos.
 
@@ -995,10 +1032,10 @@ $$\left\lbrace x_{n_k} \right\rbrace_{k \geq k_m} \mbox{ converge a } x$$
 Además, $\{x_{n_k}\} \subset A_m : k \geq k_m$, y como $A_m$  es compacto, $x \in A_m : \forall m \in \mathbb{N}$. Entonces, $$x \in \bigcap_{m \in \mathbb{N}} A_m \neq \emptyset$$
 \end{demo}
 
-\chapter{CONTINUIDAD Y \\ DIFERENCIABILIDAD}
+\chapter{Continuidad y \\ Diferenciabilidad}
 Es fundamental hacer extensibles los conceptos de continuidad y derivabilidad a dimensiones mayores que $\mathbb{R}$ y más generalmente para espacios métricos, puesto que cuestiones como la optimización de funciones, la búsqueda de extremos relativos o propiedades de conservación topológicas dependen esencialmente de estos conceptos.
 
-\section{DEFINICIÓN DE CONTINUIDAD}
+\section{Definición de Continuidad}
 En este apartado, redefinimos el concepto de continuidad de $\mathbb{R}$ haciéndolo extensible ahora a cualquier espacio métrico. Estudiaremos más concretamente $\mathbb{R}^n$ y veremos los resultados más notables en cuanto a topología que otorga la continuidad.
 
 \begin{defi}[Límite]
@@ -1283,8 +1320,7 @@ Como $x\in A$, $\exists j : 1 \leq j \leq m : B(x_j,  \frac{d_{x_j}}{2}))$. Ento
 $$d'(f(x), f(y)) \leq d'(f(x), f(x_j)) + d'(f(x_j), f(y)) < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon$$
 \end{demo}
 
-\section{DEFINICIÓN DE DIFERENCIABILIDAD}
-
+\section{Definición de Diferenciabilidad}
 La diferenciabilidad supone una parte esencial del cálculo porque permite desde calcular planos tangentes en geometría hasta poder hacer un estudio exhaustivo de la monotonía y de los máximos y mínimos de una función. Por todo ello, es necesario generar una definición válida que haga extensible las propiedades de $\mathbb{R}$ a dimensión arbitraria.
 
 \subsection{Diferencial y propiedades}
@@ -1913,10 +1949,10 @@ completar
 \end{itemize}
 \end{ej}
 
-\chapter{TEOREMAS NOTABLES}
+\chapter{Teoremas Notables}
 En este capítulo vamos a enunciar y demostrar tres resultados fundamentales para otros ámbitos de las matemáticas como son las ecuaciones en derivadas parciales o las ecuaciones algebraicas. Su estudio nace de la necesidad de poder operar y trabajar con funciones como si de números se tratase para poder realizar operaciones como dividir (multiplicar por el inverso) o poder expresar dicha función de una forma más conveniente.
 
-\section{TEOREMA DE LA FUNCIÓN INVERSA}
+\section{Teorema de la función inversa}
 Nuestro objetivo ahora es dada $f : A \subset \mathbb{R}^n \to \mathbb{R}^n$, cuándo y de qué forma podemos encontrar la solución:
 $$ f(x) = y : \begin{cases} f_1 (x_1,…,x_n )=y_1 \\ \vdots \\ f_n (x_1,…,x_n )=y_n \end{cases}$$
 Cuando trabajamos en $\mathbb{R}$, si tenemos $f : I \subset \mathbb{R} \to \mathbb{R}$ de forma que $f \in \mathcal{C}^{1)}$ y $x_0 \in I$ un punto donde la derivada no se anula $f'(x_0) \neq 0$, entonces $f$ es estrictamente monótona en un entorno de $x_0$ y, por lo tanto, invertible en un entorno de $x_0 \in I$. Además, si $g=f^{-1}$ sabemos calcular la derivada: 
@@ -2055,7 +2091,7 @@ $$\forall x \in A : |df(x)| \neq 0 \Rightarrow \forall \mathcal{U} \subset A \mb
 En este caso, se dice que $f$ es una aplicación abierta.
 \end{lema}
 
-\section{TEOREMA DE LA FUNCIÓN IMPLÍCITA}
+\section{Teorema de la función implícita}
 En el Teorema de la Función Implícita queremos estudiar si en la ecuación $x  + \sen y + y = 0$ podemos despejar $y$ en función de la variable $x$, al menos localmente. Claramente $x = -y - \sen x$ nos da la solución si cambiamos el papel de las varibles.
 
 \begin{theo}[de la Función Implícita]
@@ -2120,7 +2156,7 @@ Por Taylor, para las $x$ dentro del intervalo donde está definida $f$, tenemos 
 
 \newpage
 
-\section{MULTIPLICADORES DE LAGRANGE}
+\section{Multiplicadores de Lagrange}
 Dada $f: A \subset \mathbb{R}^n \to \mathbb{R}$ con $A$ abierto y $f \in \mathcal{C}^{1)}(A)$. Dado $B \subset A$, podríamos querer optimizar $f|_B : B \to \mathbb{R}$.
 
 \begin{ej}
