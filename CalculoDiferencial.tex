@@ -155,7 +155,7 @@ Cálculo Diferencial © 2021 by Juan Diego Barrado \& Iker Muñoz is licensed un
 \tableofcontents
 \hypersetup{linkcolor=blue} % retornamos el color de las referencias a azul, para que quede resaltado
 
-\chapter{Teoría de la Medida}
+\chapter{Espacios Métricos}
 Vamos a introducir un elemento fundamental en esta asignatura, y muy útil para las posteriores, que no es otra cosa que la capacidad de definir qué es una medida y cómo podemos medir las cosas según un criterio general.
 
 \section{Concepto de Métrica y Espacios Normados}
@@ -164,7 +164,7 @@ En esta sección, se definen los elementos básicos para el estudio de medidas, 
 \begin{defi}[métrica]
 Sea $E\neq \emptyset$ un conjunto, decimos que $d: E\times E \rightarrow \mathbb R$ es una \textbf{métrica o distancia} siempre que se satisfaga las siguientes propiedades\footnote{Nótese que no está permitido valores que tiendan a infinito (comprendidos en $\bar{\mathbb R}$)}
 \begin{itemize}
-\item Positiva: $d(x,y)>0: \forall x, y \in E$
+\item Positiva: $d(x,y)\geq 0: \forall x, y \in E$
 \item No degenerada: $d(x,y) = 0 \Leftrightarrow x = y$
 \item Simetría: $d(x,y) = d(y,x): \forall x,y \in E$
 \item Desigualdad triangular: $d(x,y)\leq d(x,z)+ d(z,y): \forall x,y,z\in E$
@@ -183,8 +183,8 @@ $$d(x,y) = \begin{cases} 0 & x= y \\ 1 & x\neq y \end{cases}$$
 Y el par formado por ambos elementos constituyen una peculiar definición de espacio métrico.	
 
 \item Definimos como \textbf{Espacio Euclídeo Usual} al conjunto:
-$$\mathbb R ^n = \mathbb R\times \cdots \times \mathbb R = \{(x_1, \cdots, x_n): x_i\in \mathbb R\}$$
-Este, junto con la suma y el producto por escalares usual, tienen estructura de espacio vectorial y también de espacio métrico.
+$$\mathbb R ^n = \mathbb R\times \cdots \times \mathbb R = \{(x_1, \cdots, x_n): x_i\in \mathbb R\}\mbox{ donde } d(x,y) = \sqrt{(x_1-y_1)^2+ \cdots + (x_n-y_n)^2}$$
+Este, junto con la suma, el producto por escalares usual y la métrica definida (que más adelante veremos que es la métrica euclídea), tiene estructura de espacio vectorial y también de espacio métrico.
 \end{itemize}
 \end{ej}
 
@@ -224,12 +224,13 @@ $$d(x,y)=d_2(x,y)=\sqrt{(x_1-y_1)^2+\cdots + (x_n-y_n)^2}$$
 
 \begin{ej}
 \begin{itemize}
-\item Definimos el conjunto de las funciones continuas $E=\{f: [0,1]\rightarrow \mathbb R: f\mbox{ continua}\} = \mathbb C[0,1]$ y la función:
+\item Definimos el conjunto de las funciones continuas $E=\{f: [0,1]\rightarrow \mathbb R: f\mbox{ continua}\} = \mathcal C[0,1]$ y la función:
 $$d(f,g) = \sup\{|f(x)-g(x)|: \forall x \in [0,1]\}$$
 Lo primero de todo, comprobamos que está bien definida: como son funciones continuas la diferencia es continua y, por ser el valor absoluto una función continua, la composición con él también es continua. Consecuentemente, al tratarse de una función continua y acotada en $[0,1]$ el máximo se alcanza, así que, de hecho, no solo el supremo es un número finito, sino que es máximo de la función en ese intervalo.
 
 Para ver que se trata de una norma, comprobamos la última propiedad (las anteriores son triviales):
-$$d(f,g) = |f(x) - g(x)| = |f(x) - h(x) + h(x)- g(x)| \leq |f(x) - h(x)| + |h(x) - g(x)| \leq d(f,h) + d(h,g)$$
+$$d(f,g) = \sup|f(x) - g(x)| = \sup|f(x) - h(x) + h(x)- g(x)| \leq$$
+$$\leq \sup|f(x) - h(x)| + \sup|h(x) - g(x)| \leq d(f,h) + d(h,g)$$
 
 \item Junto al ejemplo anterior, podemos definir:
 $$||f||_\infty = \sup\{|f(x)| : x \in [0,1]\}$$
@@ -260,13 +261,11 @@ Sea $E$ un espacio vectorial, se dice que $\langle \cdot, \cdot\rangle: E\times 
 Al par $(E, \langle \cdot, \cdot\rangle)$ se le denomina espacio vectorial con producto escalar o espacio \textbf{pre-Hilbert}.
 \end{defi}
 
-\newpage
-
 \begin{ej}
 \begin{itemize}
 \item En $\mathbb{R}^n$, definimos $$\langle x,y\rangle = \sum_{j=1}^{n} x_j \cdot y_j : \forall x,y \in \mathbb{R}^n$$
 
-\item En $\mathcal{C}[0,1]$, definimos $$\langle f,g \rangle = \int_{0}^{1} f(x) \cdot g(x) dx$$
+\item En $\mathcal{C}[0,1]$, definimos $$\langle f,g \rangle = \int_{0}^{1} f(x) \cdot g(x) \dif{x}$$
 Y es muy sencillo demostrar que ambas definiciones suponen un producto escalar en el espacio en el que están definidas.
 \end{itemize}
 \end{ej}
@@ -318,7 +317,7 @@ $$\sum_{j=1}^{\infty} |x_j y_j | \leq \sqrt{\sum_{j=1}^{n} x_j^2} \cdot\sqrt{\su
 $$\Rightarrow\sum_{j=1}^{\infty} |x_j|| y_j | \leq ||x||_{\ell^2} \cdot ||y||_{\ell^2}$$
 
 \item Sea $\mathcal{C}[0,1]$
-$$\int_{0}^{1} |f(x) \cdot g(x)| \leq \left( \int_{0}^{1} |f(x)|^2 dx \right)^\frac{1}{2} \cdot \left( \int_{0}^{1} |g(x)|^2 dx \right)^\frac{1}{2} $$
+$$\int_{0}^{1} |f(x) \cdot g(x)| \dif{x} \leq \left( \int_{0}^{1} |f(x)|^2 \dif{x} \right)^\frac{1}{2} \cdot \left( \int_{0}^{1} |g(x)|^2 \dif{x} \right)^\frac{1}{2} $$
 \end{itemize}
 \end{ej}
 
@@ -653,6 +652,7 @@ f : \mathbb{N} &\to E \\ n &\mapsto x_n
 Una \textbf{subsucesión} o \textbf{sucesión parcial} de $\{x_n\}_{n \in \mathbb{N}}$ es una sucesión:
 $$\{x_{n_j}\}_{j \in \mathbb{N}} \subset \{x_n\}_{n \in \mathbb{N}} \mbox{ donde } n_1 < n_2 < \ldots < n_j$$
 \end{defi}
+\newpage
 
 \begin{defi}[Convergencia]
 Sea $(E,d)$ un espacio métrico, y sea $\{x_n\}_{n \in \mathbb{N}}$ una sucesión de $E$, se dice que $\{x_n\}_{n \in \mathbb{N}}$ \textbf{converge a $x \in E$} si:
@@ -725,8 +725,6 @@ Sea $(E,d)$ un espacio métrico, se dice que $\{x_n\}_{n\in \mathbb{N}} \subset 
 $$\forall \varepsilon > 0: \exists n_0 \in \mathbb{N} : \forall m,n \geq n_0 \Rightarrow d(x_m, x_n) < \varepsilon$$
 Se dice que $(E,d)$ es \textbf{completo} si toda sucesión de Cauchy es convergente.
 \end{defi}
-
-\newpage
 
 \begin{obs}
 \begin{itemize}
@@ -827,7 +825,6 @@ $$\mathcal{U} = \{ \mathcal{U}_1, \ldots, \mathcal{U}_m\} \subset \mathcal{U}: A
 \item Se dice que $A \subset E$ es \textbf{compacto} si para todo recubrimiento abierto de $A$ se puede extraer un subrecubrimiento finito.\end{itemize}
 \end{defi}
 
-\newpage
 \begin{obs}
 \begin{itemize}
 \item Si $A$ es compacto, entonces $A$ es acotado.
