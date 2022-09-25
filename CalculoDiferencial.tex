@@ -381,7 +381,7 @@ $$\forall x \in A : \exists \varepsilon > 0 : B(x,\varepsilon) \subset A$$
 
 \item El intervalo $(0,1]$ no es abierto en $\mathbb{R}$, ya que para $x=1, \nexists \varepsilon > 0 : B(1,\varepsilon) \subset (0,1]$
 
-\item Consideramos el espacio métrico $\left( (0,1], d_2 \right)$. El conjunto $(0,1]$ es abierto es este espacio métrico determinado. Es decir, que el hecho de ser abierto o no depende del espacio métrico en el que nos encontramos.
+\item Consideramos el espacio métrico $\left( (0,1], d_2 \right)$. El conjunto $(0,1]$ es abierto en este espacio métrico determinado. Es decir, que el hecho de ser abierto o no depende del espacio métrico en el que nos encontramos.
 
 \item $\{x\}$ no es abierto en $\mathbb{R}$. Sin embargo, $\{x\}$ sí es abierto en $(\mathbb{R}, d_{\mbox{\tiny discreta}})$
 \end{itemize}
@@ -443,7 +443,7 @@ Denotamos como $\mathring{A} = int(A) = \{x \in A : x \mbox{ es punto interior}\
 \end{defi}
 
 \begin{prop}[Caracterización de abierto]
-Dado un espacio métrico $(E,d)$, decimos que $A\subset E$ es abierto si y sólo si:
+Dado un espacio métrico $(E,d)$, $A\subset E$ es abierto si y sólo si:
 $$A = \mathring{A}$$
 O lo que es lo mismo, todos los puntos son interiores.
 \end{prop}
@@ -454,7 +454,7 @@ O lo que es lo mismo, todos los puntos son interiores.
 \item $x \in \mathring{A} \Leftrightarrow \exists U$ abierto $: x \in U \subset A$
 \item $A=\{0\}\Rightarrow \mathring{A} = \emptyset$
 \item $A = [0,1]\Rightarrow\mathring{A} = (0,1)$
-\item $\mathring{A} = \bigcup_{\mathcal{U} \subset A} \mathcal{U}$ donde $U$ es abierto.
+\item $\mathring{A} = \bigcup_{\mathcal{U} \subset A} \mathcal{U}$ donde $\mathcal{U}$ es abierto.
 \end{itemize}
 \end{obs}
 
@@ -633,7 +633,7 @@ $$p\in \partial(A) \Leftrightarrow \forall \varepsilon: B(p,\varepsilon)\cap A \
 \begin{itemize}
 \item Vamos a poner un ejemplo donde $\bar{B}(x,r)\neq \overline{B(x,r)}$, tomamos $(E,d)$ espacio métrico donde $d$ es la métrica discreta. Escogemos $x\in E$ y $r=1$, tenemos que $B(x,1)=\{x\}\Rightarrow \overline{B(x,1)} = \{x\}$, pero vemos que $\bar{B}(x,1) = E \neq \{x\}$.
 
-\item Veamos que no siempre $Diam(A) = Diam (\partial A)$, si tomamos $E=[0,1]$, entonces $\partial E = \emptyset$, luego $Diam (E) =1 = Diam(\emptyset)$. Si tomamos $\mathbb{R}$ y $A=(0,\infty)$, vemos que $\partial A =\{0\}$, luego $Diam()A) = \infty$ pero $Diam (\partial A) = 0$. De nuevo, si tomamos $E=[0,1]$ y $A=(0,1]$, tenemos que $\partial(A) = \{0\}$ y se tiene que $Diam(A) = 1 \neq 0 = Diam (\partial(A))$
+\item Veamos que no siempre $Diam(A) = Diam (\partial A)$, si tomamos $E=[0,1]$, entonces $\partial E = \emptyset$, luego $Diam (E) =1\neq Diam(\emptyset)$. Si tomamos $\mathbb{R}$ y $A=(0,\infty)$, vemos que $\partial A =\{0\}$, luego $Diam(A) = \infty$ pero $Diam (\partial A) = 0$. De nuevo, si tomamos $E=[0,1]$ y $A=(0,1]$, tenemos que $\partial(A) = \{0\}$ y se tiene que $Diam(A) = 1 \neq 0 = Diam (\partial(A))$
 
 \item Veamos que $Diam(A) = Diam (\bar{A})$, como $A\subset \bar{A}$ entonces $Diam(A) \leq Diam (\bar{A})$. Y la otra desigualdad es muy fácil de probar también.
 
