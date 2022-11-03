@@ -1158,16 +1158,16 @@ Sean $(E,d)$ espacio métrico y $(F, || \cdot ||)$ espacio normado, $A \subset F
 \end{coro}
 
 \subsection{Cálculo de límites en $\mathbb{R}^n$}
-En $\mathbb{R}$ teníamos la posibilidad de acercarnos al límite por la derecha y por la izquierda. Sin embargo, en $\mathbb{R}^n$ podemos acercarnos desde cualquier dirección posible, luego se complica en gran medida el cálculo de límites en dicha dimensión. Por ello, es necesario definir una nueva serie criterios que faciliten esta tarea.
+En $\mathbb{R}$ teníamos la posibilidad de acercarnos al límite por la derecha y por la izquierda. Sin embargo, en $\mathbb{R}^n$ podemos acercarnos desde cualquier dirección posible, luego se complica en gran medida el cálculo de límites en dicha dimensión. Por ello, es necesario definir una nueva serie de criterios que faciliten esta tarea.
 
-\begin{prop}[Límite en $\mathbb{R^{n}}$]
+\begin{prop}[Límite en $\mathbb{R}^{n}$]
 Sea $(E,d)$ espacio métrico, $A \subset E$ un subconjunto, $f : A \to \mathbb{R}^n$ tal que $f = (f_1, \ldots , f_n),\ f_j : A \to \mathbb{R}$ y $x_0 \in A'$ un punto de acumulación, entonces:
 $$\lim_{x \to x_0} f(x) = L = (L_1, \ldots, L_n)\Leftrightarrow \forall j \in \{ 1, \ldots, n\} : \lim_{x \to x_0} f_j (x)= L_j$$
-Es decir, reducimos el cálculo de límites en $\mathbb{R^n}$ al cálculo de cada componente en $\mathbb{R}$.
+Es decir, reducimos el cálculo de límites en $\mathbb{R}^n$ al cálculo de cada componente en $\mathbb{R}$.
 \end{prop}
 
 \begin{theo}[Regla del Bocadillo]
-Sean $f,g,h : A \subset E \longrightarrow \mathbb{R}$, $x_0 \in A'$ un punto de acumulación y se satisface que:
+Sean $f,g,h : A \subset E \longrightarrow \mathbb{R}$, $x_0 \in A'$ un punto de acumulación y supongamos que:
 \begin{itemize}
 \item $\exists \delta > 0 : g(x) \leq f(x) \leq h(x) : \forall x \in \left( B(x_0, \delta) \setminus \{x_0\} \right) \cap A$
 \item $\exists \lim_{x \to x_0} g(x) = \lim_{x \to x_0} h(x) = L$
@@ -1252,7 +1252,7 @@ $$\lim_{(x,y) \to (0,0)} f(x,y) = \lim_{r \to 0^+} \frac{r^4 \cos\theta \sen^3 \
 Es decir, el límite es uniforme en $\theta$, porque la convergencia a 0, en este caso, es independiente del valor que tome $\theta$.
 \item Sea $f(x,y) = \begin{cases} \frac{x}{y} \sen (x^2 + y^2) & y \neq 0 \\ 0 & y = 0 \end{cases}$
 $$\lim_{(x,y) \to (0,0)} f(x,y) = \lim_{r \to 0^+} \frac{r \cos\theta}{r \sen\theta} \sen r^2 \nrightarrow 0 \mbox{ uniformemente en } \theta \in [0,2\pi)$$
-Porque como $\sup \{\cot \theta\} = \infty$, entonces podemos tomar valores en $\theta$ que no conviertan a 0 el denominador.
+Porque como $\sup_{\theta \in [0,2\pi)} \{\cot \theta = \frac{\sen\theta}{\cos\theta}\} = \infty$, entonces para dicho valor de $\theta$ el límite no converge a 0, es decir, no converge uniformemente en $\theta$.
 \end{itemize}
 \end{ej}
 
